@@ -36,7 +36,7 @@ Set-Item -Path Env:PACKER_LOG_PATH -Value (Join-Path -Path (Resolve-Path -Path $
 Set-Item -Path Env:PACKER_CACHE_DIR -Value (Join-Path -Path (Resolve-Path -Path $buildPath).Path -ChildPath "packer_cache")
 
 # Get the first physical network adapter that has an Up status.
-$net_adapter = ((Get-NetAdapter -Name "*" -Physical) | ? { $_.Status -eq 'Up' })[0].Name
+$net_adapter = ((Get-NetAdapter -Name "*" -Physical) | Where-Object { $_.Status -eq 'Up' })[0].Name
 
 Write-Output "Checking for existence of VM Switch $($vmSwitch)"
 

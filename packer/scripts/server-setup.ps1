@@ -1,3 +1,8 @@
+# SPDX-License-Identifier: Apache-2.0
+# Licensed to the Ed-Fi Alliance under one or more agreements.
+# The Ed-Fi Alliance licenses this file to you under the Apache License, Version 2.0.
+# See the LICENSE and NOTICES files in the project root for more information.
+
 #Requires -Version 5
 #Requires -RunAsAdministrator
 
@@ -5,10 +10,10 @@ $ErrorActionPreference = "Stop"
 
 function Install-Choco {
     if (Get-Command "choco.exe" -ErrorAction SilentlyContinue) {
-        Write-Host "Chocolatey is already installed. Setting choco command."
+        Write-Output "Chocolatey is already installed. Setting choco command."
     }
     else {
-        Write-Host "Installing Chocolatey..."
+        Write-Output "Installing Chocolatey..."
         Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
         $ChocoCmd = Get-Command "choco.exe" -ErrorAction SilentlyContinue
         $ChocolateyInstall = Convert-Path "$($ChocoCmd.Path)\..\.."
@@ -21,7 +26,7 @@ function Install-Choco {
 
 function Get-FileFromInternet {
     param (
-        [string] [Parameter(Mandatory=$true)] $url
+        [string] [Parameter(Mandatory = $true)] $url
     )
 
     New-Item -Force -ItemType Directory "downloads" | Out-Null
@@ -41,16 +46,16 @@ function Get-FileFromInternet {
 
 function Test-FileHash {
     param(
-        [string] [Parameter(Mandatory=$true)] $ExpectedHashValue,
-        [string] [Parameter(Mandatory=$true)] $FilePath
+        [string] [Parameter(Mandatory = $true)] $ExpectedHashValue,
+        [string] [Parameter(Mandatory = $true)] $FilePath
     )
 
     $calculated = (Get-FileHash $FilePath -Algorithm SHA512).Hash
 
     if ($ExpectedHashValue -ne $calculated) {
         throw "Aborting install: cannot be sure of the integrity of the downloaded file " +
-            "$FilePath. Please contact techsupport@ed-fi.org or create a " +
-            "bug report at https://tracker.ed-fi.org"
+        "$FilePath. Please contact techsupport@ed-fi.org or create a " +
+        "bug report at https://tracker.ed-fi.org"
     }
 }
 
@@ -61,7 +66,7 @@ function Enable-IisFeature {
 
     $feature = Get-WindowsOptionalFeature -FeatureName $featureName -Online
     if (-not $feature -or $feature.State -ne "Enabled") {
-        Write-Out "Enabling Windows feature: $($featureName)"
+        Write-Output "Enabling Windows feature: $($featureName)"
 
         $result = Enable-WindowsOptionalFeature -Online -FeatureName $featureName -NoRestart
         return $result.RestartNeeded
@@ -70,7 +75,7 @@ function Enable-IisFeature {
 }
 
 function Enable-RequiredIisFeatures {
-    Write-Host "Installing IIS Features in Windows" -ForegroundColor Cyan
+    Write-Output "Installing IIS Features in Windows"
 
     $restartNeeded = Enable-IisFeature IIS-WebServerRole
     $restartNeeded += Enable-IisFeature IIS-WebServer
@@ -107,7 +112,7 @@ function Enable-RequiredIisFeatures {
 }
 
 function Install-IISUrlRewriteModule {
-    Write-Host "Downloading IIS Rewrite Module 2"
+    Write-Output "Downloading IIS Rewrite Module 2"
     $url = "https://odsassets.blob.core.windows.net/public/installers/url_rewrite/rewrite_amd64_en-US.msi"
     $downloadedFile = Get-FileFromInternet $url
 
@@ -117,24 +122,24 @@ function Install-IISUrlRewriteModule {
     $logFile = "rewrite_amd64_install.log"
     $absoluteLogFile = join-path (resolve-path .) $logFile
 
-    Write-Host "Installing IIS Rewrite Module 2" -ForegroundColor Cyan
-    Write-Host "Appending to log file $absoluteLogFile"
+    Write-Output "Installing IIS Rewrite Module 2"
+    Write-Output "Appending to log file $absoluteLogFile"
 
     $command = "msiexec"
     $argumentList = "/i $downloadedFile /quiet /l*v+! $logFile"
 
-    Write-Host "$command $argumentList" -ForegroundColor Magenta
+    Write-Output "$command $argumentList"
     $msiExitCode = (Start-Process $command -ArgumentList $argumentList -PassThru -Wait).ExitCode
 
     if ($msiExitCode) {
-        Write-Host "Installation of IIS Rewrite Module 2:" -ForegroundColor Yellow
-        Write-Host "    msiexec returned status code $msiExitCode." -ForegroundColor Yellow
-        Write-Host "    See $absoluteLogFile for details." -ForegroundColor Yellow
+        Write-Output "Installation of IIS Rewrite Module 2:"
+        Write-Output "    msiexec returned status code $msiExitCode."
+        Write-Output "    See $absoluteLogFile for details."
     }
     else {
-        Write-Host "Installation of IIS Rewrite Module 2:"
-        Write-Host "    msiexec returned status code $msiExitCode (normal)."
-        Write-Host "    See $absoluteLogFile for details."
+        Write-Output "Installation of IIS Rewrite Module 2:"
+        Write-Output "    msiexec returned status code $msiExitCode (normal)."
+        Write-Output "    See $absoluteLogFile for details."
     }
 }
 
@@ -146,13 +151,13 @@ function Install-IIS {
     if (Get-Command "AI_GetMsiProperty" -ErrorAction SilentlyContinue) {
         $explanation = "Because the Advanced Installer package is running and responsible for MSI"
         $explanation = $explanation + " prerequisites, skipping unnecessary invocation of IIS Rewrite Module MSI."
-        Write-Host $explanation
+        Write-Output $explanation
     }
     else {
         Install-IISUrlRewriteModule
     }
 
-    Write-Host "Prerequisites verified" -ForegroundColor Green
+    Write-Output "Prerequisites verified"
 
     return $restartNeeded
 }
@@ -169,21 +174,28 @@ function Install-IIS {
 .NOTES
     This will install the prerequisites for the ODS/API/Admin applications.
 #>
+
+function Enable-LongFileNames {
+    if (Test-Path 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem') {
+        Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -name "LongPathsEnabled" -Value 1 -Verbose -Force
+    }
+}
 function Install-PreRequisites() {
 
     Start-Transcript -Path ".\tech-suite-install.log"
 
+    Install-IIS
     Install-Choco
+
     choco feature disable --name showDownloadProgress --execution-timeout=$installTimeout
     choco install dotnetfx -y --ignore-pending-reboot --execution-timeout=$installTimeout
+    choco install vscode -y --ignore-pending-reboot --execution-timeout=$installTimeout
     choco install dotnetcore-sdk -y --ignore-pending-reboot --execution-timeout=$installTimeout
+    choco install GoogleChrome -y --ignore-pending-reboot --ignore-checksums --execution-timeout=$installTimeout
     choco install sql-server-2019 -y --params=`"'/IgnorePendingReboot'`" --execution-timeout=$installTimeout
     choco install sql-server-management-studio -y --ignore-pending-reboot --execution-timeout=$installTimeout
-    choco install GoogleChrome -y --ignore-pending-reboot --ignore-checksums --execution-timeout=$installTimeout
-    choco install vscode -y --ignore-pending-reboot --execution-timeout=$installTimeout
 
     Stop-Transcript
 }
 
-Install-IIS
 Install-PreRequisites
