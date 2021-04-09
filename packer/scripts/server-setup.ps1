@@ -8,6 +8,11 @@
 
 $ErrorActionPreference = "Stop"
 
+$modulesPath = Join-Path -Path $PSScriptRoot -ChildPath "modules"
+$fileHelper = (Resolve-Path (Join-Path -Path $modulesPath -ChildPath "file-helper.psm1")).Path
+
+Import-Module $fileHelper
+
 function Install-Choco {
     if (Get-Command "choco.exe" -ErrorAction SilentlyContinue) {
         Write-Output "Chocolatey is already installed. Setting choco command."
@@ -22,41 +27,6 @@ function Install-Choco {
         Update-SessionEnvironment
     }
     return Get-Command "choco.exe" -ErrorAction SilentlyContinue
-}
-
-function Get-FileFromInternet {
-    param (
-        [string] [Parameter(Mandatory = $true)] $url
-    )
-
-    New-Item -Force -ItemType Directory "downloads" | Out-Null
-
-    $fileName = $url.split('/')[-1]
-    $output = "downloads\$fileName"
-
-    if (Test-Path $output) {
-        # File already exists, don't attempt to re-download
-        return $output
-    }
-
-    Invoke-WebRequest -Uri $url -OutFile $output
-
-    return $output
-}
-
-function Test-FileHash {
-    param(
-        [string] [Parameter(Mandatory = $true)] $ExpectedHashValue,
-        [string] [Parameter(Mandatory = $true)] $FilePath
-    )
-
-    $calculated = (Get-FileHash $FilePath -Algorithm SHA512).Hash
-
-    if ($ExpectedHashValue -ne $calculated) {
-        throw "Aborting install: cannot be sure of the integrity of the downloaded file " +
-        "$FilePath. Please contact techsupport@ed-fi.org or create a " +
-        "bug report at https://tracker.ed-fi.org"
-    }
 }
 
 function Enable-IisFeature {
@@ -182,8 +152,9 @@ function Enable-LongFileNames {
 }
 function Install-PreRequisites() {
 
-    Start-Transcript -Path ".\tech-suite-install.log"
+    Start-Transcript -Path ".\server-setup.log"
 
+    Enable-LongFileNames
     Install-IIS
     Install-Choco
 
