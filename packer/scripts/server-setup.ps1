@@ -18,6 +18,8 @@ function Install-Choco {
         Write-Output "Chocolatey is already installed. Setting choco command."
     }
     else {
+        Set-TLS12Support
+
         Write-Output "Installing Chocolatey..."
         Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
         $ChocoCmd = Get-Command "choco.exe" -ErrorAction SilentlyContinue
@@ -38,7 +40,7 @@ function Enable-IisFeature {
     if (-not $feature -or $feature.State -ne "Enabled") {
         Write-Output "Enabling Windows feature: $($featureName)"
 
-        $result = Enable-WindowsOptionalFeature -Online -FeatureName $featureName -NoRestart
+        $result = Enable-WindowsOptionalFeature -Online -FeatureName $featureName -NoRestart | Out-Null
         return $result.RestartNeeded
     }
     return $false
@@ -130,6 +132,23 @@ function Install-IIS {
     Write-Output "Prerequisites verified"
 
     return $restartNeeded
+}
+
+function Test-SqlServerModuleInstalled { $null -ne (Get-InstalledModule | Where-Object -Property Name -eq SqlServer) }
+
+function Use-SqlServerModule {
+
+    if (Test-SqlServerModuleInstalled) {
+        return
+    }
+    else {
+        # Ensure we have Tls12 support
+        Set-TLS12Support
+
+        Write-Host "Installing SqlServer Module"
+        Install-Module -Name SqlServer -MinimumVersion "21.1.18068" -Scope CurrentUser -Force -AllowClobber -AcceptLicense| Out-Null
+        Import-Module -Force -Scope Global SqlServer
+    }
 }
 
 <#

@@ -3,6 +3,12 @@
 # The Ed-Fi Alliance licenses this file to you under the Apache License, Version 2.0.
 # See the LICENSE and NOTICES files in the project root for more information.
 
+function Set-TLS12Support {
+    if (-not [Net.ServicePointManager]::SecurityProtocol.HasFlag([Net.SecurityProtocolType]::Tls12)) {
+        [Net.ServicePointManager]::SecurityProtocol += [Net.SecurityProtocolType]::Tls12
+    }
+}
+
 function Get-FileFromInternet {
     param (
         [string] [Parameter(Mandatory = $true)] $url
@@ -38,4 +44,4 @@ function Test-FileHash {
     }
 }
 
-Export-ModuleMember -Function Test-FileHash, Get-FileFromInternet -Alias *
+Export-ModuleMember -Function Test-FileHash, Get-FileFromInternet, Set-TLS12Support -Alias *

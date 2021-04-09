@@ -16,49 +16,107 @@
     Sets the Packer debug mode and logging path variables at runtime.
 #>
 
-param([string] $vmSwitch = "packer-hyperv-iso", [string] $isoUrl)
+param([string] $VMSwitch = "packer-hyperv-iso",
+    [string] $ISOUrl = $null,
+    [switch] $SkipCreateVMSwitch = $false,
+    [switch] $SkipRunPacker = $false)
 
 #Requires -RunAsAdministrator
 #Requires -Version 5
 
-# Create Build and Distribution Folders
+#global vars
 $buildPath = Join-Path -Path $PSScriptRoot -ChildPath "build"
 $logsPath = Join-Path -Path $buildPath -ChildPath "logs"
 $distPath = Join-Path -Path $PSScriptRoot -ChildPath "dist"
 
-New-Item -ItemType Directory -Path $buildPath -Force | Out-Null
-New-Item -ItemType Directory -Path $logsPath -force | Out-Null
-New-Item -ItemType Directory -Path $distPath -force | Out-Null
+function Invoke-CreateFolders {
+    New-Item -ItemType Directory -Path $buildPath -Force | Out-Null
+    New-Item -ItemType Directory -Path $logsPath -force | Out-Null
+    New-Item -ItemType Directory -Path $distPath -force | Out-Null
+}
+
+function Invoke-PackageDownloads {
+    if (-not [Net.ServicePointManager]::SecurityProtocol.HasFlag([Net.SecurityProtocolType]::Tls12)) {
+        [Net.ServicePointManager]::SecurityProtocol += [Net.SecurityProtocolType]::Tls12
+    }
+
+    $configPath = (Resolve-Path (Join-Path -Path $PSScriptRoot -ChildPath "build-configuration.json")).Path
+
+    $config = Get-Content $configPath | ConvertFrom-Json
+
+    $url_template = $config.url_template
+
+    $components = @{}
+    $config.components.psobject.properties | ForEach-Object { $components[$_.Name] = $_.Value }
+
+    foreach ($key in $components.Keys) {
+        $version = $components[$key].version
+        $package_name = $components[$key].package_name
+
+        $fullName = (Join-Path -Path $buildPath -ChildPath ( "{0}.zip" -f $package_name ))
+        $url = $url_template -f $package_name, $version
+
+        # ignore if already downloaded
+        if ((Test-Path -Path $fullName)) {
+            Write-Output ("Skipping '{1}' package version '{2}' download of '{0}'" -f $fullName, $package_name, $version)
+        }
+        else {
+            Write-Output ("Downloading '{1}' package version '{2}' to '{0}'" -f $fullName, $package_name, $version)
+            Invoke-WebRequest -Uri $url -OutFile $fullName
+        }
+    }
+}
+
+function Set-EnvironmentVariables {
+    Set-Item -Path Env:PACKER_LOG -Value 1
+    Set-Item -Path Env:PACKER_LOG_PATH -Value (Join-Path -Path (Resolve-Path -Path $logsPath).Path -ChildPath "packer.log")
+    Set-Item -Path Env:PACKER_CACHE_DIR -Value (Join-Path -Path (Resolve-Path -Path $buildPath).Path -ChildPath "packer_cache")
+}
+
+function Invoke-CreateVMSwitch {
+    # Get the first physical network adapter that has an Up status.
+    $net_adapter = ((Get-NetAdapter -Name "*" -Physical) | Where-Object { $_.Status -eq 'Up' })[0].Name
+
+    Write-Output "Checking for existence of VM Switch $($VMSwitch)"
+
+    # Note this requires admin privilages
+    if ($null -eq (Get-VMSwitch -Name $VMSwitch -ErrorAction SilentlyContinue)) {
+        Write-Output "Creating new VM Switch $($VMSwitch)"
+        New-VMSwitch -Name $VMSwitch -AllowManagementOS $true -NetAdapterName $net_adapter -MinimumBandwidthMode Weight
+    }
+}
+
+function Invoke-Packer {
+    $packerConfig = (Resolve-Path (Join-Path -Path $PSScriptRoot -ChildPath sea-starter-kit-win2019-eval.pkr.hcl)).Path
+
+    #initialize packer and its packages
+    & packer init $packerConfig
+
+    # run build vm with packer
+    if ( -not $ISOUrl) {
+        & packer build -force -var "vm_switch=$($VMSwitch)" $packerConfig
+    }
+    else {
+        & packer build -force -var "vm_switch=$($VMSwitch)" -var "iso_url=$($ISOUrl)" $packerConfig
+    }
+}
+
+# Create Build and Distribution Folders
+Invoke-CreateFolders
+
+#download packages and push to to build folder
+Invoke-PackageDownloads
 
 # Configure runtime environment vars
-Set-Item -Path Env:PACKER_LOG -Value 1
-Set-Item -Path Env:PACKER_LOG_PATH -Value (Join-Path -Path (Resolve-Path -Path $logsPath).Path -ChildPath "packer.log")
-Set-Item -Path Env:PACKER_CACHE_DIR -Value (Join-Path -Path (Resolve-Path -Path $buildPath).Path -ChildPath "packer_cache")
+Set-EnvironmentVariables
 
-# Get the first physical network adapter that has an Up status.
-$net_adapter = ((Get-NetAdapter -Name "*" -Physical) | Where-Object { $_.Status -eq 'Up' })[0].Name
-
-Write-Output "Checking for existence of VM Switch $($vmSwitch)"
-
-# Note this requires admin privilages
-if ($null -eq (Get-VMSwitch -Name $vmSwitch -ErrorAction SilentlyContinue)) {
-    Write-Output "Creating new VM Switch $($vmSwitch)"
-    New-VMSwitch -Name $vmSwitch -AllowManagementOS $true -NetAdapterName $net_adapter -MinimumBandwidthMode Weight
-}
+# Configur VMSwitch
+if (-not ($SkipCreateVMSwitch)) { Invoke-CreateVMSwitch }
+else { Write-Output "Skipping VM Switch validation and creation." }
 
 # Compress our PowerShell to a zip archive
 Compress-Archive -Path (Join-Path -Path $PSScriptRoot -ChildPath "scripts") -Destination  (Join-Path -Path $buildPath -ChildPath "sea-starter-kit.zip") -Force
 
 # Kick off the packer build with the force to override prior builds
-$packerConfig = (Resolve-Path (Join-Path -Path $PSScriptRoot -ChildPath sea-starter-kit-win2019-eval.pkr.hcl)).Path
-
-#initialize packer and its packages
-& packer init $packerConfig
-
-# run build vm with packer
-if ($isoUrl -eq "") {
-    & packer build -force -var "vm_switch=$($vmSwitch)" $packerConfig
-}
-else {
-    & packer build -force -var "vm_switch=$($vmSwitch)" -var "iso_url=$($isoUrl)" $packerConfig
-}
+if (-not ($SkipRunPacker)) { Invoke-Packer }
+else { Write-Output "Skipping Packer Execution" }

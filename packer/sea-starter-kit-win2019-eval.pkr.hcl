@@ -4,6 +4,26 @@ variable "archive_name" {
   default = "sea-starter-kit"
 }
 
+variable "web_api" {
+  type    = string
+  default = "EdFi.Suite3.Installer.WebApi"
+}
+
+variable "admin_app" {
+  type    = string
+  default = "EdFi.Suite3.Installer.AdminApp"
+}
+
+variable "swagger_ui" {
+  type    = string
+  default = "EdFi.Suite3.Installer.SwaggerUI"
+}
+
+variable "databases" {
+  type    = string
+  default = "EdFi.Suite3.RestApi.Databases"
+}
+
 variable "box_directory" {
   type    = string
   default = "box/"
@@ -131,8 +151,14 @@ build {
   }
 
   provisioner "file" {
-    destination = "c:/temp/${var.archive_name}.zip"
-    source      = "${path.root}/build/${var.archive_name}.zip"
+    destination = "c:/temp/"
+    sources     = [
+        "${path.root}/build/${var.archive_name}.zip",
+        "${path.root}/build/${var.web_api}.zip",
+        "${path.root}/build/${var.admin_app}.zip",
+        "${path.root}/build/${var.swagger_ui}.zip",
+        "${path.root}/build/${var.databases}.zip"
+    ]
   }
 
   provisioner "comment" {
@@ -175,6 +201,23 @@ build {
     restart_check_command = "powershell -command \"& {Write-Output 'Server Setup complete. Restarting....'}\""
   }
 
+  provisioner "comment" {
+    comment     = "Install Powershell Packages"
+    ui          = true
+    bubble_text =  false
+  }
+
+  provisioner "powershell" {
+    debug_mode        = "${var.debug_mode}"
+    elevated_password = "vagrant"
+    elevated_user     = "vagrant"
+    inline            = [
+        "Set-ExecutionPolicy Bypass",
+        "Set-Location c:/temp/${var.archive_name}/scripts/installers",
+        "./Install-PowerShellPackageProvider.ps1",
+        "./Install-SqlServerModule.ps1"
+    ]
+  }
 
 //   provisioner "powershell" {
 //     debug_mode        = "${var.debug_mode}"
