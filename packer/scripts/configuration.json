@@ -6,9 +6,9 @@
       "EdFi_Master": "server=(local);trusted_connection=True;database=master;Application Name=EdFi.Ods.WebApi"
    },
     "ApiSettings": {
-      "Mode": "SharedInstance",
+      "Mode": "YearSpecific",
       "Engine": "SQLServer",
-      "OdsTokens": [],
+      "OdsTokens": [2021],
       "Features": [
         {
           "Name": "OpenApiMetadata",
