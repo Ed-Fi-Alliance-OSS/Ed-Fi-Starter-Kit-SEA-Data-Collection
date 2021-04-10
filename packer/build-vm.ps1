@@ -107,15 +107,15 @@ Invoke-CreateFolders
 #download packages and push to to build folder
 Invoke-PackageDownloads
 
+# Compress our PowerShell to a zip archive
+Compress-Archive -Path (Join-Path -Path $PSScriptRoot -ChildPath "scripts") -Destination  (Join-Path -Path $buildPath -ChildPath "sea-starter-kit.zip") -Force
+
 # Configure runtime environment vars
 Set-EnvironmentVariables
 
-# Configur VMSwitch
+# Configure VMSwitch
 if (-not ($SkipCreateVMSwitch)) { Invoke-CreateVMSwitch }
 else { Write-Output "Skipping VM Switch validation and creation." }
-
-# Compress our PowerShell to a zip archive
-Compress-Archive -Path (Join-Path -Path $PSScriptRoot -ChildPath "scripts") -Destination  (Join-Path -Path $buildPath -ChildPath "sea-starter-kit.zip") -Force
 
 # Kick off the packer build with the force to override prior builds
 if (-not ($SkipRunPacker)) { Invoke-Packer }
