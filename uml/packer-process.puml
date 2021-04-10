@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+: Initial Provision From Image |
+: Execute Server Setup |
+: Reboot |
+: Install Required Powershell Packages |
+: Install Databases |
+: Install ODS/API |
+: Install SwaggerUI |
+: Install AdminApp |
+: Exit;
+: Extract VM |
+stop
+
+@enduml
