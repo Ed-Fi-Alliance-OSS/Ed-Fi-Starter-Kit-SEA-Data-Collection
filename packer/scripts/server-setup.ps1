@@ -181,6 +181,7 @@ function Install-PreRequisites() {
     choco install dotnetfx -y --ignore-pending-reboot --execution-timeout=$installTimeout
     choco install vscode -y --ignore-pending-reboot --execution-timeout=$installTimeout
     choco install dotnetcore-sdk -y --ignore-pending-reboot --execution-timeout=$installTimeout
+    choco install dotnetcore-3.1-windowshosting -y --ignore-pending-reboot --execution-timeout=$installTimeout
     choco install GoogleChrome -y --ignore-pending-reboot --ignore-checksums --execution-timeout=$installTimeout
     choco install sql-server-2019 -y --params=`"'/IgnorePendingReboot'`" --execution-timeout=$installTimeout
     choco install sql-server-management-studio -y --ignore-pending-reboot --execution-timeout=$installTimeout

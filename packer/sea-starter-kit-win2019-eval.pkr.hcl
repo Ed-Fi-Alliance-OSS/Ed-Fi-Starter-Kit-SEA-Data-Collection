@@ -202,7 +202,7 @@ build {
   }
 
   provisioner "comment" {
-    comment     = "Install Powershell Packages"
+    comment     = "Installing Required Powershell Packages"
     ui          = true
     bubble_text =  false
   }
@@ -213,16 +213,68 @@ build {
     elevated_user     = "vagrant"
     inline            = [
         "Set-ExecutionPolicy Bypass",
-        "Set-Location c:/temp/${var.archive_name}/scripts/installers",
-        "./Install-PowerShellPackageProvider.ps1",
-        "./Install-SqlServerModule.ps1"
+        "Set-Location c:/temp",
+        "Install-PackageProvider -Name NuGet -MinimumVersion \"2.8.5.201\" -Scope AllUsers -Force",
+        "Install-Module -Name SqlServer -MinimumVersion \"21.1.18068\" -Scope AllUsers -Force -AllowClobber"
     ]
   }
 
-//   provisioner "powershell" {
-//     debug_mode        = "${var.debug_mode}"
-//     elevated_password = "vagrant"
-//     elevated_user     = "vagrant"
-//     inline            = ["Set-ExecutionPolicy Bypass", "Set-Location c:/temp/scripts", "./install-applications.ps1"]
-//   }
+  provisioner "comment" {
+    comment     = "Installing Databases"
+    ui          = true
+    bubble_text =  false
+  }
+
+  provisioner "powershell" {
+    debug_mode        = "${var.debug_mode}"
+    elevated_password = "vagrant"
+    elevated_user     = "vagrant"
+    inline            = [
+        "Set-ExecutionPolicy bypass;",
+        "Set-Location c:/temp",
+        "Expand-Archive ./${var.databases}.zip -Destination ./${var.databases}",
+        "Copy-Item -Path ./${var.archive_name}/scripts/configuration.json -Destination ./${var.databases}",
+        "Set-Location ./${var.databases}",
+        "Import-Module ./Deployment.psm1",
+        "Initialize-DeploymentEnvironment"
+    ]
+  }
+
+  provisioner "comment" {
+    comment     = "Installing ODS/API"
+    ui          = true
+    bubble_text =  false
+  }
+
+    provisioner "powershell" {
+    debug_mode        = "${var.debug_mode}"
+    elevated_password = "vagrant"
+    elevated_user     = "vagrant"
+    inline            = [
+        "Set-ExecutionPolicy bypass;",
+        "Set-Location c:/temp",
+        "Expand-Archive ./${var.web_api}.zip -Destination ./${var.web_api}",
+        "Set-Location c:/temp/${var.archive_name}/scripts/installers",
+        "./Install-WebApi.ps1"
+    ]
+  }
+
+  provisioner "comment" {
+    comment     = "Installing SwaggerUI"
+    ui          = true
+    bubble_text =  false
+  }
+
+  provisioner "powershell" {
+    debug_mode        = "${var.debug_mode}"
+    elevated_password = "vagrant"
+    elevated_user     = "vagrant"
+    inline            = [
+        "Set-ExecutionPolicy bypass;",
+        "Set-Location c:/temp",
+        "Expand-Archive ./${var.swagger_ui}.zip -Destination ./${var.swagger_ui}",
+        "Set-Location c:/temp/${var.archive_name}/scripts/installers",
+        "./Install-SwaggerUI.ps1"
+    ]
+  }
 }
