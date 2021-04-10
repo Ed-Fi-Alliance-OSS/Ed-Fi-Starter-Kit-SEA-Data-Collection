@@ -14,7 +14,7 @@ Import-Module (Resolve-Path -Path (Join-Path -Path $installerPath -ChildPath "In
 $config = Get-SwaggerUIConfig
 
 $parameters = @{
-    PackageVersion = $config["PackageVersion"]
+    PackageVersion   = $config["PackageVersion"]
     WebApiVersionUrl = ($config["WebApiVersionUrl"] -f [Environment]::MachineName)
 }
 

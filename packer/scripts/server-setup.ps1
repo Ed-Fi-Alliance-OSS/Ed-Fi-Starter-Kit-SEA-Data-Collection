@@ -21,7 +21,6 @@ function Install-Choco {
         Set-TLS12Support
 
         Write-Output "Installing Chocolatey..."
-        Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
         $ChocoCmd = Get-Command "choco.exe" -ErrorAction SilentlyContinue
         $ChocolateyInstall = Convert-Path "$($ChocoCmd.Path)\..\.."
         Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
@@ -146,7 +145,7 @@ function Use-SqlServerModule {
         Set-TLS12Support
 
         Write-Host "Installing SqlServer Module"
-        Install-Module -Name SqlServer -MinimumVersion "21.1.18068" -Scope CurrentUser -Force -AllowClobber -AcceptLicense| Out-Null
+        Install-Module -Name SqlServer -MinimumVersion "21.1.18068" -Scope CurrentUser -Force -AllowClobber -AcceptLicense | Out-Null
         Import-Module -Force -Scope Global SqlServer
     }
 }

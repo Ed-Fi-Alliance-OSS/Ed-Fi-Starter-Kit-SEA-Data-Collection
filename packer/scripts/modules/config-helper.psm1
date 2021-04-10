@@ -12,7 +12,7 @@ function Get-ApplicationConfig {
 
     $config = @{}
 
-    $json.psobject.properties | ForEach-Object { $config[$_.Name] = $_.Value}
+    $json.psobject.properties | ForEach-Object { $config[$_.Name] = $_.Value }
 
     return $config
 }
@@ -22,7 +22,7 @@ function  Get-WebApiConfig {
 
     $config = @{}
 
-    $appConfig["WebApi"].psobject.properties | ForEach-Object { $config[$_.Name] = $_.Value}
+    $appConfig["WebApi"].psobject.properties | ForEach-Object { $config[$_.Name] = $_.Value }
 
     return $config
 }
@@ -32,7 +32,7 @@ function  Get-SwaggerUIConfig {
 
     $config = @{}
 
-    $appConfig["SwaggerUI"].psobject.properties | ForEach-Object { $config[$_.Name] = $_.Value}
+    $appConfig["SwaggerUI"].psobject.properties | ForEach-Object { $config[$_.Name] = $_.Value }
 
     return $config
 }
@@ -44,7 +44,7 @@ function  Get-AdminAppConfig {
 
     $config = @{}
 
-    $appConfig["admin_app"].psobject.properties | ForEach-Object { $config[$_.Name] = $_.Value}
+    $appConfig["AdminApp"].psobject.properties | ForEach-Object { $config[$_.Name] = $_.Value }
 
     return $config
 }

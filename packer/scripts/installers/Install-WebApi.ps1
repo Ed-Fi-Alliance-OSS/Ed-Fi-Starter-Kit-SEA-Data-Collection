@@ -13,13 +13,13 @@ Import-Module (Resolve-Path -Path (Join-Path -Path $installerPath -ChildPath "In
 $config = Get-WebApiConfig
 
 $parameters = @{
-    PackageVersion = $config["PackageVersion"]
+    PackageVersion   = $config["PackageVersion"]
     DbConnectionInfo = @{
-        Engine="SqlServer"
-        Server="localhost"
-        UseIntegratedSecurity=$true
+        Engine                = "SqlServer"
+        Server                = "localhost"
+        UseIntegratedSecurity = $true
     }
-    InstallType = $config["InstallType"]
+    InstallType      = $config["InstallType"]
 }
 
 Write-Output "Installing ODS/API"
