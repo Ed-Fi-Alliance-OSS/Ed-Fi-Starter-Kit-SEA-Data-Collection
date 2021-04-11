@@ -1,5 +1,4 @@
 @startwbs
-Title: Proposed Directory Structure
 + /
  + packer/
   + build-configuration.json

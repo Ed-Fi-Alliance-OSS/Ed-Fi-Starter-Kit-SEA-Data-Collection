@@ -246,7 +246,7 @@ build {
     bubble_text =  false
   }
 
-    provisioner "powershell" {
+  provisioner "powershell" {
     debug_mode        = "${var.debug_mode}"
     elevated_password = "vagrant"
     elevated_user     = "vagrant"
