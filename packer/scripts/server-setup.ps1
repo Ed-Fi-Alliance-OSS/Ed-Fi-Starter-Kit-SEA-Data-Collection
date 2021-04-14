@@ -19,7 +19,7 @@ function Install-Choco {
     }
     else {
         Write-Output "Installing Chocolatey..."
-        Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+        Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
         $ChocoCmd = Get-Command "choco.exe" -ErrorAction SilentlyContinue
         $ChocolateyInstall = Convert-Path "$($ChocoCmd.Path)\..\.."
         Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
@@ -132,23 +132,6 @@ function Install-IIS {
     return $restartNeeded
 }
 
-function Test-SqlServerModuleInstalled { $null -ne (Get-InstalledModule | Where-Object -Property Name -eq SqlServer) }
-
-function Use-SqlServerModule {
-
-    if (Test-SqlServerModuleInstalled) {
-        return
-    }
-    else {
-        # Ensure we have Tls12 support
-        Set-TLS12Support
-
-        Write-Host "Installing SqlServer Module"
-        Install-Module -Name SqlServer -MinimumVersion "21.1.18068" -Scope CurrentUser -Force -AllowClobber -AcceptLicense | Out-Null
-        Import-Module -Force -Scope Global SqlServer
-    }
-}
-
 <#
 .SYNOPSIS
     Configures a VM for Starter Kit Assessments by installing all prerequisites.
@@ -186,5 +169,8 @@ function Install-PreRequisites() {
 
     Stop-Transcript
 }
+
+Set-TLS12Support
+Set-ExecutionPolicy bypass -Scope CurrentUser -Force;
 
 Install-PreRequisites

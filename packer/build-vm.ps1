@@ -27,12 +27,10 @@ param([string] $VMSwitch = "packer-hyperv-iso",
 #global vars
 $buildPath = Join-Path -Path $PSScriptRoot -ChildPath "build"
 $logsPath = Join-Path -Path $buildPath -ChildPath "logs"
-$distPath = Join-Path -Path $PSScriptRoot -ChildPath "dist"
 
 function Invoke-CreateFolders {
     New-Item -ItemType Directory -Path $buildPath -Force | Out-Null
     New-Item -ItemType Directory -Path $logsPath -force | Out-Null
-    New-Item -ItemType Directory -Path $distPath -force | Out-Null
 }
 
 function Invoke-PackageDownloads {
@@ -100,6 +98,18 @@ function Invoke-Packer {
         & packer build -force -var "vm_switch=$($VMSwitch)" -var "iso_url=$($ISOUrl)" $packerConfig
     }
 }
+
+function Invoke-ValidateDriveSpace($minimumSpace) {
+    $drive = ((Get-Location).Path.Split(":")).Get(0)
+
+    $spaceAvailable = (Get-Volume -DriveLetter $drive).SizeRemaining/1GB
+
+    if ($spaceAvailable -lt $minimumSpace) { throw "Not enough space to build the VM. {0} GB is required." -f $minimumSpace }
+}
+
+
+# Validate we have enough disk space
+Invoke-ValidateDriveSpace(30)
 
 # Create Build and Distribution Folders
 Invoke-CreateFolders

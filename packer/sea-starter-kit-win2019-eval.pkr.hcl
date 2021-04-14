@@ -101,7 +101,7 @@ variable "vm_switch" {
 
 variable "distribution_directory" {
     type = string
-    default = "./dist"
+    default = "dist"
 }
 
 variable "user_name" {
@@ -138,7 +138,7 @@ source "hyperv-iso" "sea-starter-kit" {
   winrm_password   = "${var.password}"
   winrm_timeout    = "10000s"
   winrm_username   = "${var.user_name}"
-  output_directory = "${var.distribution_directory}"
+  output_directory = "${path.root}/${var.distribution_directory}"
 }
 
 build {
@@ -169,10 +169,11 @@ build {
 
   provisioner "powershell" {
     debug_mode        = "${var.debug_mode}"
-    elevated_password = "vagrant"
-    elevated_user     = "vagrant"
+    elevated_password = "${var.user_name}"
+    elevated_user     = "${var.password}"
     inline            = [
-        "Set-ExecutionPolicy bypass;",
+        "Set-ExecutionPolicy bypass -Scope CurrentUser -Force;",
+        "Install-PackageProvider -Name NuGet -MinimumVersion \"2.8.5.201\" -Scope AllUsers -Force",
         "Set-Location c:/temp;",
         "Expand-Archive ./${var.archive_name}.zip -Destination ./${var.archive_name}"
       ]
@@ -186,9 +187,9 @@ build {
 
   provisioner "powershell" {
     debug_mode        = "${var.debug_mode}"
-    elevated_password = "vagrant"
-    elevated_user     = "vagrant"
-    inline            = ["Set-ExecutionPolicy Bypass", "Set-Location c:/temp/${var.archive_name}/scripts", "./server-setup.ps1"]
+    elevated_password = "${var.user_name}"
+    elevated_user     = "${var.password}"
+    inline            = ["Set-Location c:/temp/${var.archive_name}/scripts", "./server-setup.ps1"]
   }
 
   provisioner "comment" {
@@ -209,14 +210,9 @@ build {
 
   provisioner "powershell" {
     debug_mode        = "${var.debug_mode}"
-    elevated_password = "vagrant"
-    elevated_user     = "vagrant"
-    inline            = [
-        "Set-ExecutionPolicy Bypass",
-        "Set-Location c:/temp",
-        "Install-PackageProvider -Name NuGet -MinimumVersion \"2.8.5.201\" -Scope AllUsers -Force",
-        "Install-Module -Name SqlServer -MinimumVersion \"21.1.18068\" -Scope AllUsers -Force -AllowClobber"
-    ]
+    elevated_password = "${var.user_name}"
+    elevated_user     = "${var.password}"
+    inline            = [ "Set-Location c:/temp",  ]
   }
 
   provisioner "comment" {
@@ -227,10 +223,9 @@ build {
 
   provisioner "powershell" {
     debug_mode        = "${var.debug_mode}"
-    elevated_password = "vagrant"
-    elevated_user     = "vagrant"
+    elevated_password = "${var.user_name}"
+    elevated_user     = "${var.password}"
     inline            = [
-        "Set-ExecutionPolicy bypass;",
         "Set-Location c:/temp",
         "Expand-Archive ./${var.databases}.zip -Destination ./${var.databases}",
         "Copy-Item -Path ./${var.archive_name}/scripts/configuration.json -Destination ./${var.databases}",
@@ -248,10 +243,9 @@ build {
 
   provisioner "powershell" {
     debug_mode        = "${var.debug_mode}"
-    elevated_password = "vagrant"
-    elevated_user     = "vagrant"
+    elevated_password = "${var.user_name}"
+    elevated_user     = "${var.password}"
     inline            = [
-        "Set-ExecutionPolicy bypass;",
         "Set-Location c:/temp",
         "Expand-Archive ./${var.web_api}.zip -Destination ./${var.web_api}",
         "Set-Location c:/temp/${var.archive_name}/scripts/installers",
@@ -267,10 +261,9 @@ build {
 
   provisioner "powershell" {
     debug_mode        = "${var.debug_mode}"
-    elevated_password = "vagrant"
-    elevated_user     = "vagrant"
+    elevated_password = "${var.user_name}"
+    elevated_user     = "${var.password}"
     inline            = [
-        "Set-ExecutionPolicy bypass;",
         "Set-Location c:/temp",
         "Expand-Archive ./${var.swagger_ui}.zip -Destination ./${var.swagger_ui}",
         "Set-Location c:/temp/${var.archive_name}/scripts/installers",
