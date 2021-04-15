@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "*.metaed": "csharp"
+        "*.metaed": "csharp",
+        "*.hcl": "hcl"
     },
     "psi-header.config": {
         "forceToTop": true,
