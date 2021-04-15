@@ -169,6 +169,7 @@ build {
     inline            = [
         "Set-ExecutionPolicy bypass -Scope CurrentUser -Force;",
         "Install-PackageProvider -Name NuGet -MinimumVersion \"2.8.5.201\" -Scope AllUsers -Force",
+        "Install-Module -Name PackageManagement -Force -MinimumVersion \"1.4.6\" -Scope CurrentUser -AllowClobber -Repository PSGallery",
         "Set-Location c:/temp;",
         "Expand-Archive ./${var.archive_name}.zip -Destination ./${var.archive_name}"
       ]
