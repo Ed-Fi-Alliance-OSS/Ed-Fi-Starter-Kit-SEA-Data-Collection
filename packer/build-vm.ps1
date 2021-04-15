@@ -24,6 +24,10 @@ param([string] $VMSwitch = "packer-hyperv-iso",
 #Requires -RunAsAdministrator
 #Requires -Version 5
 
+#imports
+$modulesPath = Join-Path -Path $PSScriptRoot -ChildPath "scripts/modules"
+Import-Module (Resolve-Path -Path (Join-Path -Path $modulesPath -ChildPath "file-helper.psm1")).Path
+
 #global vars
 $buildPath = Join-Path -Path $PSScriptRoot -ChildPath "build"
 $logsPath = Join-Path -Path $buildPath -ChildPath "logs"
@@ -34,10 +38,6 @@ function Invoke-CreateFolders {
 }
 
 function Invoke-PackageDownloads {
-    if (-not [Net.ServicePointManager]::SecurityProtocol.HasFlag([Net.SecurityProtocolType]::Tls12)) {
-        [Net.ServicePointManager]::SecurityProtocol += [Net.SecurityProtocolType]::Tls12
-    }
-
     $configPath = (Resolve-Path (Join-Path -Path $PSScriptRoot -ChildPath "build-configuration.json")).Path
 
     $config = Get-Content $configPath | ConvertFrom-Json
@@ -110,6 +110,9 @@ function Invoke-ValidateDriveSpace($minimumSpace) {
 
 # Validate we have enough disk space
 Invoke-ValidateDriveSpace(30)
+
+# Enable Tls2 support
+Set-TLS12Support
 
 # Create Build and Distribution Folders
 Invoke-CreateFolders

@@ -24,11 +24,6 @@ variable "databases" {
   default = "EdFi.Suite3.RestApi.Databases"
 }
 
-variable "box_directory" {
-  type    = string
-  default = "box/"
-}
-
 variable "cpus" {
   type    = string
   default = "2"
