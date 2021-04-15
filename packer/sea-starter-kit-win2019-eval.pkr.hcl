@@ -212,7 +212,7 @@ build {
     debug_mode        = "${var.debug_mode}"
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
-    inline            = [ "Set-Location c:/temp",  ]
+    inline            = ["Set-Location c:/temp"]
   }
 
   provisioner "comment" {
