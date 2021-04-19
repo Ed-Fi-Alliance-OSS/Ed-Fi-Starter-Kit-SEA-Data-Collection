@@ -8,6 +8,9 @@
         "WebApiVersionUrl": "https://{0}/WebApi"
     },
     "AdminApp": {
-        "OdsApiUrl": "https://{0}/WebApi"
+        "OdsApiUrl": "https://{0}/WebApi",
+        "PackageVersion": "2.1.0",
+        "ApiMode": "YearSpecific",
+        "ToolsPath": "c:/temp/tools"
     }
 }
