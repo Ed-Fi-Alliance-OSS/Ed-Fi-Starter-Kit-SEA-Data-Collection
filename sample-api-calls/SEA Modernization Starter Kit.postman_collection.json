@@ -6,542 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "Clean up ",
-			"item": [
-				{
-					"name": "Get  existing student  John Smith",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", () => {\r",
-									"    pm.expect(pm.response.code).to.equal(200);\r",
-									"});\r",
-									"\r",
-									"const __ = require('lodash');\r",
-									"const students = pm.response.json();\r",
-									"if(students.length>0)\r",
-									"{\r",
-									"    const studentIds = __.map(students, student => student.studentUniqueId);\r",
-									"    pm.environment.set(\"known:studentIds\",studentIds);\r",
-									"    pm.environment.set(\"known:studentUniqueId\",__.first(students)['studentUniqueId']);\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{ApiBaseUrl}}/data/v3/ed-fi/students/?firstName=John&lastSurname=Smith",
-							"host": [
-								"{{ApiBaseUrl}}"
-							],
-							"path": [
-								"data",
-								"v3",
-								"ed-fi",
-								"students",
-								""
-							],
-							"query": [
-								{
-									"key": "firstName",
-									"value": "John"
-								},
-								{
-									"key": "lastSurname",
-									"value": "Smith"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Clean up StudentSchoolAssociations for  John Smith",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", () => {",
-									"    pm.expect(pm.response.code).to.equal(200);",
-									"});",
-									"",
-									"",
-									"pm.test('Delete all students', () => {",
-									"",
-									"const responseItems = pm.response.json();",
-									"if(responseItems.length>0){",
-									"    const studentIds =pm.environment.get(\"known:studentIds\");",
-									"            studentIds.forEach(studentId => {",
-									"",
-									"                console.log(studentId);",
-									"",
-									"                let StudentSchoolAssociationsGetRequest = {",
-									"                    url: pm.environment.get(\"ApiBaseUrl\") + \"/data/v3/ed-fi/StudentSchoolAssociations/?studentUniqueId=\" + studentId,",
-									"                    method: 'GET',",
-									"                    header: 'Authorization:bearer ' + pm.environment.get(\"AccessToken\"),",
-									"                    body: {}",
-									"                };",
-									"",
-									"                pm.sendRequest(StudentSchoolAssociationsGetRequest, function (err, StudentSchoolAssociations) {",
-									"                    if (err) {",
-									"                        console.log(err);",
-									"                    } else {",
-									"                        ",
-									"                            StudentSchoolAssociations.json().forEach(studentSchoolAssociationResponse => {",
-									"",
-									"                                console.log(studentSchoolAssociationResponse.id);",
-									"",
-									"                                let StudentSchoolAssociationsDeleteRequest = {",
-									"                                    url: pm.environment.get(\"ApiBaseUrl\") + \"/data/v3/ed-fi/StudentSchoolAssociations/\" + studentSchoolAssociationResponse.id,",
-									"                                    method: 'DELETE',",
-									"                                    header: 'Authorization:bearer ' + pm.environment.get(\"AccessToken\"),",
-									"                                    body: {}",
-									"                                };",
-									"",
-									"                                pm.sendRequest(StudentSchoolAssociationsDeleteRequest, function (err, StudentSchoolAssociations) {",
-									"                                    if (err) {",
-									"                                        console.log(err);",
-									"                                    } else {}",
-									"                                });",
-									"                            });",
-									"",
-									"                    }",
-									"                });",
-									"            });",
-									"}",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{ApiBaseUrl}}/data/v3/ed-fi/StudentSchoolAssociations/?schoolId=255901001&studentUniqueId={{known:studentUniqueId}}",
-							"host": [
-								"{{ApiBaseUrl}}"
-							],
-							"path": [
-								"data",
-								"v3",
-								"ed-fi",
-								"StudentSchoolAssociations",
-								""
-							],
-							"query": [
-								{
-									"key": "schoolId",
-									"value": "255901001"
-								},
-								{
-									"key": "studentUniqueId",
-									"value": "{{known:studentUniqueId}}"
-								}
-							]
-						},
-						"description": "This api post method adds new academicWeeks for particular school .\nThis test method will throw WeekIdentifier is required error when WeekIdentifier is not passed"
-					},
-					"response": []
-				},
-				{
-					"name": "Get  existing student  Kelly Logan",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", () => {\r",
-									"    pm.expect(pm.response.code).to.equal(200);\r",
-									"});\r",
-									"\r",
-									"const __ = require('lodash');\r",
-									"const students = pm.response.json();\r",
-									"if(students.length>0)\r",
-									"{\r",
-									"    const studentIds = __.map(students, student => student.studentUniqueId);\r",
-									"    pm.environment.set(\"known:studentIds\",studentIds);\r",
-									"    pm.environment.set(\"known:studentUniqueId\",__.first(students)['studentUniqueId']);\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{ApiBaseUrl}}/data/v3/ed-fi/students/?firstName=Kelly&lastSurname=Logan",
-							"host": [
-								"{{ApiBaseUrl}}"
-							],
-							"path": [
-								"data",
-								"v3",
-								"ed-fi",
-								"students",
-								""
-							],
-							"query": [
-								{
-									"key": "firstName",
-									"value": "Kelly"
-								},
-								{
-									"key": "lastSurname",
-									"value": "Logan"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Clean up StudentSchoolAssociations for  Kelly Logan",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", () => {",
-									"    pm.expect(pm.response.code).to.equal(200);",
-									"});",
-									"",
-									"",
-									"pm.test('Delete all students', () => {",
-									"",
-									"const responseItems = pm.response.json();",
-									"if(responseItems.length>0){",
-									"    const studentIds =pm.environment.get(\"known:studentIds\");",
-									"            studentIds.forEach(studentId => {",
-									"",
-									"                console.log(studentId);",
-									"",
-									"                let StudentSchoolAssociationsGetRequest = {",
-									"                    url: pm.environment.get(\"ApiBaseUrl\") + \"/data/v3/ed-fi/StudentSchoolAssociations/?studentUniqueId=\" + studentId,",
-									"                    method: 'GET',",
-									"                    header: 'Authorization:bearer ' + pm.environment.get(\"AccessToken\"),",
-									"                    body: {}",
-									"                };",
-									"",
-									"                pm.sendRequest(StudentSchoolAssociationsGetRequest, function (err, StudentSchoolAssociations) {",
-									"                    if (err) {",
-									"                        console.log(err);",
-									"                    } else {",
-									"                        ",
-									"                            StudentSchoolAssociations.json().forEach(studentSchoolAssociationResponse => {",
-									"",
-									"                                console.log(studentSchoolAssociationResponse.id);",
-									"",
-									"                                let StudentSchoolAssociationsDeleteRequest = {",
-									"                                    url: pm.environment.get(\"ApiBaseUrl\") + \"/data/v3/ed-fi/StudentSchoolAssociations/\" + studentSchoolAssociationResponse.id,",
-									"                                    method: 'DELETE',",
-									"                                    header: 'Authorization:bearer ' + pm.environment.get(\"AccessToken\"),",
-									"                                    body: {}",
-									"                                };",
-									"",
-									"                                pm.sendRequest(StudentSchoolAssociationsDeleteRequest, function (err, StudentSchoolAssociations) {",
-									"                                    if (err) {",
-									"                                        console.log(err);",
-									"                                    } else {}",
-									"                                });",
-									"                            });",
-									"",
-									"                    }",
-									"                });",
-									"            });",
-									"}",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{ApiBaseUrl}}/data/v3/ed-fi/StudentSchoolAssociations/?schoolId=255901001&studentUniqueId={{known:studentUniqueId}}",
-							"host": [
-								"{{ApiBaseUrl}}"
-							],
-							"path": [
-								"data",
-								"v3",
-								"ed-fi",
-								"StudentSchoolAssociations",
-								""
-							],
-							"query": [
-								{
-									"key": "schoolId",
-									"value": "255901001"
-								},
-								{
-									"key": "studentUniqueId",
-									"value": "{{known:studentUniqueId}}"
-								}
-							]
-						},
-						"description": "This api post method adds new academicWeeks for particular school .\nThis test method will throw WeekIdentifier is required error when WeekIdentifier is not passed"
-					},
-					"response": []
-				},
-				{
-					"name": "Get  existing student  Jennifer Hart",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", () => {\r",
-									"    pm.expect(pm.response.code).to.equal(200);\r",
-									"});\r",
-									"\r",
-									"const __ = require('lodash');\r",
-									"const students = pm.response.json();\r",
-									"if(students.length>0)\r",
-									"{\r",
-									"    const studentIds = __.map(students, student => student.studentUniqueId);\r",
-									"    pm.environment.set(\"known:studentIds\",studentIds);\r",
-									"    pm.environment.set(\"known:studentUniqueId\",__.first(students)['studentUniqueId']);\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{ApiBaseUrl}}/data/v3/ed-fi/students/?firstName=Jennifer&lastSurname=Hart",
-							"host": [
-								"{{ApiBaseUrl}}"
-							],
-							"path": [
-								"data",
-								"v3",
-								"ed-fi",
-								"students",
-								""
-							],
-							"query": [
-								{
-									"key": "firstName",
-									"value": "Jennifer"
-								},
-								{
-									"key": "lastSurname",
-									"value": "Hart"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Clean up StudentSchoolAssociations for  Jennifer Hart",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", () => {",
-									"    pm.expect(pm.response.code).to.equal(200);",
-									"});",
-									"",
-									"",
-									"pm.test('Delete all students', () => {",
-									"",
-									"const responseItems = pm.response.json();",
-									"if(responseItems.length>0){",
-									"    const studentIds =pm.environment.get(\"known:studentIds\");",
-									"            studentIds.forEach(studentId => {",
-									"",
-									"                console.log(studentId);",
-									"",
-									"                let StudentSchoolAssociationsGetRequest = {",
-									"                    url: pm.environment.get(\"ApiBaseUrl\") + \"/data/v3/ed-fi/StudentSchoolAssociations/?studentUniqueId=\" + studentId,",
-									"                    method: 'GET',",
-									"                    header: 'Authorization:bearer ' + pm.environment.get(\"AccessToken\"),",
-									"                    body: {}",
-									"                };",
-									"",
-									"                pm.sendRequest(StudentSchoolAssociationsGetRequest, function (err, StudentSchoolAssociations) {",
-									"                    if (err) {",
-									"                        console.log(err);",
-									"                    } else {",
-									"                        ",
-									"                            StudentSchoolAssociations.json().forEach(studentSchoolAssociationResponse => {",
-									"",
-									"                                console.log(studentSchoolAssociationResponse.id);",
-									"",
-									"                                let StudentSchoolAssociationsDeleteRequest = {",
-									"                                    url: pm.environment.get(\"ApiBaseUrl\") + \"/data/v3/ed-fi/StudentSchoolAssociations/\" + studentSchoolAssociationResponse.id,",
-									"                                    method: 'DELETE',",
-									"                                    header: 'Authorization:bearer ' + pm.environment.get(\"AccessToken\"),",
-									"                                    body: {}",
-									"                                };",
-									"",
-									"                                pm.sendRequest(StudentSchoolAssociationsDeleteRequest, function (err, StudentSchoolAssociations) {",
-									"                                    if (err) {",
-									"                                        console.log(err);",
-									"                                    } else {}",
-									"                                });",
-									"                            });",
-									"",
-									"                    }",
-									"                });",
-									"            });",
-									"}",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{ApiBaseUrl}}/data/v3/ed-fi/StudentSchoolAssociations/?schoolId=255901001&studentUniqueId={{known:studentUniqueId}}",
-							"host": [
-								"{{ApiBaseUrl}}"
-							],
-							"path": [
-								"data",
-								"v3",
-								"ed-fi",
-								"StudentSchoolAssociations",
-								""
-							],
-							"query": [
-								{
-									"key": "schoolId",
-									"value": "255901001"
-								},
-								{
-									"key": "studentUniqueId",
-									"value": "{{known:studentUniqueId}}"
-								}
-							]
-						},
-						"description": "This api post method adds new academicWeeks for particular school .\nThis test method will throw WeekIdentifier is required error when WeekIdentifier is not passed"
-					},
-					"response": []
-				}
-			]
-		},
-		{
 			"name": "Get Existing Schools",
 			"item": [
 				{
@@ -624,18 +88,23 @@
 			"name": "John Smith",
 			"item": [
 				{
-					"name": "Create Student John Smith",
+					"name": "Create Student",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 201\", () => {",
-									"    pm.expect(pm.response.code).to.equal(201);",
+									"pm.test(\"Status code is 200 or 201\", () => {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
 									"});",
+									"",
+									"const uuid = require('uuid');",
+									"function newGuid() { return uuid.v4().toString().replace(/[^a-zA-Z0-9 ]/g,\"\"); }",
+									"function createScenarioId() { return newGuid().substring(0,5); }",
+									"pm.environment.set('scenarioId', createScenarioId());",
 									"const scenarioId = pm.environment.get('scenarioId');",
-									"pm.environment.set('known:'+scenarioId+':studentGuid',pm.response.headers.one('Location').value.split(\"/\").pop());",
-									"pm.environment.set('known:'+scenarioId+':studentUniqueId',pm.environment.get('supplied:'+scenarioId+':studentUniqueId'));    "
+									"pm.environment.set('known:'+scenarioId+':studentUniqueId','ea21f9ab553748dba18ba032a9a07d16'); ",
+									"pm.environment.set('known:'+scenarioId+':studentGuid',pm.response.headers.one('Location').value.split(\"/\").pop());   "
 								],
 								"type": "text/javascript"
 							}
@@ -644,18 +113,7 @@
 							"listen": "prerequest",
 							"script": {
 								"exec": [
-									"const uuid = require('uuid');",
-									"function newGuid() { return uuid.v4().toString().replace(/[^a-zA-Z0-9 ]/g,\"\"); }",
-									"function createScenarioId() { return newGuid().substring(0,5); }",
-									"pm.environment.set('scenarioId', createScenarioId());",
-									"const scenarioId = pm.environment.get('scenarioId');",
-									"pm.environment.set('supplied:'+scenarioId+':studentUniqueId', newGuid());",
-									"",
-									"const moment = require('moment');",
-									"let birthDate=new Date();",
-									"birthDate = birthDate.addYears(-20);",
-									"birthDate= moment(birthDate).format(\"YYYY-MM-DD\");",
-									"pm.environment.set('supplied:'+scenarioId+':birthDate',birthDate);"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -673,7 +131,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"studentUniqueId\": \"{{supplied:{{scenarioId}}:studentUniqueId}}\",\r\n  \"birthDate\":\"{{supplied:{{scenarioId}}:birthDate}}\",\r\n  \"firstName\": \"John\",\r\n  \"lastSurname\": \"Smith\"\r\n}"
+							"raw": "{\r\n  \"studentUniqueId\": \"ea21f9ab553748dba18ba032a9a07d16\",\r\n  \"birthDate\":\"2007-04-22\",\r\n  \"firstName\": \"John\",\r\n  \"lastSurname\": \"Smith\"\r\n}"
 						},
 						"url": {
 							"raw": "{{ApiBaseUrl}}/data/v3/ed-fi/students",
@@ -691,7 +149,7 @@
 					"response": []
 				},
 				{
-					"name": "StudentSchoolAssociations FTE is 1 & Entry Date < Oct 1st 2021",
+					"name": "Create Student School Association",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -712,8 +170,8 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 201\", () => {",
-									"    pm.expect(pm.response.code).to.equal(201);",
+									"pm.test(\"Status code is 200 or 201\", () => {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
 									"});",
 									"",
 									"const scenarioId = pm.environment.get('scenarioId');",
@@ -755,7 +213,7 @@
 					"response": []
 				},
 				{
-					"name": "Get StudentSchoolAssociations",
+					"name": "Get Student School Association",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -814,7 +272,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Student  John Smith",
+					"name": "Get Student",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -876,7 +334,7 @@
 					"response": []
 				},
 				{
-					"name": "Create student special education program associations",
+					"name": "Create Student Special Education Program Association",
 					"event": [
 						{
 							"listen": "test",
@@ -936,7 +394,7 @@
 					"response": []
 				},
 				{
-					"name": "Get student special education program associations",
+					"name": "Get Student Special Education Program Association",
 					"event": [
 						{
 							"listen": "test",
@@ -994,7 +452,7 @@
 					"response": []
 				},
 				{
-					"name": "Create studentEducationOrganizationAssociations",
+					"name": "Create Student Education Organization Association",
 					"event": [
 						{
 							"listen": "test",
@@ -1017,7 +475,8 @@
 									"const scenarioId = pm.environment.get('scenarioId');\r",
 									"pm.environment.set('supplied:'+scenarioId+':languageDescriptor','uri://ed-fi.org/LanguageDescriptor#tso');\r",
 									"pm.environment.set('supplied:'+scenarioId+':sexDescriptor','uri://ed-fi.org/SexDescriptor#Male');\r",
-									"pm.environment.set('supplied:'+scenarioId+':studentCharacteristicDescriptor','uri://ed-fi.org/StudentCharacteristicDescriptor#Homeless');\r",
+									"pm.environment.set('supplied:'+scenarioId+':studentCharacteristicDescriptor','uri://ed-fi.org/StudentCharacteristicDescriptor#Immigrant');\r",
+									"pm.environment.set('supplied:'+scenarioId+':raceDescriptor','uri://ed-fi.org/RaceDescriptor#White');\r",
 									""
 								],
 								"type": "text/javascript"
@@ -1029,7 +488,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n \r\n  \"educationOrganizationReference\": {\r\n    \"educationOrganizationId\":255901\r\n  },\r\n  \"studentReference\": {\r\n    \"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n  },\r\n  \"hispanicLatinoEthnicity\": true,\r\n  \r\n  \"languages\": [\r\n    {\r\n      \"languageDescriptor\": \"{{supplied:{{scenarioId}}:languageDescriptor}}\"\r\n    }\r\n  ],\r\n  \"sexDescriptor\": \"{{supplied:{{scenarioId}}:sexDescriptor}}\",\r\n  \"studentCharacteristics\": [\r\n    {\r\n      \"studentCharacteristicDescriptor\": \"{{supplied:{{scenarioId}}:studentCharacteristicDescriptor}}\"\r\n    }\r\n  ]\r\n  \r\n  \r\n}",
+							"raw": "{\r\n \r\n  \"educationOrganizationReference\": {\r\n    \"educationOrganizationId\":255901\r\n  },\r\n  \"studentReference\": {\r\n    \"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n  },\r\n  \"hispanicLatinoEthnicity\": true,\r\n  \r\n  \"languages\": [\r\n    {\r\n      \"languageDescriptor\": \"{{supplied:{{scenarioId}}:languageDescriptor}}\"\r\n    }\r\n  ],\r\n  \"sexDescriptor\": \"{{supplied:{{scenarioId}}:sexDescriptor}}\",\r\n  \"studentCharacteristics\": [\r\n    {\r\n      \"studentCharacteristicDescriptor\": \"{{supplied:{{scenarioId}}:studentCharacteristicDescriptor}}\"\r\n    }\r\n  ],\r\n  \"races\": [\r\n      {\r\n        \"raceDescriptor\": \"{{supplied:{{scenarioId}}:raceDescriptor}}\"\r\n      }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1052,7 +511,7 @@
 					"response": []
 				},
 				{
-					"name": "Get studentEducationOrganizationAssociations",
+					"name": "Get Student Education Organization Association",
 					"event": [
 						{
 							"listen": "test",
@@ -1108,7 +567,7 @@
 					"response": []
 				},
 				{
-					"name": "Create StudentLanguageInstructionProgramAssociations",
+					"name": "Create Student Language Instruction Program Association",
 					"event": [
 						{
 							"listen": "test",
@@ -1166,7 +625,7 @@
 					"response": []
 				},
 				{
-					"name": "Get StudentLanguageInstructionProgramAssociations",
+					"name": "Get Student Language Instruction Program Association",
 					"event": [
 						{
 							"listen": "test",
@@ -1222,7 +681,7 @@
 					"response": []
 				},
 				{
-					"name": "Create studentSchoolFoodServiceProgramAssociations",
+					"name": "Create Student School Food Service Program Association",
 					"event": [
 						{
 							"listen": "test",
@@ -1280,7 +739,7 @@
 					"response": []
 				},
 				{
-					"name": "Get studentSchoolFoodServiceProgramAssociations",
+					"name": "Get Student School Food Service Program Association",
 					"event": [
 						{
 							"listen": "test",
@@ -1361,18 +820,22 @@
 			"name": "Kelly Logan",
 			"item": [
 				{
-					"name": "Create Student Kelly Logan",
+					"name": "Create Student",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 201\", () => {",
-									"    pm.expect(pm.response.code).to.equal(201);",
+									"pm.test(\"Status code is 200 or 201\", () => {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
 									"});",
+									"const uuid = require('uuid');",
+									"function newGuid() { return uuid.v4().toString().replace(/[^a-zA-Z0-9 ]/g,\"\"); }",
+									"function createScenarioId() { return newGuid().substring(0,5); }",
+									"pm.environment.set('scenarioId', createScenarioId());",
 									"const scenarioId = pm.environment.get('scenarioId');",
-									"pm.environment.set('known:'+scenarioId+':studentGuid',pm.response.headers.one('Location').value.split(\"/\").pop());",
-									"pm.environment.set('known:'+scenarioId+':studentUniqueId',pm.environment.get('supplied:'+scenarioId+':studentUniqueId'));    "
+									"pm.environment.set('known:'+scenarioId+':studentUniqueId','aa21f9ab553748dba18ba032a9a07d16'); ",
+									"pm.environment.set('known:'+scenarioId+':studentGuid',pm.response.headers.one('Location').value.split(\"/\").pop());   "
 								],
 								"type": "text/javascript"
 							}
@@ -1381,18 +844,7 @@
 							"listen": "prerequest",
 							"script": {
 								"exec": [
-									"const uuid = require('uuid');",
-									"function newGuid() { return uuid.v4().toString().replace(/[^a-zA-Z0-9 ]/g,\"\"); }",
-									"function createScenarioId() { return newGuid().substring(0,5); }",
-									"pm.environment.set('scenarioId', createScenarioId());",
-									"const scenarioId = pm.environment.get('scenarioId');",
-									"pm.environment.set('supplied:'+scenarioId+':studentUniqueId', newGuid());",
-									"",
-									"const moment = require('moment');",
-									"let birthDate=new Date();",
-									"birthDate = birthDate.addYears(-20);",
-									"birthDate= moment(birthDate).format(\"YYYY-MM-DD\");",
-									"pm.environment.set('supplied:'+scenarioId+':birthDate',birthDate);"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -1410,7 +862,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"studentUniqueId\": \"{{supplied:{{scenarioId}}:studentUniqueId}}\",\r\n  \"birthDate\":\"{{supplied:{{scenarioId}}:birthDate}}\",\r\n  \"firstName\": \"Kelly\",\r\n  \"lastSurname\": \"Logan\"\r\n}"
+							"raw": "{\r\n   \"studentUniqueId\": \"aa21f9ab553748dba18ba032a9a07d16\",\r\n  \"birthDate\":\"2007-04-21\",\r\n  \"firstName\": \"Kelly\",\r\n  \"lastSurname\": \"Logan\"\r\n}\r\n"
 						},
 						"url": {
 							"raw": "{{ApiBaseUrl}}/data/v3/ed-fi/students",
@@ -1428,7 +880,7 @@
 					"response": []
 				},
 				{
-					"name": "StudentSchoolAssociation FTE 0.51 & Entry Date < Oct 1st 2021",
+					"name": "Create Student School Association",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -1449,10 +901,9 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 201\", () => {",
-									"    pm.expect(pm.response.code).to.equal(201);",
+									"pm.test(\"Status code is 200 or 201\", () => {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
 									"});",
-									"",
 									"const scenarioId = pm.environment.get('scenarioId');",
 									"pm.environment.set('known:'+scenarioId+':studentSchoolAssociationGuid',pm.response.headers.one('Location').value.split(\"/\").pop());",
 									""
@@ -1492,7 +943,7 @@
 					"response": []
 				},
 				{
-					"name": "Get StudentSchoolAssociations",
+					"name": "Get Student School Association",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -1550,7 +1001,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Student Kelly Logan",
+					"name": "Get Student",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -1612,7 +1063,7 @@
 					"response": []
 				},
 				{
-					"name": "StudentSchoolAssociation FTE 0.49 & Entry Date < Oct 1st 2021",
+					"name": "Create Student School Association FTE 0.49 & Entry Date < Oct 1st 2021",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -1633,10 +1084,9 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", () => {",
-									"    pm.expect(pm.response.code).to.equal(200);",
+									"pm.test(\"Status code is 200 or 201\", () => {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
 									"});",
-									"",
 									"const scenarioId = pm.environment.get('scenarioId');",
 									"pm.environment.set('known:'+scenarioId+':studentSchoolAssociationGuid',pm.response.headers.one('Location').value.split(\"/\").pop());"
 								],
@@ -1675,7 +1125,7 @@
 					"response": []
 				},
 				{
-					"name": "Get StudentSchoolAssociations",
+					"name": "Get Student School Association",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -1733,7 +1183,7 @@
 					"response": []
 				},
 				{
-					"name": "Create student special education program associations",
+					"name": "Create Student Special Education Program Association",
 					"event": [
 						{
 							"listen": "test",
@@ -1792,7 +1242,7 @@
 					"response": []
 				},
 				{
-					"name": "Get student special education program associations",
+					"name": "Get Student Special Education Program Association",
 					"event": [
 						{
 							"listen": "test",
@@ -1849,7 +1299,7 @@
 					"response": []
 				},
 				{
-					"name": "Create StudentLanguageInstructionProgramAssociations",
+					"name": "Create Student Language Instruction Program Association",
 					"event": [
 						{
 							"listen": "test",
@@ -1907,7 +1357,7 @@
 					"response": []
 				},
 				{
-					"name": "Get StudentLanguageInstructionProgramAssociations",
+					"name": "Get Student Language Instruction Program Association",
 					"event": [
 						{
 							"listen": "test",
@@ -1963,7 +1413,7 @@
 					"response": []
 				},
 				{
-					"name": "Create studentEducationOrganizationAssociations",
+					"name": "Create Student Education Organization Association",
 					"event": [
 						{
 							"listen": "test",
@@ -1985,8 +1435,8 @@
 									"const scenarioId = pm.environment.get('scenarioId');\r",
 									"pm.environment.set('supplied:'+scenarioId+':languageDescriptor','uri://ed-fi.org/LanguageDescriptor#tso');\r",
 									"pm.environment.set('supplied:'+scenarioId+':sexDescriptor','uri://ed-fi.org/SexDescriptor#Male');\r",
-									"pm.environment.set('supplied:'+scenarioId+':studentCharacteristicDescriptor','uri://ed-fi.org/StudentCharacteristicDescriptor#Homeless');\r",
-									""
+									"pm.environment.set('supplied:'+scenarioId+':studentCharacteristicDescriptor','uri://ed-fi.org/StudentCharacteristicDescriptor#Single Parent');\r",
+									"pm.environment.set('supplied:'+scenarioId+':raceDescriptor','uri://ed-fi.org/RaceDescriptor#Asian');"
 								],
 								"type": "text/javascript"
 							}
@@ -1997,7 +1447,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n \r\n  \"educationOrganizationReference\": {\r\n    \"educationOrganizationId\":255901\r\n  },\r\n  \"studentReference\": {\r\n    \"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n  },\r\n  \"hispanicLatinoEthnicity\": true,\r\n  \r\n  \"languages\": [\r\n    {\r\n      \"languageDescriptor\": \"{{supplied:{{scenarioId}}:languageDescriptor}}\"\r\n    }\r\n  ],\r\n  \"sexDescriptor\": \"{{supplied:{{scenarioId}}:sexDescriptor}}\",\r\n  \"studentCharacteristics\": [\r\n    {\r\n      \"studentCharacteristicDescriptor\": \"{{supplied:{{scenarioId}}:studentCharacteristicDescriptor}}\"\r\n    }\r\n  ]\r\n  \r\n  \r\n}",
+							"raw": "{\r\n \r\n  \"educationOrganizationReference\": {\r\n    \"educationOrganizationId\":255901\r\n  },\r\n  \"studentReference\": {\r\n    \"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n  },\r\n  \"hispanicLatinoEthnicity\": true,\r\n  \r\n  \"languages\": [\r\n    {\r\n      \"languageDescriptor\": \"{{supplied:{{scenarioId}}:languageDescriptor}}\"\r\n    }\r\n  ],\r\n  \"sexDescriptor\": \"{{supplied:{{scenarioId}}:sexDescriptor}}\",\r\n  \"studentCharacteristics\": [\r\n    {\r\n      \"studentCharacteristicDescriptor\": \"{{supplied:{{scenarioId}}:studentCharacteristicDescriptor}}\"\r\n    }\r\n  ],\r\n  \"races\": [\r\n      {\r\n        \"raceDescriptor\": \"{{supplied:{{scenarioId}}:raceDescriptor}}\"\r\n      }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2020,7 +1470,7 @@
 					"response": []
 				},
 				{
-					"name": "Get studentEducationOrganizationAssociations",
+					"name": "Get Student Education Organization Association",
 					"event": [
 						{
 							"listen": "test",
@@ -2076,7 +1526,7 @@
 					"response": []
 				},
 				{
-					"name": "Create studentSchoolFoodServiceProgramAssociations",
+					"name": "Create Student School Food Service Program Association",
 					"event": [
 						{
 							"listen": "test",
@@ -2134,7 +1584,7 @@
 					"response": []
 				},
 				{
-					"name": "Get studentSchoolFoodServiceProgramAssociations",
+					"name": "Get Student School Food Service Program Association",
 					"event": [
 						{
 							"listen": "test",
@@ -2215,7 +1665,7 @@
 			"name": "Jennifer Hart",
 			"item": [
 				{
-					"name": "Create Student Jennifer Hart",
+					"name": "Create Student",
 					"event": [
 						{
 							"listen": "test",
@@ -2282,7 +1732,7 @@
 					"response": []
 				},
 				{
-					"name": "StudentSchoolAssociations  FTE is 1 & Entry Date > Oct 1st 2021",
+					"name": "Create Student School Association",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -2342,7 +1792,7 @@
 					"response": []
 				},
 				{
-					"name": "Get StudentSchoolAssociations",
+					"name": "Get Student School Association",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -2400,7 +1850,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Student  Jennifer Hart",
+					"name": "Get Student",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -2462,7 +1912,7 @@
 					"response": []
 				},
 				{
-					"name": "Create student special education program associations",
+					"name": "Create Student Special Education Program Association",
 					"event": [
 						{
 							"listen": "test",
@@ -2522,7 +1972,7 @@
 					"response": []
 				},
 				{
-					"name": "Get student special education program associations",
+					"name": "Get Student Special Education Program Association",
 					"event": [
 						{
 							"listen": "test",
@@ -2579,7 +2029,7 @@
 					"response": []
 				},
 				{
-					"name": "Create studentEducationOrganizationAssociations",
+					"name": "Create Student Education Organization Association",
 					"event": [
 						{
 							"listen": "test",
@@ -2603,7 +2053,7 @@
 									"pm.environment.set('supplied:'+scenarioId+':languageDescriptor','uri://ed-fi.org/LanguageDescriptor#tso');\r",
 									"pm.environment.set('supplied:'+scenarioId+':sexDescriptor','uri://ed-fi.org/SexDescriptor#Male');\r",
 									"pm.environment.set('supplied:'+scenarioId+':studentCharacteristicDescriptor','uri://ed-fi.org/StudentCharacteristicDescriptor#Homeless');\r",
-									""
+									"pm.environment.set('supplied:'+scenarioId+':raceDescriptor','uri://ed-fi.org/RaceDescriptor#American Indian - Alaska Native');"
 								],
 								"type": "text/javascript"
 							}
@@ -2614,7 +2064,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n \r\n  \"educationOrganizationReference\": {\r\n    \"educationOrganizationId\":255901\r\n  },\r\n  \"studentReference\": {\r\n    \"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n  },\r\n  \"hispanicLatinoEthnicity\": true,\r\n  \r\n  \"languages\": [\r\n    {\r\n      \"languageDescriptor\": \"{{supplied:{{scenarioId}}:languageDescriptor}}\"\r\n    }\r\n  ],\r\n  \"sexDescriptor\": \"{{supplied:{{scenarioId}}:sexDescriptor}}\",\r\n  \"studentCharacteristics\": [\r\n    {\r\n      \"studentCharacteristicDescriptor\": \"{{supplied:{{scenarioId}}:studentCharacteristicDescriptor}}\"\r\n    }\r\n  ]\r\n  \r\n  \r\n}",
+							"raw": "{\r\n \r\n  \"educationOrganizationReference\": {\r\n    \"educationOrganizationId\":255901\r\n  },\r\n  \"studentReference\": {\r\n    \"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n  },\r\n  \"hispanicLatinoEthnicity\": true,\r\n  \r\n  \"languages\": [\r\n    {\r\n      \"languageDescriptor\": \"{{supplied:{{scenarioId}}:languageDescriptor}}\"\r\n    }\r\n  ],\r\n  \"sexDescriptor\": \"{{supplied:{{scenarioId}}:sexDescriptor}}\",\r\n  \"studentCharacteristics\": [\r\n    {\r\n      \"studentCharacteristicDescriptor\": \"{{supplied:{{scenarioId}}:studentCharacteristicDescriptor}}\"\r\n    }\r\n  ],\r\n  \"races\": [\r\n      {\r\n        \"raceDescriptor\": \"{{supplied:{{scenarioId}}:raceDescriptor}}\"\r\n      }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2637,7 +2087,7 @@
 					"response": []
 				},
 				{
-					"name": "Get studentEducationOrganizationAssociations",
+					"name": "Get Student Education Organization Association",
 					"event": [
 						{
 							"listen": "test",
@@ -2693,7 +2143,7 @@
 					"response": []
 				},
 				{
-					"name": "Create StudentLanguageInstructionProgramAssociations",
+					"name": "Create Student Language Instruction Program Association",
 					"event": [
 						{
 							"listen": "test",
@@ -2751,7 +2201,7 @@
 					"response": []
 				},
 				{
-					"name": "Get StudentLanguageInstructionProgramAssociations",
+					"name": "Get Student Language Instruction Program Association",
 					"event": [
 						{
 							"listen": "test",
@@ -2807,7 +2257,7 @@
 					"response": []
 				},
 				{
-					"name": "Create studentSchoolFoodServiceProgramAssociations",
+					"name": "Create Student School Food Service Program Association",
 					"event": [
 						{
 							"listen": "test",
@@ -2865,7 +2315,7 @@
 					"response": []
 				},
 				{
-					"name": "Get studentSchoolFoodServiceProgramAssociations",
+					"name": "Get  Student School Food Service Program Association",
 					"event": [
 						{
 							"listen": "test",
