@@ -207,7 +207,7 @@
 			<EducationOrganizationIdentificationSystem>uri://ed-fi.org/EducationOrganizationIdentificationSystemDescriptor#SEA</EducationOrganizationIdentificationSystem>
 		</EducationOrganizationIdentificationCode>
 		<NameOfInstitution>Lakeside Middle School</NameOfInstitution>
-		<ShortNameOfInstitution>GBMS</ShortNameOfInstitution>
+		<ShortNameOfInstitution>LMS</ShortNameOfInstitution>
 		<EducationOrganizationCategory>uri://ed-fi.org/EducationOrganizationCategoryDescriptor#School</EducationOrganizationCategory>
 		<Address>
 			<StreetNumberName>3410 Timber Tr</StreetNumberName>
