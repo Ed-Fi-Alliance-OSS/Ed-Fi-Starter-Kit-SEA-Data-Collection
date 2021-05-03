@@ -1,0 +1,75 @@
+name: SEASK-35-container
+
+on: [push]
+
+jobs:
+  SEASK-35-container:
+    runs-on: windows-2016
+
+    steps:
+    #   - name: Start linux container for SQLServer 2017 Express
+    #     run: docker run -p 1434:1434 -e 'SA_PASSWORD=Passw0rd!' -e 'ACCEPT_EULA=Y' --name mssqllin -e 'MSSQL_PID=Express' -d mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+
+    #   - name: Check SQLServer version
+    #     shell: powershell
+    #     run: |
+    #       docker exec -it mssqllin /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Passw0rd!
+    #       SELECT @@VERSION
+    #       GO
+
+      - name: Start windows container for SQLServer 2017 Express
+        run: |
+          docker run -m 3gb -p 1433:1433 -e 'sa_password=Passw0rd!' -e 'ACCEPT_EULA=Y' --name mssqlwin -d microsoft/mssql-server-windows-express:2017-latest
+
+
+    #   - name: Check SQLServer version
+    #     shell: powershell
+    #     run: |
+    #       docker exec -it mssqlwin sqlcmd -S localhost -U sa -P Passw0rd! -q 'SELECT @@VERSION'
+
+    #   - name: Setup .NET Core SDK 3.1.x
+    #     uses: actions/setup-dotnet@v1.7.2
+    #     with:
+    #       dotnet-version: "3.1.x"
+    #       source-url: ${{ env.AZURE_ARTIFACTS_FEED_URL }}
+    #     env:
+    #       NUGET_AUTH_TOKEN: ${{ secrets.AZURE_ARTIFACTS_PERSONAL_ACCESS_TOKEN }}
+
+      - name: Enable longpaths
+        run: |
+          git version
+          git config --global core.longpaths true
+
+      - name: Checkout Ed-Fi-ODS
+        uses: actions/checkout@v2.3.4
+        with:
+          repository: Ed-Fi-Alliance-OSS/Ed-Fi-ODS
+          path: Ed-Fi-ODS/
+
+      - name: Checkout Ed-Fi-ODS-Implementation
+        uses: actions/checkout@v2.3.4
+        with:
+          ref: SEASK-35
+          repository: Ed-Fi-Alliance-OSS/Ed-Fi-ODS-Implementation
+          path: Ed-Fi-ODS-Implementation/
+
+      # - name: Checkout Starter Kit Sample Extension
+      #   uses: actions/checkout@v2.3.4
+      #   with:
+      #     repository: Ed-Fi-Alliance-OSS/Starter-Kit-SEA-Data-Collection
+      #     path: Starter-Kit-SEA-Data-Collection
+
+      - name: Copy Repositories
+        shell: powershell
+        run: |
+          docker stop mssqlwin
+          docker cp $env:GITHUB_WORKSPACE/Ed-Fi-ODS/ mssqlwin:C:/Ed-Fi-ODS
+          docker cp $env:GITHUB_WORKSPACE/Ed-Fi-ODS-Implementation/ mssqlwin:C:/Ed-Fi-ODS-Implementation
+          docker start mssqlwin
+          ls
+
+      - name: Initialize-DeveloperEnvironment
+        shell: powershell
+        run: |
+          docker exec mssqlwin powershell ". 'C:/Ed-Fi-ODS-Implementation/build.github.ps1'"
+

@@ -1,0 +1,55 @@
+name: SEASK-35-chocolatey
+
+on: []
+
+jobs:
+  SEASK-35-chocolatey:
+    runs-on: windows-2016
+
+    steps:
+
+      - name: Choco
+        uses: crazy-max/ghaction-chocolatey@808cb194e35015aeb01fd9eae37b11a81f7a17b0
+        with:
+          args: install sql-server-express -y
+
+      - name: Setup .NET Core SDK 3.1.x
+        uses: actions/setup-dotnet@v1.7.2
+        with:
+          dotnet-version: "3.1.x"
+          source-url: ${{ env.AZURE_ARTIFACTS_FEED_URL }}
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.AZURE_ARTIFACTS_PERSONAL_ACCESS_TOKEN }}
+
+      - name: Enable longpaths
+        run: |
+          git version
+          git config --global core.longpaths true
+
+      - name: Checkout Ed-Fi-ODS
+        uses: actions/checkout@v2.3.4
+        with:
+          repository: Ed-Fi-Alliance-OSS/Ed-Fi-ODS
+          path: Ed-Fi-ODS/
+
+      - name: Checkout Ed-Fi-ODS-Implementation
+        uses: actions/checkout@v2.3.4
+        with:
+          ref: SEASK-35
+          repository: Ed-Fi-Alliance-OSS/Ed-Fi-ODS-Implementation
+          path: Ed-Fi-ODS-Implementation/
+
+      - name: Checkout Starter Kit Sample Extension
+        uses: actions/checkout@v2.3.4
+        with:
+          ref: SEASK-49
+          repository: Ed-Fi-Alliance-OSS/Starter-Kit-SEA-Data-Collection
+          path: Starter-Kit-SEA-Data-Collection
+
+      - name: Initialize-DeveloperEnvironment
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSVersionTable
+
+
