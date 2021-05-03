@@ -1224,30 +1224,6 @@
 	<StudentProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>704928</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Gifted and Talented</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Gifted and Talented</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentProgramAssociation>
-	<StudentProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>704936</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -1479,30 +1455,6 @@
 	<StudentProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>704984</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Gifted and Talented</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Gifted and Talented</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentProgramAssociation>
-	<StudentProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>705004</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -1640,30 +1592,6 @@
 		<BeginDate>2021-08-30</BeginDate>
 		<EndDate>2021-12-17</EndDate>
 		<ReasonExited>uri://ed-fi.org/ReasonExitedDescriptor#Reached maximum age</ReasonExited>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentProgramAssociation>
-	<StudentProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>705104</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Gifted and Talented</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Gifted and Talented</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
 		<EducationOrganizationReference>
 			<EducationOrganizationIdentity>
 				<EducationOrganizationId>255902</EducationOrganizationId>
@@ -1812,32 +1740,6 @@
 			</ProgramIdentity>
 		</ProgramReference>
 		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentProgramAssociation>
-	<StudentProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>705210</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Gifted and Talented</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Gifted and Talented</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EndDate>2021-10-03</EndDate>
-		<ReasonExited>uri://ed-fi.org/ReasonExitedDescriptor#Moved out of state</ReasonExited>
 		<EducationOrganizationReference>
 			<EducationOrganizationIdentity>
 				<EducationOrganizationId>255902</EducationOrganizationId>
@@ -2071,30 +1973,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>705343</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Gifted and Talented</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Gifted and Talented</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentProgramAssociation>
-	<StudentProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>705353</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -2373,30 +2251,6 @@
 	<StudentProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>705484</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Gifted and Talented</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Gifted and Talented</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentProgramAssociation>
-	<StudentProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>705492</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -2524,30 +2378,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>705539</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Gifted and Talented</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Gifted and Talented</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentProgramAssociation>
-	<StudentProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>705544</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -3210,35 +3040,6 @@
 	<StudentSpecialEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>704956</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Special Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Special Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EndDate>2021-12-17</EndDate>
-		<ReasonExited>uri://ed-fi.org/ReasonExitedDescriptor#Moved out of state</ReasonExited>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<LastEvaluationDate>2021-08-23</LastEvaluationDate>
-		<IEPReviewDate>2021-08-27</IEPReviewDate>
-		<IEPBeginDate>2021-09-01</IEPBeginDate>
-	</StudentSpecialEducationProgramAssociation>
-	<StudentSpecialEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>704989</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -3689,35 +3490,6 @@
 	<StudentSpecialEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>705188</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Special Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Special Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EndDate>2021-12-17</EndDate>
-		<ReasonExited>uri://ed-fi.org/ReasonExitedDescriptor#Moved out of state</ReasonExited>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<LastEvaluationDate>2021-08-23</LastEvaluationDate>
-		<IEPReviewDate>2021-08-27</IEPReviewDate>
-		<IEPBeginDate>2021-09-01</IEPBeginDate>
-	</StudentSpecialEducationProgramAssociation>
-	<StudentSpecialEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>705191</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -4099,35 +3871,6 @@
 			</ProgramIdentity>
 		</ProgramReference>
 		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<LastEvaluationDate>2021-08-23</LastEvaluationDate>
-		<IEPReviewDate>2021-08-27</IEPReviewDate>
-		<IEPBeginDate>2021-09-01</IEPBeginDate>
-	</StudentSpecialEducationProgramAssociation>
-	<StudentSpecialEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>705280</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Special Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Special Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EndDate>2021-12-17</EndDate>
-		<ReasonExited>uri://ed-fi.org/ReasonExitedDescriptor#Moved out of state</ReasonExited>
 		<EducationOrganizationReference>
 			<EducationOrganizationIdentity>
 				<EducationOrganizationId>255902</EducationOrganizationId>
@@ -5284,33 +5027,6 @@
 	<StudentSpecialEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>705683</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Special Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Special Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<LastEvaluationDate>2021-08-23</LastEvaluationDate>
-		<IEPReviewDate>2021-08-27</IEPReviewDate>
-		<IEPBeginDate>2021-09-01</IEPBeginDate>
-	</StudentSpecialEducationProgramAssociation>
-	<StudentSpecialEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>705684</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -5651,35 +5367,6 @@
 	<StudentSpecialEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>705745</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Special Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Special Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EndDate>2021-10-03</EndDate>
-		<ReasonExited>uri://ed-fi.org/ReasonExitedDescriptor#Moved out of state</ReasonExited>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<LastEvaluationDate>2021-08-23</LastEvaluationDate>
-		<IEPReviewDate>2021-08-27</IEPReviewDate>
-		<IEPBeginDate>2021-09-01</IEPBeginDate>
-	</StudentSpecialEducationProgramAssociation>
-	<StudentSpecialEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>705750</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -5767,32 +5454,6 @@
 		<IEPReviewDate>2021-08-27</IEPReviewDate>
 		<IEPBeginDate>2021-09-01</IEPBeginDate>
 	</StudentSpecialEducationProgramAssociation>
-	<StudentCTEProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>704822</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Career and Technical Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Career and Technical Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EndDate>2021-12-17</EndDate>
-		<ReasonExited>uri://ed-fi.org/ReasonExitedDescriptor#Reached maximum age</ReasonExited>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentCTEProgramAssociation>
 	<StudentCTEProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
@@ -6109,32 +5770,6 @@
 			</ProgramIdentity>
 		</ProgramReference>
 		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentCTEProgramAssociation>
-	<StudentCTEProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>705041</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Career and Technical Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Career and Technical Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EndDate>2021-10-03</EndDate>
-		<ReasonExited>uri://ed-fi.org/ReasonExitedDescriptor#Moved out of state</ReasonExited>
 		<EducationOrganizationReference>
 			<EducationOrganizationIdentity>
 				<EducationOrganizationId>255902</EducationOrganizationId>
@@ -7547,32 +7182,6 @@
 	<StudentMigrantEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>705087</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>705088</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -7860,32 +7469,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>705103</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>705104</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -8224,32 +7807,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>705121</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>705124</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -8873,32 +8430,6 @@
 	<StudentMigrantEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>705148</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>705149</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -9290,32 +8821,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>705166</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>705167</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -9913,32 +9418,6 @@
 	<StudentMigrantEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>705255</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>705256</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -10070,32 +9549,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>705262</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>705263</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -10381,32 +9834,6 @@
 	<StudentMigrantEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>705274</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>705275</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -10512,32 +9939,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>705279</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>705280</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -11811,32 +11212,6 @@
 	<StudentMigrantEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>705342</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>705348</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -12149,32 +11524,6 @@
 	<StudentMigrantEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>705426</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>705428</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -12383,32 +11732,6 @@
 	<StudentMigrantEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>705438</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>705439</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -12436,32 +11759,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>705440</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>705441</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -13476,32 +12773,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>705483</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>705484</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -14714,30 +13985,6 @@
 	<StudentLanguageInstructionProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>705067</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>English as a Second Language (ESL)</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#English as a Second Language (ESL)</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentLanguageInstructionProgramAssociation>
-	<StudentLanguageInstructionProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>705092</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -14840,30 +14087,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>705146</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>English as a Second Language (ESL)</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#English as a Second Language (ESL)</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentLanguageInstructionProgramAssociation>
-	<StudentLanguageInstructionProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>705188</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -15224,54 +14447,6 @@
 		<BeginDate>2021-08-30</BeginDate>
 		<EndDate>2021-12-17</EndDate>
 		<ReasonExited>uri://ed-fi.org/ReasonExitedDescriptor#Reached maximum age</ReasonExited>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentLanguageInstructionProgramAssociation>
-	<StudentLanguageInstructionProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>705618</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>English as a Second Language (ESL)</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#English as a Second Language (ESL)</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentLanguageInstructionProgramAssociation>
-	<StudentLanguageInstructionProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>705661</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>English as a Second Language (ESL)</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#English as a Second Language (ESL)</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
 		<EducationOrganizationReference>
 			<EducationOrganizationIdentity>
 				<EducationOrganizationId>255902</EducationOrganizationId>
@@ -16064,30 +15239,6 @@
 	<StudentSchoolFoodServiceProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>705167</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255902 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>School Food Service</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Compensatory Services for Disadvantaged Students</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255902</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentSchoolFoodServiceProgramAssociation>
-	<StudentSchoolFoodServiceProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>705181</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -16473,31 +15624,6 @@
 	<StudentProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>804854</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Bilingual</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Bilingual</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<ServedOutsideOfRegularSession>1</ServedOutsideOfRegularSession>
-	</StudentProgramAssociation>
-	<StudentProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>804865</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -16862,55 +15988,7 @@
 	<StudentProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805123</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Bilingual</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Bilingual</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentProgramAssociation>
-	<StudentProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805147</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Bilingual</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Bilingual</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentProgramAssociation>
-	<StudentProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805157</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -18095,56 +17173,6 @@
 	<StudentProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805076</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Gifted and Talented</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Gifted and Talented</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentProgramAssociation>
-	<StudentProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805080</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Gifted and Talented</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Gifted and Talented</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EndDate>2021-12-17</EndDate>
-		<ReasonExited>uri://ed-fi.org/ReasonExitedDescriptor#Reached maximum age</ReasonExited>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentProgramAssociation>
-	<StudentProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805104</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -18246,30 +17274,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>805159</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Gifted and Talented</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Gifted and Talented</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentProgramAssociation>
-	<StudentProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805161</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -18396,30 +17400,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>805237</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Gifted and Talented</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Gifted and Talented</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentProgramAssociation>
-	<StudentProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805243</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -18969,30 +17949,6 @@
 	<StudentProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805525</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Gifted and Talented</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Gifted and Talented</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentProgramAssociation>
-	<StudentProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805527</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -19435,30 +18391,6 @@
 	<StudentProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805721</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Gifted and Talented</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Gifted and Talented</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentProgramAssociation>
-	<StudentProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805748</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -19533,32 +18465,6 @@
 	<StudentProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805771</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Gifted and Talented</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Gifted and Talented</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EndDate>2021-10-03</EndDate>
-		<ReasonExited>uri://ed-fi.org/ReasonExitedDescriptor#Moved out of state</ReasonExited>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentProgramAssociation>
-	<StudentProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805776</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -19580,37 +18486,6 @@
 			</EducationOrganizationIdentity>
 		</EducationOrganizationReference>
 	</StudentProgramAssociation>
-	<StudentSpecialEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>804872</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Special Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Special Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<IdeaEligibility>1</IdeaEligibility>
-		<SpecialEducationSetting>uri://ed-fi.org/SpecialEducationSettingDescriptor#Inside regular class less than 40% of the day</SpecialEducationSetting>
-		<SpecialEducationHoursPerWeek>25.00</SpecialEducationHoursPerWeek>
-		<SchoolHoursPerWeek>10.00</SchoolHoursPerWeek>
-		<LastEvaluationDate>2021-08-23</LastEvaluationDate>
-		<IEPReviewDate>2021-08-27</IEPReviewDate>
-		<IEPBeginDate>2021-09-01</IEPBeginDate>
-	</StudentSpecialEducationProgramAssociation>
 	<StudentSpecialEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
@@ -19903,33 +18778,6 @@
 	<StudentSpecialEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805047</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Special Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Special Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<LastEvaluationDate>2021-08-23</LastEvaluationDate>
-		<IEPReviewDate>2021-08-27</IEPReviewDate>
-		<IEPBeginDate>2021-09-01</IEPBeginDate>
-	</StudentSpecialEducationProgramAssociation>
-	<StudentSpecialEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805075</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -19947,33 +18795,6 @@
 		<BeginDate>2021-08-30</BeginDate>
 		<EndDate>2021-10-03</EndDate>
 		<ReasonExited>uri://ed-fi.org/ReasonExitedDescriptor#Moved out of state</ReasonExited>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<LastEvaluationDate>2021-08-23</LastEvaluationDate>
-		<IEPReviewDate>2021-08-27</IEPReviewDate>
-		<IEPBeginDate>2021-09-01</IEPBeginDate>
-	</StudentSpecialEducationProgramAssociation>
-	<StudentSpecialEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805109</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Special Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Special Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
 		<EducationOrganizationReference>
 			<EducationOrganizationIdentity>
 				<EducationOrganizationId>255903</EducationOrganizationId>
@@ -20268,33 +19089,6 @@
 	<StudentSpecialEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805192</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Special Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Special Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<LastEvaluationDate>2021-08-23</LastEvaluationDate>
-		<IEPReviewDate>2021-08-27</IEPReviewDate>
-		<IEPBeginDate>2021-09-01</IEPBeginDate>
-	</StudentSpecialEducationProgramAssociation>
-	<StudentSpecialEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805198</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -20352,33 +19146,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>805202</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Special Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Special Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<LastEvaluationDate>2021-08-23</LastEvaluationDate>
-		<IEPReviewDate>2021-08-27</IEPReviewDate>
-		<IEPBeginDate>2021-09-01</IEPBeginDate>
-	</StudentSpecialEducationProgramAssociation>
-	<StudentSpecialEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805213</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -20580,33 +19347,6 @@
 	<StudentSpecialEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805256</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Special Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Special Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<LastEvaluationDate>2021-08-23</LastEvaluationDate>
-		<IEPReviewDate>2021-08-27</IEPReviewDate>
-		<IEPBeginDate>2021-09-01</IEPBeginDate>
-	</StudentSpecialEducationProgramAssociation>
-	<StudentSpecialEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805271</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -20678,35 +19418,6 @@
 			</ProgramIdentity>
 		</ProgramReference>
 		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<LastEvaluationDate>2021-08-23</LastEvaluationDate>
-		<IEPReviewDate>2021-08-27</IEPReviewDate>
-		<IEPBeginDate>2021-09-01</IEPBeginDate>
-	</StudentSpecialEducationProgramAssociation>
-	<StudentSpecialEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805294</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Special Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Special Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EndDate>2021-10-03</EndDate>
-		<ReasonExited>uri://ed-fi.org/ReasonExitedDescriptor#Moved out of state</ReasonExited>
 		<EducationOrganizationReference>
 			<EducationOrganizationIdentity>
 				<EducationOrganizationId>255903</EducationOrganizationId>
@@ -20970,64 +19681,6 @@
 	<StudentSpecialEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805471</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Special Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Special Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<LastEvaluationDate>2021-08-23</LastEvaluationDate>
-		<IEPReviewDate>2021-08-27</IEPReviewDate>
-		<IEPBeginDate>2021-09-01</IEPBeginDate>
-	</StudentSpecialEducationProgramAssociation>
-	<StudentSpecialEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805478</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Special Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Special Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<IdeaEligibility>1</IdeaEligibility>
-		<SpecialEducationSetting>uri://ed-fi.org/SpecialEducationSettingDescriptor#Inside reg class between 40-79% of the day</SpecialEducationSetting>
-		<SpecialEducationHoursPerWeek>16.00</SpecialEducationHoursPerWeek>
-		<SchoolHoursPerWeek>19.00</SchoolHoursPerWeek>
-		<LastEvaluationDate>2021-08-23</LastEvaluationDate>
-		<IEPReviewDate>2021-08-27</IEPReviewDate>
-		<IEPBeginDate>2021-09-01</IEPBeginDate>
-	</StudentSpecialEducationProgramAssociation>
-	<StudentSpecialEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805482</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -21126,35 +19779,6 @@
 			</ProgramIdentity>
 		</ProgramReference>
 		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<LastEvaluationDate>2021-08-23</LastEvaluationDate>
-		<IEPReviewDate>2021-08-27</IEPReviewDate>
-		<IEPBeginDate>2021-09-01</IEPBeginDate>
-	</StudentSpecialEducationProgramAssociation>
-	<StudentSpecialEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805515</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Special Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Special Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EndDate>2021-12-17</EndDate>
-		<ReasonExited>uri://ed-fi.org/ReasonExitedDescriptor#Reached maximum age</ReasonExited>
 		<EducationOrganizationReference>
 			<EducationOrganizationIdentity>
 				<EducationOrganizationId>255903</EducationOrganizationId>
@@ -21397,60 +20021,6 @@
 	<StudentSpecialEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805589</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Special Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Special Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<LastEvaluationDate>2021-08-23</LastEvaluationDate>
-		<IEPReviewDate>2021-08-27</IEPReviewDate>
-		<IEPBeginDate>2021-09-01</IEPBeginDate>
-	</StudentSpecialEducationProgramAssociation>
-	<StudentSpecialEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805593</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Special Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Special Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<LastEvaluationDate>2021-08-23</LastEvaluationDate>
-		<IEPReviewDate>2021-08-27</IEPReviewDate>
-		<IEPBeginDate>2021-09-01</IEPBeginDate>
-	</StudentSpecialEducationProgramAssociation>
-	<StudentSpecialEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805597</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -21614,33 +20184,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>805621</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Special Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Special Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<LastEvaluationDate>2021-08-23</LastEvaluationDate>
-		<IEPReviewDate>2021-08-27</IEPReviewDate>
-		<IEPBeginDate>2021-09-01</IEPBeginDate>
-	</StudentSpecialEducationProgramAssociation>
-	<StudentSpecialEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805642</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -22062,33 +20605,6 @@
 	<StudentSpecialEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805719</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Special Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Special Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<LastEvaluationDate>2021-08-23</LastEvaluationDate>
-		<IEPReviewDate>2021-08-27</IEPReviewDate>
-		<IEPBeginDate>2021-09-01</IEPBeginDate>
-	</StudentSpecialEducationProgramAssociation>
-	<StudentSpecialEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805720</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -22189,35 +20705,6 @@
 			</ProgramIdentity>
 		</ProgramReference>
 		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<LastEvaluationDate>2021-08-23</LastEvaluationDate>
-		<IEPReviewDate>2021-08-27</IEPReviewDate>
-		<IEPBeginDate>2021-09-01</IEPBeginDate>
-	</StudentSpecialEducationProgramAssociation>
-	<StudentSpecialEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805745</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Special Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Special Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EndDate>2021-10-03</EndDate>
-		<ReasonExited>uri://ed-fi.org/ReasonExitedDescriptor#Moved out of state</ReasonExited>
 		<EducationOrganizationReference>
 			<EducationOrganizationIdentity>
 				<EducationOrganizationId>255903</EducationOrganizationId>
@@ -22337,30 +20824,6 @@
 		<BeginDate>2021-08-30</BeginDate>
 		<EndDate>2021-12-17</EndDate>
 		<ReasonExited>uri://ed-fi.org/ReasonExitedDescriptor#Reached maximum age</ReasonExited>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentCTEProgramAssociation>
-	<StudentCTEProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>804830</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Career and Technical Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Career and Technical Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
 		<EducationOrganizationReference>
 			<EducationOrganizationIdentity>
 				<EducationOrganizationId>255903</EducationOrganizationId>
@@ -23020,30 +21483,6 @@
 	<StudentCTEProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805187</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Career and Technical Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Career and Technical Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentCTEProgramAssociation>
-	<StudentCTEProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805223</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -23059,32 +21498,6 @@
 			</ProgramIdentity>
 		</ProgramReference>
 		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentCTEProgramAssociation>
-	<StudentCTEProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805225</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Career and Technical Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Career and Technical Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EndDate>2021-10-03</EndDate>
-		<ReasonExited>uri://ed-fi.org/ReasonExitedDescriptor#Moved out of state</ReasonExited>
 		<EducationOrganizationReference>
 			<EducationOrganizationIdentity>
 				<EducationOrganizationId>255903</EducationOrganizationId>
@@ -23442,30 +21855,6 @@
 	<StudentCTEProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805457</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Career and Technical Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Career and Technical Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentCTEProgramAssociation>
-	<StudentCTEProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805467</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -23603,32 +21992,6 @@
 			</ProgramIdentity>
 		</ProgramReference>
 		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentCTEProgramAssociation>
-	<StudentCTEProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805587</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Career and Technical Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Career and Technical Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EndDate>2021-12-17</EndDate>
-		<ReasonExited>uri://ed-fi.org/ReasonExitedDescriptor#Reached maximum age</ReasonExited>
 		<EducationOrganizationReference>
 			<EducationOrganizationIdentity>
 				<EducationOrganizationId>255903</EducationOrganizationId>
@@ -24513,32 +22876,6 @@
 	<StudentMigrantEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805109</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805110</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -24670,32 +23007,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>805116</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805117</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -25163,32 +23474,6 @@
 	<StudentMigrantEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805138</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805139</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -25553,59 +23838,7 @@
 	<StudentMigrantEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805153</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805154</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805155</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -25684,32 +23917,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>805160</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805161</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -26229,32 +24436,6 @@
 	<StudentMigrantEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805241</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805242</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -26515,59 +24696,7 @@
 	<StudentMigrantEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805256</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805257</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805259</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -26957,32 +25086,6 @@
 	<StudentMigrantEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805274</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805275</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -27217,32 +25320,6 @@
 	<StudentMigrantEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805284</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805285</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -27451,32 +25528,6 @@
 	<StudentMigrantEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805294</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805295</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -27607,32 +25658,6 @@
 	<StudentMigrantEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805300</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805301</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -27738,32 +25763,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>805305</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805306</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -28023,32 +26022,6 @@
 	<StudentMigrantEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805316</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805317</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -28102,32 +26075,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>805319</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805320</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -28518,32 +26465,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>805367</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805380</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -29037,32 +26958,6 @@
 	<StudentMigrantEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805441</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805442</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -29376,32 +27271,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>805456</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805457</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -29765,32 +27634,6 @@
 	<StudentMigrantEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805471</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805472</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -29896,32 +27739,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>805477</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805478</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -30545,58 +28362,6 @@
 	<StudentMigrantEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805505</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805506</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805507</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -30857,32 +28622,6 @@
 	<StudentMigrantEducationProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805520</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805527</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -31066,32 +28805,6 @@
 		<StudentReference>
 			<StudentIdentity>
 				<StudentUniqueId>805722</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903 </EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Migrant Education</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Migrant Education</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<PriorityForServices>0</PriorityForServices>
-		<LastQualifyingMove>2021-08-31</LastQualifyingMove>
-	</StudentMigrantEducationProgramAssociation>
-	<StudentMigrantEducationProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805726</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
 		<ProgramReference>
@@ -31515,30 +29228,6 @@
 	<StudentLanguageInstructionProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805222</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>English as a Second Language (ESL)</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#English as a Second Language (ESL)</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentLanguageInstructionProgramAssociation>
-	<StudentLanguageInstructionProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805268</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -31737,30 +29426,6 @@
 	<StudentLanguageInstructionProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805561</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>English as a Second Language (ESL)</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#English as a Second Language (ESL)</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentLanguageInstructionProgramAssociation>
-	<StudentLanguageInstructionProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805566</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -31835,30 +29500,6 @@
 	<StudentLanguageInstructionProgramAssociation>
 		<StudentReference>
 			<StudentIdentity>
-				<StudentUniqueId>805618</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>English as a Second Language (ESL)</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#English as a Second Language (ESL)</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentLanguageInstructionProgramAssociation>
-	<StudentLanguageInstructionProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
 				<StudentUniqueId>805661</StudentUniqueId>
 			</StudentIdentity>
 		</StudentReference>
@@ -31874,32 +29515,6 @@
 			</ProgramIdentity>
 		</ProgramReference>
 		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-	</StudentLanguageInstructionProgramAssociation>
-	<StudentLanguageInstructionProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>805667</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>English as a Second Language (ESL)</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#English as a Second Language (ESL)</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EndDate>2021-12-17</EndDate>
-		<ReasonExited>uri://ed-fi.org/ReasonExitedDescriptor#Reached maximum age</ReasonExited>
 		<EducationOrganizationReference>
 			<EducationOrganizationIdentity>
 				<EducationOrganizationId>255903</EducationOrganizationId>
@@ -32336,38 +29951,6 @@
 			</ProgramIdentity>
 		</ProgramReference>
 		<BeginDate>2021-08-30</BeginDate>
-		<EducationOrganizationReference>
-			<EducationOrganizationIdentity>
-				<EducationOrganizationId>255903</EducationOrganizationId>
-			</EducationOrganizationIdentity>
-		</EducationOrganizationReference>
-		<NeglectedOrDelinquentProgram>uri://ed-fi.org/NeglectedOrDelinquentProgramDescriptor#Neglected Programs</NeglectedOrDelinquentProgram>
-		<NeglectedOrDelinquentProgramService>
-			<NeglectedOrDelinquentProgramService>uri://ed-fi.org/NeglectedOrDelinquentProgramServiceDescriptor#Dropout Prevention Programs</NeglectedOrDelinquentProgramService>
-			<PrimaryIndicator>1</PrimaryIndicator>
-			<ServiceBeginDate>2021-08-30</ServiceBeginDate>
-		</NeglectedOrDelinquentProgramService>
-	</StudentNeglectedOrDelinquentProgramAssociation>
-	<StudentNeglectedOrDelinquentProgramAssociation>
-		<StudentReference>
-			<StudentIdentity>
-				<StudentUniqueId>804934</StudentUniqueId>
-			</StudentIdentity>
-		</StudentReference>
-		<ProgramReference>
-			<ProgramIdentity>
-				<EducationOrganizationReference>
-					<EducationOrganizationIdentity>
-						<EducationOrganizationId>255903</EducationOrganizationId>
-					</EducationOrganizationIdentity>
-				</EducationOrganizationReference>
-				<ProgramName>Neglected and Delinquent Program</ProgramName>
-				<ProgramType>uri://ed-fi.org/ProgramTypeDescriptor#Neglected and Delinquent Program</ProgramType>
-			</ProgramIdentity>
-		</ProgramReference>
-		<BeginDate>2021-08-30</BeginDate>
-		<EndDate>2021-12-31</EndDate>
-		<ReasonExited>uri://ed-fi.org/ReasonExitedDescriptor#Unknown reason</ReasonExited>
 		<EducationOrganizationReference>
 			<EducationOrganizationIdentity>
 				<EducationOrganizationId>255903</EducationOrganizationId>
