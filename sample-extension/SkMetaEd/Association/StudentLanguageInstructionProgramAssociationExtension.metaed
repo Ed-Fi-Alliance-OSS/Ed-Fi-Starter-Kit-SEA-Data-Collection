@@ -1,0 +1,4 @@
+Association EdFi.StudentLanguageInstructionProgramAssociation additions
+    bool RedesignatedEnglishFluent
+        documentation "Students that have been redesignated as English Fluent."
+        is optional

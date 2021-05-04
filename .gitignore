@@ -1,3 +1,4 @@
+*.cache
 *.log
 *.vhdx
 *.iso
@@ -7,3 +8,38 @@
 *.idea
 dist
 build
+
+# Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
+[Bb]in
+csx/
+rcf/
+[Oo]bj
+logistics/bin
+.vs/
+.idea/
+
+#User-specific files
+*.suo
+*.csproj.user
+*.ccproj.user
+*.sln.DotSettings.user
+*.csproj.DotSettings.user
+*.pubxml.user
+*.dbmdl
+.vs/
+# Resharper files
+_ReSharper.*
+*.resharper
+*.resharper.user
+
+#Others
+*.orig
+*.original
+*.AssemblyAttributes.cs
+*.AssemblyInfo.cs
+*.csprojAssemblyReference.cache
+*.AssemblyInfoInputs.cache
+bin/
+obj/
+Debug/
+Release/
