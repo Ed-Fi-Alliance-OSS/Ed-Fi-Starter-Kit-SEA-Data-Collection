@@ -86,16 +86,17 @@ function Invoke-CreateVMSwitch {
 
 function Invoke-Packer {
     $packerConfig = (Resolve-Path (Join-Path -Path $PSScriptRoot -ChildPath sea-starter-kit-win2019-eval.pkr.hcl)).Path
+    $commonVars = (Resolve-Path (Join-Path -Path $PSScriptRoot -ChildPath common-variables.json)).Path
 
     #initialize packer and its packages
     & packer init $packerConfig
 
     # run build vm with packer
     if ( -not $ISOUrl) {
-        & packer build -force -var "vm_switch=$($VMSwitch)" $packerConfig
+        & packer build -force -var "vm_switch=$($VMSwitch)" "-var-file=$($commonVars)" $packerConfig
     }
     else {
-        & packer build -force -var "vm_switch=$($VMSwitch)" -var "iso_url=$($ISOUrl)" $packerConfig
+        & packer build -force -var "vm_switch=$($VMSwitch)" -var "iso_url=$($ISOUrl)" "-var-file=$($commonVars)" $packerConfig
     }
 }
 
