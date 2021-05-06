@@ -25,11 +25,11 @@
 				<AddressType>uri://ed-fi.org/AddressTypeDescriptor#Mailing</AddressType>
 			</Address>
 			<InstitutionTelephone>
-				<TelephoneNumber>(512) 494-1213</TelephoneNumber>
+				<TelephoneNumber>(950) 494-1213</TelephoneNumber>
 				<InstitutionTelephoneNumberType>uri://ed-fi.org/InstitutionTelephoneNumberTypeDescriptor#Main</InstitutionTelephoneNumberType>
 			</InstitutionTelephone>
 			<InstitutionTelephone>
-				<TelephoneNumber>(512) 494-1214</TelephoneNumber>
+				<TelephoneNumber>(950) 494-1214</TelephoneNumber>
 				<InstitutionTelephoneNumberType>uri://ed-fi.org/InstitutionTelephoneNumberTypeDescriptor#Fax</InstitutionTelephoneNumberType>
 			</InstitutionTelephone>
 			<StateEducationAgencyId>255900</StateEducationAgencyId>
@@ -115,7 +115,7 @@
 		<ShortNameOfInstitution>BCISD</ShortNameOfInstitution>
 		<EducationOrganizationCategory>uri://ed-fi.org/EducationOrganizationCategoryDescriptor#Local Education Agency</EducationOrganizationCategory>
 		<Address>
-			<StreetNumberName>202 Maple Street </StreetNumberName>
+			<StreetNumberName>202 Maple Street</StreetNumberName>
 			<City>Bear Creek</City>
 			<StateAbbreviation>uri://ed-fi.org/StateAbbreviationDescriptor#TX</StateAbbreviation>
 			<PostalCode>75173</PostalCode>
