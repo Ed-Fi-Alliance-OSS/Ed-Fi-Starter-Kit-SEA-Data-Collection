@@ -62,4 +62,4 @@ jobs:
         run: nuget pack $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Data-Collection/sample-extension/EdFi.Ods.Extensions.Sk/EdFi.Ods.Extensions.Sk.nuspec -OutputDirectory NugetPackages -Version 1.0.$env:GITHUB_RUN_NUMBER -Properties configuration=release -Properties "authors=Ed-Fi Alliance" -Properties "owners=Ed-Fi Alliance" -Properties "copyright=Copyright ©Ed-Fi Alliance, LLC. 2020" -Properties id=EdFi.Ods.Extensions.Sk -Properties title=EdFi.Ods.Extensions.Sk -Properties description=EdFi.Ods.Extensions.Sk -NoPackageAnalysis -NoDefaultExcludes
 
       - name: Push Package
-        run: dotnet nuget push NugetPackages/EdFi.Ods.Extensions.Sk.1.0.$env:GITHUB_RUN_NUMBER.nupkg --api-key AzureArtifacts
+        run: dotnet nuget push NugetPackages/EdFi.Ods.Extensions.Sk.1.0.$env:GITHUB_RUN_NUMBER.nupkg --api-key AzureArtifacts --skip-duplicate
