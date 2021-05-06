@@ -1,4 +1,4 @@
-name: Starter Kit Extension Build and Deploy Package:
+name: Starter Kit Extension Build and Deploy Package
 
 on: [push]
 
