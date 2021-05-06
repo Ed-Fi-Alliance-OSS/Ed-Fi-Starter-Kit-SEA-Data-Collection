@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	<InterchangeEducationOrganization xmlns="http://ed-fi.org/3.3.0-a" xmlns:ann="http://ed-fi.org/annotation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ed-fi.org/3.3.0-a ../../Schemas/Bulk/Interchange-EducationOrganization.xsd">
-		<StateEducationAgency id="SEA_255900">
-			<EducationOrganizationIdentificationCode>
-				<IdentificationCode>255900</IdentificationCode>
-				<EducationOrganizationIdentificationSystem>uri://ed-fi.org/EducationOrganizationIdentificationSystemDescriptor#NCES</EducationOrganizationIdentificationSystem>
-			</EducationOrganizationIdentificationCode>
-			<NameOfInstitution>Texas Education Agency</NameOfInstitution>
-			<ShortNameOfInstitution>TEA</ShortNameOfInstitution>
-			<EducationOrganizationCategory>uri://ed-fi.org/EducationOrganizationCategoryDescriptor#State Education Agency</EducationOrganizationCategory>
-			<Address>
-				<StreetNumberName>William B. Travis Bldg.</StreetNumberName>
-				<City>Austin</City>
-				<StateAbbreviation>uri://ed-fi.org/StateAbbreviationDescriptor#TX</StateAbbreviation>
-				<PostalCode>78701</PostalCode>
-				<NameOfCounty>Travis</NameOfCounty>
-				<AddressType>uri://ed-fi.org/AddressTypeDescriptor#Physical</AddressType>
-			</Address>
-			<Address>
-				<StreetNumberName>P.O. Box 898</StreetNumberName>
-				<City>Austin</City>
-				<StateAbbreviation>uri://ed-fi.org/StateAbbreviationDescriptor#TX</StateAbbreviation>
-				<PostalCode>78701</PostalCode>
-				<NameOfCounty>Travis</NameOfCounty>
-				<AddressType>uri://ed-fi.org/AddressTypeDescriptor#Mailing</AddressType>
-			</Address>
-			<InstitutionTelephone>
-				<TelephoneNumber>(950) 494-1213</TelephoneNumber>
-				<InstitutionTelephoneNumberType>uri://ed-fi.org/InstitutionTelephoneNumberTypeDescriptor#Main</InstitutionTelephoneNumberType>
-			</InstitutionTelephone>
-			<InstitutionTelephone>
-				<TelephoneNumber>(950) 494-1214</TelephoneNumber>
-				<InstitutionTelephoneNumberType>uri://ed-fi.org/InstitutionTelephoneNumberTypeDescriptor#Fax</InstitutionTelephoneNumberType>
-			</InstitutionTelephone>
-			<StateEducationAgencyId>255900</StateEducationAgencyId>
-		</StateEducationAgency>
+<InterchangeEducationOrganization xmlns="http://ed-fi.org/3.3.0-a" xmlns:ann="http://ed-fi.org/annotation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ed-fi.org/3.3.0-a ../../Schemas/Bulk/Interchange-EducationOrganization.xsd">
+	<StateEducationAgency id="SEA_255900">
+		<EducationOrganizationIdentificationCode>
+			<IdentificationCode>255900</IdentificationCode>
+			<EducationOrganizationIdentificationSystem>uri://ed-fi.org/EducationOrganizationIdentificationSystemDescriptor#NCES</EducationOrganizationIdentificationSystem>
+		</EducationOrganizationIdentificationCode>
+		<NameOfInstitution>Texas Education Agency</NameOfInstitution>
+		<ShortNameOfInstitution>TEA</ShortNameOfInstitution>
+		<EducationOrganizationCategory>uri://ed-fi.org/EducationOrganizationCategoryDescriptor#State Education Agency</EducationOrganizationCategory>
+		<Address>
+			<StreetNumberName>William B. Travis Bldg.</StreetNumberName>
+			<City>Austin</City>
+			<StateAbbreviation>uri://ed-fi.org/StateAbbreviationDescriptor#TX</StateAbbreviation>
+			<PostalCode>78701</PostalCode>
+			<NameOfCounty>Travis</NameOfCounty>
+			<AddressType>uri://ed-fi.org/AddressTypeDescriptor#Physical</AddressType>
+		</Address>
+		<Address>
+			<StreetNumberName>P.O. Box 898</StreetNumberName>
+			<City>Austin</City>
+			<StateAbbreviation>uri://ed-fi.org/StateAbbreviationDescriptor#TX</StateAbbreviation>
+			<PostalCode>78701</PostalCode>
+			<NameOfCounty>Travis</NameOfCounty>
+			<AddressType>uri://ed-fi.org/AddressTypeDescriptor#Mailing</AddressType>
+		</Address>
+		<InstitutionTelephone>
+			<TelephoneNumber>(950) 494-1213</TelephoneNumber>
+			<InstitutionTelephoneNumberType>uri://ed-fi.org/InstitutionTelephoneNumberTypeDescriptor#Main</InstitutionTelephoneNumberType>
+		</InstitutionTelephone>
+		<InstitutionTelephone>
+			<TelephoneNumber>(950) 494-1214</TelephoneNumber>
+			<InstitutionTelephoneNumberType>uri://ed-fi.org/InstitutionTelephoneNumberTypeDescriptor#Fax</InstitutionTelephoneNumberType>
+		</InstitutionTelephone>
+		<StateEducationAgencyId>255900</StateEducationAgencyId>
+	</StateEducationAgency>
 	<EducationServiceCenter id="ESC_255951">
 		<EducationOrganizationIdentificationCode>
 			<IdentificationCode>255951</IdentificationCode>
@@ -66,7 +66,7 @@
 			<InstitutionTelephoneNumberType>uri://ed-fi.org/InstitutionTelephoneNumberTypeDescriptor#Fax</InstitutionTelephoneNumberType>
 		</InstitutionTelephone>
 		<EducationServiceCenterId>255951</EducationServiceCenterId>
-		<StateEducationAgencyReference ref="SEA_255900" />
+		<StateEducationAgencyReference ref="SEA_255900"/>
 	</EducationServiceCenter>
 	<LocalEducationAgency id="LEAG_255902">
 		<EducationOrganizationIdentificationCode>
@@ -103,7 +103,7 @@
 		<WebSite>http://www.LISD.edu/</WebSite>
 		<LocalEducationAgencyId>255902</LocalEducationAgencyId>
 		<LocalEducationAgencyCategory>uri://ed-fi.org/LocalEducationAgencyCategoryDescriptor#Independent</LocalEducationAgencyCategory>
-		<EducationServiceCenterReference ref="ESC_255951" />
+		<EducationServiceCenterReference ref="ESC_255951"/>
 	</LocalEducationAgency>
 	<LocalEducationAgency id="LEAG_255903">
 		<EducationOrganizationIdentificationCode>
@@ -140,7 +140,7 @@
 		<WebSite>http://www.BCISD.edu/</WebSite>
 		<LocalEducationAgencyId>255903</LocalEducationAgencyId>
 		<LocalEducationAgencyCategory>uri://ed-fi.org/LocalEducationAgencyCategoryDescriptor#Independent</LocalEducationAgencyCategory>
-		<EducationServiceCenterReference ref="ESC_255950" />
+		<EducationServiceCenterReference ref="ESC_255950"/>
 	</LocalEducationAgency>
 	<School id="SCOL_255902001">
 		<EducationOrganizationIdentificationCode>
@@ -196,7 +196,7 @@
 		<CharterStatus>uri://ed-fi.org/CharterStatusDescriptor#Not a Charter School</CharterStatus>
 		<TitleIPartASchoolDesignation>uri://ed-fi.org/TitleIPartASchoolDesignationDescriptor#Not A Title I School</TitleIPartASchoolDesignation>
 		<AdministrativeFundingControl>uri://ed-fi.org/AdministrativeFundingControlDescriptor#Public School</AdministrativeFundingControl>
-		<LocalEducationAgencyReference ref="LEAG_255902" />
+		<LocalEducationAgencyReference ref="LEAG_255902"/>
 	</School>
 	<School id="SCOL_255902044">
 		<EducationOrganizationIdentificationCode>
@@ -251,7 +251,7 @@
 		<CharterStatus>uri://ed-fi.org/CharterStatusDescriptor#Not a Charter School</CharterStatus>
 		<TitleIPartASchoolDesignation>uri://ed-fi.org/TitleIPartASchoolDesignationDescriptor#Not A Title I School</TitleIPartASchoolDesignation>
 		<AdministrativeFundingControl>uri://ed-fi.org/AdministrativeFundingControlDescriptor#Public School</AdministrativeFundingControl>
-		<LocalEducationAgencyReference ref="LEAG_255902" />
+		<LocalEducationAgencyReference ref="LEAG_255902"/>
 	</School>
 	<School id="SCOL_255902107">
 		<EducationOrganizationIdentificationCode>
@@ -308,7 +308,7 @@
 		<CharterStatus>uri://ed-fi.org/CharterStatusDescriptor#Not a Charter School</CharterStatus>
 		<TitleIPartASchoolDesignation>uri://ed-fi.org/TitleIPartASchoolDesignationDescriptor#Not A Title I School</TitleIPartASchoolDesignation>
 		<AdministrativeFundingControl>uri://ed-fi.org/AdministrativeFundingControlDescriptor#Public School</AdministrativeFundingControl>
-		<LocalEducationAgencyReference ref="LEAG_255902" />
+		<LocalEducationAgencyReference ref="LEAG_255902"/>
 	</School>
 	<School id="SCOL_255903001">
 		<EducationOrganizationIdentificationCode>
@@ -364,7 +364,7 @@
 		<CharterStatus>uri://ed-fi.org/CharterStatusDescriptor#Not a Charter School</CharterStatus>
 		<TitleIPartASchoolDesignation>uri://ed-fi.org/TitleIPartASchoolDesignationDescriptor#Not A Title I School</TitleIPartASchoolDesignation>
 		<AdministrativeFundingControl>uri://ed-fi.org/AdministrativeFundingControlDescriptor#Public School</AdministrativeFundingControl>
-		<LocalEducationAgencyReference ref="LEAG_255903" />
+		<LocalEducationAgencyReference ref="LEAG_255903"/>
 	</School>
 	<School id="SCOL_255903044">
 		<EducationOrganizationIdentificationCode>
@@ -419,7 +419,7 @@
 		<CharterStatus>uri://ed-fi.org/CharterStatusDescriptor#Not a Charter School</CharterStatus>
 		<TitleIPartASchoolDesignation>uri://ed-fi.org/TitleIPartASchoolDesignationDescriptor#Not A Title I School</TitleIPartASchoolDesignation>
 		<AdministrativeFundingControl>uri://ed-fi.org/AdministrativeFundingControlDescriptor#Public School</AdministrativeFundingControl>
-		<LocalEducationAgencyReference ref="LEAG_255903" />
+		<LocalEducationAgencyReference ref="LEAG_255903"/>
 	</School>
 	<School id="SCOL_255903107">
 		<EducationOrganizationIdentificationCode>
@@ -476,7 +476,7 @@
 		<CharterStatus>uri://ed-fi.org/CharterStatusDescriptor#Not a Charter School</CharterStatus>
 		<TitleIPartASchoolDesignation>uri://ed-fi.org/TitleIPartASchoolDesignationDescriptor#Not A Title I School</TitleIPartASchoolDesignation>
 		<AdministrativeFundingControl>uri://ed-fi.org/AdministrativeFundingControlDescriptor#Public School</AdministrativeFundingControl>
-		<LocalEducationAgencyReference ref="LEAG_255903" />
+		<LocalEducationAgencyReference ref="LEAG_255903"/>
 	</School>
 	<Location id="LOCN_255902107101-255902107">
 		<SchoolReference>
@@ -1854,8 +1854,6 @@
 			<EndTime>15:45:00</EndTime>
 		</MeetingTime>
 	</ClassPeriod>
-
-
 	<ClassPeriod id="CPER_01-Traditional-255903001">
 		<SchoolReference>
 			<SchoolIdentity>
