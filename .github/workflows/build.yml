@@ -6,7 +6,7 @@ env:
   AZURE_ARTIFACTS_FEED_URL: https://pkgs.dev.azure.com/ed-fi-alliance/Ed-Fi-Alliance-OSS/_packaging/EdFi/nuget/v3/index.json
   
 jobs:
-  Starter Kit Extension Build and Deploy Package:
+  build-and-test:
     runs-on: windows-2019
 
     steps:
