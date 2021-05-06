@@ -34,39 +34,39 @@
 			</InstitutionTelephone>
 			<StateEducationAgencyId>255900</StateEducationAgencyId>
 		</StateEducationAgency>
-	<EducationServiceCenter id="ESC_255950">
+	<EducationServiceCenter id="ESC_255951">
 		<EducationOrganizationIdentificationCode>
-			<IdentificationCode>255950</IdentificationCode>
+			<IdentificationCode>255951</IdentificationCode>
 			<EducationOrganizationIdentificationSystem>uri://ed-fi.org/EducationOrganizationIdentificationSystemDescriptor#NCES</EducationOrganizationIdentificationSystem>
 		</EducationOrganizationIdentificationCode>
-		<NameOfInstitution>Region 99 Education Service Center</NameOfInstitution>
+		<NameOfInstitution>Region 100 Education Service Center</NameOfInstitution>
 		<EducationOrganizationCategory>uri://ed-fi.org/EducationOrganizationCategoryDescriptor#Education Service Center</EducationOrganizationCategory>
 		<Address>
-			<StreetNumberName>898 Texas Education Blvd.</StreetNumberName>
-			<City>Dallas</City>
+			<StreetNumberName>2274 Sundown Lane</StreetNumberName>
+			<City>Austin</City>
 			<StateAbbreviation>uri://ed-fi.org/StateAbbreviationDescriptor#TX</StateAbbreviation>
-			<PostalCode>75217</PostalCode>
-			<NameOfCounty>Dallas</NameOfCounty>
+			<PostalCode>78749</PostalCode>
+			<NameOfCounty>Travis</NameOfCounty>
 			<AddressType>uri://ed-fi.org/AddressTypeDescriptor#Physical</AddressType>
 		</Address>
 		<Address>
-			<StreetNumberName>P.O. Box 898</StreetNumberName>
-			<City>Dallas</City>
+			<StreetNumberName>P.O. Box 274</StreetNumberName>
+			<City>Austin</City>
 			<StateAbbreviation>uri://ed-fi.org/StateAbbreviationDescriptor#TX</StateAbbreviation>
-			<PostalCode>75217</PostalCode>
-			<NameOfCounty>Dallas</NameOfCounty>
+			<PostalCode>78749</PostalCode>
+			<NameOfCounty>Travis</NameOfCounty>
 			<AddressType>uri://ed-fi.org/AddressTypeDescriptor#Mailing</AddressType>
 		</Address>
 		<InstitutionTelephone>
-			<TelephoneNumber>(214) 876-8290</TelephoneNumber>
+			<TelephoneNumber>(950) 876-8290</TelephoneNumber>
 			<InstitutionTelephoneNumberType>uri://ed-fi.org/InstitutionTelephoneNumberTypeDescriptor#Main</InstitutionTelephoneNumberType>
 		</InstitutionTelephone>
 		<InstitutionTelephone>
-			<TelephoneNumber>(214) 876-8921</TelephoneNumber>
+			<TelephoneNumber>(950) 876-8921</TelephoneNumber>
 			<InstitutionTelephoneNumberType>uri://ed-fi.org/InstitutionTelephoneNumberTypeDescriptor#Fax</InstitutionTelephoneNumberType>
 		</InstitutionTelephone>
-		<EducationServiceCenterId>255950</EducationServiceCenterId>
-		<StateEducationAgencyReference ref="SEA_255900"></StateEducationAgencyReference>
+		<EducationServiceCenterId>255951</EducationServiceCenterId>
+		<StateEducationAgencyReference ref="SEA_255900" />
 	</EducationServiceCenter>
 	<LocalEducationAgency id="LEAG_255902">
 		<EducationOrganizationIdentificationCode>
@@ -93,18 +93,17 @@
 			<AddressType>uri://ed-fi.org/AddressTypeDescriptor#Mailing</AddressType>
 		</Address>
 		<InstitutionTelephone>
-			<TelephoneNumber>(259) 458-8811</TelephoneNumber>
+			<TelephoneNumber>(950) 458-8811</TelephoneNumber>
 			<InstitutionTelephoneNumberType>uri://ed-fi.org/InstitutionTelephoneNumberTypeDescriptor#Main</InstitutionTelephoneNumberType>
 		</InstitutionTelephone>
 		<InstitutionTelephone>
-			<TelephoneNumber>(259) 458-8812</TelephoneNumber>
+			<TelephoneNumber>(950) 458-8812</TelephoneNumber>
 			<InstitutionTelephoneNumberType>uri://ed-fi.org/InstitutionTelephoneNumberTypeDescriptor#Fax</InstitutionTelephoneNumberType>
 		</InstitutionTelephone>
 		<WebSite>http://www.LISD.edu/</WebSite>
 		<LocalEducationAgencyId>255902</LocalEducationAgencyId>
 		<LocalEducationAgencyCategory>uri://ed-fi.org/LocalEducationAgencyCategoryDescriptor#Independent</LocalEducationAgencyCategory>
-		<EducationServiceCenterReference ref="ESC_255950">
-		</EducationServiceCenterReference>
+		<EducationServiceCenterReference ref="ESC_255951" />
 	</LocalEducationAgency>
 	<LocalEducationAgency id="LEAG_255903">
 		<EducationOrganizationIdentificationCode>
@@ -141,8 +140,7 @@
 		<WebSite>http://www.BCISD.edu/</WebSite>
 		<LocalEducationAgencyId>255903</LocalEducationAgencyId>
 		<LocalEducationAgencyCategory>uri://ed-fi.org/LocalEducationAgencyCategoryDescriptor#Independent</LocalEducationAgencyCategory>
-		<EducationServiceCenterReference ref="ESC_255950">
-		</EducationServiceCenterReference>
+		<EducationServiceCenterReference ref="ESC_255950" />
 	</LocalEducationAgency>
 	<School id="SCOL_255902001">
 		<EducationOrganizationIdentificationCode>
@@ -169,11 +167,11 @@
 			<AddressType>uri://ed-fi.org/AddressTypeDescriptor#Mailing</AddressType>
 		</Address>
 		<InstitutionTelephone>
-			<TelephoneNumber>(259) 452-6598</TelephoneNumber>
+			<TelephoneNumber>(950) 452-6598</TelephoneNumber>
 			<InstitutionTelephoneNumberType>uri://ed-fi.org/InstitutionTelephoneNumberTypeDescriptor#Main</InstitutionTelephoneNumberType>
 		</InstitutionTelephone>
 		<InstitutionTelephone>
-			<TelephoneNumber>(259) 452-6599</TelephoneNumber>
+			<TelephoneNumber>(950) 452-6599</TelephoneNumber>
 			<InstitutionTelephoneNumberType>uri://ed-fi.org/InstitutionTelephoneNumberTypeDescriptor#Fax</InstitutionTelephoneNumberType>
 		</InstitutionTelephone>
 		<WebSite>http://www.LISD.edu/LHS/</WebSite>
@@ -198,8 +196,7 @@
 		<CharterStatus>uri://ed-fi.org/CharterStatusDescriptor#Not a Charter School</CharterStatus>
 		<TitleIPartASchoolDesignation>uri://ed-fi.org/TitleIPartASchoolDesignationDescriptor#Not A Title I School</TitleIPartASchoolDesignation>
 		<AdministrativeFundingControl>uri://ed-fi.org/AdministrativeFundingControlDescriptor#Public School</AdministrativeFundingControl>
-		<LocalEducationAgencyReference ref="LEAG_255902">
-		</LocalEducationAgencyReference>
+		<LocalEducationAgencyReference ref="LEAG_255902" />
 	</School>
 	<School id="SCOL_255902044">
 		<EducationOrganizationIdentificationCode>
@@ -254,8 +251,7 @@
 		<CharterStatus>uri://ed-fi.org/CharterStatusDescriptor#Not a Charter School</CharterStatus>
 		<TitleIPartASchoolDesignation>uri://ed-fi.org/TitleIPartASchoolDesignationDescriptor#Not A Title I School</TitleIPartASchoolDesignation>
 		<AdministrativeFundingControl>uri://ed-fi.org/AdministrativeFundingControlDescriptor#Public School</AdministrativeFundingControl>
-		<LocalEducationAgencyReference ref="LEAG_255902">
-		</LocalEducationAgencyReference>
+		<LocalEducationAgencyReference ref="LEAG_255902" />
 	</School>
 	<School id="SCOL_255902107">
 		<EducationOrganizationIdentificationCode>
@@ -312,8 +308,7 @@
 		<CharterStatus>uri://ed-fi.org/CharterStatusDescriptor#Not a Charter School</CharterStatus>
 		<TitleIPartASchoolDesignation>uri://ed-fi.org/TitleIPartASchoolDesignationDescriptor#Not A Title I School</TitleIPartASchoolDesignation>
 		<AdministrativeFundingControl>uri://ed-fi.org/AdministrativeFundingControlDescriptor#Public School</AdministrativeFundingControl>
-		<LocalEducationAgencyReference ref="LEAG_255902">
-		</LocalEducationAgencyReference>
+		<LocalEducationAgencyReference ref="LEAG_255902" />
 	</School>
 	<School id="SCOL_255903001">
 		<EducationOrganizationIdentificationCode>
@@ -369,8 +364,7 @@
 		<CharterStatus>uri://ed-fi.org/CharterStatusDescriptor#Not a Charter School</CharterStatus>
 		<TitleIPartASchoolDesignation>uri://ed-fi.org/TitleIPartASchoolDesignationDescriptor#Not A Title I School</TitleIPartASchoolDesignation>
 		<AdministrativeFundingControl>uri://ed-fi.org/AdministrativeFundingControlDescriptor#Public School</AdministrativeFundingControl>
-		<LocalEducationAgencyReference ref="LEAG_255903">
-		</LocalEducationAgencyReference>
+		<LocalEducationAgencyReference ref="LEAG_255903" />
 	</School>
 	<School id="SCOL_255903044">
 		<EducationOrganizationIdentificationCode>
@@ -425,8 +419,7 @@
 		<CharterStatus>uri://ed-fi.org/CharterStatusDescriptor#Not a Charter School</CharterStatus>
 		<TitleIPartASchoolDesignation>uri://ed-fi.org/TitleIPartASchoolDesignationDescriptor#Not A Title I School</TitleIPartASchoolDesignation>
 		<AdministrativeFundingControl>uri://ed-fi.org/AdministrativeFundingControlDescriptor#Public School</AdministrativeFundingControl>
-		<LocalEducationAgencyReference ref="LEAG_255903">
-		</LocalEducationAgencyReference>
+		<LocalEducationAgencyReference ref="LEAG_255903" />
 	</School>
 	<School id="SCOL_255903107">
 		<EducationOrganizationIdentificationCode>
@@ -483,85 +476,8 @@
 		<CharterStatus>uri://ed-fi.org/CharterStatusDescriptor#Not a Charter School</CharterStatus>
 		<TitleIPartASchoolDesignation>uri://ed-fi.org/TitleIPartASchoolDesignationDescriptor#Not A Title I School</TitleIPartASchoolDesignation>
 		<AdministrativeFundingControl>uri://ed-fi.org/AdministrativeFundingControlDescriptor#Public School</AdministrativeFundingControl>
-		<LocalEducationAgencyReference ref="LEAG_255903">
-		</LocalEducationAgencyReference>
+		<LocalEducationAgencyReference ref="LEAG_255903" />
 	</School>
-	<CommunityOrganization>
-		<EducationOrganizationIdentificationCode>
-			<IdentificationCode>20</IdentificationCode>
-			<EducationOrganizationIdentificationSystem>uri://ed-fi.org/EducationOrganizationIdentificationSystemDescriptor#SEA</EducationOrganizationIdentificationSystem>
-		</EducationOrganizationIdentificationCode>
-		<NameOfInstitution>Communities in Schools</NameOfInstitution>
-		<ShortNameOfInstitution>CIS</ShortNameOfInstitution>
-		<EducationOrganizationCategory>uri://ed-fi.org/EducationOrganizationCategoryDescriptor#Other</EducationOrganizationCategory>
-		<CommunityOrganizationId>20</CommunityOrganizationId>
-	</CommunityOrganization>
-	<CommunityProvider>
-		<NameOfInstitution>Communities in Schools of Lakeside</NameOfInstitution>
-		<EducationOrganizationCategory>uri://ed-fi.org/EducationOrganizationCategoryDescriptor#Other</EducationOrganizationCategory>
-		<CommunityProviderId>19255902</CommunityProviderId>
-		<CommunityOrganizationReference>
-			<CommunityOrganizationIdentity>
-				<CommunityOrganizationId>20</CommunityOrganizationId>
-			</CommunityOrganizationIdentity>
-		</CommunityOrganizationReference>
-		<ProviderStatus>uri://ed-fi.org/ProviderStatusDescriptor#Active</ProviderStatus>
-		<ProviderCategory>uri://ed-fi.org/ProviderCategoryDescriptor#Not Applicable</ProviderCategory>
-		<SchoolIndicator>false</SchoolIndicator>
-	</CommunityProvider>
-	<CommunityProviderLicense>
-		<CommunityProviderReference>
-			<CommunityProviderIdentity>
-				<CommunityProviderId>19255902</CommunityProviderId>
-			</CommunityProviderIdentity>
-		</CommunityProviderReference>
-		<License>
-			<LicenseIdentifier>594835-c</LicenseIdentifier>
-			<LicensingOrganization>Texas Health and Human Services</LicensingOrganization>
-			<LicenseEffectiveDate>2020-01-01</LicenseEffectiveDate>
-			<LicenseExpirationDate>2022-12-31</LicenseExpirationDate>
-			<LicenseStatus>uri://ed-fi.org/LicenseStatusDescriptor#Regulated</LicenseStatus>
-			<LicenseType>uri://ed-fi.org/LicenseTypeDescriptor#School Age Program</LicenseType>
-		</License>
-	</CommunityProviderLicense>
-	<CommunityOrganization>
-		<EducationOrganizationIdentificationCode>
-			<IdentificationCode>21</IdentificationCode>
-			<EducationOrganizationIdentificationSystem>uri://ed-fi.org/EducationOrganizationIdentificationSystemDescriptor#SEA</EducationOrganizationIdentificationSystem>
-		</EducationOrganizationIdentificationCode>
-		<NameOfInstitution>Communities in Schools</NameOfInstitution>
-		<ShortNameOfInstitution>CIS</ShortNameOfInstitution>
-		<EducationOrganizationCategory>uri://ed-fi.org/EducationOrganizationCategoryDescriptor#Other</EducationOrganizationCategory>
-		<CommunityOrganizationId>21</CommunityOrganizationId>
-	</CommunityOrganization>
-	<CommunityProvider>
-		<NameOfInstitution>Communities in Schools of Bear Creek</NameOfInstitution>
-		<EducationOrganizationCategory>uri://ed-fi.org/EducationOrganizationCategoryDescriptor#Other</EducationOrganizationCategory>
-		<CommunityProviderId>19255903</CommunityProviderId>
-		<CommunityOrganizationReference>
-			<CommunityOrganizationIdentity>
-				<CommunityOrganizationId>21</CommunityOrganizationId>
-			</CommunityOrganizationIdentity>
-		</CommunityOrganizationReference>
-		<ProviderStatus>uri://ed-fi.org/ProviderStatusDescriptor#Active</ProviderStatus>
-		<ProviderCategory>uri://ed-fi.org/ProviderCategoryDescriptor#Not Applicable</ProviderCategory>
-		<SchoolIndicator>false</SchoolIndicator>
-	</CommunityProvider>
-	<CommunityProviderLicense>
-		<CommunityProviderReference>
-			<CommunityProviderIdentity>
-				<CommunityProviderId>19255903</CommunityProviderId>
-			</CommunityProviderIdentity>
-		</CommunityProviderReference>
-		<License>
-			<LicenseIdentifier>594836-c</LicenseIdentifier>
-			<LicensingOrganization>Texas Health and Human Services</LicensingOrganization>
-			<LicenseEffectiveDate>2020-01-01</LicenseEffectiveDate>
-			<LicenseExpirationDate>2022-12-31</LicenseExpirationDate>
-			<LicenseStatus>uri://ed-fi.org/LicenseStatusDescriptor#Regulated</LicenseStatus>
-			<LicenseType>uri://ed-fi.org/LicenseTypeDescriptor#School Age Program</LicenseType>
-		</License>
-	</CommunityProviderLicense>
 	<Location id="LOCN_255902107101-255902107">
 		<SchoolReference>
 			<SchoolIdentity>
@@ -6458,19 +6374,6 @@
 		<RatingOrganization>SEA</RatingOrganization>
 		<RatingProgram>AEIS</RatingProgram>
 	</AccountabilityRating>
-	<PostSecondaryInstitution>
-		<NameOfInstitution>The University of Texas at Austin</NameOfInstitution>
-		<ShortNameOfInstitution>UT-Austin</ShortNameOfInstitution>
-		<EducationOrganizationCategory>uri://ed-fi.org/EducationOrganizationCategoryDescriptor#Post Secondary Institution</EducationOrganizationCategory>
-		<InstitutionTelephone>
-			<TelephoneNumber>(512) 471-3434</TelephoneNumber>
-			<InstitutionTelephoneNumberType>uri://ed-fi.org/InstitutionTelephoneNumberTypeDescriptor#Main</InstitutionTelephoneNumberType>
-		</InstitutionTelephone>
-		<WebSite>https://www.utexas.edu/</WebSite>
-		<OperationalStatus>uri://ed-fi.org/OperationalStatusDescriptor#Active</OperationalStatus>
-		<PostSecondaryInstitutionId>6000203</PostSecondaryInstitutionId>
-		<PostSecondaryInstitutionLevel>uri://ed-fi.org/PostSecondaryInstitutionLevelDescriptor#Four or more years</PostSecondaryInstitutionLevel>
-	</PostSecondaryInstitution>
 	<OrganizationDepartment>
 		<NameOfInstitution>Lakeside ISD Central Office</NameOfInstitution>
 		<EducationOrganizationCategory>uri://ed-fi.org/EducationOrganizationCategoryDescriptor#Organization Department</EducationOrganizationCategory>
