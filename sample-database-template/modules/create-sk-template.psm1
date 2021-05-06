@@ -12,7 +12,7 @@ Import-Module -Force -Scope Global (Get-RepositoryResolvedPath "DatabaseTemplate
 function Get-SKConfiguration([hashtable] $config = @{ }) {
 
     $config = Merge-Hashtables (Get-DefaultTemplateConfiguration), $config
-    $config.appSettings.Plugin.Folder = "../../Plugin"
+    $config.appSettings.Plugin.Folder = "../../sample-data/plugin"
     $config.appSettings.Plugin.Scripts = @("sk")
 
     $config.testHarnessJsonConfigLEAs = @(255901, 1, 2, 3, 4, 5, 6, 7, 6000203)
@@ -24,7 +24,6 @@ function Get-SKConfiguration([hashtable] $config = @{ }) {
         ("$(Get-PluginFolderFromSettings $config.appSettings)\EdFi.Ods.Extensions.Sk*\Artifacts\Schemas\")
     )
 
-	$config.appSettings.Plugin.Folder = "../../sample-data/plugin"
     $config.databaseBackupName = "EdFi.Ods.Populated.Template.Sk"
     $config.packageNuspecName = "EdFi.Ods.Populated.Template.Sk"
 
