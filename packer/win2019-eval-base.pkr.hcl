@@ -1,3 +1,66 @@
+variable "cpus" {
+  type    = string
+}
+
+variable "debug_mode" {
+  type    = string
+}
+
+variable "disk_size" {
+  type    = string
+}
+
+variable "headless" {
+  type    = string
+}
+
+variable "hw_version" {
+  type    = string
+}
+
+variable "iso_checksum" {
+  type    = string
+}
+
+variable "iso_url" {
+  type    = string
+}
+
+variable "memory" {
+  type    = string
+}
+
+variable "shutdown_command" {
+  type    = string
+}
+
+variable "version" {
+  type    = string
+}
+
+variable "vm_switch" {
+  type    = string
+}
+
+variable "user_name" {
+    type = string
+}
+
+variable "password" {
+    type = string
+}
+
+variable "vm_name" {
+    type = string
+}
+
+variable "archive_name" {
+    type = string
+}
+
+variable "distribution_directory" {
+    type = string
+}
 
 packer {
     required_plugins {
@@ -8,7 +71,7 @@ packer {
     }
 }
 
-source "hyperv-iso" "sea-starter-kit" {
+source "hyperv-iso" "ed-fi-base-image" {
   communicator     = "winrm"
   cpus             = "${var.cpus}"
   disk_size        = "${var.disk_size}"
@@ -27,10 +90,11 @@ source "hyperv-iso" "sea-starter-kit" {
 }
 
 build {
-  sources = ["source.hyperv-iso.sea-starter-kit"]
+  name= "base"
+  sources = ["source.hyperv-iso.ed-fi-base-image"]
 
   provisioner "comment" {
-    comment     = "Copying ${var.archive_name}.zip to c:/temp"
+    comment     = "Copying server-setup.ps1 to c:/temp"
     ui          = true
     bubble_text =  false
   }
@@ -38,12 +102,25 @@ build {
   provisioner "file" {
     destination = "c:/temp/"
     sources     = [
-        "${path.root}/build/${var.archive_name}.zip",
-        "${path.root}/build/${var.web_api}.zip",
-        "${path.root}/build/${var.admin_app}.zip",
-        "${path.root}/build/${var.swagger_ui}.zip",
-        "${path.root}/build/${var.databases}.zip"
+        "${path.root}/build/${var.archive_name}.zip"
     ]
+  }
+
+  provisioner "comment" {
+    comment     = "Installing PowerShell package manager"
+    ui          = true
+    bubble_text = false
+  }
+
+  provisioner "powershell" {
+    debug_mode        = "${var.debug_mode}"
+    elevated_password = "${var.user_name}"
+    elevated_user     = "${var.password}"
+    inline            = [
+        "Set-ExecutionPolicy bypass -Scope CurrentUser -Force;",
+        "Install-PackageProvider -Name NuGet -MinimumVersion \"2.8.5.201\" -Scope AllUsers -Force",
+        "Install-Module -Name PackageManagement -Force -MinimumVersion \"1.4.6\" -Scope CurrentUser -AllowClobber -Repository PSGallery"
+      ]
   }
 
   provisioner "comment" {
@@ -57,16 +134,13 @@ build {
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
     inline            = [
-        "Set-ExecutionPolicy bypass -Scope CurrentUser -Force;",
-        "Install-PackageProvider -Name NuGet -MinimumVersion \"2.8.5.201\" -Scope AllUsers -Force",
-        "Install-Module -Name PackageManagement -Force -MinimumVersion \"1.4.6\" -Scope CurrentUser -AllowClobber -Repository PSGallery",
-        "Set-Location c:/temp;",
-        "Expand-Archive ./${var.archive_name}.zip -Destination ./${var.archive_name}"
-      ]
+        "Set-Location c:/temp",
+        "Expand-Archive ./${var.archive_name}.zip -Destination ."
+    ]
   }
 
   provisioner "comment" {
-    comment          = "Executing c:/temp/${var.archive_name}/server-setup.ps1"
+    comment          = "Executing c:/temp/scripts/server-setup.ps1"
     ui               = true
     bubble_text      = false
   }
@@ -75,7 +149,12 @@ build {
     debug_mode        = "${var.debug_mode}"
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
-    inline            = ["Set-Location c:/temp/${var.archive_name}/scripts", "./server-setup.ps1"]
+    inline            = [
+        "Set-Location c:/temp/scripts/",
+        "./server-setup.ps1",
+        "Remove-item c:/temp/* -Recurse -Force",
+        "Optimize-Volume -DriveLetter C"
+    ]
   }
 
   provisioner "comment" {
@@ -86,103 +165,5 @@ build {
 
   provisioner "windows-restart" {
     restart_check_command = "powershell -command \"& {Write-Output 'Server Setup complete. Restarting....'}\""
-  }
-
-  provisioner "comment" {
-    comment     = "Installing Required Powershell Packages"
-    ui          = true
-    bubble_text =  false
-  }
-
-  provisioner "powershell" {
-    debug_mode        = "${var.debug_mode}"
-    elevated_password = "${var.user_name}"
-    elevated_user     = "${var.password}"
-    inline            = ["Set-Location c:/temp"]
-  }
-
-  provisioner "comment" {
-    comment     = "Installing Databases"
-    ui          = true
-    bubble_text =  false
-  }
-
-  provisioner "powershell" {
-    debug_mode        = "${var.debug_mode}"
-    elevated_password = "${var.user_name}"
-    elevated_user     = "${var.password}"
-    inline            = [
-        "Set-Location c:/temp",
-        "Expand-Archive ./${var.databases}.zip -Destination ./${var.databases}",
-        "Copy-Item -Path ./${var.archive_name}/scripts/configuration.json -Destination ./${var.databases}",
-        "Set-Location ./${var.databases}",
-        "Import-Module ./Deployment.psm1",
-        "Initialize-DeploymentEnvironment"
-    ]
-  }
-
-  provisioner "comment" {
-    comment     = "Installing ODS/API"
-    ui          = true
-    bubble_text =  false
-  }
-
-  provisioner "powershell" {
-    debug_mode        = "${var.debug_mode}"
-    elevated_password = "${var.user_name}"
-    elevated_user     = "${var.password}"
-    inline            = [
-        "Set-Location c:/temp",
-        "Expand-Archive ./${var.web_api}.zip -Destination ./${var.web_api}",
-        "Set-Location c:/temp/${var.archive_name}/scripts/installers",
-        "./Install-WebApi.ps1"
-    ]
-  }
-
-  provisioner "comment" {
-    comment     = "Installing SwaggerUI"
-    ui          = true
-    bubble_text =  false
-  }
-
-  provisioner "powershell" {
-    debug_mode        = "${var.debug_mode}"
-    elevated_password = "${var.user_name}"
-    elevated_user     = "${var.password}"
-    inline            = [
-        "Set-Location c:/temp",
-        "Expand-Archive ./${var.swagger_ui}.zip -Destination ./${var.swagger_ui}",
-        "Set-Location c:/temp/${var.archive_name}/scripts/installers",
-        "./Install-SwaggerUI.ps1"
-    ]
-  }
-
-  provisioner "comment" {
-    comment     = "Installing Admin App"
-    ui          = true
-    bubble_text =  false
-  }
-
-  provisioner "powershell" {
-    debug_mode        = "${var.debug_mode}"
-    elevated_password = "${var.user_name}"
-    elevated_user     = "${var.password}"
-    inline            = [
-        "Set-Location c:/temp",
-        "Expand-Archive ./${var.admin_app}.zip -Destination ./${var.admin_app}",
-        "Set-Location c:/temp/${var.archive_name}/scripts/installers",
-        "./Install-AdminApp.ps1"
-    ]
-  }
-
-  provisioner "powershell" {
-    debug_mode        = "${var.debug_mode}"
-    elevated_password = "${var.user_name}"
-    elevated_user     = "${var.password}"
-    inline            = [
-        "Write-Host (\"Web Api => https://{0}/WebApi\" -f [Environment]::MachineName)",
-        "Write-Host (\"Admin App => https://{0}/AdminApp\" -f [Environment]::MachineName)",
-        "Write-Host (\"SwaggerUI => https://{0}/SwaggerUI\" -f [Environment]::MachineName)"
-    ]
   }
 }
