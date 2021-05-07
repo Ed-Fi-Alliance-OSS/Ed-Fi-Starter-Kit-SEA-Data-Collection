@@ -25,6 +25,7 @@ function Get-SKConfiguration([hashtable] $config = @{ }) {
         ("$(Get-PluginFolderFromSettings $config.appSettings)/EdFi.Ods.Extensions.Sk*/Artifacts/Schemas/")
     )
 
+	$config.backupDirectory = "$PSScriptRoot/../"
     $config.databaseBackupName = "EdFi.Ods.Populated.Template.Sk"
     $config.packageNuspecName = "EdFi.Ods.Populated.Template.Sk"
 
