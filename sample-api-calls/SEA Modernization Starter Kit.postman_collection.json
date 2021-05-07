@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "7c8d337c-9ab0-4620-a217-c647b772a359",
+		"_postman_id": "0dbcbc3d-f05b-41c4-a003-c21f8b937d92",
 		"name": "SEA Modernization Starter Kit",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -29,7 +29,8 @@
 									"});",
 									"const __ = require('lodash');",
 									"const schools = pm.response.json();",
-									"pm.environment.set(\"known:schoolId\",__.first(schools)['schoolId']);"
+									"pm.environment.set(\"known:schoolId\",__.first(schools)['schoolId']);",
+									"pm.environment.set(\"known:localEducationAgencyId\",__.first(schools)['localEducationAgencyReference'].localEducationAgencyId);"
 								],
 								"type": "text/javascript"
 							}
@@ -173,10 +174,8 @@
 									"pm.test(\"Status code is 200 or 201\", () => {",
 									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
 									"});",
-									"",
 									"const scenarioId = pm.environment.get('scenarioId');",
-									"pm.environment.set('known:'+scenarioId+':studentSchoolAssociationGuid',pm.response.headers.one('Location').value.split(\"/\").pop());",
-									""
+									"pm.environment.set('known:'+scenarioId+':studentSchoolAssociationGuid',pm.response.headers.one('Location').value.split(\"/\").pop());"
 								],
 								"type": "text/javascript"
 							}
@@ -194,7 +193,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n   \"schoolReference\":{ \r\n      \"schoolId\":\"{{known:schoolId}}\"\r\n   },\r\n   \"studentReference\":{ \r\n      \"studentUniqueId\":\"{{known:{{scenarioId}}:studentUniqueId}}\"\r\n   },\r\n   \"entryDate\":\"{{supplied:{{scenarioId}}:entryDate}}\",\r\n   \"entryGradeLevelDescriptor\":\"{{supplied:{{scenarioId}}:entryGradeLevelDescriptor}}\",\r\n   \"fullTimeEquivalency\": 1\r\n  }"
+							"raw": "{ \r\n   \"schoolReference\":{ \r\n      \"schoolId\":\"{{known:schoolId}}\"\r\n   },\r\n   \"studentReference\":{ \r\n      \"studentUniqueId\":\"{{known:{{scenarioId}}:studentUniqueId}}\"\r\n   },\r\n   \"entryDate\":\"{{supplied:{{scenarioId}}:entryDate}}\",\r\n   \"entryGradeLevelDescriptor\":\"{{supplied:{{scenarioId}}:entryGradeLevelDescriptor}}\",\r\n   \"fullTimeEquivalency\": 1,\r\n    \"_ext\": {\r\n    \"Sk\": {\r\n      \"residentLocalEducationAgencyReference\": {\r\n        \"localEducationAgencyId\": \"{{known:localEducationAgencyId}}\"\r\n      },\r\n      \"residentSchoolReference\": {\r\n        \"schoolId\": \"{{known:schoolId}}\"\r\n      },\r\n      \"reportingSchoolReference\": {\r\n        \"schoolId\": \"{{known:schoolId}}\"\r\n      }\r\n    }\r\n  }\r\n  }"
 						},
 						"url": {
 							"raw": "{{ApiBaseUrl}}/data/v3/ed-fi/StudentSchoolAssociations",
@@ -376,7 +375,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"Special Education\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#Special Education\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n}\r\n}"
+							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"Special Education\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#Special Education\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n},\r\n\"_ext\": {\r\n\"Sk\": {\r\n\"toTakeAlternateAssessment\": true\r\n}\r\n}\r\n}"
 						},
 						"url": {
 							"raw": "{{ApiBaseUrl}}/data/v3/ed-fi/studentSpecialEducationProgramAssociations",
@@ -602,7 +601,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"English as a Second Language (ESL)\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#English as a Second Language (ESL)\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n}\r\n}",
+							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"English as a Second Language (ESL)\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#English as a Second Language (ESL)\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n},\r\n\"_ext\": {\r\n\"Sk\": {\r\n\"redesignatedEnglishFluent\": true\r\n}\r\n}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -924,7 +923,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n   \"schoolReference\":{ \r\n      \"schoolId\":\"{{known:schoolId}}\"\r\n   },\r\n   \"studentReference\":{ \r\n      \"studentUniqueId\":\"{{known:{{scenarioId}}:studentUniqueId}}\"\r\n   },\r\n   \"entryDate\":\"{{supplied:{{scenarioId}}:entryDate}}\",\r\n   \"entryGradeLevelDescriptor\":\"{{supplied:{{scenarioId}}:entryGradeLevelDescriptor}}\",\r\n   \"fullTimeEquivalency\": 0.51\r\n  }"
+							"raw": "{ \r\n   \"schoolReference\":{ \r\n      \"schoolId\":\"{{known:schoolId}}\"\r\n   },\r\n   \"studentReference\":{ \r\n      \"studentUniqueId\":\"{{known:{{scenarioId}}:studentUniqueId}}\"\r\n   },\r\n   \"entryDate\":\"{{supplied:{{scenarioId}}:entryDate}}\",\r\n   \"entryGradeLevelDescriptor\":\"{{supplied:{{scenarioId}}:entryGradeLevelDescriptor}}\",\r\n   \"fullTimeEquivalency\": 0.51,\r\n       \"_ext\": {\r\n    \"Sk\": {\r\n      \"residentLocalEducationAgencyReference\": {\r\n        \"localEducationAgencyId\": \"{{known:localEducationAgencyId}}\"\r\n      },\r\n      \"residentSchoolReference\": {\r\n        \"schoolId\": \"{{known:schoolId}}\"\r\n      },\r\n      \"reportingSchoolReference\": {\r\n        \"schoolId\": \"{{known:schoolId}}\"\r\n      }\r\n    }\r\n  }\r\n  }"
 						},
 						"url": {
 							"raw": "{{ApiBaseUrl}}/data/v3/ed-fi/StudentSchoolAssociations",
@@ -1106,7 +1105,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n   \"schoolReference\":{ \r\n      \"schoolId\":\"{{known:schoolId}}\"\r\n   },\r\n   \"studentReference\":{ \r\n      \"studentUniqueId\":\"{{known:{{scenarioId}}:studentUniqueId}}\"\r\n   },\r\n   \"entryDate\":\"{{supplied:{{scenarioId}}:entryDate}}\",\r\n   \"entryGradeLevelDescriptor\":\"{{supplied:{{scenarioId}}:entryGradeLevelDescriptor}}\",\r\n   \"fullTimeEquivalency\": 0.49\r\n  }"
+							"raw": "{ \r\n   \"schoolReference\":{ \r\n      \"schoolId\":\"{{known:schoolId}}\"\r\n   },\r\n   \"studentReference\":{ \r\n      \"studentUniqueId\":\"{{known:{{scenarioId}}:studentUniqueId}}\"\r\n   },\r\n   \"entryDate\":\"{{supplied:{{scenarioId}}:entryDate}}\",\r\n   \"entryGradeLevelDescriptor\":\"{{supplied:{{scenarioId}}:entryGradeLevelDescriptor}}\",\r\n   \"fullTimeEquivalency\": 0.49,\r\n       \"_ext\": {\r\n    \"Sk\": {\r\n      \"residentLocalEducationAgencyReference\": {\r\n        \"localEducationAgencyId\": \"{{known:localEducationAgencyId}}\"\r\n      },\r\n      \"residentSchoolReference\": {\r\n        \"schoolId\": \"{{known:schoolId}}\"\r\n      },\r\n      \"reportingSchoolReference\": {\r\n        \"schoolId\": \"{{known:schoolId}}\"\r\n      }\r\n    }\r\n  }\r\n  }"
 						},
 						"url": {
 							"raw": "{{ApiBaseUrl}}/data/v3/ed-fi/StudentSchoolAssociations",
@@ -1224,7 +1223,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"Special Education\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#Special Education\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n}\r\n}"
+							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"Special Education\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#Special Education\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n},\r\n\"_ext\": {\r\n\"Sk\": {\r\n\"toTakeAlternateAssessment\": true\r\n}\r\n}\r\n}"
 						},
 						"url": {
 							"raw": "{{ApiBaseUrl}}/data/v3/ed-fi/studentSpecialEducationProgramAssociations",
@@ -1334,7 +1333,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"English as a Second Language (ESL)\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#English as a Second Language (ESL)\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n}\r\n}",
+							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"English as a Second Language (ESL)\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#English as a Second Language (ESL)\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n},\r\n\"_ext\": {\r\n\"Sk\": {\r\n\"redesignatedEnglishFluent\": true\r\n}\r\n}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1671,12 +1670,16 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 201\", () => {",
-									"    pm.expect(pm.response.code).to.equal(201);",
+									"pm.test(\"Status code is 200 or 201\", () => {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
 									"});",
+									"const uuid = require('uuid');",
+									"function newGuid() { return uuid.v4().toString().replace(/[^a-zA-Z0-9 ]/g,\"\"); }",
+									"function createScenarioId() { return newGuid().substring(0,5); }",
+									"pm.environment.set('scenarioId', createScenarioId());",
 									"const scenarioId = pm.environment.get('scenarioId');",
 									"pm.environment.set('known:'+scenarioId+':studentGuid',pm.response.headers.one('Location').value.split(\"/\").pop());",
-									"pm.environment.set('known:'+scenarioId+':studentUniqueId',pm.environment.get('supplied:'+scenarioId+':studentUniqueId'));    "
+									"pm.environment.set('known:'+scenarioId+':studentUniqueId','4f25f5e04eb842e9ad7558979272bb7f');    "
 								],
 								"type": "text/javascript"
 							}
@@ -1685,18 +1688,7 @@
 							"listen": "prerequest",
 							"script": {
 								"exec": [
-									"const uuid = require('uuid');",
-									"function newGuid() { return uuid.v4().toString().replace(/[^a-zA-Z0-9 ]/g,\"\"); }",
-									"function createScenarioId() { return newGuid().substring(0,5); }",
-									"pm.environment.set('scenarioId', createScenarioId());",
-									"const scenarioId = pm.environment.get('scenarioId');",
-									"pm.environment.set('supplied:'+scenarioId+':studentUniqueId', newGuid());",
-									"",
-									"const moment = require('moment');",
-									"let birthDate=new Date();",
-									"birthDate = birthDate.addYears(-20);",
-									"birthDate= moment(birthDate).format(\"YYYY-MM-DD\");",
-									"pm.environment.set('supplied:'+scenarioId+':birthDate',birthDate);"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -1714,7 +1706,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"studentUniqueId\": \"{{supplied:{{scenarioId}}:studentUniqueId}}\",\r\n  \"birthDate\":\"{{supplied:{{scenarioId}}:birthDate}}\",\r\n  \"firstName\": \"Jennifer\",\r\n  \"lastSurname\": \"Hart\"\r\n}"
+							"raw": "{\r\n  \"studentUniqueId\": \"4f25f5e04eb842e9ad7558979272bb7f\",\r\n  \"birthDate\":\"2001-05-06\",\r\n  \"firstName\": \"Jennifer\",\r\n  \"lastSurname\": \"Hart\"\r\n}"
 						},
 						"url": {
 							"raw": "{{ApiBaseUrl}}/data/v3/ed-fi/students",
@@ -1749,8 +1741,8 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 201\", () => {",
-									"    pm.expect(pm.response.code).to.equal(201);",
+									"pm.test(\"Status code is 200 or 201\", () => {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
 									"});",
 									"",
 									"const scenarioId = pm.environment.get('scenarioId');",
@@ -1773,7 +1765,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n   \"schoolReference\":{ \r\n      \"schoolId\":\"{{known:schoolId}}\"\r\n   },\r\n   \"studentReference\":{ \r\n      \"studentUniqueId\":\"{{known:{{scenarioId}}:studentUniqueId}}\"\r\n   },\r\n   \"entryDate\":\"2021-10-02\",\r\n   \"entryGradeLevelDescriptor\":\"{{supplied:{{scenarioId}}:entryGradeLevelDescriptor}}\",\r\n   \"fullTimeEquivalency\": 1\r\n  }"
+							"raw": "{ \r\n   \"schoolReference\":{ \r\n      \"schoolId\":\"{{known:schoolId}}\"\r\n   },\r\n   \"studentReference\":{ \r\n      \"studentUniqueId\":\"{{known:{{scenarioId}}:studentUniqueId}}\"\r\n   },\r\n   \"entryDate\":\"2021-10-02\",\r\n   \"entryGradeLevelDescriptor\":\"{{supplied:{{scenarioId}}:entryGradeLevelDescriptor}}\",\r\n   \"fullTimeEquivalency\": 1,\r\n       \"_ext\": {\r\n    \"Sk\": {\r\n      \"residentLocalEducationAgencyReference\": {\r\n        \"localEducationAgencyId\": \"{{known:localEducationAgencyId}}\"\r\n      },\r\n      \"residentSchoolReference\": {\r\n        \"schoolId\": \"{{known:schoolId}}\"\r\n      },\r\n      \"reportingSchoolReference\": {\r\n        \"schoolId\": \"{{known:schoolId}}\"\r\n      }\r\n    }\r\n  }\r\n  }"
 						},
 						"url": {
 							"raw": "{{ApiBaseUrl}}/data/v3/ed-fi/StudentSchoolAssociations",
@@ -1954,7 +1946,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"Special Education\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#Special Education\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n}\r\n}"
+							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"Special Education\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#Special Education\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n},\r\n\"_ext\": {\r\n\"Sk\": {\r\n\"toTakeAlternateAssessment\": true\r\n}\r\n}\r\n}"
 						},
 						"url": {
 							"raw": "{{ApiBaseUrl}}/data/v3/ed-fi/studentSpecialEducationProgramAssociations",
@@ -2178,7 +2170,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"English as a Second Language (ESL)\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#English as a Second Language (ESL)\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n}\r\n}",
+							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"English as a Second Language (ESL)\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#English as a Second Language (ESL)\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n},\r\n\"_ext\": {\r\n\"Sk\": {\r\n\"redesignatedEnglishFluent\": true\r\n}\r\n}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2412,7 +2404,7 @@
 					"CreateAccessToken(\"TokenExpiry\",\"AccessToken\",\"ApiKey\",\"ApiSecret\")",
 					"",
 					"// Adapted from: https://marcin-chwedczuk.github.io/automatically-generate-new-oauth2-tokens-when-using-postman",
-					"// Assumes Environment with Environment Variables: ApiBaseUrl, ApiKey, ApiSecret",					
+					"// Assumes Environment with Environment Variables: ApiBaseUrl, ApiKey, ApiSecret",
 					"// Handles auto refreshing based on provided expiration, but doesn't handle the token being revoked early",
 					"// If stuck with \"Bad Token\" or \"Not Authenticated\", just delete the Token or TokenExpiry variables to force a new token",
 					"function CreateAccessToken(TokenExpiry,AccessToken,ApiKey, ApiSecret)",
