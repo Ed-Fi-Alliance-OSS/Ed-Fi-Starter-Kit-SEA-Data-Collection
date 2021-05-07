@@ -35,7 +35,6 @@ Import-Module (Resolve-Path -Path (Join-Path -Path $modulesPath -ChildPath "pack
 
 #global vars
 $buildPath = Join-Path -Path $PSScriptRoot -ChildPath "build"
-$distPath = Join-Path -Path $PSScriptRoot -ChildPath "dist"
 $logsPath = Join-Path -Path $buildPath -ChildPath "logs"
 $configPath = (Resolve-Path (Join-Path -Path $PSScriptRoot -ChildPath "build-configuration.json")).Path
 
@@ -72,7 +71,5 @@ if (-not ($SkipRunPacker)) {
     $packerVariables = (Resolve-Path (Join-Path -Path $PSScriptRoot -ChildPath $VariablesFile)).Path
 
     Invoke-Packer -ConfigPath $packerConfig -VariablesPath $packerVariables -VMSwitch $VMSwitch
-
-    # Move-Item -Path (Join Path -Path $distPath -ChildPath *.*) -Recurse -Destination $buildPath -Force | Out-Null
 }
 else { Write-Output "Skipping Packer Execution" }
