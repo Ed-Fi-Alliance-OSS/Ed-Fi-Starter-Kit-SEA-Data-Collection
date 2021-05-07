@@ -11,7 +11,7 @@ Import-Module -Force -Scope Global (Get-RepositoryResolvedPath "DatabaseTemplate
 
 function Get-SKConfiguration([hashtable] $config = @{ }) {
 
-	$env:toolsPath = "$PSScriptRoot\..\..\..\Ed-Fi-ODS-Implementation\tools\"
+    $env:toolsPath = "$PSScriptRoot/../../../Ed-Fi-ODS-Implementation/tools/"
     $config = Merge-Hashtables (Get-DefaultTemplateConfiguration), $config
     $config.appSettings.Plugin.Folder = "../../sample-data/plugin"
     $config.appSettings.Plugin.Scripts = @("sk")
