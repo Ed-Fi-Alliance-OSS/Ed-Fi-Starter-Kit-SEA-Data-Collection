@@ -82,7 +82,7 @@ packer {
 }
 
 source "hyperv-vmcx" "sea-starter-kit" {
-  clone_from_vmcx_path = "${path.root}/${var.distribution_directory}/${var.base_image_directory}"
+  clone_from_vmcx_path = "${path.root}/${var.base_image_directory}/"
   communicator     = "winrm"
   cpus             = "${var.cpus}"
   headless         = "${var.headless}"
@@ -211,9 +211,8 @@ build {
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
     inline            = [
-        "Set-Location c:/temp",
-        "Remove-Item ./*.zip -Force",
-        "Remove-Item ./${var.archive_name} -Recurse -Force"
+        "Remove-item c:/temp/* -Recurse -Force",
+        "Optimize-Volume -DriveLetter C"
     ]
   }
 

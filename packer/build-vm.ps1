@@ -68,8 +68,8 @@ else { Write-Output "Skipping VM Switch validation and creation." }
 
 # Kick off the packer build with the force to override prior builds
 if (-not ($SkipRunPacker)) {
-    $packerConfig = (Resolve-Path (Join-Path -Path $PSScriptRoot -ChildPath win2019-eval-base.pkr.hcl)).Path
-    $packerVariables = (Resolve-Path (Join-Path -Path $PSScriptRoot -ChildPath base-variables.json)).Path
+    $packerConfig = (Resolve-Path (Join-Path -Path $PSScriptRoot -ChildPath $PackerFile)).Path
+    $packerVariables = (Resolve-Path (Join-Path -Path $PSScriptRoot -ChildPath $VariablesFile)).Path
 
     Invoke-Packer -ConfigPath $packerConfig -VariablesPath $packerVariables -VMSwitch $VMSwitch
 
