@@ -6,11 +6,12 @@
 
 $ErrorActionPreference = "Stop"
 
-& "$PSScriptRoot\..\..\..\Ed-Fi-ODS-Implementation\logistics\scripts\modules\load-path-resolver.ps1"
+& "$PSScriptRoot\..\..\..\Ed-Fi-ODS-Implementation\logistics\scripts\modules\load-path-resolver.ps1" -repositoryNames @('Ed-Fi-ODS', 'Ed-Fi-ODS-Implementation', 'Starter-Kit-SEA-Data-Collection')
 Import-Module -Force -Scope Global (Get-RepositoryResolvedPath "DatabaseTemplate\Modules\create-database-template.psm1")
 
 function Get-SKConfiguration([hashtable] $config = @{ }) {
 
+	$env:toolsPath = "$PSScriptRoot\..\..\..\Ed-Fi-ODS-Implementation\tools\"
     $config = Merge-Hashtables (Get-DefaultTemplateConfiguration), $config
     $config.appSettings.Plugin.Folder = "../../sample-data/plugin"
     $config.appSettings.Plugin.Scripts = @("sk")
