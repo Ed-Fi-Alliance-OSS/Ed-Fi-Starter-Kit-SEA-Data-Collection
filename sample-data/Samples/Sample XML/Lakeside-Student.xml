@@ -1488,18 +1488,6 @@
 		</BirthData>
 	</Student>
 	<Student>
-		<StudentUniqueId>704959</StudentUniqueId>
-		<Name>
-			<PersonalTitlePrefix>Mr</PersonalTitlePrefix>
-			<FirstName>Thomas</FirstName>
-			<MiddleName>Jeffery</MiddleName>
-			<LastSurname>Cleveland</LastSurname>
-		</Name>
-		<BirthData>
-			<BirthDate>2014-03-28</BirthDate>
-		</BirthData>
-	</Student>
-	<Student>
 		<StudentUniqueId>704960</StudentUniqueId>
 		<Name>
 			<PersonalTitlePrefix>Mr</PersonalTitlePrefix>
@@ -3449,17 +3437,6 @@
 		</BirthData>
 	</Student>
 	<Student>
-		<StudentUniqueId>705142</StudentUniqueId>
-		<Name>
-			<PersonalTitlePrefix>Ms</PersonalTitlePrefix>
-			<FirstName>Concetta</FirstName>
-			<LastSurname>Booth</LastSurname>
-		</Name>
-		<BirthData>
-			<BirthDate>2014-05-28</BirthDate>
-		</BirthData>
-	</Student>
-	<Student>
 		<StudentUniqueId>705143</StudentUniqueId>
 		<Name>
 			<PersonalTitlePrefix>Mr</PersonalTitlePrefix>
@@ -3468,18 +3445,6 @@
 		</Name>
 		<BirthData>
 			<BirthDate>2015-07-24</BirthDate>
-		</BirthData>
-	</Student>
-	<Student>
-		<StudentUniqueId>705144</StudentUniqueId>
-		<Name>
-			<PersonalTitlePrefix>Ms</PersonalTitlePrefix>
-			<FirstName>Yolanda</FirstName>
-			<MiddleName>Paige</MiddleName>
-			<LastSurname>Farmer</LastSurname>
-		</Name>
-		<BirthData>
-			<BirthDate>2015-08-04</BirthDate>
 		</BirthData>
 	</Student>
 	<Student>
@@ -5735,18 +5700,6 @@
 		</Name>
 		<BirthData>
 			<BirthDate>2009-11-19</BirthDate>
-		</BirthData>
-	</Student>
-	<Student>
-		<StudentUniqueId>705355</StudentUniqueId>
-		<Name>
-			<PersonalTitlePrefix>Mr</PersonalTitlePrefix>
-			<FirstName>Maurice</FirstName>
-			<MiddleName>Earl</MiddleName>
-			<LastSurname>Forbes</LastSurname>
-		</Name>
-		<BirthData>
-			<BirthDate>2008-09-07</BirthDate>
 		</BirthData>
 	</Student>
 	<Student>
@@ -8348,18 +8301,6 @@
 		</BirthData>
 	</Student>
 	<Student>
-		<StudentUniqueId>705595</StudentUniqueId>
-		<Name>
-			<PersonalTitlePrefix>Mrs</PersonalTitlePrefix>
-			<FirstName>Irene</FirstName>
-			<MiddleName>Cheryl</MiddleName>
-			<LastSurname>Watkins</LastSurname>
-		</Name>
-		<BirthData>
-			<BirthDate>2015-09-24</BirthDate>
-		</BirthData>
-	</Student>
-	<Student>
 		<StudentUniqueId>705596</StudentUniqueId>
 		<Name>
 			<PersonalTitlePrefix>Ms</PersonalTitlePrefix>
@@ -8447,18 +8388,6 @@
 		</Name>
 		<BirthData>
 			<BirthDate>2006-01-17</BirthDate>
-		</BirthData>
-	</Student>
-	<Student>
-		<StudentUniqueId>705604</StudentUniqueId>
-		<Name>
-			<PersonalTitlePrefix>Ms</PersonalTitlePrefix>
-			<FirstName>Laura</FirstName>
-			<MiddleName>Josie</MiddleName>
-			<LastSurname>Foster</LastSurname>
-		</Name>
-		<BirthData>
-			<BirthDate>2008-12-23</BirthDate>
 		</BirthData>
 	</Student>
 	<Student>
