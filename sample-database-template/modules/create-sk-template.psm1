@@ -14,7 +14,7 @@ function Get-SKConfiguration([hashtable] $config = @{ }) {
     $config.appSettings.Plugin.Folder = "../../sample-data/plugin"
     $config.appSettings.Plugin.Scripts = @("sk")
 
-    $config.testHarnessJsonConfigLEAs = @(255901, 1, 2, 3, 4, 5, 6, 7, 6000203)
+    $config.testHarnessJsonConfigLEAs = @(255902, 255903)
     $config.testHarnessJsonConfig = "$PSScriptRoot\testHarnessConfiguration.SK.json"
 
     $config.bulkLoadMaxRequests = 1
