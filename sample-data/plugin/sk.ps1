@@ -20,6 +20,7 @@ $parameters = @{
     outputDirectory = "$PSScriptRoot"
     toolsPath       = (Get-ToolsPath)
 }
+
 $pluginPaths += Get-NuGetPackage @parameters
 
 return $pluginPaths
