@@ -21,7 +21,7 @@ function Invoke-CreateVMSwitch {
 
     Write-Output "Checking for existence of VM Switch $($VMSwitch)"
 
-    # Note this requires admin privilages
+    # Note this requires admin privileges
     if ($null -eq (Get-VMSwitch -Name $VMSwitch -ErrorAction SilentlyContinue)) {
         Write-Output "Creating new VM Switch $($VMSwitch)"
         New-VMSwitch -Name $VMSwitch -AllowManagementOS $true -NetAdapterName $net_adapter -MinimumBandwidthMode Weight
