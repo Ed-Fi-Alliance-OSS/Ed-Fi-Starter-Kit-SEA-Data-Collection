@@ -152,6 +152,7 @@ build {
     inline            = [
         "Set-Location c:/temp/scripts/",
         "./server-setup.ps1",
+        "Set-Location c:/",
         "Remove-item c:/temp/* -Recurse -Force",
         "Optimize-Volume -DriveLetter C"
     ]
