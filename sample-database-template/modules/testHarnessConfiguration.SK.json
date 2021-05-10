@@ -28,7 +28,8 @@
       "NamespacePrefixes": [
         "uri://ed-fi.org",
         "uri://gbisd.edu",
-        "uri://sk.ed-fi.org"
+        "uri://lisd.edu",
+        "uri://bcisd.edu"
       ]
     }
   ]

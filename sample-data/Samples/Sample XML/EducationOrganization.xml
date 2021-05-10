@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<InterchangeEducationOrganization xmlns="http://ed-fi.org/3.3.0-a" xmlns:ann="http://ed-fi.org/annotation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ed-fi.org/3.3.0-a ../../Schemas/Bulk/Interchange-EducationOrganization.xsd">
+	<StateEducationAgency id="SEA_255900">
+		<EducationOrganizationIdentificationCode>
+			<IdentificationCode>255900</IdentificationCode>
+			<EducationOrganizationIdentificationSystem>uri://ed-fi.org/EducationOrganizationIdentificationSystemDescriptor#NCES</EducationOrganizationIdentificationSystem>
+		</EducationOrganizationIdentificationCode>
+		<NameOfInstitution>Texas Education Agency</NameOfInstitution>
+		<ShortNameOfInstitution>TEA</ShortNameOfInstitution>
+		<EducationOrganizationCategory>uri://ed-fi.org/EducationOrganizationCategoryDescriptor#State Education Agency</EducationOrganizationCategory>
+		<Address>
+			<StreetNumberName>William B. Travis Bldg.</StreetNumberName>
+			<City>Austin</City>
+			<StateAbbreviation>uri://ed-fi.org/StateAbbreviationDescriptor#TX</StateAbbreviation>
+			<PostalCode>78701</PostalCode>
+			<NameOfCounty>Travis</NameOfCounty>
+			<AddressType>uri://ed-fi.org/AddressTypeDescriptor#Physical</AddressType>
+		</Address>
+		<Address>
+			<StreetNumberName>P.O. Box 898</StreetNumberName>
+			<City>Austin</City>
+			<StateAbbreviation>uri://ed-fi.org/StateAbbreviationDescriptor#TX</StateAbbreviation>
+			<PostalCode>78701</PostalCode>
+			<NameOfCounty>Travis</NameOfCounty>
+			<AddressType>uri://ed-fi.org/AddressTypeDescriptor#Mailing</AddressType>
+		</Address>
+		<InstitutionTelephone>
+			<TelephoneNumber>(950) 494-1213</TelephoneNumber>
+			<InstitutionTelephoneNumberType>uri://ed-fi.org/InstitutionTelephoneNumberTypeDescriptor#Main</InstitutionTelephoneNumberType>
+		</InstitutionTelephone>
+		<InstitutionTelephone>
+			<TelephoneNumber>(950) 494-1214</TelephoneNumber>
+			<InstitutionTelephoneNumberType>uri://ed-fi.org/InstitutionTelephoneNumberTypeDescriptor#Fax</InstitutionTelephoneNumberType>
+		</InstitutionTelephone>
+		<StateEducationAgencyId>255900</StateEducationAgencyId>
+	</StateEducationAgency>
+	<EducationServiceCenter id="ESC_255951">
+		<EducationOrganizationIdentificationCode>
+			<IdentificationCode>255951</IdentificationCode>
+			<EducationOrganizationIdentificationSystem>uri://ed-fi.org/EducationOrganizationIdentificationSystemDescriptor#NCES</EducationOrganizationIdentificationSystem>
+		</EducationOrganizationIdentificationCode>
+		<NameOfInstitution>Region 100 Education Service Center</NameOfInstitution>
+		<EducationOrganizationCategory>uri://ed-fi.org/EducationOrganizationCategoryDescriptor#Education Service Center</EducationOrganizationCategory>
+		<Address>
+			<StreetNumberName>2274 Sundown Lane</StreetNumberName>
+			<City>Austin</City>
+			<StateAbbreviation>uri://ed-fi.org/StateAbbreviationDescriptor#TX</StateAbbreviation>
+			<PostalCode>78749</PostalCode>
+			<NameOfCounty>Travis</NameOfCounty>
+			<AddressType>uri://ed-fi.org/AddressTypeDescriptor#Physical</AddressType>
+		</Address>
+		<Address>
+			<StreetNumberName>P.O. Box 274</StreetNumberName>
+			<City>Austin</City>
+			<StateAbbreviation>uri://ed-fi.org/StateAbbreviationDescriptor#TX</StateAbbreviation>
+			<PostalCode>78749</PostalCode>
+			<NameOfCounty>Travis</NameOfCounty>
+			<AddressType>uri://ed-fi.org/AddressTypeDescriptor#Mailing</AddressType>
+		</Address>
+		<InstitutionTelephone>
+			<TelephoneNumber>(950) 876-8290</TelephoneNumber>
+			<InstitutionTelephoneNumberType>uri://ed-fi.org/InstitutionTelephoneNumberTypeDescriptor#Main</InstitutionTelephoneNumberType>
+		</InstitutionTelephone>
+		<InstitutionTelephone>
+			<TelephoneNumber>(950) 876-8921</TelephoneNumber>
+			<InstitutionTelephoneNumberType>uri://ed-fi.org/InstitutionTelephoneNumberTypeDescriptor#Fax</InstitutionTelephoneNumberType>
+		</InstitutionTelephone>
+		<EducationServiceCenterId>255951</EducationServiceCenterId>
+		<StateEducationAgencyReference ref="SEA_255900"/>
+	</EducationServiceCenter>
+</InterchangeEducationOrganization>

@@ -39,8 +39,10 @@ _ReSharper.*
 *.AssemblyInfo.cs
 *.csprojAssemblyReference.cache
 *.AssemblyInfoInputs.cache
+tools/*
 sample-database-template/*.bak
 sample-database-template/*.nuspec
+sample-data/plugin/EdFi.Ods.Extensions*/
 bin/
 obj/
 Debug/
