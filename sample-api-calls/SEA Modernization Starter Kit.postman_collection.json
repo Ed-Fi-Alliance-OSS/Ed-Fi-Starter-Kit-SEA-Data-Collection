@@ -601,7 +601,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"English as a Second Language (ESL)\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#English as a Second Language (ESL)\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n},\r\n\"_ext\": {\r\n\"Sk\": {\r\n\"redesignatedEnglishFluent\": true\r\n}\r\n}\r\n}",
+							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"English as a Second Language (ESL)\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#English as a Second Language (ESL)\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n},\r\n\"_ext\": {\r\n\"Sk\": {\r\n\"redesignatedEnglishFluent\": false\r\n}\r\n}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1223,7 +1223,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"Special Education\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#Special Education\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n},\r\n\"_ext\": {\r\n\"Sk\": {\r\n\"toTakeAlternateAssessment\": true\r\n}\r\n}\r\n}"
+							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"Special Education\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#Special Education\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n},\r\n\"_ext\": {\r\n\"Sk\": {\r\n\"toTakeAlternateAssessment\": false\r\n}\r\n}\r\n}"
 						},
 						"url": {
 							"raw": "{{ApiBaseUrl}}/data/v3/ed-fi/studentSpecialEducationProgramAssociations",
@@ -1333,7 +1333,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"English as a Second Language (ESL)\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#English as a Second Language (ESL)\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n},\r\n\"_ext\": {\r\n\"Sk\": {\r\n\"redesignatedEnglishFluent\": true\r\n}\r\n}\r\n}",
+							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"English as a Second Language (ESL)\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#English as a Second Language (ESL)\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n},\r\n\"_ext\": {\r\n\"Sk\": {\r\n\"redesignatedEnglishFluent\": false\r\n}\r\n}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1946,7 +1946,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"Special Education\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#Special Education\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n},\r\n\"_ext\": {\r\n\"Sk\": {\r\n\"toTakeAlternateAssessment\": true\r\n}\r\n}\r\n}"
+							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"Special Education\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#Special Education\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n},\r\n\"_ext\": {\r\n\"Sk\": {\r\n\"toTakeAlternateAssessment\": false\r\n}\r\n}\r\n}"
 						},
 						"url": {
 							"raw": "{{ApiBaseUrl}}/data/v3/ed-fi/studentSpecialEducationProgramAssociations",
@@ -2170,7 +2170,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"English as a Second Language (ESL)\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#English as a Second Language (ESL)\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n},\r\n\"_ext\": {\r\n\"Sk\": {\r\n\"redesignatedEnglishFluent\": true\r\n}\r\n}\r\n}",
+							"raw": "{\r\n\"beginDate\": \"{{supplied:{{scenarioId}}:beginDate}}\",\r\n\"educationOrganizationReference\": {\r\n\"educationOrganizationId\":255901\r\n},\r\n\"programReference\": {\r\n\"educationOrganizationId\": 255901,\r\n\"programName\": \"English as a Second Language (ESL)\",\r\n\"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#English as a Second Language (ESL)\"\r\n},\r\n\"studentReference\": {\r\n\"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n},\r\n\"_ext\": {\r\n\"Sk\": {\r\n\"redesignatedEnglishFluent\": false\r\n}\r\n}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
