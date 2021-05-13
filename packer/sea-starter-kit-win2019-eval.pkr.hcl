@@ -147,6 +147,7 @@ build {
         "Expand-Archive ./${var.databases}.zip -Destination ./${var.databases}",
         "Copy-Item -Path ./${var.archive_name}/scripts/configuration.json -Destination ./${var.databases}",
         "Set-Location ./${var.databases}",
+        "Import-Module -Force -Scope Global SqlServer",
         "Import-Module ./Deployment.psm1",
         "Initialize-DeploymentEnvironment"
     ]
