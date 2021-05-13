@@ -17,5 +17,6 @@
   "admin_app": "EdFi.Suite3.Installer.AdminApp",
   "swagger_ui": "EdFi.Suite3.Installer.SwaggerUI",
   "databases": "EdFi.Suite3.RestApi.Databases",
-  "sampledata": "EdFi.Ods.Populated.Template.SK"
+  "sampledata": "EdFi.Ods.Populated.Template.SK",
+  "postman": "postman"
 }

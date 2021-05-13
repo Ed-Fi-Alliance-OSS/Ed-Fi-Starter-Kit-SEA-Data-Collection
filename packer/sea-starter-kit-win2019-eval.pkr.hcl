@@ -22,6 +22,9 @@ variable "swagger_ui" {
 
 variable "databases" {
   type    = string
+
+variable "postman" {
+  type = string
 }
 
 variable "sampledata" {
@@ -118,12 +121,13 @@ build {
     destination = "c:/temp/"
     sources     = [
         "${path.root}/build/${var.landing_page}.zip",
-        "${path.root}/build/${var.archive_name}.zip",
-        "${path.root}/build/${var.web_api}.zip",
-        "${path.root}/build/${var.admin_app}.zip",
-        "${path.root}/build/${var.swagger_ui}.zip",
-        "${path.root}/build/${var.databases}.zip",
-        "${path.root}/build/${var.sampledata}.zip"
+      "${path.root}/build/${var.archive_name}.zip",
+      "${path.root}/build/${var.web_api}.zip",
+      "${path.root}/build/${var.admin_app}.zip",
+      "${path.root}/build/${var.swagger_ui}.zip",
+      "${path.root}/build/${var.databases}.zip",
+      "${path.root}/build/${var.sampledata}.zip",
+      "${path.root}/build/${var.postman}.zip"
     ]
   }
 
@@ -138,8 +142,9 @@ build {
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
     inline            = [
-        "Set-Location c:/temp",
-        "Expand-Archive ./${var.archive_name}.zip -Destination ./${var.archive_name}"
+      "Set-Location c:/temp",
+      "Expand-Archive ./${var.archive_name}.zip -Destination ./${var.archive_name}",
+      "Expand-Archive ./${var.postman}.zip -Destination \"c:/SEA Modernization Starter Kit\""
     ]
   }
   

@@ -166,6 +166,7 @@ function Install-PreRequisites() {
     choco install GoogleChrome -y --ignore-pending-reboot --ignore-checksums --execution-timeout=$installTimeout
     choco install sql-server-express -y -o -ia "'/IACCEPTSQLSERVERLICENSETERMS /Q /ACTION=install /INSTANCEID=MSSQLSERVER /INSTANCENAME=MSSQLSERVER /TCPENABLED=1 /UPDATEENABLED=FALSE'" --execution-timeout=$installTimeout
     choco install sql-server-management-studio -y --ignore-pending-reboot --execution-timeout=$installTimeout
+    choco install postman -y --ignore-pending-reboot --execution-timeout=$installTimeout
 
     Install-Module -Name SqlServer -MinimumVersion '21.1.18068' -Scope CurrentUser -Force -AllowClobber
 
