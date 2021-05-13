@@ -5,23 +5,24 @@ variable "landing_page" {
 }
 
 variable "archive_name" {
-  type    = string
+  type = string
 }
 
 variable "web_api" {
-  type    = string
+  type = string
 }
 
 variable "admin_app" {
-  type    = string
+  type = string
 }
 
 variable "swagger_ui" {
-  type    = string
+  type = string
 }
 
 variable "databases" {
-  type    = string
+  type = string
+}
 
 variable "postman" {
   type = string
@@ -32,80 +33,80 @@ variable "sampledata" {
 }
 
 variable "cpus" {
-  type    = string
+  type = string
   default = "2"
 }
 
 variable "debug_mode" {
-  type    = string
+  type = string
 }
 
 variable "disk_size" {
-  type    = string
+  type = string
 }
 
 variable "headless" {
-  type    = string
+  type = string
 }
 
 variable "hw_version" {
-  type    = string
+  type = string
 }
 
 variable "memory" {
-  type    = string
+  type = string
 }
 
 variable "shutdown_command" {
-  type    = string
+  type = string
 }
 
 variable "vm_name" {
-  type    = string
+  type = string
 }
 
 variable "vm_switch" {
-  type    = string
+  type = string
 }
 
 variable "distribution_directory" {
-    type = string
+  type = string
 }
 
 variable "user_name" {
-    type = string
+  type = string
 }
 
 variable "password" {
-    type = string
+  type = string
 }
 
 variable "base_image_directory" {
-    type = string
+  type = string
 }
 
 packer {
-    required_plugins {
-        comment = {
-            version = ">=v0.2.23"
-            source = "github.com/sylviamoss/comment"
-        }
+  required_plugins {
+    comment = {
+      version = ">=v0.2.23"
+      source = "github.com/sylviamoss/comment"
     }
+  }
 }
 
 source "hyperv-vmcx" "sea-starter-kit" {
   clone_from_vmcx_path = "${path.root}/${var.base_image_directory}/"
-  communicator     = "winrm"
-  cpus             = "${var.cpus}"
-  headless         = "${var.headless}"
-  memory           = "${var.memory}"
-  shutdown_command = "${var.shutdown_command}"
-  switch_name      = "${var.vm_switch}"
-  vm_name          = "${var.vm_name}"
-  winrm_password   = "${var.password}"
-  winrm_timeout    = "10000s"
-  winrm_username   = "${var.user_name}"
-  output_directory = "${path.root}/${var.distribution_directory}"
+  communicator         = "winrm"
+  cpus                 = "${var.cpus}"
+  headless             = "${var.headless}"
+  memory               = "${var.memory}"
+  shutdown_command     = "${var.shutdown_command}"
+  switch_name          = "${var.vm_switch}"
+  vm_name              = "${var.vm_name}"
+  winrm_password       = "${var.password}"
+  winrm_timeout        = "10000s"
+  winrm_username       = "${var.user_name}"
+  output_directory     = "${path.root}/${var.distribution_directory}"
 }
 
 build {
@@ -114,7 +115,7 @@ build {
   provisioner "comment" {
     comment     = "Copying ${var.archive_name}.zip to c:/temp"
     ui          = true
-    bubble_text =  false
+    bubble_text = false
   }
 
   provisioner "file" {
@@ -169,7 +170,7 @@ build {
   provisioner "comment" {
     comment     = "Installing Databases"
     ui          = true
-    bubble_text =  false
+    bubble_text = false
   }
 
   provisioner "powershell" {
@@ -178,23 +179,23 @@ build {
     elevated_user     = "${var.password}"
     inline            = [
         "New-Item -Path c:/ -Name plugin -ItemType directory",
-        "Set-Location c:/temp",
-        "Expand-Archive ./${var.databases}.zip -Destination ./${var.databases}",
+      "Set-Location c:/temp",
+      "Expand-Archive ./${var.databases}.zip -Destination ./${var.databases}",
         "Expand-Archive ./${var.sampledata}.zip -Destination ./${var.sampledata}",
-        "Copy-Item -Path ./${var.archive_name}/scripts/configuration.json -Destination ./${var.databases}",
+      "Copy-Item -Path ./${var.archive_name}/scripts/configuration.json -Destination ./${var.databases}",
         "Copy-Item -Path ./${var.archive_name}/scripts/sampledata.ps1 -Destination ./${var.databases}/Ed-Fi-ODS-Implementation/DatabaseTemplate/Scripts/",
         "Copy-Item -Path ./${var.archive_name}/scripts/sk.ps1 -Destination c:/plugin -Force",
-        "Set-Location ./${var.databases}",
-        "Import-Module -Force -Scope Global SqlServer",
-        "Import-Module ./Deployment.psm1",
-        "Initialize-DeploymentEnvironment"
+      "Set-Location ./${var.databases}",
+      "Import-Module -Force -Scope Global SqlServer",
+      "Import-Module ./Deployment.psm1",
+      "Initialize-DeploymentEnvironment"
     ]
   }
 
   provisioner "comment" {
     comment     = "Installing ODS/API"
     ui          = true
-    bubble_text =  false
+    bubble_text = false
   }
 
   provisioner "powershell" {
@@ -202,18 +203,18 @@ build {
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
     inline            = [
-        "Set-Location c:/temp",
-        "Expand-Archive ./${var.web_api}.zip -Destination ./${var.web_api}",
-        "Set-Location c:/temp/${var.archive_name}/scripts/installers",
-        "./Install-WebApi.ps1",
-        "Copy-Item -Path c:/temp/${var.archive_name}/scripts/webapi.appsettings.production.json -Destination C:/inetpub/Ed-Fi/WebApi/appsettings.production.json"
+      "Set-Location c:/temp",
+      "Expand-Archive ./${var.web_api}.zip -Destination ./${var.web_api}",
+      "Set-Location c:/temp/${var.archive_name}/scripts/installers",
+      "./Install-WebApi.ps1",
+      "Copy-Item -Path c:/temp/${var.archive_name}/scripts/webapi.appsettings.production.json -Destination C:/inetpub/Ed-Fi/WebApi/appsettings.production.json"
     ]
   }
 
   provisioner "comment" {
     comment     = "Installing SwaggerUI"
     ui          = true
-    bubble_text =  false
+    bubble_text = false
   }
 
   provisioner "powershell" {
@@ -221,17 +222,17 @@ build {
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
     inline            = [
-        "Set-Location c:/temp",
-        "Expand-Archive ./${var.swagger_ui}.zip -Destination ./${var.swagger_ui}",
-        "Set-Location c:/temp/${var.archive_name}/scripts/installers",
-        "./Install-SwaggerUI.ps1"
+      "Set-Location c:/temp",
+      "Expand-Archive ./${var.swagger_ui}.zip -Destination ./${var.swagger_ui}",
+      "Set-Location c:/temp/${var.archive_name}/scripts/installers",
+      "./Install-SwaggerUI.ps1"
     ]
   }
 
   provisioner "comment" {
     comment     = "Installing Admin App"
     ui          = true
-    bubble_text =  false
+    bubble_text = false
   }
 
   provisioner "powershell" {
@@ -239,10 +240,10 @@ build {
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
     inline            = [
-        "Set-Location c:/temp",
-        "Expand-Archive ./${var.admin_app}.zip -Destination ./${var.admin_app}",
-        "Set-Location c:/temp/${var.archive_name}/scripts/installers",
-        "./Install-AdminApp.ps1"
+      "Set-Location c:/temp",
+      "Expand-Archive ./${var.admin_app}.zip -Destination ./${var.admin_app}",
+      "Set-Location c:/temp/${var.archive_name}/scripts/installers",
+      "./Install-AdminApp.ps1"
     ]
   }
 
@@ -251,8 +252,8 @@ build {
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
     inline            = [
-        "Remove-item c:/temp/* -Recurse -Force",
-        "Optimize-Volume -DriveLetter C"
+      "Remove-item c:/temp/* -Recurse -Force",
+      "Optimize-Volume -DriveLetter C"
     ]
   }
 
@@ -261,9 +262,9 @@ build {
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
     inline            = [
-        "Write-Host (\"Web Api => https://{0}/WebApi\" -f [Environment]::MachineName)",
-        "Write-Host (\"Admin App => https://{0}/AdminApp\" -f [Environment]::MachineName)",
-        "Write-Host (\"SwaggerUI => https://{0}/SwaggerUI\" -f [Environment]::MachineName)"
+      "Write-Host (\"Web Api => https://{0}/WebApi\" -f [Environment]::MachineName)",
+      "Write-Host (\"Admin App => https://{0}/AdminApp\" -f [Environment]::MachineName)",
+      "Write-Host (\"SwaggerUI => https://{0}/SwaggerUI\" -f [Environment]::MachineName)"
     ]
   }
 }
