@@ -164,8 +164,10 @@ function Install-PreRequisites() {
     choco install dotnetcore-sdk -y --ignore-pending-reboot --execution-timeout=$installTimeout
     choco install dotnetcore-3.1-windowshosting -y --ignore-pending-reboot --execution-timeout=$installTimeout
     choco install GoogleChrome -y --ignore-pending-reboot --ignore-checksums --execution-timeout=$installTimeout
-    choco install sql-server-2019 -y --params=`"'/IgnorePendingReboot'`" --execution-timeout=$installTimeout
+    choco install sql-server-express -y -o -ia "'/IACCEPTSQLSERVERLICENSETERMS /Q /ACTION=install /INSTANCEID=MSSQLSERVER /INSTANCENAME=MSSQLSERVER /TCPENABLED=1 /UPDATEENABLED=FALSE'" --execution-timeout=$installTimeout
     choco install sql-server-management-studio -y --ignore-pending-reboot --execution-timeout=$installTimeout
+
+    Install-Module -Name SqlServer -MinimumVersion '21.1.18068' -Scope CurrentUser -Force -AllowClobber
 
     Stop-Transcript
 }
