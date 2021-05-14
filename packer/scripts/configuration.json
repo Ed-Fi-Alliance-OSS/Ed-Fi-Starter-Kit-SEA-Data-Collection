@@ -8,7 +8,7 @@
     "ApiSettings": {
       "Mode": "YearSpecific",
       "Engine": "SQLServer",
-      "OdsTokens": [2021],
+      "OdsTokens": [2022],
       "Features": [
         {
           "Name": "OpenApiMetadata",
@@ -52,12 +52,12 @@
         }
       ],
       "ExcludedExtensions": [],
-      "OdsDatabaseTemplateName": "",
+      "OdsDatabaseTemplateName": "populated",
       "DropDatabases": false,
       "MinimalTemplateSuffix": "Ods_Minimal_Template",
       "PopulatedTemplateSuffix": "Ods_Populated_Template",
-      "MinimalTemplateScript": "",
-      "PopulatedTemplateScript": ""
+      "MinimalTemplateScript": "EdFiMinimalTemplate",
+      "PopulatedTemplateScript": "sampledata"
     },
     "Plugin": {
       "Folder": "",

@@ -15,5 +15,6 @@
   "web_api": "EdFi.Suite3.Installer.WebApi",
   "admin_app": "EdFi.Suite3.Installer.AdminApp",
   "swagger_ui": "EdFi.Suite3.Installer.SwaggerUI",
-  "databases": "EdFi.Suite3.RestApi.Databases"
+  "databases": "EdFi.Suite3.RestApi.Databases",
+  "sampledata": "EdFi.Ods.Populated.Template.SK"
 }
