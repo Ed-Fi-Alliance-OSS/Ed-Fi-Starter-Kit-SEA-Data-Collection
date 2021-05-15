@@ -19,6 +19,10 @@ variable "databases" {
   type    = string
 }
 
+variable "sampledata" {
+  type    = string
+}
+
 variable "cpus" {
   type    = string
   default = "2"
@@ -112,7 +116,8 @@ build {
         "${path.root}/build/${var.web_api}.zip",
         "${path.root}/build/${var.admin_app}.zip",
         "${path.root}/build/${var.swagger_ui}.zip",
-        "${path.root}/build/${var.databases}.zip"
+        "${path.root}/build/${var.databases}.zip",
+        "${path.root}/build/${var.sampledata}.zip"
     ]
   }
 
@@ -145,7 +150,9 @@ build {
     inline            = [
         "Set-Location c:/temp",
         "Expand-Archive ./${var.databases}.zip -Destination ./${var.databases}",
+        "Expand-Archive ./${var.sampledata}.zip -Destination ./${var.sampledata}",
         "Copy-Item -Path ./${var.archive_name}/scripts/configuration.json -Destination ./${var.databases}",
+        "Copy-Item -Path ./${var.archive_name}/scripts/sampledata.ps1 -Destination ./${var.databases}/Ed-Fi-ODS-Implementation/DatabaseTemplate/Scripts/",
         "Set-Location ./${var.databases}",
         "Import-Module -Force -Scope Global SqlServer",
         "Import-Module ./Deployment.psm1",
