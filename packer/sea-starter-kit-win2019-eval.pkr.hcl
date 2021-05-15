@@ -148,11 +148,14 @@ build {
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
     inline            = [
+        "New-Item -Path c:/ -Name plugin -ItemType directory",
         "Set-Location c:/temp",
         "Expand-Archive ./${var.databases}.zip -Destination ./${var.databases}",
         "Expand-Archive ./${var.sampledata}.zip -Destination ./${var.sampledata}",
         "Copy-Item -Path ./${var.archive_name}/scripts/configuration.json -Destination ./${var.databases}",
         "Copy-Item -Path ./${var.archive_name}/scripts/sampledata.ps1 -Destination ./${var.databases}/Ed-Fi-ODS-Implementation/DatabaseTemplate/Scripts/",
+        "Copy-Item -Path ./${var.archive_name}/scripts/sk.ps1 -Destination c:/plugin -Force",
+        "Copy-Item -Path ./${var.archive_name}/scripts/configuration.packages.json -Destination ./${var.databases}/Ed-Fi-ODS-Implementation/logistics/scripts -Force",
         "Set-Location ./${var.databases}",
         "Import-Module -Force -Scope Global SqlServer",
         "Import-Module ./Deployment.psm1",
@@ -174,7 +177,8 @@ build {
         "Set-Location c:/temp",
         "Expand-Archive ./${var.web_api}.zip -Destination ./${var.web_api}",
         "Set-Location c:/temp/${var.archive_name}/scripts/installers",
-        "./Install-WebApi.ps1"
+        "./Install-WebApi.ps1",
+        "Copy-Item -Path c:/temp/${var.archive_name}/scripts/webapi.appsettings.production.json -Destination C:/inetpub/Ed-Fi/WebApi/appsettings.production.json"
     ]
   }
 
