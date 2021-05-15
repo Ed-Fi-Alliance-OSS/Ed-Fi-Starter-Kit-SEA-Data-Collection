@@ -60,7 +60,7 @@
       "PopulatedTemplateScript": "sampledata"
     },
     "Plugin": {
-      "Folder": "",
-      "Scripts": []
+      "Folder": "c:/plugin",
+      "Scripts": ["sk"]
     }
   }
