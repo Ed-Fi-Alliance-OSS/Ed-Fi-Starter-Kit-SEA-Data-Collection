@@ -117,7 +117,7 @@ build {
   provisioner "file" {
     destination = "c:/temp/"
     sources     = [
-		"${path.root}/build/${var.landing_page}.zip",
+        "${path.root}/build/${var.landing_page}.zip",
         "${path.root}/build/${var.archive_name}.zip",
         "${path.root}/build/${var.web_api}.zip",
         "${path.root}/build/${var.admin_app}.zip",
@@ -171,11 +171,11 @@ build {
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
     inline            = [
-		"((Get-Content -path C:/Ed-Fi/docs/index.html -Raw) -replace '@@DOMAINNAME@@',[System.Net.Dns]::GetHostName()) | Set-Content -Path C:/Ed-Fi/docs/index.html",
+        "((Get-Content -path C:/Ed-Fi/docs/index.html -Raw) -replace '@@DOMAINNAME@@',[Environment]::MachineName) | Set-Content -Path C:/Ed-Fi/docs/index.html",
         "$Shell = New-Object -ComObject (\"WScript.Shell\")",
-		"$Shortcut = $Shell.CreateShortcut(\"C:/Users/Public/Desktop/SEA Modernization Starter Kit.lnk\")",
-		"$Shortcut.TargetPath = \"C:/Ed-Fi/docs/index.html\"",
-		"$Shortcut.Save()"
+		    "$Shortcut = $Shell.CreateShortcut(\"C:/Users/Public/Desktop/SEA Modernization Starter Kit.lnk\")",
+		    "$Shortcut.TargetPath = \"C:/Ed-Fi/docs/index.html\"",
+		    "$Shortcut.Save()"
     ]
   }
 
