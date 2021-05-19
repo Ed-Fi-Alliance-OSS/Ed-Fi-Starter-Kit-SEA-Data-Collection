@@ -5,23 +5,23 @@
 			<IdentificationCode>255900</IdentificationCode>
 			<EducationOrganizationIdentificationSystem>uri://ed-fi.org/EducationOrganizationIdentificationSystemDescriptor#NCES</EducationOrganizationIdentificationSystem>
 		</EducationOrganizationIdentificationCode>
-		<NameOfInstitution>Texas Education Agency</NameOfInstitution>
-		<ShortNameOfInstitution>TEA</ShortNameOfInstitution>
+		<NameOfInstitution>Starter Kit Department of Education</NameOfInstitution>
+		<ShortNameOfInstitution>SKDOE</ShortNameOfInstitution>
 		<EducationOrganizationCategory>uri://ed-fi.org/EducationOrganizationCategoryDescriptor#State Education Agency</EducationOrganizationCategory>
 		<Address>
-			<StreetNumberName>William B. Travis Bldg.</StreetNumberName>
-			<City>Austin</City>
+			<StreetNumberName>9020 W. Cedar St.</StreetNumberName>
+			<City>Hillside</City>
 			<StateAbbreviation>uri://ed-fi.org/StateAbbreviationDescriptor#TX</StateAbbreviation>
-			<PostalCode>78701</PostalCode>
-			<NameOfCounty>Travis</NameOfCounty>
+			<PostalCode>78200</PostalCode>
+			<NameOfCounty>Rodgers</NameOfCounty>
 			<AddressType>uri://ed-fi.org/AddressTypeDescriptor#Physical</AddressType>
 		</Address>
 		<Address>
-			<StreetNumberName>P.O. Box 898</StreetNumberName>
-			<City>Austin</City>
+			<StreetNumberName>P.O. Box 5150</StreetNumberName>
+			<City>Hillside</City>
 			<StateAbbreviation>uri://ed-fi.org/StateAbbreviationDescriptor#TX</StateAbbreviation>
-			<PostalCode>78701</PostalCode>
-			<NameOfCounty>Travis</NameOfCounty>
+			<PostalCode>78200</PostalCode>
+			<NameOfCounty>Rodgers</NameOfCounty>
 			<AddressType>uri://ed-fi.org/AddressTypeDescriptor#Mailing</AddressType>
 		</Address>
 		<InstitutionTelephone>
