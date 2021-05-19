@@ -171,6 +171,7 @@ build {
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
     inline            = [
+		"((Get-Content -path C:/Ed-Fi/docs/index.html -Raw) -replace '@@DOMAINNAME@@',[System.Net.Dns]::GetHostName()) | Set-Content -Path C:/Ed-Fi/docs/index.html",
         "$Shell = New-Object -ComObject (\"WScript.Shell\")",
 		"$Shortcut = $Shell.CreateShortcut(\"C:/Users/Public/Desktop/SEA Modernization Starter Kit.lnk\")",
 		"$Shortcut.TargetPath = \"C:/Ed-Fi/docs/index.html\"",

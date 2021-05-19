@@ -4,6 +4,7 @@
 *.iso
 *.txt
 *.zip
+*.png
 *.idea
 dist
 build
