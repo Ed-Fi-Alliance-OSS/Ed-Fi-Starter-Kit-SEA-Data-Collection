@@ -58,6 +58,9 @@ Invoke-PackageDownloads -ConfigPath $configPath -BuildPath $buildPath
 # Compress our PowerShell to a zip archive
 Compress-Archive -Path (Join-Path -Path $PSScriptRoot -ChildPath "scripts") -Destination  (Join-Path -Path $buildPath -ChildPath "scripts.zip") -Force
 
+# Compress landing page and resources to a zip archive
+Compress-Archive -Path (Join-Path -Path $PSScriptRoot -ChildPath "docs") -Destination  (Join-Path -Path $buildPath -ChildPath "docs.zip") -Force
+
 # Configure runtime environment vars
 Set-EnvironmentVariables -BuildPath $buildPath -LogsPath $logsPath
 

@@ -1,4 +1,9 @@
 
+
+variable "landing_page" {
+  type    = string
+}
+
 variable "archive_name" {
   type    = string
 }
@@ -112,6 +117,7 @@ build {
   provisioner "file" {
     destination = "c:/temp/"
     sources     = [
+		"${path.root}/build/${var.landing_page}.zip",
         "${path.root}/build/${var.archive_name}.zip",
         "${path.root}/build/${var.web_api}.zip",
         "${path.root}/build/${var.admin_app}.zip",
@@ -122,7 +128,7 @@ build {
   }
 
   provisioner "comment" {
-    comment     = "Exctacting ${var.archive_name}.zip to c:/temp/${var.archive_name}"
+    comment     = "Extracting ${var.archive_name}.zip to c:/temp/${var.archive_name}"
     ui          = true
     bubble_text = false
   }
@@ -134,6 +140,58 @@ build {
     inline            = [
         "Set-Location c:/temp",
         "Expand-Archive ./${var.archive_name}.zip -Destination ./${var.archive_name}"
+    ]
+  }
+  
+  provisioner "comment" {
+    comment     = "Extracting ${var.landing_page}.zip to c:/Ed-Fi"
+    ui          = true
+    bubble_text = false
+  }
+
+  provisioner "powershell" {
+    debug_mode        = "${var.debug_mode}"
+    elevated_password = "${var.user_name}"
+    elevated_user     = "${var.password}"
+    inline            = [
+		"New-Item -ItemType Directory -Path c:/Ed-Fi -Force | Out-Null",
+        "Set-Location c:/temp",
+        "Expand-Archive ./${var.landing_page}.zip -Destination c:/Ed-Fi"
+    ]
+  }
+  
+  provisioner "comment" {
+    comment     = "Create shortcut for landing page"
+    ui          = true
+    bubble_text = false
+  }
+
+  provisioner "powershell" {
+    debug_mode        = "${var.debug_mode}"
+    elevated_password = "${var.user_name}"
+    elevated_user     = "${var.password}"
+    inline            = [
+        "$Shell = New-Object -ComObject (\"WScript.Shell\")",
+		"$Shortcut = $Shell.CreateShortcut(\"C:/Users/Public/Desktop/SEA Modernization Starter Kit.lnk\")",
+		"$Shortcut.TargetPath = \"C:/Ed-Fi/docs/index.html\"",
+		"$Shortcut.Save()"
+    ]
+  }
+
+  provisioner "powershell" {
+    debug_mode        = "${var.debug_mode}"
+    elevated_password = "${var.user_name}"
+    elevated_user     = "${var.password}"
+    inline            = [
+        "Set-Location c:/temp",
+        "Expand-Archive ./${var.databases}.zip -Destination ./${var.databases}",
+        "Expand-Archive ./${var.sampledata}.zip -Destination ./${var.sampledata}",
+        "Copy-Item -Path ./${var.archive_name}/scripts/configuration.json -Destination ./${var.databases}",
+        "Copy-Item -Path ./${var.archive_name}/scripts/sampledata.ps1 -Destination ./${var.databases}/Ed-Fi-ODS-Implementation/DatabaseTemplate/Scripts/",
+        "Set-Location ./${var.databases}",
+        "Import-Module -Force -Scope Global SqlServer",
+        "Import-Module ./Deployment.psm1",
+        "Initialize-DeploymentEnvironment"
     ]
   }
 
