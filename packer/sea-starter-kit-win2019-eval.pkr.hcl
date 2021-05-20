@@ -34,7 +34,6 @@ variable "sampledata" {
 
 variable "cpus" {
   type = string
-  default = "2"
 }
 
 variable "debug_mode" {
@@ -182,13 +181,14 @@ build {
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
     inline            = [
-        "New-Item -Path c:/ -Name plugin -ItemType directory",
+      "$ErrorActionPreference = 'Stop'",
+      "New-Item -Path c:/ -Name plugin -ItemType directory",
       "Set-Location c:/temp",
       "Expand-Archive ./${var.databases}.zip -Destination ./${var.databases}",
-        "Expand-Archive ./${var.sampledata}.zip -Destination ./${var.sampledata}",
-      "Copy-Item -Path ./${var.archive_name}/scripts/configuration.json -Destination ./${var.databases}",
-        "Copy-Item -Path ./${var.archive_name}/scripts/sampledata.ps1 -Destination ./${var.databases}/Ed-Fi-ODS-Implementation/DatabaseTemplate/Scripts/",
-        "Copy-Item -Path ./${var.archive_name}/scripts/sk.ps1 -Destination c:/plugin -Force",
+      "Expand-Archive ./${var.sampledata}.zip -Destination ./${var.sampledata}",
+      "Copy-Item -Path ./${var.archive_name}/configuration.json -Destination ./${var.databases}",
+      "Copy-Item -Path ./${var.archive_name}/sampledata.ps1 -Destination ./${var.databases}/Ed-Fi-ODS-Implementation/DatabaseTemplate/Scripts/",
+      "Copy-Item -Path ./${var.archive_name}/scripts/sk.ps1 -Destination c:/plugin -Force",
       "Set-Location ./${var.databases}",
       "Import-Module -Force -Scope Global SqlServer",
       "Import-Module ./Deployment.psm1",
@@ -228,9 +228,10 @@ build {
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
     inline            = [
+      "$ErrorActionPreference = 'Stop'",
       "Set-Location c:/temp",
       "Expand-Archive ./${var.web_api}.zip -Destination ./${var.web_api}",
-      "Set-Location c:/temp/${var.archive_name}/scripts/installers",
+      "Set-Location c:/temp/${var.archive_name}/installers",
       "./Install-WebApi.ps1",
       "Copy-Item -Path c:/temp/${var.archive_name}/scripts/webapi.appsettings.production.json -Destination C:/inetpub/Ed-Fi/WebApi/appsettings.production.json"
     ]
@@ -247,9 +248,10 @@ build {
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
     inline            = [
+      "$ErrorActionPreference = 'Stop'",
       "Set-Location c:/temp",
       "Expand-Archive ./${var.swagger_ui}.zip -Destination ./${var.swagger_ui}",
-      "Set-Location c:/temp/${var.archive_name}/scripts/installers",
+      "Set-Location c:/temp/${var.archive_name}/installers",
       "./Install-SwaggerUI.ps1"
     ]
   }
@@ -265,9 +267,10 @@ build {
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
     inline            = [
+      "$ErrorActionPreference = 'Stop'",
       "Set-Location c:/temp",
       "Expand-Archive ./${var.admin_app}.zip -Destination ./${var.admin_app}",
-      "Set-Location c:/temp/${var.archive_name}/scripts/installers",
+      "Set-Location c:/temp/${var.archive_name}/installers",
       "./Install-AdminApp.ps1"
     ]
   }
@@ -277,6 +280,7 @@ build {
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
     inline            = [
+      "$ErrorActionPreference = 'Stop'",
       "Remove-item c:/temp/* -Recurse -Force",
       "Optimize-Volume -DriveLetter C"
     ]
@@ -287,6 +291,7 @@ build {
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
     inline            = [
+      "$ErrorActionPreference = 'Stop'",
       "Write-Host (\"Web Api => https://{0}/WebApi\" -f [Environment]::MachineName)",
       "Write-Host (\"Admin App => https://{0}/AdminApp\" -f [Environment]::MachineName)",
       "Write-Host (\"SwaggerUI => https://{0}/SwaggerUI\" -f [Environment]::MachineName)"

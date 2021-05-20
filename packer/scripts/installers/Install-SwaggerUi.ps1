@@ -5,7 +5,7 @@
 
 # imports
 $modulesPath = Join-Path -Path $PSScriptRoot -ChildPath "../modules"
-$installerPath = Join-Path -Path $PSScriptRoot -ChildPath "../../../EdFi.Suite3.Installer.SwaggerUI"
+$installerPath = Join-Path -Path $PSScriptRoot -ChildPath "../../EdFi.Suite3.Installer.SwaggerUI"
 
 Import-Module (Resolve-Path -Path (Join-Path -Path $modulesPath -ChildPath "config-helper.psm1")).Path -Force
 Import-Module (Resolve-Path -Path (Join-Path -Path $installerPath -ChildPath "Install-EdFiOdsSwaggerUI.psm1")).Path

@@ -56,7 +56,7 @@ Invoke-CreateFolders
 Invoke-PackageDownloads -ConfigPath $configPath -BuildPath $buildPath
 
 # Compress PowerShell to a zip archive
-Compress-Archive -Path (Join-Path -Path $PSScriptRoot -ChildPath "scripts") -Destination  (Join-Path -Path $buildPath -ChildPath "scripts.zip") -Force
+Compress-Archive -Path (Join-Path -Path $PSScriptRoot -ChildPath "scripts/*") -Destination  (Join-Path -Path $buildPath -ChildPath "scripts.zip") -Force
 
 # Compress Postman to a zip archive
 Compress-Archive -Path (Join-Path -Path $PSScriptRoot -ChildPath "../sample-api-calls/*") -Destination  (Join-Path -Path $buildPath -ChildPath "postman.zip") -Force
