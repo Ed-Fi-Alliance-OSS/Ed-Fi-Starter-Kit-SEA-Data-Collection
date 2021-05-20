@@ -144,7 +144,7 @@ build {
   }
   
   provisioner "comment" {
-    comment     = "Extracting ${var.landing_page}.zip to c:/Ed-Fi"
+    comment     = "Extracting ${var.landing_page}.zip to desktop"
     ui          = true
     bubble_text = false
   }
@@ -154,45 +154,10 @@ build {
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
     inline            = [
-		"New-Item -ItemType Directory -Path c:/Ed-Fi -Force | Out-Null",
         "Set-Location c:/temp",
-        "Expand-Archive ./${var.landing_page}.zip -Destination c:/Ed-Fi"
-    ]
-  }
-  
-  provisioner "comment" {
-    comment     = "Create shortcut for landing page"
-    ui          = true
-    bubble_text = false
-  }
-
-  provisioner "powershell" {
-    debug_mode        = "${var.debug_mode}"
-    elevated_password = "${var.user_name}"
-    elevated_user     = "${var.password}"
-    inline            = [
-        "((Get-Content -path C:/Ed-Fi/docs/index.html -Raw) -replace '@@DOMAINNAME@@',[Environment]::MachineName) | Set-Content -Path C:/Ed-Fi/docs/index.html",
-        "$Shell = New-Object -ComObject (\"WScript.Shell\")",
-		    "$Shortcut = $Shell.CreateShortcut(\"C:/Users/Public/Desktop/SEA Modernization Starter Kit.lnk\")",
-		    "$Shortcut.TargetPath = \"C:/Ed-Fi/docs/index.html\"",
-		    "$Shortcut.Save()"
-    ]
-  }
-
-  provisioner "powershell" {
-    debug_mode        = "${var.debug_mode}"
-    elevated_password = "${var.user_name}"
-    elevated_user     = "${var.password}"
-    inline            = [
-        "Set-Location c:/temp",
-        "Expand-Archive ./${var.databases}.zip -Destination ./${var.databases}",
-        "Expand-Archive ./${var.sampledata}.zip -Destination ./${var.sampledata}",
-        "Copy-Item -Path ./${var.archive_name}/scripts/configuration.json -Destination ./${var.databases}",
-        "Copy-Item -Path ./${var.archive_name}/scripts/sampledata.ps1 -Destination ./${var.databases}/Ed-Fi-ODS-Implementation/DatabaseTemplate/Scripts/",
-        "Set-Location ./${var.databases}",
-        "Import-Module -Force -Scope Global SqlServer",
-        "Import-Module ./Deployment.psm1",
-        "Initialize-DeploymentEnvironment"
+        "Expand-Archive ./${var.landing_page}.zip -Destination ./${var.landing_page}",
+        "((Get-Content -path \"./${var.landing_page}/docs/SEA Modernization Starter Kit.html\" -Raw) -replace '@@DOMAINNAME@@',[Environment]::MachineName) | Set-Content -Path \"./${var.landing_page}/docs/SEA Modernization Starter Kit.html\"",
+        "Copy-Item -Path \"./${var.landing_page}/docs/SEA Modernization Starter Kit.html\" -Destination C:/Users/Public/Desktop"
     ]
   }
 
