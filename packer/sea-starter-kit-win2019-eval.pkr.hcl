@@ -211,8 +211,6 @@ build {
       "Set-Location c:/temp",
       "Expand-Archive ./${var.postman}.zip -Destination c:/${var.starter_kit_directory}",
       "Set-Location c:/temp/scripts",
-      "ls c:/temp",
-      "ls c:/temp/scripts",
       "./postman-setup.ps1"
     ]
   }
