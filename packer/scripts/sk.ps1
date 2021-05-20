@@ -8,15 +8,12 @@
 Import-Module (Get-RepositoryResolvedPath 'logistics/scripts/modules/packaging/nuget-helper.psm1')
 Import-Module (Get-RepositoryResolvedPath "logistics/scripts/modules/tools/ToolsHelper.psm1")
 
-$configurationFile = (Get-RepositoryResolvedPath 'logistics/scripts/configuration.packages.json')
-$configuration = (Get-Content $configurationFile | ConvertFrom-Json).packages.sk
-
 $pluginPaths = @()
 
 $parameters = @{
-    packageName     = $configuration.packageName
-    packageVersion  = $configuration.packageVersion
-    packageSource   = $configuration.packageSource
+    packageName     = "EdFi.Ods.Extensions.Sk"
+    packageVersion  = "1.0.46"
+    packageSource   = "https://pkgs.dev.azure.com/ed-fi-alliance/Ed-Fi-Alliance-OSS/_packaging/EdFi/nuget/v3/index.json"
     outputDirectory = "$PSScriptRoot"
     toolsPath       = (Get-ToolsPath)
 }

@@ -155,7 +155,6 @@ build {
         "Copy-Item -Path ./${var.archive_name}/scripts/configuration.json -Destination ./${var.databases}",
         "Copy-Item -Path ./${var.archive_name}/scripts/sampledata.ps1 -Destination ./${var.databases}/Ed-Fi-ODS-Implementation/DatabaseTemplate/Scripts/",
         "Copy-Item -Path ./${var.archive_name}/scripts/sk.ps1 -Destination c:/plugin -Force",
-        "Copy-Item -Path ./${var.archive_name}/scripts/configuration.packages.json -Destination ./${var.databases}/Ed-Fi-ODS-Implementation/logistics/scripts -Force",
         "Set-Location ./${var.databases}",
         "Import-Module -Force -Scope Global SqlServer",
         "Import-Module ./Deployment.psm1",
