@@ -85,6 +85,10 @@ variable "base_image_directory" {
   type = string
 }
 
+variable "starter_kit_directory" {
+  type = string
+}
+
 packer {
   required_plugins {
     comment = {
@@ -143,9 +147,9 @@ build {
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
     inline            = [
+      "$ErrorActionPreference = 'Stop'",
       "Set-Location c:/temp",
-      "Expand-Archive ./${var.archive_name}.zip -Destination ./${var.archive_name}",
-      "Expand-Archive ./${var.postman}.zip -Destination \"c:/SEA Modernization Starter Kit\""
+      "Expand-Archive ./${var.archive_name}.zip -Destination ./${var.archive_name}"
     ]
   }
   
@@ -189,6 +193,27 @@ build {
       "Import-Module -Force -Scope Global SqlServer",
       "Import-Module ./Deployment.psm1",
       "Initialize-DeploymentEnvironment"
+    ]
+  }
+
+  provisioner "comment" {
+    comment     = "Postman Setup"
+    ui          = true
+    bubble_text = false
+  }
+
+  provisioner "powershell" {
+    debug_mode        = "${var.debug_mode}"
+    elevated_password = "${var.user_name}"
+    elevated_user     = "${var.password}"
+    inline            = [
+      "$ErrorActionPreference = 'Stop'",
+      "Set-Location c:/temp",
+      "Expand-Archive ./${var.postman}.zip -Destination c:/${var.starter_kit_directory}",
+      "Set-Location c:/temp/scripts",
+      "ls c:/temp",
+      "ls c:/temp/scripts",
+      "./postman-setup.ps1"
     ]
   }
 
