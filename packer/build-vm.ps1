@@ -59,7 +59,7 @@ Invoke-PackageDownloads -ConfigPath $configPath -BuildPath $buildPath
 Compress-Archive -Path (Join-Path -Path $PSScriptRoot -ChildPath "scripts/*") -Destination  (Join-Path -Path $buildPath -ChildPath "scripts.zip") -Force
 
 # Compress Postman to a zip archive
-Compress-Archive -Path (Join-Path -Path $PSScriptRoot -ChildPath "../sample-api-calls/*") -Destination  (Join-Path -Path $buildPath -ChildPath "postman.zip") -Force
+Compress-Archive -Path (Join-Path -Path $PSScriptRoot -ChildPath "../sample-api-calls/*.json") -Destination  (Join-Path -Path $buildPath -ChildPath "postman.zip") -Force
 
 # Compress landing page and resources to a zip archive
 Compress-Archive -Path (Join-Path -Path $PSScriptRoot -ChildPath "docs") -Destination  (Join-Path -Path $buildPath -ChildPath "docs.zip") -Force
