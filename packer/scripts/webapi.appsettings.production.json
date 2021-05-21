@@ -1,0 +1,6 @@
+{
+  "Plugin": {
+    "Folder": "c:/plugin",
+    "Scripts": ["sk"]
+  }
+}
