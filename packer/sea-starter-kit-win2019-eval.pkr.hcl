@@ -124,7 +124,7 @@ build {
   provisioner "file" {
     destination = "c:/temp/"
     sources     = [
-        "${path.root}/build/${var.landing_page}.zip",
+      "${path.root}/build/${var.landing_page}.zip",
       "${path.root}/build/${var.archive_name}.zip",
       "${path.root}/build/${var.web_api}.zip",
       "${path.root}/build/${var.admin_app}.zip",
@@ -151,7 +151,7 @@ build {
       "Expand-Archive ./${var.archive_name}.zip -Destination ./${var.archive_name}"
     ]
   }
-  
+
   provisioner "comment" {
     comment     = "Extracting ${var.landing_page}.zip to desktop"
     ui          = true
@@ -188,7 +188,7 @@ build {
       "Expand-Archive ./${var.sampledata}.zip -Destination ./${var.sampledata}",
       "Copy-Item -Path ./${var.archive_name}/configuration.json -Destination ./${var.databases}",
       "Copy-Item -Path ./${var.archive_name}/sampledata.ps1 -Destination ./${var.databases}/Ed-Fi-ODS-Implementation/DatabaseTemplate/Scripts/",
-      "Copy-Item -Path ./${var.archive_name}/scripts/sk.ps1 -Destination c:/plugin -Force",
+      "Copy-Item -Path ./${var.archive_name}/sk.ps1 -Destination c:/plugin -Force",
       "Set-Location ./${var.databases}",
       "Import-Module -Force -Scope Global SqlServer",
       "Import-Module ./Deployment.psm1",
@@ -210,7 +210,7 @@ build {
       "$ErrorActionPreference = 'Stop'",
       "Set-Location c:/temp",
       "Expand-Archive ./${var.postman}.zip -Destination c:/${var.starter_kit_directory}",
-      "Set-Location c:/temp/scripts",
+      "Set-Location c:/temp/${var.archive_name}",
       "./postman-setup.ps1"
     ]
   }
@@ -231,7 +231,7 @@ build {
       "Expand-Archive ./${var.web_api}.zip -Destination ./${var.web_api}",
       "Set-Location c:/temp/${var.archive_name}/installers",
       "./Install-WebApi.ps1",
-      "Copy-Item -Path c:/temp/${var.archive_name}/scripts/webapi.appsettings.production.json -Destination C:/inetpub/Ed-Fi/WebApi/appsettings.production.json"
+      "Copy-Item -Path c:/temp/${var.archive_name}/webapi.appsettings.production.json -Destination C:/inetpub/Ed-Fi/WebApi/appsettings.production.json"
     ]
   }
 

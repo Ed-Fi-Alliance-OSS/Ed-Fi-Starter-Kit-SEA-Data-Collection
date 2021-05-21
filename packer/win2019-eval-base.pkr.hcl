@@ -135,12 +135,12 @@ build {
     elevated_user     = "${var.password}"
     inline            = [
         "Set-Location c:/temp",
-        "Expand-Archive ./${var.archive_name}.zip -Destination ."
+        "Expand-Archive ./${var.archive_name}.zip -Destination ./${var.archive_name}"
     ]
   }
 
   provisioner "comment" {
-    comment          = "Executing c:/temp/scripts/server-setup.ps1"
+    comment          = "Executing c:/temp/${var.archive_name}/server-setup.ps1"
     ui               = true
     bubble_text      = false
   }
@@ -150,7 +150,7 @@ build {
     elevated_password = "${var.user_name}"
     elevated_user     = "${var.password}"
     inline            = [
-        "Set-Location c:/temp/scripts/",
+        "Set-Location c:/temp/${var.archive_name}/",
         "./server-setup.ps1",
         "Set-Location c:/",
         "Remove-item c:/temp/* -Recurse -Force",
