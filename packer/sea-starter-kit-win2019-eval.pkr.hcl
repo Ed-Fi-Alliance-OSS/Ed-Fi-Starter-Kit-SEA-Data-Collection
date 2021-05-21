@@ -1,4 +1,9 @@
 
+
+variable "landing_page" {
+  type    = string
+}
+
 variable "archive_name" {
   type    = string
 }
@@ -112,6 +117,7 @@ build {
   provisioner "file" {
     destination = "c:/temp/"
     sources     = [
+        "${path.root}/build/${var.landing_page}.zip",
         "${path.root}/build/${var.archive_name}.zip",
         "${path.root}/build/${var.web_api}.zip",
         "${path.root}/build/${var.admin_app}.zip",
@@ -122,7 +128,7 @@ build {
   }
 
   provisioner "comment" {
-    comment     = "Exctacting ${var.archive_name}.zip to c:/temp/${var.archive_name}"
+    comment     = "Extracting ${var.archive_name}.zip to c:/temp/${var.archive_name}"
     ui          = true
     bubble_text = false
   }
@@ -134,6 +140,24 @@ build {
     inline            = [
         "Set-Location c:/temp",
         "Expand-Archive ./${var.archive_name}.zip -Destination ./${var.archive_name}"
+    ]
+  }
+  
+  provisioner "comment" {
+    comment     = "Extracting ${var.landing_page}.zip to desktop"
+    ui          = true
+    bubble_text = false
+  }
+
+  provisioner "powershell" {
+    debug_mode        = "${var.debug_mode}"
+    elevated_password = "${var.user_name}"
+    elevated_user     = "${var.password}"
+    inline            = [
+        "Set-Location c:/temp",
+        "Expand-Archive ./${var.landing_page}.zip -Destination ./${var.landing_page}",
+        "((Get-Content -path \"./${var.landing_page}/docs/SEA Modernization Starter Kit.html\" -Raw) -replace '@@DOMAINNAME@@',[Environment]::MachineName) | Set-Content -Path \"./${var.landing_page}/docs/SEA Modernization Starter Kit.html\"",
+        "Copy-Item -Path \"./${var.landing_page}/docs/SEA Modernization Starter Kit.html\" -Destination C:/Users/Public/Desktop"
     ]
   }
 
