@@ -13,9 +13,11 @@
   "password": "vagrant",
   "archive_name": "scripts",
   "landing_page": "docs",
+  "postman": "postman",
   "web_api": "EdFi.Suite3.Installer.WebApi",
   "admin_app": "EdFi.Suite3.Installer.AdminApp",
   "swagger_ui": "EdFi.Suite3.Installer.SwaggerUI",
   "databases": "EdFi.Suite3.RestApi.Databases",
-  "sampledata": "EdFi.Ods.Populated.Template.SK"
+  "sampledata": "EdFi.Ods.Populated.Template.SK",
+  "starter_kit_directory": "Ed-Fi-Starter-Kit"
 }
