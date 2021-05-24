@@ -114,8 +114,8 @@ build {
 
   provisioner "powershell" {
     debug_mode        = "${var.debug_mode}"
-    elevated_password = "${var.user_name}"
-    elevated_user     = "${var.password}"
+    elevated_password = "${var.password}"
+    elevated_user     = "${var.user_name}"
     inline            = [
         "Set-ExecutionPolicy bypass -Scope CurrentUser -Force;",
         "Install-PackageProvider -Name NuGet -MinimumVersion \"2.8.5.201\" -Scope AllUsers -Force",
@@ -131,8 +131,8 @@ build {
 
   provisioner "powershell" {
     debug_mode        = "${var.debug_mode}"
-    elevated_password = "${var.user_name}"
-    elevated_user     = "${var.password}"
+    elevated_password = "${var.password}"
+    elevated_user     = "${var.user_name}"
     inline            = [
         "Set-Location c:/temp",
         "Expand-Archive ./${var.archive_name}.zip -Destination ./${var.archive_name}"
@@ -147,8 +147,8 @@ build {
 
   provisioner "powershell" {
     debug_mode        = "${var.debug_mode}"
-    elevated_password = "${var.user_name}"
-    elevated_user     = "${var.password}"
+    elevated_password = "${var.password}"
+    elevated_user     = "${var.user_name}"
     inline            = [
         "Set-Location c:/temp/${var.archive_name}/",
         "./server-setup.ps1",
