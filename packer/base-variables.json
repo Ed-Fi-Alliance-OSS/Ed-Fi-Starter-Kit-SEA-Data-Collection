@@ -11,8 +11,8 @@
   "version": "0.1.0",
   "vm_name": "ed-fi-starter-kit",
   "distribution_directory": "dist",
-  "user_name": "vagrant",
-  "password": "vagrant",
+  "user_name": "Administrator",
+  "password": "EdFi!sCool",
   "archive_name": "scripts",
   "vm_switch": ""
 }

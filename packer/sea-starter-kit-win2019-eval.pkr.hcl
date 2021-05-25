@@ -143,8 +143,8 @@ build {
 
   provisioner "powershell" {
     debug_mode        = "${var.debug_mode}"
-    elevated_password = "${var.user_name}"
-    elevated_user     = "${var.password}"
+    elevated_password = "${var.password}"
+    elevated_user     = "${var.user_name}"
     inline            = [
       "$ErrorActionPreference = 'Stop'",
       "Set-Location c:/temp",
@@ -160,8 +160,8 @@ build {
 
   provisioner "powershell" {
     debug_mode        = "${var.debug_mode}"
-    elevated_password = "${var.user_name}"
-    elevated_user     = "${var.password}"
+    elevated_password = "${var.password}"
+    elevated_user     = "${var.user_name}"
     inline            = [
         "Set-Location c:/temp",
         "Expand-Archive ./${var.landing_page}.zip -Destination ./${var.landing_page}",
@@ -178,8 +178,8 @@ build {
 
   provisioner "powershell" {
     debug_mode        = "${var.debug_mode}"
-    elevated_password = "${var.user_name}"
-    elevated_user     = "${var.password}"
+    elevated_password = "${var.password}"
+    elevated_user     = "${var.user_name}"
     inline            = [
       "$ErrorActionPreference = 'Stop'",
       "New-Item -Path c:/ -Name plugin -ItemType directory",
@@ -204,8 +204,8 @@ build {
 
   provisioner "powershell" {
     debug_mode        = "${var.debug_mode}"
-    elevated_password = "${var.user_name}"
-    elevated_user     = "${var.password}"
+    elevated_password = "${var.password}"
+    elevated_user     = "${var.user_name}"
     inline            = [
       "$ErrorActionPreference = 'Stop'",
       "Set-Location c:/temp",
@@ -223,8 +223,8 @@ build {
 
   provisioner "powershell" {
     debug_mode        = "${var.debug_mode}"
-    elevated_password = "${var.user_name}"
-    elevated_user     = "${var.password}"
+    elevated_password = "${var.password}"
+    elevated_user     = "${var.user_name}"
     inline            = [
       "$ErrorActionPreference = 'Stop'",
       "Set-Location c:/temp",
@@ -243,8 +243,8 @@ build {
 
   provisioner "powershell" {
     debug_mode        = "${var.debug_mode}"
-    elevated_password = "${var.user_name}"
-    elevated_user     = "${var.password}"
+    elevated_password = "${var.password}"
+    elevated_user     = "${var.user_name}"
     inline            = [
       "$ErrorActionPreference = 'Stop'",
       "Set-Location c:/temp",
@@ -262,8 +262,8 @@ build {
 
   provisioner "powershell" {
     debug_mode        = "${var.debug_mode}"
-    elevated_password = "${var.user_name}"
-    elevated_user     = "${var.password}"
+    elevated_password = "${var.password}"
+    elevated_user     = "${var.user_name}"
     inline            = [
       "$ErrorActionPreference = 'Stop'",
       "Set-Location c:/temp",
@@ -275,8 +275,8 @@ build {
 
   provisioner "powershell" {
     debug_mode        = "${var.debug_mode}"
-    elevated_password = "${var.user_name}"
-    elevated_user     = "${var.password}"
+    elevated_password = "${var.password}"
+    elevated_user     = "${var.user_name}"
     inline            = [
       "$ErrorActionPreference = 'Stop'",
       "Remove-item c:/temp/* -Recurse -Force",
@@ -286,8 +286,8 @@ build {
 
   provisioner "powershell" {
     debug_mode        = "${var.debug_mode}"
-    elevated_password = "${var.user_name}"
-    elevated_user     = "${var.password}"
+    elevated_password = "${var.password}"
+    elevated_user     = "${var.user_name}"
     inline            = [
       "$ErrorActionPreference = 'Stop'",
       "Write-Host (\"Web Api => https://{0}/WebApi\" -f [Environment]::MachineName)",
