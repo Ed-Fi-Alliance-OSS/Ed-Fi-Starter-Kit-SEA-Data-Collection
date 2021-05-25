@@ -18,7 +18,7 @@
             "package_name": "EdFi.Suite3.RestApi.Databases"
         },
 		"sampledata": {
-            "version": "1.0.56",
+            "version": "1.0.57",
             "package_name": "EdFi.Ods.Populated.Template.SK"
         }
     }
