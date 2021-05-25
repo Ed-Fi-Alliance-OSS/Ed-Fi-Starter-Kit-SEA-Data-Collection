@@ -5,12 +5,12 @@
 
 IF NOT EXISTS (SELECT name FROM sys.schemas WHERE name = N'reporting')
 BEGIN
-	EXEC('CREATE SCHEMA [reporting]');
+    EXEC('CREATE SCHEMA [reporting]');
 END
 GO
 
 IF NOT EXISTS (SELECT name FROM sys.schemas WHERE name = N'validation')
 BEGIN
-	EXEC('CREATE SCHEMA [validation]');
+    EXEC('CREATE SCHEMA [validation]');
 END
 GO
