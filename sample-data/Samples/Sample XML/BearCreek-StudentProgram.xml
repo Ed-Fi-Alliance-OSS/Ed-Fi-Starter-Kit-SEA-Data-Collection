@@ -4858,9 +4858,11 @@
 		<IEPBeginDate>2021-09-01</IEPBeginDate>
 		<Disability>
 			<Disability>uri://ed-fi.org/DisabilityDescriptor#Other Health Impairment</Disability>
+			<OrderOfDisability>2</OrderOfDisability>
 		</Disability>
 		<Disability>
 			<Disability>uri://ed-fi.org/DisabilityDescriptor#Sensory impairment</Disability>
+			<OrderOfDisability>1</OrderOfDisability>
 		</Disability>
 	</StudentSpecialEducationProgramAssociation>
 	<StudentSpecialEducationProgramAssociation>

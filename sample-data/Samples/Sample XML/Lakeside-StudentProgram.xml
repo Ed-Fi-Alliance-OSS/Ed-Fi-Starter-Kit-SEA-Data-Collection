@@ -3030,9 +3030,11 @@
 		<IEPBeginDate>2021-09-01</IEPBeginDate>
 		<Disability>
 			<Disability>uri://ed-fi.org/DisabilityDescriptor#Physical Disability</Disability>
+			<OrderOfDisability>1</OrderOfDisability>
 		</Disability>
 		<Disability>
 			<Disability>uri://ed-fi.org/DisabilityDescriptor#Sensory impairment</Disability>
+			<OrderOfDisability>2</OrderOfDisability>
 		</Disability>
 		<SpecialEducationProgramService>
 			<SpecialEducationProgramService>uri://ed-fi.org/SpecialEducationProgramServiceDescriptor#Early Identification And Evaluation</SpecialEducationProgramService>
