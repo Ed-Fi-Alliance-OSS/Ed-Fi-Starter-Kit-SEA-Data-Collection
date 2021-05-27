@@ -30,6 +30,12 @@ function Get-SKConfiguration([hashtable] $config = @{ }) {
     return $config
 }
 
+function Copy-Plugins() {
+    $sourcePath = "$PSScriptRoot/../../sample-data/plugin/*"
+	$destinationPath = "$PSScriptRoot/../../../Ed-Fi-ODS-Implementation/plugin"
+	Copy-item -Force -Recurse -Verbose $sourcePath -Destination $destinationPath
+}
+
 Set-Alias -Scope Global initpop Initialize-PopulatedTemplate
 function Initialize-SKTemplate {
     <#
@@ -103,6 +109,7 @@ function Initialize-SKTemplate {
             $script:result += Invoke-Task 'Invoke-SetTestHarnessConfig' { Invoke-SetTestHarnessConfig $config }
             $script:result += Invoke-Task 'Remove-Plugins' { Remove-Plugins $config.appSettings }
             $script:result += Invoke-Task 'Get-Plugins' { Get-Plugins $config.appSettings }
+			$script:result += Invoke-Task 'Copy-Plugins' { Copy-Plugins }
             $script:result += Invoke-Task 'Invoke-SampleXmlValidation' { Invoke-SampleXmlValidation $config }
             $script:result += Invoke-Task 'New-TempDirectory' { New-TempDirectory $config }
             $script:result += Invoke-Task 'Copy-BootstrapInterchangeFiles' { Copy-BootstrapInterchangeFiles $config }
