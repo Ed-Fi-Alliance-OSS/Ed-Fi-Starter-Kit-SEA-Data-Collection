@@ -11,7 +11,7 @@ Import-Module -Force -Scope Global (Get-RepositoryResolvedPath "DatabaseTemplate
 function Get-SKConfiguration([hashtable] $config = @{ }) {
     $env:toolsPath = "$PSScriptRoot/../../../Ed-Fi-ODS-Implementation/tools/"
     $config = Merge-Hashtables (Get-DefaultTemplateConfiguration), $config
-    $config.appSettings.Plugin.Folder = "../../sample-data/plugin"
+    $config.appSettings.Plugin.Folder = "$PSScriptRoot/../../../Ed-Fi-ODS-Implementation/plugin"
     $config.appSettings.Plugin.Scripts = @("sk")
 
     $config.testHarnessJsonConfigLEAs = @(255902, 255903)
@@ -30,7 +30,8 @@ function Get-SKConfiguration([hashtable] $config = @{ }) {
     return $config
 }
 
-function Copy-Plugins() {
+function Copy-PluginScripts() {
+    #Copy plugin scripts to Ed-Fi-ODS-Implementation
     $sourcePath = "$PSScriptRoot/../../sample-data/plugin/*"
 	$destinationPath = "$PSScriptRoot/../../../Ed-Fi-ODS-Implementation/plugin"
 	Copy-item -Force -Recurse -Verbose $sourcePath -Destination $destinationPath
@@ -88,6 +89,7 @@ function Initialize-SKTemplate {
     )
 
     Clear-Error
+    Copy-PluginScripts
 
     $paramConfig = @{
         samplePath              = $samplePath
@@ -109,7 +111,6 @@ function Initialize-SKTemplate {
             $script:result += Invoke-Task 'Invoke-SetTestHarnessConfig' { Invoke-SetTestHarnessConfig $config }
             $script:result += Invoke-Task 'Remove-Plugins' { Remove-Plugins $config.appSettings }
             $script:result += Invoke-Task 'Get-Plugins' { Get-Plugins $config.appSettings }
-			$script:result += Invoke-Task 'Copy-Plugins' { Copy-Plugins }
             $script:result += Invoke-Task 'Invoke-SampleXmlValidation' { Invoke-SampleXmlValidation $config }
             $script:result += Invoke-Task 'New-TempDirectory' { New-TempDirectory $config }
             $script:result += Invoke-Task 'Copy-BootstrapInterchangeFiles' { Copy-BootstrapInterchangeFiles $config }
