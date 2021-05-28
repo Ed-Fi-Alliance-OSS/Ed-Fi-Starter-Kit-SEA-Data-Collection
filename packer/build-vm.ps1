@@ -21,12 +21,9 @@ param(
     [string] [Parameter(Mandatory = $true)] $VariablesFile,
     [string] $VMSwitch = "packer-hyperv-iso",
     [string] $ISOUrl = $null,
-    [switch] $SkipCreateVMSwitch = $false,
     [switch] $SkipRunPacker = $false
 )
 
-#Requires -RunAsAdministrator
-#Requires -Version 5
 
 #imports
 $modulesPath = Join-Path -Path $PSScriptRoot -ChildPath "scripts/modules"
@@ -66,10 +63,6 @@ Compress-Archive -Path (Join-Path -Path $PSScriptRoot -ChildPath "docs") -Destin
 
 # Configure runtime environment vars
 Set-EnvironmentVariables -BuildPath $buildPath -LogsPath $logsPath
-
-# Configure VMSwitch
-if (-not ($SkipCreateVMSwitch)) { Invoke-CreateVMSwitch -VMSwitch $VMSwitch}
-else { Write-Output "Skipping VM Switch validation and creation." }
 
 # Kick off the packer build with the force to override prior builds
 if (-not ($SkipRunPacker)) {
