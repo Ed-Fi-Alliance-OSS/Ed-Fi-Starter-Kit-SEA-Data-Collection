@@ -71,7 +71,6 @@ BEGIN
         AND sch_Reporting.LocalEducationAgencyId = med.LocalEducationAgencyId
     INNER JOIN edfi.Descriptor d_gradelevel ON
         ssa.EntryGradeLevelDescriptorId = d_gradelevel.DescriptorId
-        AND d_gradelevel.Namespace like '%ed-fi.org/GradeLevel%'
     WHERE
         med.total_fte >= CASE WHEN d_gradelevel.CodeValue IN ('hp', 'pk') THEN 0 else 51 END
         AND (ssa.ExitWithdrawDate IS NULL OR ssa.ExitWithdrawDate >= @searchDate)
@@ -82,7 +81,7 @@ BEGIN
         total_fte;
 
     RETURN;
-END
+END;
 GO
 
 CREATE OR ALTER FUNCTION reporting.GetMinimalSchoolReportingId
@@ -465,3 +464,111 @@ BEGIN
 END;
 GO
 
+CREATE OR ALTER FUNCTION reporting.GetSpedBeginDate
+(
+    @searchDate DATE
+)
+RETURNS @ResultTable TABLE
+(
+    StudentUSI INT,
+    ProgramEducationOrganizationId INT,
+    BeginDate DATE,
+    INDEX idx_SpedBeginDate CLUSTERED (StudentUSI, ProgramEducationOrganizationId)
+)
+AS
+BEGIN
+    INSERT INTO @ResultTable (StudentUSI, ProgramEducationOrganizationId, BeginDate)
+    SELECT
+        gspa.StudentUSI,
+        gspa.ProgramEducationOrganizationId,
+        BeginDate = MIN(gspa.BeginDate)
+    FROM edfi.GeneralStudentProgramAssociation gspa WITH(NOLOCK)
+    INNER JOIN edfi.StudentSpecialEducationProgramAssociation ssepa WITH(NOLOCK) ON
+        gspa.StudentUSI = ssepa.StudentUSI
+        AND gspa.EducationOrganizationId = ssepa.EducationOrganizationId
+        AND gspa.ProgramEducationOrganizationId = ssepa.ProgramEducationOrganizationId
+        AND gspa.BeginDate = ssepa.BeginDate
+        AND gspa.ProgramTypeDescriptorId = ssepa.ProgramTypeDescriptorId
+        AND gspa.ProgramName = ssepa.ProgramName
+    WHERE gspa.ProgramName = 'Special Education'
+        AND (gspa.EndDate IS NULL OR gspa.EndDate >= @searchDate)
+        AND gspa.BeginDate <= @searchDate
+    GROUP BY
+        gspa.StudentUSI,
+        gspa.ProgramEducationOrganizationId
+
+    RETURN;
+END;
+GO
+
+CREATE OR ALTER FUNCTION reporting.GetAllDisablitites
+(
+    @searchDate DATE
+)
+RETURNS @ResultTable TABLE
+(
+    BeginDate DATE,
+    ProgramEducationOrganizationId INT,
+    StudentUSI INT,
+    CodeValue NVARCHAR(50),
+    ShortDescription NVARCHAR(75),
+    OrderOfDisability INT,
+    INDEX idx_allDisabilities CLUSTERED (BeginDate, ProgramEducationOrganizationId, StudentUSI, CodeValue, ShortDescription, OrderOfDisability)
+)
+AS
+BEGIN
+    INSERT INTO @ResultTable (BeginDate, ProgramEducationOrganizationId, StudentUSI, CodeValue, ShortDescription, OrderOfDisability)
+    SELECT DISTINCT
+        ssepad.BeginDate,
+        ssepad.ProgramEducationOrganizationId,
+        ssepad.StudentUSI,
+        d.CodeValue,
+        d.ShortDescription,
+        OrderOfDisability = COALESCE(ssepad.OrderOfDisability,1)
+    FROM edfi.StudentSpecialEducationProgramAssociationDisability ssepad WITH(NOLOCK)
+    INNER JOIN edfi.Descriptor d WITH(NOLOCK) ON
+        ssepad.DisabilityDescriptorId = d.DescriptorId
+    INNER JOIN reporting.GetSpedBeginDate(@searchDate) smbd ON
+        ssepad.studentusi = smbd.studentusi
+        AND ssepad.ProgramEducationOrganizationId = smbd.ProgramEducationOrganizationId
+        AND ssepad.BeginDate = smbd.BeginDate
+
+    RETURN;
+END;
+GO
+
+CREATE OR ALTER FUNCTION reporting.GetSpedProgramServices
+(
+)
+RETURNS @ResultTable TABLE
+(
+    BeginDate DATE,
+    StudentUSI INT,
+    ProgramEducationOrganizationId INT,
+    OT NVARCHAR(1),
+    SL NVARCHAR(1),
+    INDEX idx_Services (BeginDate, StudentUSI, ProgramEducationOrganizationId)
+)
+AS
+BEGIN
+    INSERT INTO @ResultTable (BeginDate, StudentUSI, ProgramEducationOrganizationId, OT, SL)
+    SELECT
+        spas.BeginDate,
+        spas.StudentUSI,
+        spas.ProgramEducationOrganizationId,
+        OT = MAX(CASE d.CodeValue WHEN 'Occupational And Physical Therapy' then 'Y' else 'N' END),
+        SL = MAX(CASE d.CodeValue WHEN 'Speech-Language And Audiology Services' THEN 'Y' ELSE 'N' END)
+    FROM edfi.StudentSpecialEducationProgramAssociationSpecialEducationProgramService spas WITH (NOLOCK)
+    LEFT JOIN edfi.Descriptor d WITH(NOLOCK) ON
+        spas.SpecialEducationProgramServiceDescriptorId = d.DescriptorId
+        AND d.CodeValue in ('Speech-Language And Audiology Services', 'Occupational And Physical Therapy')
+    WHERE
+        spas.ProgramName = 'Special Education'
+    GROUP BY
+        StudentUSI,
+        ProgramEducationOrganizationId,
+        BeginDate;
+
+    RETURN;
+END;
+GO

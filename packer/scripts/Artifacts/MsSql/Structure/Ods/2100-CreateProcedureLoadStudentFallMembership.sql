@@ -46,18 +46,10 @@ BEGIN
         ,GRADE_LEVEL = LEFT(d.CodeValue,2)
         ,BIRTHDATE = s.BirthDate
         ,GENDER_CODE = LEFT(sex.CodeValue,1)
-    --    ,FOOD_PROGRAM_ELIGIBILITY_CODE = CASE WHEN cep.AGENCYID is not null THEN '4' else COALESCE(frl.CodeValue, '0') END
-    --,FOOD_PROGRAM_ELIGIBILITY_DESC = CASE WHEN cep.AGENCYID is not null THEN 'Eligible for Community Eligibility Provision'
-    --                                        ELSE COALESCE(frl.ShortDescription, 'Not eligible for Free or Reduced Price Meals')
-    --                                     END
-        ,COALESCE(frl.CodeValue, '0') FOOD_PROGRAM_ELIGIBILITY_CODE
-        ,COALESCE(frl.ShortDescription, 'Not eligible for Free or Reduced Price Meals') FOOD_PROGRAM_ELIGIBILITY_DESC
         ,ETHNIC_CODE = r.reporting_race
         ,ETHNIC_DESC = r.reporting_race_desc
         ,SPECIAL_EDUCATION_CODE = CASE WHEN specialeducation.studentusi IS NULL THEN '2' else '1' END
         ,SPECIAL_EDUCATION_DESC = CASE WHEN specialeducation.studentusi IS NULL THEN 'No' else 'Yes' END
-        --,PLAN_504 = CASE WHEN plan504.studentusi IS NULL THEN 'No' else 'Yes' END
-        ,'No' PLAN_504
         ,LEP_ELIGIBILITY_CODE = CASE WHEN el.StudentUSI is not null AND ISNULL(el.RedesignatedEnglishFluent,0) = 0 THEN '1' else '2' END
         ,LEP_ELIGIBILITY_DESC = CASE WHEN el.StudentUSI is not null AND ISNULL(el.RedesignatedEnglishFluent,0) = 0 THEN 'Yes' else 'No' END
         ,LEP_PARTICIPATION_CODE = CASE WHEN ISNULL(el.EnglishLearnerParticipation,0) = 1 AND ISNULL(el.RedesignatedEnglishFluent,0) = 0 THEN '1' else '2' END
@@ -73,10 +65,6 @@ BEGIN
         ,EXPECTED_GRADUATION_YEAR = seodcy.SchoolYear
         ,STUD_SINGLE_PARENT_CODE = CASE WHEN singleparent.StudentUSI IS NULL THEN '2' else '1' END
         ,STUD_SINGLE_PARENT_DESC = CASE WHEN singleparent.StudentUSI IS NULL THEN 'No' else 'Yes' END
-    --    ,GIFTED_ELIGIBILITY_CODE = CASE WHEN halel.StudentUSI IS NULL THEN '2' else '1' END
-    --    ,GIFTED_ELIGIBILITY_DESC = CASE WHEN halel.StudentUSI IS NULL THEN 'No' else 'Yes' END
-        ,GIFTED_ELIGIBILITY_CODE = '1'
-        ,GIFTED_ELIGIBILITY_DESC = 'No'
         ,IMMIGRANT_CODE = imm.CodeValue
         ,IMMIGRANT_DESC = imm.Description
         ,FTE_PERCENT = msid.total_fte
@@ -97,10 +85,6 @@ BEGIN
         ,UNACCOMPANIED_HOMELESS_YOUTH_DESC = CASE WHEN ISNULL(home.HomelessUnaccompaniedYouth,0) = 1 THEN 'Yes' else 'No' END
         ,MILITARY_FAMILY_CODE = CASE WHEN parentinmilitary.StudentUSI IS NULL THEN '2' else '1' END
         ,MILITARY_FAMILY_DESC = CASE WHEN parentinmilitary.StudentUSI IS NULL THEN 'No' else 'Yes' END
-    --    ,DIRECTORY_OPT_OUT_CODE = CASE WHEN directoryoptout.StudentUSI IS NULL THEN '2' else '1' END
-    --    ,DIRECTORY_OPT_OUT_DESC = CASE WHEN directoryoptout.StudentUSI IS NULL THEN 'No' else 'Yes' END
-        ,'1' DIRECTORY_OPT_OUT_CODE
-        ,'Yes' DIRECTORY_OPT_OUT_DESC
         ,RESIDENCE_STATUS_CODE = COALESCE(d_residencestatus.CodeValue,'00')
         ,RESIDENCE_STATUS_DESCRIPTION = COALESCE(d_residencestatus.ShortDescription,'Not applicable')
         ,BATCH_ID = null
@@ -174,22 +158,6 @@ BEGIN
     LEFT JOIN edfi.Descriptor imm WITH (NOLOCK) ON
         imm.DescriptorId = seodx.StudentCharacteristicDescriptorId
         AND imm.CodeValue = 'Immigrant'
-    --LEFT JOIN (
-    --            SELECT
-    --                seodsc.EducationOrganizationId,
-    --                seodsc.StudentUSI,
-    --                d.CodeValue,
-    --                d.Description
-    --            FROM edfi.StudentEducationOrganizationAssociationStudentCharacteristic seodsc WITH (NOLOCK)
-    --            INNER JOIN edfi.Descriptor d ON
-    --                seodsc.StudentCharacteristicDescriptorId = d.DescriptorId
-    --            WHERE
-        --        d.CodeValue = '39'
-                --AND
-    --            d.Namespace like '%StudentCharacteristic%'
-    --    ) halel ON
-    --seod.StudentUSI = halel.StudentUSI
-    --AND seod.EducationOrganizationId = halel.EducationOrganizationId
     LEFT JOIN (
         SELECT
             seodsc.EducationOrganizationId,
@@ -226,24 +194,6 @@ BEGIN
             AND spa.BeginDate <= @October_1st) specialeducation ON
         ssa.StudentUSI = specialeducation.StudentUSI
         AND school.LocalEducationAgencyId = specialeducation.ProgramEducationOrganizationId
-    --LEFT JOIN (
-    --    SELECT
-    --        seodsc.EducationOrganizationId,
-    --        seodsc.StudentUSI,
-    --        d.CodeValue,
-    --        d.Description
-    --    FROM edfi.StudentEducationOrganizationAssociationStudentCharacteristic seodsc
-    --    INNER JOIN edfi.Descriptor d ON
-    --        seodsc.StudentCharacteristicDescriptorId = d.DescriptorId
-    --    WHERE d.CodeValue = '38' AND d.Namespace like '%StudentCharacteristic%') directoryoptout on
-    --seod.StudentUSI = directoryoptout.StudentUSI
-    --AND seod.EducationOrganizationId = directoryoptout.EducationOrganizationId
-    --LEFT JOIN (SELECT seodsc.EducationOrganizationId, seodsc.StudentUSI, d.CodeValue, d.Description
-    --FROM edfi.StudentEducationOrganizationAssociationStudentCharacteristic seodsc
-    --INNER JOIN edfi.Descriptor d ON seodsc.StudentCharacteristicDescriptorId = d.DescriptorId
-    --WHERE d.CodeValue = '42' AND d.Namespace like '%StudentCharacteristic%') plan504 on
-    --seod.StudentUSI = plan504.StudentUSI
-    --AND seod.EducationOrganizationId = plan504.EducationOrganizationId
     LEFT JOIN reporting.GetHomeLanguageCode() homelanguage ON
         seod.StudentUSI = homelanguage.StudentUSI
         AND seod.EducationOrganizationId = homelanguage.EducationOrganizationId
@@ -251,10 +201,6 @@ BEGIN
         seodcy.CohortYearTypeDescriptorId = (SELECT TOP 1 DescriptorId FROM edfi.Descriptor WHERE namespace like '%CohortYearType%' AND CodeValue='Ninth grade')
         AND seodcy.StudentUSI = seod.StudentUSI
         AND seodcy.EducationOrganizationId = seod.EducationOrganizationId
-    --LEFT JOIN NDE_Data.dbo.CNP_SFAParticipants cep WITH (NOLOCK)
-    --on cep.SCHOOL_YEAR = @SCHOOL_YEAR
-    --AND cep.CEP = 'Y'
-    --AND cep.AGENCYID = eoic.IdentificationCode
     WHERE
         ssa.EntryDate <= @October_1st
         AND (ssa.ExitWithdrawDate >= @October_1st or ssa.ExitWithdrawDate IS NULL)
