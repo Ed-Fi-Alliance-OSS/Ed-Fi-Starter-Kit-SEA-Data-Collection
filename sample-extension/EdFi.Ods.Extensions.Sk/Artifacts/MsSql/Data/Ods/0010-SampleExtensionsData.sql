@@ -22,36 +22,14 @@ SELECT @student604823EntryDate =EntryDate FROM edfi.[StudentSchoolAssociation] w
 IF (@grandBendHighSchoolId IS NULL OR @student604822USI IS NULL OR @student604823USI IS NULL) RETURN
 
 INSERT INTO [sk].[StudentSchoolAssociationExtension]
-([EntryDate]
-,[SchoolId]
-,[StudentUSI]
-,[ResidentLocalEducationAgencyId]
-,[ResidentSchoolId]
-,[ReportingSchoolId])
+([EntryDate],[SchoolId],[StudentUSI],[ResidentLocalEducationAgencyId],[ResidentSchoolId],[ReportingSchoolId])
 VALUES
-(@student604822EntryDate
-,@grandBendHighSchoolId
-,@student604822USI
-,@localEducationAgencyId
-,@grandBendHighSchoolId
-,@grandBendHighSchoolId
-)
+(@student604822EntryDate,@grandBendHighSchoolId,@student604822USI,@localEducationAgencyId,@grandBendHighSchoolId,@grandBendHighSchoolId)
 
 
 INSERT INTO [sk].[StudentSchoolAssociationExtension]
-([EntryDate]
-,[SchoolId]
-,[StudentUSI]
-,[ResidentLocalEducationAgencyId]
-,[ResidentSchoolId]
-,[ReportingSchoolId])
+([EntryDate],[SchoolId],[StudentUSI],[ResidentLocalEducationAgencyId],[ResidentSchoolId],[ReportingSchoolId])
 VALUES
-(@student604823EntryDate
-,@grandBendHighSchoolId
-,@student604823USI
-,@localEducationAgencyId
-,@grandBendHighSchoolId
-,@grandBendHighSchoolId
-)
+(@student604823EntryDate,@grandBendHighSchoolId,@student604823USI,@localEducationAgencyId,@grandBendHighSchoolId,@grandBendHighSchoolId)
 
 GO
