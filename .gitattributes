@@ -1,4 +1,4 @@
 # Declare files that will always have CRLF line endings on checkout.
 *.tt eol=crlf
 *.ttinclude eol=crlf
-*.sql text working-tree-encoding=UTF-16LE eol=CRLF
+*.sql diff
