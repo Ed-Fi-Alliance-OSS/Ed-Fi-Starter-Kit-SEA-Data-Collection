@@ -10,7 +10,7 @@ DECLARE @student604823USI INT;
 DECLARE @student604822EntryDate date;
 DECLARE @student604823EntryDate date;
 
-SELECT @grandBendHighSchoolId = SchoolId , @localEducationAgencyId= localEducationAgencyId FROM edfi.School WHERE SchoolId = 255901001
+SELECT @grandBendHighSchoolId = SchoolId , @localEducationAgencyId = localEducationAgencyId FROM edfi.School WHERE SchoolId = 255901001
 SELECT @student604822USI = StudentUSI FROM edfi.Student WHERE StudentUniqueId = '604822'
 SELECT @student604823USI = StudentUSI FROM edfi.Student WHERE StudentUniqueId = '604823'
 SELECT @student604822EntryDate = EntryDate FROM edfi.[StudentSchoolAssociation] WHERE StudentUSI = @student604822USI
