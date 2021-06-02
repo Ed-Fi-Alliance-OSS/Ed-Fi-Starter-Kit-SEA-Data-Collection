@@ -14,7 +14,7 @@ SELECT @grandBendHighSchoolId = SchoolId , @localEducationAgencyId = localEducat
 SELECT @student604822USI = StudentUSI FROM edfi.Student WHERE StudentUniqueId = '604822'
 SELECT @student604823USI = StudentUSI FROM edfi.Student WHERE StudentUniqueId = '604823'
 SELECT @student604822EntryDate = EntryDate FROM edfi.[StudentSchoolAssociation] WHERE StudentUSI = @student604822USI
-SELECT @student604823EntryDate =EntryDate FROM edfi.[StudentSchoolAssociation] where StudentUSI =@student604823USI
+SELECT @student604823EntryDate = EntryDate FROM edfi.[StudentSchoolAssociation] WHERE StudentUSI = @student604823USI
 
 
 --Sanity check to make sure some data exists, otherwise skip the script
