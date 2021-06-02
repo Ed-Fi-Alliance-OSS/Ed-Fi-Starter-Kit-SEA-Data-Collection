@@ -166,7 +166,12 @@ build {
         "Set-Location c:/temp",
         "Expand-Archive ./${var.landing_page}.zip -Destination ./${var.landing_page}",
         "((Get-Content -path \"./${var.landing_page}/docs/SEA Modernization Starter Kit.html\" -Raw) -replace '@@DOMAINNAME@@',[Environment]::MachineName) | Set-Content -Path \"./${var.landing_page}/docs/SEA Modernization Starter Kit.html\"",
-        "Copy-Item -Path \"./${var.landing_page}/docs/SEA Modernization Starter Kit.html\" -Destination C:/Users/Public/Desktop"
+        "Copy-Item -Recurse -Path ./${var.landing_page}/docs/ -Destination c:/${var.starter_kit_directory}/LandingPage",
+        "$WshShell = New-Object -comObject WScript.Shell",
+        "$Shortcut = $WshShell.CreateShortcut(\"C:/Users/Public/Desktop/Start Here.lnk\")",
+        "$Shortcut.TargetPath = \"c:/${var.starter_kit_directory}/LandingPage/SEA Modernization Starter Kit.html\"",
+        "$Shortcut.IconLocation = \"https://edfidata.s3-us-west-2.amazonaws.com/Starter+Kits/images/favicon.ico\"",
+        "$Shortcut.Save()"
     ]
   }
 
@@ -209,7 +214,7 @@ build {
     inline            = [
       "$ErrorActionPreference = 'Stop'",
       "Set-Location c:/temp",
-      "Expand-Archive ./${var.postman}.zip -Destination c:/${var.starter_kit_directory}",
+      "Expand-Archive ./${var.postman}.zip -Destination c:/${var.starter_kit_directory}/Postman",
       "Set-Location c:/temp/${var.archive_name}",
       "./postman-setup.ps1"
     ]
