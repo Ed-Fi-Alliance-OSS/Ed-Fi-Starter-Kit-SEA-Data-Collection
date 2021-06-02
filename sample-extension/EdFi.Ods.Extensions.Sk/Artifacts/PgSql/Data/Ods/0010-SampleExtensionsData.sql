@@ -9,7 +9,7 @@ declare student604823EntryDate date;
 begin
 
 SELECT  SchoolId ,localEducationAgencyId into grandBendHighSchoolId ,residentLocalEducationAgencyId FROM edfi.School WHERE SchoolId = 255901001;
-SELECT StudentUSI into student604822USI  FROM edfi.Student WHERE StudentUniqueId = '604822';
+SELECT StudentUSI into student604822USI FROM edfi.Student WHERE StudentUniqueId = '604822';
 SELECT StudentUSI into student604823USI FROM edfi.Student WHERE StudentUniqueId = '604823';
 SELECT EntryDate into student604822EntryDate FROM edfi.StudentSchoolAssociation where StudentUSI = student604822USI;
 SELECT EntryDate into student604823EntryDate FROM edfi.StudentSchoolAssociation where StudentUSI = student604823USI;
