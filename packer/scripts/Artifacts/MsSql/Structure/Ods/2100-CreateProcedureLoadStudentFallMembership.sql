@@ -6,11 +6,11 @@
 CREATE OR ALTER PROCEDURE reporting.LoadStudentFallMembership
 AS
 BEGIN
-    DECLARE @Datayear NVARCHAR(9) = '2020-2021'
+    DECLARE @Datayear NVARCHAR(9) = '2021-2022'
 
     --October 1st
     DECLARE @October_1st date = LEFT(@Datayear,4) + '-10-01'
-    DECLARE @SCHOOL_YEAR VARCHAR(10) = '2021-06-30'
+    DECLARE @SCHOOL_YEAR VARCHAR(10) = '2022-06-30'
 
     --Age 21 Date
     DECLARE @Age_21 date = CAST(CAST(LEFT(@Datayear,4) AS INT)-21 AS CHAR(4)) + '-08-01'

@@ -6,9 +6,9 @@
 CREATE OR ALTER PROCEDURE reporting.LoadSpedChildCount
 AS
 BEGIN
-    DECLARE @datayears VARCHAR(8) = '20202021'
+    DECLARE @datayears VARCHAR(8) = '20212022'
     DECLARE @October1 DATE = LEFT(@datayears,4) + '-10-01'
-    DECLARE @SCHOOL_YEAR VARCHAR(10) = '2021-06-30'
+    DECLARE @SCHOOL_YEAR VARCHAR(10) = '2022-06-30'
 
     DECLARE @MinOrder TABLE
     (
