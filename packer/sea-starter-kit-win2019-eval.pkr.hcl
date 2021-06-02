@@ -200,6 +200,22 @@ build {
       "Initialize-DeploymentEnvironment"
     ]
   }
+  
+  provisioner "comment" {
+    comment          = "Executing c:/temp/${var.archive_name}/report-setup.ps1"
+    ui               = true
+    bubble_text      = false
+  }
+
+  provisioner "powershell" {
+    debug_mode        = "${var.debug_mode}"
+    elevated_password = "${var.password}"
+    elevated_user     = "${var.user_name}"
+    inline            = [
+        "Set-Location c:/temp/${var.archive_name}/",
+        "./report-setup.ps1"
+    ]
+  }
 
   provisioner "comment" {
     comment     = "Postman Setup"
