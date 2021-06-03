@@ -204,7 +204,7 @@ BEGIN
     WHERE
         ssa.EntryDate <= @October_1st
         AND (ssa.ExitWithdrawDate >= @October_1st or ssa.ExitWithdrawDate IS NULL)
-        AND msid.total_fte >= (CASE WHEN d.CodeValue IN ('HP', 'PK') THEN 0 else 51 END)
+        AND msid.total_fte >= 0.51
         AND s.BirthDate >= (CASE WHEN substring(eoic.IdentificationCode,5,1) = '6' THEN @Age_21 else '1900-01-01' END);
 END;
 GO

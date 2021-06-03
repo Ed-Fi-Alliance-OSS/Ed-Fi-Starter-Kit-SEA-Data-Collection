@@ -87,7 +87,7 @@ BEGIN
         ssa.EntryDate = ssae.EntryDate
         AND ssa.SchoolId = ssae.SchoolId
         AND ssa.StudentUSI = ssae.StudentUSI
-    INNER JOIN edfi.Descriptor d_residentstatus ON
+    LEFT JOIN edfi.Descriptor d_residentstatus ON
         ssa.ResidencyStatusDescriptorId = d_residentstatus.DescriptorId
     INNER JOIN reporting.GetMinimalSchoolReportingId(@October1) msid ON
         ssa.StudentUSI = msid.StudentUSI

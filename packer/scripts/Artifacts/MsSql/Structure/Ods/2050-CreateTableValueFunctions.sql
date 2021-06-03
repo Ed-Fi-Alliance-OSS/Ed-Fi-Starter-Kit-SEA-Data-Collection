@@ -53,7 +53,7 @@ RETURNS @ResultTable TABLE
 )
 AS
 BEGIN
-    INSERT INTO @ResultTable (LocalEducationAgencyId, StudentUSI, Total_FTE, Max_FTE)
+    INSERT INTO @ResultTable (StudentUSI, LocalEducationAgencyId, Total_FTE, Max_FTE)
     SELECT
         ssa.StudentUSI,
         med.LocalEducationAgencyId,
@@ -72,7 +72,7 @@ BEGIN
     INNER JOIN edfi.Descriptor d_gradelevel ON
         ssa.EntryGradeLevelDescriptorId = d_gradelevel.DescriptorId
     WHERE
-        med.total_fte >= CASE WHEN d_gradelevel.CodeValue IN ('hp', 'pk') THEN 0 else 51 END
+        med.total_fte >= 0.51
         AND (ssa.ExitWithdrawDate IS NULL OR ssa.ExitWithdrawDate >= @searchDate)
         AND ssa.EntryDate <= @searchDate
     GROUP BY
@@ -452,7 +452,7 @@ BEGIN
             SELECT StudentUSI, ProgramEducationOrganizationId, MAX(BeginDate) as BeginDate
             FROM edfi.GeneralStudentProgramAssociation WITH (NOLOCK)
             WHERE
-                ProgramName = 'English Learners'
+                ProgramName = 'English as a Second Language (ESL)'
                 AND BeginDate <= @searchDate AND (ENDDate IS NULL or ENDDate >= @searchDate)
             GROUP BY StudentUSI, ProgramEducationOrganizationId
         ) mbd ON
