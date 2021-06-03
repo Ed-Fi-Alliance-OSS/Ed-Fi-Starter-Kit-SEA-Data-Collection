@@ -2,7 +2,7 @@
   "packages": {
     "sk": {
       "PackageName": "EdFi.Ods.Extensions.Sk",
-      "PackageVersion": "1.0.150",
+      "PackageVersion": "1.0.160",
       "PackageSource": "https://pkgs.dev.azure.com/ed-fi-alliance/Ed-Fi-Alliance-OSS/_packaging/EdFi/nuget/v3/index.json"
     }
   }
