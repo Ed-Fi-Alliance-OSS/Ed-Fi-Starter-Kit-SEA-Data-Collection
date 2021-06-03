@@ -21,7 +21,16 @@ Invoke-Sqlcmd -Database "EdFi_Ods_2022" -Query "EXEC reporting.LoadSpedChildCoun
 
 New-Item -Path "C:/Users/Public/Desktop/" -Name Reports -ItemType directory
 
-Invoke-Sqlcmd -Database "EdFi_Ods_2022" -Query "SELECT * FROM [EdFi_Ods_2022].[reporting].[StudentFallMembership]" | Export-Csv -Path "C:/Users/Public/Desktop/Reports/StudentFallMembership.csv" -NoTypeInformation
+if (-not (Get-InstalledModule | Where-Object -Property Name -eq "ImportExcel")) {
+    Install-Module -Force -Scope CurrentUser -Name ImportExcel
+}
 
-Invoke-Sqlcmd -Database "EdFi_Ods_2022" -Query "SELECT * FROM [EdFi_Ods_2022].[reporting].[SpecialEducationChildCount]" | Export-Csv -Path "C:/Users/Public/Desktop/Reports/SpecialEducationChildCount.csv" -NoTypeInformation
+$SQLresults = Invoke-Sqlcmd -Database "EdFi_Ods_2022" -InputFile ".\Artifacts\MsSql\Structure\Ods\3100-StudentFallMembershipReport.sql" | Select * -ExcludeProperty RowError, RowState, Table, ItemArray, HasErrors
+
+$SQLresults | Export-Excel -Path "C:/Users/Public/Desktop/Reports/StudentFallMembershipReport.xlsx" -WorksheetName "Membership" -AutoSize
+
+$SQLresults = Invoke-Sqlcmd -Database "EdFi_Ods_2022" -Query "SELECT * FROM [EdFi_Ods_2022].[reporting].[SpecialEducationChildCount]" -OutputSqlErrors $true
+
+$SQLresults | Export-Excel -Path "C:/Users/Public/Desktop/Reports/SpecialEducationChildCount.xlsx" -WorksheetName "2021-2022" -AutoSize -Show
+
 
