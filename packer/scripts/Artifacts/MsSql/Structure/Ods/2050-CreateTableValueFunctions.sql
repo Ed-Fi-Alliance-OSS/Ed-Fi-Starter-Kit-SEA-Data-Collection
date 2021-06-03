@@ -147,7 +147,7 @@ BEGIN
     INNER JOIN edfi.StudentEducationOrganizationAssociationLanguage seodl WITH (NOLOCK) ON
         seod.StudentUSI = seodl.StudentUSI
         AND seod.EducationOrganizationId = seodl.EducationOrganizationId
-    INNER JOIN edfi.StudentEducationOrganizationAssociationLanguageUse seodlu WITH (NOLOCK) ON --I think most records are missing this, it isn't required?
+    INNER JOIN edfi.StudentEducationOrganizationAssociationLanguageUse seodlu WITH (NOLOCK) ON
         seodl.StudentUSI = seodlu.StudentUSI
         AND seodl.EducationOrganizationId = seodlu.EducationOrganizationId
         AND seodl.LanguageDescriptorId = seodlu.LanguageDescriptorId
@@ -167,7 +167,7 @@ BEGIN
     INNER JOIN edfi.StudentEducationOrganizationAssociationLanguage seodl WITH (NOLOCK) ON
         seod.StudentUSI = seodl.StudentUSI
         AND seod.EducationOrganizationId = seodl.EducationOrganizationId
-    INNER JOIN edfi.StudentEducationOrganizationAssociationLanguageUse seodlu WITH (NOLOCK) ON --I think most records are missing this, it isn't required?
+    INNER JOIN edfi.StudentEducationOrganizationAssociationLanguageUse seodlu WITH (NOLOCK) ON
         seodl.StudentUSI = seodlu.StudentUSI
         AND seodl.EducationOrganizationId = seodlu.EducationOrganizationId
         AND seodl.LanguageDescriptorId = seodlu.LanguageDescriptorId
