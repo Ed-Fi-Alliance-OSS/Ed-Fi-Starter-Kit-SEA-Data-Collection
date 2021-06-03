@@ -68,7 +68,7 @@ GO
 
 CREATE TABLE reporting.SpecialEducationChildCount
 (
-    Datayears VARCHAR(8),
+    Datayears VARCHAR(9),
     StudentUniqueId NVARCHAR(32),
     AgencyId NVARCHAR(60),
     DistrictOfResidence NVARCHAR(7),
