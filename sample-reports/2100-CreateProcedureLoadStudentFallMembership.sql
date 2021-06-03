@@ -29,30 +29,25 @@ BEGIN
     SELECT
         DATAYEARS = LEFT(@DATAYEAR,4) + RIGHT(@DATAYEAR,4)
         ,DISTRICT_CODE = LEFT(eoic.IdentificationCode,7)
-        ,SCHOOL_CODE = RIGHT(eoic.IdentificationCode,3)
-        ,NDE_STUDENT_ID = LEFT(LTRIM(s.StudentUniqueId),10)
+        ,SCHOOL_CODE = eoic.IdentificationCode
+        ,STUDENT_ID = LEFT(LTRIM(s.StudentUniqueId),10)
         ,LOCAL_STUDENT_ID = LEFT(COALESCE(sic.IdentificationCode,''),25)
         ,DISTRICT_CODE_RESIDENCE = LEFT(eoic_resdist.IdentificationCode,7)
-        ,SCHOOL_CODE_RESIDENCE = ''--ISNULL(RIGHT(ressch.StateOrganizationID,3),'')
+        ,SCHOOL_CODE_RESIDENCE = ssaext.ResidentSchoolId
         ,STUDENT_NAME = LEFT(s.LastSurname+', '+s.FirstName,42)
         ,STUDENT_LAST_NM = LEFT(s.LastSurname,60)
         ,STUDENT_FIRST_NM = LEFT(s.FirstName,60)
         ,STUDENT_MID_INIT = COALESCE(LEFT(s.MiddleName,1),'')
-        ,ALIAS_FIRST_NAME = ''
-        ,ALIAS_LAST_NAME = ''
-        ,ALIAS_MID_NAME = ''
-        ,ALIAS_NAME_SUFFIX = ''
-        ,STUD_MIDDLE_NM = ''
-        ,GRADE_LEVEL = LEFT(d.CodeValue,2)
+        ,GRADE_LEVEL = d.CodeValue
         ,BIRTHDATE = s.BirthDate
         ,GENDER_CODE = LEFT(sex.CodeValue,1)
         ,ETHNIC_CODE = r.reporting_race
         ,ETHNIC_DESC = r.reporting_race_desc
-        ,SPECIAL_EDUCATION_CODE = CASE WHEN specialeducation.studentusi IS NULL THEN '2' else '1' END
+        ,SPECIAL_EDUCATION_CODE = CASE WHEN specialeducation.studentusi IS NULL THEN '0' else '1' END
         ,SPECIAL_EDUCATION_DESC = CASE WHEN specialeducation.studentusi IS NULL THEN 'No' else 'Yes' END
-        ,LEP_ELIGIBILITY_CODE = CASE WHEN el.StudentUSI is not null AND ISNULL(el.RedesignatedEnglishFluent,0) = 0 THEN '1' else '2' END
+        ,LEP_ELIGIBILITY_CODE = CASE WHEN el.StudentUSI is not null AND ISNULL(el.RedesignatedEnglishFluent,0) = 0 THEN '1' else '0' END
         ,LEP_ELIGIBILITY_DESC = CASE WHEN el.StudentUSI is not null AND ISNULL(el.RedesignatedEnglishFluent,0) = 0 THEN 'Yes' else 'No' END
-        ,LEP_PARTICIPATION_CODE = CASE WHEN ISNULL(el.EnglishLearnerParticipation,0) = 1 AND ISNULL(el.RedesignatedEnglishFluent,0) = 0 THEN '1' else '2' END
+        ,LEP_PARTICIPATION_CODE = CASE WHEN ISNULL(el.EnglishLearnerParticipation,0) = 1 AND ISNULL(el.RedesignatedEnglishFluent,0) = 0 THEN '1' else '0' END
         ,LEP_PARTICIPATION_DESC = CASE WHEN ISNULL(el.EnglishLearnerParticipation,0) = 1 AND ISNULL(el.RedesignatedEnglishFluent,0) = 0 THEN 'Yes' else 'No' END
         ,LEP_DURATION_CODE = null
         ,LEP_DURATION_DESC = null
@@ -60,10 +55,10 @@ BEGIN
         ,ENGLISH_PROFICIENCY_DESC = CASE WHEN ISNULL(el.RedesignatedEnglishFluent,0) = 1 THEN 'Redesignated as English Fluent' else 'Not Applicable' END
         ,HOME_LANGUAGE_CODE = homelanguage.CodeValue
         ,HOME_LANGUAGE_DESC = LEFT(homelanguage.Description,100)
-        ,TARGETED_ASSISTANCE_NONPUBLIC_CODE = '2' --because this is Fall Membership, there are no non-public students in the table
+        ,TARGETED_ASSISTANCE_NONPUBLIC_CODE = '0' --because this is Fall Membership, there are no non-public students in the table
         ,TARGETED_ASSISTANCE_NONPUBLIC_DESC = 'No' --because this is Fall Membership, there are no non-public students in the table
         ,EXPECTED_GRADUATION_YEAR = seodcy.SchoolYear
-        ,STUD_SINGLE_PARENT_CODE = CASE WHEN singleparent.StudentUSI IS NULL THEN '2' else '1' END
+        ,STUD_SINGLE_PARENT_CODE = CASE WHEN singleparent.StudentUSI IS NULL THEN '0' else '1' END
         ,STUD_SINGLE_PARENT_DESC = CASE WHEN singleparent.StudentUSI IS NULL THEN 'No' else 'Yes' END
         ,IMMIGRANT_CODE = imm.CodeValue
         ,IMMIGRANT_DESC = imm.Description
@@ -81,17 +76,14 @@ BEGIN
         ,RACE4_SHORT_DESC = r.race_4_desc
         ,RACE5_CODE = r.race_5_code
         ,RACE5_SHORT_DESC = r.race_5_desc
-        ,UNACCOMPANIED_HOMELESS_YOUTH_CODE = CASE WHEN ISNULL(home.HomelessUnaccompaniedYouth,0) = 1 THEN '1' else '2' END
+        ,UNACCOMPANIED_HOMELESS_YOUTH_CODE = CASE WHEN ISNULL(home.HomelessUnaccompaniedYouth,0) = 1 THEN '1' else '0' END
         ,UNACCOMPANIED_HOMELESS_YOUTH_DESC = CASE WHEN ISNULL(home.HomelessUnaccompaniedYouth,0) = 1 THEN 'Yes' else 'No' END
-        ,MILITARY_FAMILY_CODE = CASE WHEN parentinmilitary.StudentUSI IS NULL THEN '2' else '1' END
+        ,MILITARY_FAMILY_CODE = CASE WHEN parentinmilitary.StudentUSI IS NULL THEN '0' else '1' END
         ,MILITARY_FAMILY_DESC = CASE WHEN parentinmilitary.StudentUSI IS NULL THEN 'No' else 'Yes' END
         ,RESIDENCE_STATUS_CODE = COALESCE(d_residencestatus.CodeValue,'00')
         ,RESIDENCE_STATUS_DESCRIPTION = COALESCE(d_residencestatus.ShortDescription,'Not applicable')
         ,BATCH_ID = null
-        ,STUDENT_ID = LEFT(LTRIM(s.StudentUniqueId),10)
         ,STUDENT_KEY = s.StudentUSI
-        ,DISTRICT_KEY = cast('31'+LEFT(eoic.IdentificationCode,2)+substring(eoic.IdentificationCode,4,4) as int)
-        ,LOCATION_KEY = eo.EducationOrganizationId
         ,SCHOOL_YEAR = RIGHT(@DATAYEAR,4)+'-06-30'
     FROM edfi.Student s WITH (NOLOCK)
 
@@ -119,7 +111,7 @@ BEGIN
     INNER JOIN edfi.StudentEducationOrganizationAssociation seod WITH (NOLOCK) ON
         ssa.StudentUSI = seod.StudentUSI
         AND school.LocalEducationAgencyId = seod.EducationOrganizationId
-    INNER JOIN edfi.StudentEducationOrganizationAssociationStudentCharacteristic as seodx WITH (NOLOCK) ON
+    LEFT JOIN edfi.StudentEducationOrganizationAssociationStudentCharacteristic as seodx WITH (NOLOCK) ON
         seodx.StudentUSI = seod.StudentUSI
         AND seodx.EducationOrganizationId = seod.EducationOrganizationId
     INNER JOIN edfi.Descriptor sex ON
