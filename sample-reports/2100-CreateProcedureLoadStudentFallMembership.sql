@@ -27,7 +27,7 @@ BEGIN
 
     INSERT INTO reporting.StudentFallMembership
     SELECT
-        DATAYEARS = LEFT(@DATAYEAR,4) + RIGHT(@DATAYEAR,4)
+         DATAYEARS = @DATAYEAR
         ,DISTRICT_CODE = LEFT(eoic.IdentificationCode,7)
         ,SCHOOL_CODE = eoic.IdentificationCode
         ,STUDENT_ID = LEFT(LTRIM(s.StudentUniqueId),10)
