@@ -16,6 +16,8 @@ $config = Get-SwaggerUIConfig
 $parameters = @{
     PackageVersion   = $config["PackageVersion"]
     WebApiVersionUrl = ($config["WebApiVersionUrl"] -f [Environment]::MachineName)
+    PrePopulatedKey = "starterKit"
+    PrePopulatedSecret = "starterKitSecret"
 }
 
 Write-Output "Installing SwaggerUI"

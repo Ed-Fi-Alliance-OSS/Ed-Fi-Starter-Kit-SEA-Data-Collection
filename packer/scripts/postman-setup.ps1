@@ -4,7 +4,7 @@
 # See the LICENSE and NOTICES files in the project root for more information.
 
 function Set-PostmanEnvironmentConfig {
-    $configPath = (Resolve-Path "C:/Ed-Fi-Starter-Kit/SEA Modernization Starter Kit Environment (Local).postman_environment.json").Path
+    $configPath = (Resolve-Path "C:/Ed-Fi-Starter-Kit/Postman/SEA Modernization Starter Kit Environment (Local).postman_environment.json").Path
 
     $config = Get-Content $configPath | ConvertFrom-Json
 
