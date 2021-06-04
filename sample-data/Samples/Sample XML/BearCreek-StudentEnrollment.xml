@@ -2796,7 +2796,7 @@
 		<EntryDate>2021-08-23</EntryDate>
 		<EntryGradeLevel>uri://ed-fi.org/GradeLevelDescriptor#First grade</EntryGradeLevel>
 		<GraduationPlanReference ref="GPLN_Minimum-BCES"/>
-		<FullTimeEquivalency>1.00</FullTimeEquivalency>
+		<FullTimeEquivalency>0.75</FullTimeEquivalency>
 		<ResidentLocalEducationAgencyReference>
 			<LocalEducationAgencyIdentity>
 				<LocalEducationAgencyId>255903</LocalEducationAgencyId>
@@ -3186,7 +3186,7 @@
 		<EntryDate>2021-08-23</EntryDate>
 		<EntryGradeLevel>uri://ed-fi.org/GradeLevelDescriptor#First grade</EntryGradeLevel>
 		<GraduationPlanReference ref="GPLN_Minimum-BCES"/>
-		<FullTimeEquivalency>1.00</FullTimeEquivalency>
+		<FullTimeEquivalency>0.5</FullTimeEquivalency>
 		<ResidentLocalEducationAgencyReference>
 			<LocalEducationAgencyIdentity>
 				<LocalEducationAgencyId>255903</LocalEducationAgencyId>
@@ -3368,7 +3368,7 @@
 		<EntryDate>2021-08-23</EntryDate>
 		<EntryGradeLevel>uri://ed-fi.org/GradeLevelDescriptor#First grade</EntryGradeLevel>
 		<GraduationPlanReference ref="GPLN_Minimum-BCES"/>
-		<FullTimeEquivalency>1.00</FullTimeEquivalency>
+		<FullTimeEquivalency>0.75</FullTimeEquivalency>
 		<ResidentLocalEducationAgencyReference>
 			<LocalEducationAgencyIdentity>
 				<LocalEducationAgencyId>255903</LocalEducationAgencyId>
