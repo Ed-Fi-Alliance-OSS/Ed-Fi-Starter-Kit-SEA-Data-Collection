@@ -130,7 +130,7 @@ build {
     sources     = [
       "${path.root}/build/${var.landing_page}.zip",
       "${path.root}/build/${var.archive_name}.zip",
-	  "${path.root}/build/${var.sample_report}.zip",
+      "${path.root}/build/${var.sample_report}.zip",
       "${path.root}/build/${var.web_api}.zip",
       "${path.root}/build/${var.admin_app}.zip",
       "${path.root}/build/${var.swagger_ui}.zip",
@@ -234,11 +234,11 @@ build {
     elevated_password = "${var.password}"
     elevated_user     = "${var.user_name}"
     inline            = [
-		"$ErrorActionPreference = 'Stop'",
-        "Set-Location c:/temp/${var.archive_name}/",
+      "$ErrorActionPreference = 'Stop'",
+       "Set-Location c:/temp/${var.archive_name}/",
         "./report-setup.ps1",
-		"Set-Location c:/${var.sample_report}",
-		"./report.ps1"
+        "Set-Location c:/${var.sample_report}",
+        "./report.ps1"
     ]
   }
 

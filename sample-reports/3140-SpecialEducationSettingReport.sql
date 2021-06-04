@@ -8,16 +8,20 @@
 -- Query to generate SEA Starter Kit - Special Education Setting = Student Count report
 -- =========================================================================================
 SELECT [SettingCode] AS [Special Education Setting]
-	, [2021-2022], [2020-2021], [2019-2020], [2018-2019], [2017-2018]
+    , [2021-2022]
+    , [2020-2021]
+    , [2019-2020]
+    , [2018-2019]
+    , [2017-2018]
 FROM  
 (
-	SELECT DISTINCT StudentUniqueId, Datayears, SettingCode 
-	FROM [EdFi_Ods_2022].[reporting].[SpecialEducationChildCount]
-	WHERE LTRIM(RTRIM(SettingCode)) <> ''
+    SELECT DISTINCT StudentUniqueId, Datayears, SettingCode 
+    FROM [EdFi_Ods_2022].[reporting].[SpecialEducationChildCount]
+    WHERE LTRIM(RTRIM(SettingCode)) <> ''
 ) AS SourceTable  
 PIVOT  
 (  
-  COUNT(StudentUniqueId)  
-  FOR Datayears IN ([2021-2022], [2020-2021], [2019-2020], [2018-2019], [2017-2018])  
+    COUNT(StudentUniqueId)  
+    FOR Datayears IN ([2021-2022], [2020-2021], [2019-2020], [2018-2019], [2017-2018])  
 ) AS PivotTable
 ORDER BY [SettingCode]
