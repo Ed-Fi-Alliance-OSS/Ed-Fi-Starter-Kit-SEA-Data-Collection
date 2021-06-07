@@ -22,7 +22,8 @@ param(
     [string] $VMSwitch = "packer-hyperv-iso",
     [string] $ISOUrl = $null,
     [switch] $SkipCreateVMSwitch = $false,
-    [switch] $SkipRunPacker = $false
+    [switch] $SkipRunPacker = $false,
+	[switch] $DownloadBaseImage = $false
 )
 
 #Requires -RunAsAdministrator
@@ -51,6 +52,26 @@ Set-TLS12Support
 
 # Create Build and Distribution Folders
 Invoke-CreateFolders
+
+# Download base image from S3 only for Starter Kit build
+$fileName = Split-Path $PackerFile -leaf
+if ($DownloadBaseImage -and ($fileName -eq "sea-starter-kit-win2019-eval.pkr.hcl")) {
+    
+    if (Test-Path "downloads/BaseQuickStartVM-Current.zip") {
+        Write-Output "Deleting old file"
+        Remove-Item -Path "downloads/BaseQuickStartVM-Current.zip" -Force
+    }
+
+    Write-Output "Downloading base image from S3"
+    $url = "https://edfidata.s3-us-west-2.amazonaws.com/Starter+Kits/VM/BaseQuickStartVM/BaseQuickStartVM-Current.zip"
+    $downloadedFile = Get-FileFromInternet $url
+	
+	if (-not (Get-InstalledModule | Where-Object -Property Name -eq "7Zip4Powershell")) {
+		Install-Module -Force -Scope CurrentUser -Name 7Zip4Powershell
+	}
+	
+	Expand-7Zip -ArchiveFileName $downloadedFile -TargetPath $buildPath
+}
 
 #download packages and push to to build folder
 Invoke-PackageDownloads -ConfigPath $configPath -BuildPath $buildPath
