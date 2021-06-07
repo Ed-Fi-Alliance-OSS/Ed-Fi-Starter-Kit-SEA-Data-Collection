@@ -235,10 +235,10 @@ build {
     elevated_user     = "${var.user_name}"
     inline            = [
       "$ErrorActionPreference = 'Stop'",
-       "Set-Location c:/temp/${var.archive_name}/",
-        "./report-setup.ps1",
-        "Set-Location c:/${var.sample_report}",
-        "./report.ps1"
+      "Set-Location c:/temp/${var.archive_name}/",
+      "./report-setup.ps1",
+      "Set-Location c:/${var.sample_report}",
+      "./report.ps1"
     ]
   }
 
