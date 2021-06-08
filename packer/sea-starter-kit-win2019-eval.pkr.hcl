@@ -88,6 +88,10 @@ variable "starter_kit_directory" {
   type = string
 }
 
+variable "sample_report" {
+  type = string
+}
+
 packer {
   required_plugins {
     comment = {
@@ -126,6 +130,7 @@ build {
     sources     = [
       "${path.root}/build/${var.landing_page}.zip",
       "${path.root}/build/${var.archive_name}.zip",
+      "${path.root}/build/${var.sample_report}.zip",
       "${path.root}/build/${var.web_api}.zip",
       "${path.root}/build/${var.admin_app}.zip",
       "${path.root}/build/${var.swagger_ui}.zip",
@@ -174,6 +179,23 @@ build {
         "$Shortcut.Save()"
     ]
   }
+  
+  provisioner "comment" {
+    comment     = "Extracting ${var.sample_report}.zip to c:/${var.sample_report}"
+    ui          = true
+    bubble_text = false
+  }
+
+  provisioner "powershell" {
+    debug_mode        = "${var.debug_mode}"
+    elevated_password = "${var.password}"
+    elevated_user     = "${var.user_name}"
+    inline            = [
+      "$ErrorActionPreference = 'Stop'",
+      "Set-Location c:/temp",
+      "Expand-Archive ./${var.sample_report}.zip -Destination c:/${var.sample_report}"
+    ]
+  }
 
   provisioner "comment" {
     comment     = "Installing Databases"
@@ -198,6 +220,25 @@ build {
       "Import-Module -Force -Scope Global SqlServer",
       "Import-Module ./Deployment.psm1",
       "Initialize-DeploymentEnvironment"
+    ]
+  }
+  
+  provisioner "comment" {
+    comment          = "Executing c:/temp/${var.archive_name}/report-setup.ps1"
+    ui               = true
+    bubble_text      = false
+  }
+
+  provisioner "powershell" {
+    debug_mode        = "${var.debug_mode}"
+    elevated_password = "${var.password}"
+    elevated_user     = "${var.user_name}"
+    inline            = [
+      "$ErrorActionPreference = 'Stop'",
+      "Set-Location c:/temp/${var.archive_name}/",
+      "./report-setup.ps1",
+      "Set-Location c:/${var.sample_report}",
+      "./report.ps1"
     ]
   }
 
