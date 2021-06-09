@@ -179,7 +179,7 @@ build {
         "$Shortcut.Save()"
     ]
   }
-  
+
   provisioner "comment" {
     comment     = "Extracting ${var.sample_report}.zip to c:/${var.sample_report}"
     ui          = true
@@ -222,7 +222,7 @@ build {
       "Initialize-DeploymentEnvironment"
     ]
   }
-  
+
   provisioner "comment" {
     comment          = "Executing c:/temp/${var.archive_name}/report-setup.ps1"
     ui               = true
@@ -296,7 +296,8 @@ build {
       "Set-Location c:/temp",
       "Expand-Archive ./${var.swagger_ui}.zip -Destination ./${var.swagger_ui}",
       "Set-Location c:/temp/${var.archive_name}/installers",
-      "./Install-SwaggerUI.ps1"
+      "./Install-SwaggerUI.ps1",
+      "Copy-Item -Path c:/temp/${var.archive_name}/installers/swagger_index.js -Destination C:/inetpub/Ed-Fi/SwaggerUI/wwwroot/index.js -Force"
     ]
   }
 
