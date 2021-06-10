@@ -224,7 +224,7 @@ build {
       "Copy-Item -Path ./${var.archive_name}/sk.ps1 -Destination c:/plugin -Force",
       "New-Item -ItemType Directory -Path ./${var.databases}/Ed-Fi-ODS-Implementation/Artifacts/MsSql/Structure/Ods/",
       "Get-ChildItem C:/${var.sample_report}/* -filter '*-Create*.sql' | Move-Item -Destination ./${var.databases}/Ed-Fi-ODS-Implementation/Artifacts/MsSql/Structure/Ods/",
-      "Copy-Item ./${var.sample_validation}/* ./${var.databases}/Ed-Fi-ODS-Implementation/Artifacts/MsSql/Structure/Ods/ -filter '*.sql' -recurse"
+      "Copy-Item ./${var.sample_validation}/* ./${var.databases}/Ed-Fi-ODS-Implementation/Artifacts/MsSql/Structure/Ods/ -filter '*.sql' -recurse",
       "Set-Location ./${var.databases}",
       "Import-Module -Force -Scope Global SqlServer",
       "Import-Module ./Deployment.psm1",
