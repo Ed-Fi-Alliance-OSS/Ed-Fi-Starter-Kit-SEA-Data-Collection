@@ -92,6 +92,10 @@ variable "sample_report" {
   type = string
 }
 
+variable "sample_validation" {
+  type = string
+}
+
 packer {
   required_plugins {
     comment = {
@@ -131,6 +135,7 @@ build {
       "${path.root}/build/${var.landing_page}.zip",
       "${path.root}/build/${var.archive_name}.zip",
       "${path.root}/build/${var.sample_report}.zip",
+      "${path.root}/build/${var.sample_validation}.zip",
       "${path.root}/build/${var.web_api}.zip",
       "${path.root}/build/${var.admin_app}.zip",
       "${path.root}/build/${var.swagger_ui}.zip",
@@ -213,9 +218,13 @@ build {
       "Set-Location c:/temp",
       "Expand-Archive ./${var.databases}.zip -Destination ./${var.databases}",
       "Expand-Archive ./${var.sampledata}.zip -Destination ./${var.sampledata}",
+      "Expand-Archive ./${var.sample_validation}.zip -Destination ./${var.sample_validation}",
       "Copy-Item -Path ./${var.archive_name}/configuration.json -Destination ./${var.databases}",
       "Copy-Item -Path ./${var.archive_name}/sampledata.ps1 -Destination ./${var.databases}/Ed-Fi-ODS-Implementation/DatabaseTemplate/Scripts/",
       "Copy-Item -Path ./${var.archive_name}/sk.ps1 -Destination c:/plugin -Force",
+      "New-Item -ItemType Directory -Path ./${var.databases}/Ed-Fi-ODS-Implementation/Artifacts/MsSql/Structure/Ods/",
+      "Get-ChildItem C:/${var.sample_report}/* -filter '*-Create*.sql' | Move-Item -Destination ./${var.databases}/Ed-Fi-ODS-Implementation/Artifacts/MsSql/Structure/Ods/",
+      "Copy-Item ./${var.sample_validation}/* ./${var.databases}/Ed-Fi-ODS-Implementation/Artifacts/MsSql/Structure/Ods/ -filter '*.sql' -recurse",
       "Set-Location ./${var.databases}",
       "Import-Module -Force -Scope Global SqlServer",
       "Import-Module ./Deployment.psm1",
@@ -224,7 +233,7 @@ build {
   }
   
   provisioner "comment" {
-    comment          = "Executing c:/temp/${var.archive_name}/report-setup.ps1"
+    comment          = "Executing c:/${var.sample_report}/report.ps1"
     ui               = true
     bubble_text      = false
   }
@@ -235,8 +244,6 @@ build {
     elevated_user     = "${var.user_name}"
     inline            = [
       "$ErrorActionPreference = 'Stop'",
-      "Set-Location c:/temp/${var.archive_name}/",
-      "./report-setup.ps1",
       "Set-Location c:/${var.sample_report}",
       "./report.ps1"
     ]

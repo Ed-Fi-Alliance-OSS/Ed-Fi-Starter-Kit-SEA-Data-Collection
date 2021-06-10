@@ -13,6 +13,7 @@
   "password": "EdFi!sCool",
   "archive_name": "scripts",
   "sample_report": "sample-reports",
+  "sample_validation": "sample-validation",
   "landing_page": "docs",
   "postman": "postman",
   "web_api": "EdFi.Suite3.Installer.WebApi",
