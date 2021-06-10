@@ -297,7 +297,7 @@ build {
       "Expand-Archive ./${var.swagger_ui}.zip -Destination ./${var.swagger_ui}",
       "Set-Location c:/temp/${var.archive_name}/installers",
       "./Install-SwaggerUI.ps1",
-      "Copy-Item -Path c:/temp/${var.archive_name}/installers/swagger_index.js -Destination C:/inetpub/Ed-Fi/SwaggerUI/wwwroot/index.js -Force"
+      "Add-Content -Path C:/inetpub/Ed-Fi/SwaggerUI/wwwroot/index.js -Value (Get-Content -Path c:/temp/${var.archive_name}/installers/swagger_index.js)"
     ]
   }
 
