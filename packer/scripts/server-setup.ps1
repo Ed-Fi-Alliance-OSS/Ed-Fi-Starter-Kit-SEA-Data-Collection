@@ -162,7 +162,7 @@ function Install-PreRequisites() {
     choco install dotnetfx -y --ignore-pending-reboot --execution-timeout=$installTimeout
     choco install vscode -y --ignore-pending-reboot --execution-timeout=$installTimeout
     choco install dotnetcore-sdk -y --ignore-pending-reboot --execution-timeout=$installTimeout
-    choco install dotnetcore-3.1-windowshosting -y --ignore-pending-reboot --execution-timeout=$installTimeout
+    choco install dotnetcore-windowshosting -y --ignore-pending-reboot --execution-timeout=$installTimeout
     choco install GoogleChrome -y --ignore-pending-reboot --ignore-checksums --execution-timeout=$installTimeout
     choco install sql-server-express -y -o -ia "'/IACCEPTSQLSERVERLICENSETERMS /Q /ACTION=install /INSTANCEID=MSSQLSERVER /INSTANCENAME=MSSQLSERVER /TCPENABLED=1 /UPDATEENABLED=FALSE'" --execution-timeout=$installTimeout
     choco install sql-server-management-studio -y --ignore-pending-reboot --execution-timeout=$installTimeout
