@@ -9,43 +9,44 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-create procedure [dbo].[ValidationError_705]
+CREATE OR ALTER PROCEDURE [validation].[ValidationError_705]
 (
       @StateOrganizationId  nvarchar(11)= 'all',
        @Datayear nvarchar(9)
 )
-as
+AS
+BEGIN
 /**
 Student Has Over 100 Percent Total FTE Within District
 
 Student has over 100 percent FTE reported across all School Enrollment records in your district. Please verify FTE and enrollment records for the student.
 **/
 
-declare @maydate date
-set @maydate = right(@datayear,4)+ '-05-01'  --work around for schools that add end of year date prevous to end of year
+DECLARE @maydate date
+SET @maydate = right(@datayear,4)+ '-05-01'  --work around for schools that add end of year date prevous to end of year
 
 DECLARE @ERROR_CODE INT = 705
 DECLARE @ERROR_MESSAGE  nvarchar(100) = 'Student Has Over 100 Percent Total FTE Within District'
 DROP TABLE IF EXISTS #fte
 
 --determine FTE
-select distinct
+SELECT DISTINCT
  ssa.StudentUSI
  , school.LocalEducationAgencyId
- , sum(ssa.FullTimeEquivalency) *100 as fte
+ , SUM(ssa.FullTimeEquivalency) *100 AS fte
  into #fte
-from edfi.StudentSchoolAssociation as ssa
-	inner join edfi.School as school
-		on ssa.SchoolId = school.SchoolId
-where (ssa.ExitWithdrawDate is null or ssa.ExitWithdrawDate > @maydate)		--check for full year enrollments
-	and ssa.EntryDate < @maydate											--skip summer school
-group by ssa.StudentUSI, school.LocalEducationAgencyId
-order by fte
+FROM edfi.StudentSchoolAssociation AS ssa
+    INNER JOIN edfi.School AS school
+		ON ssa.SchoolId = school.SchoolId
+WHERE (ssa.ExitWithdrawDate is null OR ssa.ExitWithdrawDate > @maydate)		--check for full year enrollments
+	AND ssa.EntryDate < @maydate											--skip summer school
+GROUP BY ssa.StudentUSI, school.LocalEducationAgencyId
+ORDER BY fte
 
 
 --set error
 
-INSERT INTO [dbo].[DistrictErrorStaging]
+INSERT INTO [validation].[DistrictErrorStaging]
 (	[ErrorCode],
     [ErrorMessage],
 	[Datayears],
@@ -60,14 +61,13 @@ select distinct
 , DistrictCode = eoic.IdentificationCode
 , [StudentUSI] = #fte.StudentUSI
 , DateAdded = GETDATE()
-from  #fte
-	inner join edfi.EducationOrganizationIdentificationCode eoic
-			 on #fte.LocalEducationAgencyId = eoic.EducationOrganizationId
-where #fte.fte > 100
-	and (eoic.IdentificationCode = @StateOrganizationId or @StateOrganizationId='all')
+FROM  #fte
+	INNER JOIN edfi.EducationOrganizationIdentificationCode eoic
+			 ON #fte.LocalEducationAgencyId = eoic.EducationOrganizationId
+WHERE #fte.fte > 100
+	AND (eoic.IdentificationCode = @StateOrganizationId or @StateOrganizationId='all')
 
-drop table #fte
+DROP TABLE #fte
 
-
-
-select * from [dbo].[DistrictErrorStaging] where [ErrorCode] = 705
+END;
+GO
