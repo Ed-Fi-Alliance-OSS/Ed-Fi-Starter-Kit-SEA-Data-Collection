@@ -83,7 +83,7 @@ Compress-Archive -Path (Join-Path -Path $PSScriptRoot -ChildPath "scripts/*") -D
 Compress-Archive -Path (Join-Path -Path $PSScriptRoot -ChildPath "../sample-api-calls/*.json") -Destination  (Join-Path -Path $buildPath -ChildPath "postman.zip") -Force
 
 # Compress Report scripts to a zip archive
-Compress-Archive -Path (Join-Path -Path $PSScriptRoot -ChildPath "../sample-reports/*") -Destination  (Join-Path -Path $buildPath -ChildPath "sample-reports.zip") -Force
+Compress-Archive -Path (Join-Path -Path $PSScriptRoot -ChildPath "../sample-reports/*") -Destination  (Join-Path -Path $buildPath -ChildPath "ReportGenerationScripts.zip") -Force
 
 # Compress Validation scripts to a zip archive
 Compress-Archive -Path (Join-Path -Path $PSScriptRoot -ChildPath "../sample-validation/*") -Destination  (Join-Path -Path $buildPath -ChildPath "sample-validation.zip") -Force
