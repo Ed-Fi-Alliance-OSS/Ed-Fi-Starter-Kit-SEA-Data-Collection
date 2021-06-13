@@ -18,10 +18,11 @@ AS
 BEGIN
 
 TRUNCATE TABLE [validation].[DistrictErrorLog];
+INSERT INTO [validation].[DistrictErrorLog](ErrorCode, ErrorMessage, Datayears, DistrictCode, StudentUSI, DateAdded)
+SELECT * FROM [validation].[GetValidationError_743](@StateOrganizationId, @Datayear)
 
-EXEC [validation].[ValidationError_743] @StateOrganizationId, @Datayear
-
-EXEC [validation].[ValidationError_705] @StateOrganizationId, @Datayear
+INSERT INTO [validation].[DistrictErrorLog](ErrorCode, ErrorMessage, Datayears, DistrictCode, StudentUSI, DateAdded)
+SELECT * FROM [validation].[GetValidationError_705](@StateOrganizationId, @Datayear)
 
 END;
 GO
