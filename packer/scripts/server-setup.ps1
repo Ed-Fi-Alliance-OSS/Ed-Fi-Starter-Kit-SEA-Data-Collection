@@ -150,6 +150,14 @@ function Enable-LongFileNames {
         Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -name "LongPathsEnabled" -Value 1 -Verbose -Force
     }
 }
+
+function RemoveDesktopIcons{
+    Remove-Item "C:\Users\*\Desktop\Visual Studio Code.lnk" -Force
+    Remove-Item "C:\Users\*\Desktop\Google Chrome.lnk" -Force
+    Remove-Item "C:\Users\*\Desktop\Postman.lnk" -Force
+    Remove-Item "C:\Users\*\Desktop\LibreOffice*.lnk" -Force
+}
+
 function Install-PreRequisites() {
 
     Start-Transcript -Path ".\server-setup.log"
@@ -171,6 +179,8 @@ function Install-PreRequisites() {
 
     Install-Module -Name SqlServer -MinimumVersion '21.1.18068' -Scope CurrentUser -Force -AllowClobber
 
+    RemoveDesktopIcons
+    
     Stop-Transcript
 }
 
