@@ -49,7 +49,7 @@ jobs:
       - name: Checkout Ed-Fi-ODS-Implementation
         uses: actions/checkout@v2.3.4
         with:
-          ref: SEASK-35
+          ref: ODS-4948
           repository: Ed-Fi-Alliance-OSS/Ed-Fi-ODS-Implementation
           path: Ed-Fi-ODS-Implementation/
 
