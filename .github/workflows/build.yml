@@ -75,7 +75,7 @@ jobs:
       - name: Initialize-DevelopmentEnvironment
         shell: powershell
         run: |
-          docker exec mssqlwin powershell "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; & ([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://dot.net/v1/dotnet-install.ps1'))) -Channel 3.1 -InstallDir 'C:/Program Files/dotnet'; dotnet user-secrets set --project C:/Ed-Fi-ODS-Implementation/Application/EdFi.Ods.WebApi/ "Plugin:Folder" "../../Plugin"; . C:/Ed-Fi-ODS-Implementation/Initialize-PowershellForDevelopment.ps1; Initialize-DevelopmentEnvironment -RunDotnetTest -RunSdkGen -RunSmokeTest"
+          docker exec mssqlwin powershell "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; & ([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://dot.net/v1/dotnet-install.ps1'))) -Channel 3.1 -InstallDir 'C:/Program Files/dotnet'; dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ec "Plugin:Folder" "../../Plugin"; . C:/Ed-Fi-ODS-Implementation/Initialize-PowershellForDevelopment.ps1; Initialize-DevelopmentEnvironment -RunDotnetTest -RunSdkGen -RunSmokeTest"
 
       - name: Pack
         run: nuget pack $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Data-Collection/sample-extension/EdFi.Ods.Extensions.Sk/EdFi.Ods.Extensions.Sk.nuspec -OutputDirectory NugetPackages -Version 1.0.$env:GITHUB_RUN_NUMBER -Properties configuration=release -Properties "authors=Ed-Fi Alliance" -Properties "owners=Ed-Fi Alliance" -Properties "copyright=Copyright ©Ed-Fi Alliance, LLC. 2020" -Properties id=EdFi.Ods.Extensions.Sk -Properties title=EdFi.Ods.Extensions.Sk -Properties description=EdFi.Ods.Extensions.Sk -NoPackageAnalysis -NoDefaultExcludes
