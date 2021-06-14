@@ -1,6 +1,6 @@
 name: SEASK-35-container
 
-on: [push]
+on: workflow_dispatch
 
 jobs:
   SEASK-35-container:
