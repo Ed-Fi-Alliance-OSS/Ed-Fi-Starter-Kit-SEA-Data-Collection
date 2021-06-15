@@ -23,7 +23,7 @@ jobs:
 
       - name: Create Login  [USER MANAGER\ContainerAdministrator] on SQLServer 2017 Express
         run: |
-           docker exec -it SQLServer sqlcmd -S localhost -U sa -P Passw0rd! -q "CREATE LOGIN [USER MANAGER\ContainerAdministrator] FROM WINDOWS WITH DEFAULT_DATABASE=[master], DEFAULT_LANGUAGE=[us_english];ALTER SERVER ROLE [sysadmin] ADD MEMBER [USER MANAGER\ContainerAdministrator];"
+           docker exec -it mssqllin sqlcmd -S localhost -U sa -P Passw0rd! -q "CREATE LOGIN [USER MANAGER\ContainerAdministrator] FROM WINDOWS WITH DEFAULT_DATABASE=[master], DEFAULT_LANGUAGE=[us_english];ALTER SERVER ROLE [sysadmin] ADD MEMBER [USER MANAGER\ContainerAdministrator];"
 
     #   - name: Check SQLServer version
     #     shell: powershell
