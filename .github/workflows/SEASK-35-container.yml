@@ -25,6 +25,11 @@ jobs:
         run: |
            docker exec  mssqlwin sqlcmd -S localhost -U sa -P Passw0rd! -q "CREATE LOGIN [USER MANAGER\ContainerAdministrator] FROM WINDOWS WITH DEFAULT_DATABASE=[master], DEFAULT_LANGUAGE=[us_english];ALTER SERVER ROLE [sysadmin] ADD MEMBER [USER MANAGER\ContainerAdministrator];"
 
+      - name: Restart the MSSQLSERVER Service
+        shell: powershell
+        run: |
+          docker exec mssqlwin powershell ". 'net stop MSSQLSERVER"
+          docker exec mssqlwin powershell ". 'net start MSSQLSERVER"
     #   - name: Check SQLServer version
     #     shell: powershell
     #     run: |
