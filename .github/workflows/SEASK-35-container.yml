@@ -28,9 +28,9 @@ jobs:
       - name: Restart the MSSQLSERVER Service
         shell: powershell
         run: |
-           docker exec SQLServer powershell "Get-Service `MSSQL*'"
-          docker exec mssqlwin powershell "net stop MSSQL$SQLEXPRESS"
-          docker exec mssqlwin powershell "net start MSSQL$SQLEXPRESS"
+          docker exec mssqlwin powershell "net stop 'SQL Server (SQLEXPRESS)'"
+          docker exec mssqlwin powershell "net start 'SQL Server (SQLEXPRESS)'"
+
     #   - name: Check SQLServer version
     #     shell: powershell
     #     run: |
