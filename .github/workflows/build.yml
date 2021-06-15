@@ -4,7 +4,7 @@ on: [push]
 
 env:
   AZURE_ARTIFACTS_FEED_URL: https://pkgs.dev.azure.com/ed-fi-alliance/Ed-Fi-Alliance-OSS/_packaging/EdFi/nuget/v3/index.json
-  
+
 jobs:
   build-and-test:
     runs-on: windows-2019
@@ -17,6 +17,20 @@ jobs:
           source-url: ${{ env.AZURE_ARTIFACTS_FEED_URL }}
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.AZURE_ARTIFACTS_PERSONAL_ACCESS_TOKEN }}
+
+      - name: Start windows container for SQLServer 2017 Express
+        run: |
+          docker run -m 3gb -p 1433:1433 -e 'sa_password=Passw0rd!' -e 'ACCEPT_EULA=Y' --name mssqlwin -d microsoft/mssql-server-windows-express:2017-latest
+
+      - name: Add dbowner role to  [USER MANAGER\ContainerAdministrator] on SQLServer 2017 Express
+        run: |
+           docker exec  mssqlwin sqlcmd -S localhost -U sa -P Passw0rd! -q "EXEC sp_addrolemember [db_owner], [USER MANAGER\ContainerAdministrator]"
+           
+      - name: Restart the MSSQLSERVER Service
+        shell: powershell
+        run: |
+          docker exec mssqlwin powershell "net stop 'MSSQL`$SQLEXPRESS'"
+          docker exec mssqlwin powershell "net start 'MSSQL`$SQLEXPRESS'"
 
       - name: Enable longpaths
         run: |
@@ -54,10 +68,10 @@ jobs:
 
       - name: Build Starter Kit Sample Extension
         run: dotnet build $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Data-Collection/sample-extension/EdFi.Ods.Extensions.Sk/ --configuration release
-      
+
       - name: Test Starter Kit Sample Extension
         run: dotnet test $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Data-Collection/sample-extension/EdFi.Ods.Extensions.Sk/ --no-restore --verbosity normal
-        
+
       - name: Pack
         run: nuget pack $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Data-Collection/sample-extension/EdFi.Ods.Extensions.Sk/EdFi.Ods.Extensions.Sk.nuspec -OutputDirectory NugetPackages -Version 1.0.$env:GITHUB_RUN_NUMBER -Properties configuration=release -Properties "authors=Ed-Fi Alliance" -Properties "owners=Ed-Fi Alliance" -Properties "copyright=Copyright ©Ed-Fi Alliance, LLC. 2020" -Properties id=EdFi.Ods.Extensions.Sk -Properties title=EdFi.Ods.Extensions.Sk -Properties description=EdFi.Ods.Extensions.Sk -NoPackageAnalysis -NoDefaultExcludes
 
