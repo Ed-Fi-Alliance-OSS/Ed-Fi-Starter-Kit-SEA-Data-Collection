@@ -71,6 +71,7 @@ jobs:
           docker stop mssqlwin
           docker cp $env:GITHUB_WORKSPACE/Ed-Fi-ODS/ mssqlwin:C:/Ed-Fi-ODS/
           docker cp $env:GITHUB_WORKSPACE/Ed-Fi-ODS-Implementation/ mssqlwin:C:/Ed-Fi-ODS-Implementation/
+          docker cp $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Data-Collection/.github/workflows/build.ps1 mssqlwin:C:/
           docker cp $env:GITHUB_WORKSPACE/NugetPackages/EdFi.Ods.Extensions.Sk.1.0.$env:GITHUB_RUN_NUMBER.nupkg mssqlwin:C:/
           docker start mssqlwin
           docker exec mssqlwin powershell "Move-Item C:/EdFi.Ods.Extensions.Sk.1.0.$env:GITHUB_RUN_NUMBER.nupkg C:/EdFi.Ods.Extensions.Sk.zip"
@@ -79,7 +80,7 @@ jobs:
       - name: Initialize-DevelopmentEnvironment
         shell: powershell
         run: |
-          docker exec mssqlwin powershell "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; & ([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://dot.net/v1/dotnet-install.ps1'))) -Channel 3.1 -InstallDir 'C:/Program Files/dotnet'; dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ec "Plugin:Folder" "../../Plugin"; dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed "Plugin:Folder" "../../Plugin"; . C:/Ed-Fi-ODS-Implementation/Initialize-PowershellForDevelopment.ps1; Initialize-DevelopmentEnvironment -RunDotnetTest -RunSdkGen -RunSmokeTest"
+          docker exec mssqlwin powershell "& C:/build.ps1"
 
       - name: Push Package
         run: dotnet nuget push NugetPackages/EdFi.Ods.Extensions.Sk.1.0.$env:GITHUB_RUN_NUMBER.nupkg --api-key AzureArtifacts --skip-duplicate
