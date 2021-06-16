@@ -22,9 +22,9 @@ jobs:
         run: |
           docker run -m 3gb -p 1433:1433 -e 'sa_password=Passw0rd!' -e 'ACCEPT_EULA=Y' --name mssqlwin -d microsoft/mssql-server-windows-developer:latest
 
-#      - name: Add dbowner role to  [USER MANAGER\ContainerAdministrator] on Microsoft SQL Server 2017 Developer Edition
-#        run: |
-#           docker exec  mssqlwin sqlcmd -S localhost -U sa -P Passw0rd! -q "EXEC sp_addrolemember [db_owner], [USER MANAGER\ContainerAdministrator]"
+      - name: Add dbowner role to  [User Manager\ContainerAdministrator] on Microsoft SQL Server 2017 Developer Edition
+        run: |
+           docker exec  mssqlwin sqlcmd -S localhost -U sa -P Passw0rd! -q "EXEC sp_addrolemember [db_owner], [User Manager\ContainerAdministrator]"
 
       - name: Restart the MSSQLSERVER Service
         shell: powershell
