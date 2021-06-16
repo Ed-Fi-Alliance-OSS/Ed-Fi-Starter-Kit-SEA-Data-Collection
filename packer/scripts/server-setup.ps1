@@ -186,13 +186,16 @@ function Install-PreRequisites() {
 
 function Set-WallPaper {
     Write-Output "Downloading wallpaper image"
+
+    if (-not (Test-path "C:/Ed-Fi-Starter-Kit/")) {
+        New-Item -Path "C:/Ed-Fi-Starter-Kit/" -ItemType "directory"
+    }
+
     $url = "https://edfidata.s3-us-west-2.amazonaws.com/Starter+Kits/images/EdFiQuickStartBackground.png"
-    $downloadedFile = Get-FileFromInternet $url
+    Invoke-WebRequest -Uri $url -OutFile "C:/Ed-Fi-Starter-Kit/EdFiQuickStartBackground.png"
 	
-    Copy-Item -Path $downloadedFile -Destination "C:/"
-	
-    Set-ItemProperty -path "HKCU:Control Panel\Desktop" -name WallPaper -value "C:/EdFiQuickStartBackground.png"
-    Set-ItemProperty -path "HKCU:\Control Panel\Desktop" -name WallpaperStyle -value "6"
+    Set-ItemProperty -path "HKCU:\Control Panel\Desktop" -name WallPaper -value "C:/Ed-Fi-Starter-Kit/EdFiQuickStartBackground.png"
+    Set-ItemProperty -path "HKCU:\Control Panel\Desktop" -name WallpaperStyle -value "0" -Force
     rundll32.exe user32.dll, UpdatePerUserSystemParameters
 }
 
