@@ -150,6 +150,14 @@ function Enable-LongFileNames {
         Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -name "LongPathsEnabled" -Value 1 -Verbose -Force
     }
 }
+
+function RemoveDesktopIcons{
+    Remove-Item "C:\Users\*\Desktop\Visual Studio Code.lnk" -Force
+    Remove-Item "C:\Users\*\Desktop\Google Chrome.lnk" -Force
+    Remove-Item "C:\Users\*\Desktop\Postman.lnk" -Force
+    Remove-Item "C:\Users\*\Desktop\LibreOffice*.lnk" -Force
+}
+
 function Install-PreRequisites() {
 
     Start-Transcript -Path ".\server-setup.log"
@@ -171,10 +179,28 @@ function Install-PreRequisites() {
 
     Install-Module -Name SqlServer -MinimumVersion '21.1.18068' -Scope CurrentUser -Force -AllowClobber
 
+    RemoveDesktopIcons
+    
     Stop-Transcript
+}
+
+function Set-WallPaper {
+    Write-Output "Downloading wallpaper image"
+
+    if (-not (Test-path "C:/Ed-Fi-Starter-Kit/")) {
+        New-Item -Path "C:/Ed-Fi-Starter-Kit/" -ItemType "directory"
+    }
+
+    $url = "https://edfidata.s3-us-west-2.amazonaws.com/Starter+Kits/images/EdFiQuickStartBackground.png"
+    Invoke-WebRequest -Uri $url -OutFile "C:/Ed-Fi-Starter-Kit/EdFiQuickStartBackground.png"
+	
+    Set-ItemProperty -path "HKCU:\Control Panel\Desktop" -name WallPaper -value "C:/Ed-Fi-Starter-Kit/EdFiQuickStartBackground.png"
+    Set-ItemProperty -path "HKCU:\Control Panel\Desktop" -name WallpaperStyle -value "0" -Force
+    rundll32.exe user32.dll, UpdatePerUserSystemParameters
 }
 
 Set-TLS12Support
 Set-ExecutionPolicy bypass -Scope CurrentUser -Force;
 
+Set-WallPaper
 Install-PreRequisites
