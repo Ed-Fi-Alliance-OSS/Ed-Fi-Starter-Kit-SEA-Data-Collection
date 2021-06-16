@@ -71,9 +71,9 @@ jobs:
           docker stop mssqlwin
           docker cp $env:GITHUB_WORKSPACE/Ed-Fi-ODS/ mssqlwin:C:/Ed-Fi-ODS/
           docker cp $env:GITHUB_WORKSPACE/Ed-Fi-ODS-Implementation/ mssqlwin:C:/Ed-Fi-ODS-Implementation/
-          docker cp $env:GITHUB_WORKSPACE/NugetPackages/EdFi.Ods.Extensions.Sk.*.nupkg mssqlwin:C:/
+          docker cp $env:GITHUB_WORKSPACE/NugetPackages/EdFi.Ods.Extensions.Sk.1.0.$env:GITHUB_RUN_NUMBER.nupkg mssqlwin:C:/
           docker start mssqlwin
-          docker exec mssqlwin powershell "Move-Item C:/EdFi.Ods.Extensions.Sk.*.nupkg C:/EdFi.Ods.Extensions.Sk.zip"
+          docker exec mssqlwin powershell "Move-Item C:/EdFi.Ods.Extensions.Sk.1.0.$env:GITHUB_RUN_NUMBER.nupkg C:/EdFi.Ods.Extensions.Sk.zip"
           docker exec mssqlwin powershell "Expand-Archive C:/EdFi.Ods.Extensions.Sk.zip C:/Ed-Fi-ODS-Implementation/Plugin/; ls"
 
       - name: Initialize-DevelopmentEnvironment
