@@ -7,7 +7,7 @@ env:
 
 jobs:
   build-and-test:
-    runs-on: windows-2019
+    runs-on: windows-2016
 
     steps:
       - name: Setup .NET Core SDK 3.1.x
