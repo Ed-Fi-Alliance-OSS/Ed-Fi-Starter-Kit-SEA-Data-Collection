@@ -1456,7 +1456,7 @@
 								"exec": [
 									"const scenarioId = pm.environment.get('scenarioId');\r",
 									"pm.environment.set('supplied:'+scenarioId+':languageDescriptor','uri://ed-fi.org/LanguageDescriptor#tso');\r",
-									"pm.environment.set('supplied:'+scenarioId+':sexDescriptor','uri://ed-fi.org/SexDescriptor#Male');\r",
+									"pm.environment.set('supplied:'+scenarioId+':sexDescriptor','uri://ed-fi.org/SexDescriptor#Female');\r",
 									"pm.environment.set('supplied:'+scenarioId+':studentCharacteristicDescriptor','uri://ed-fi.org/StudentCharacteristicDescriptor#Single Parent');\r",
 									"pm.environment.set('supplied:'+scenarioId+':raceDescriptor','uri://ed-fi.org/RaceDescriptor#Asian');"
 								],
@@ -2076,7 +2076,7 @@
 								"exec": [
 									"const scenarioId = pm.environment.get('scenarioId');\r",
 									"pm.environment.set('supplied:'+scenarioId+':languageDescriptor','uri://ed-fi.org/LanguageDescriptor#tso');\r",
-									"pm.environment.set('supplied:'+scenarioId+':sexDescriptor','uri://ed-fi.org/SexDescriptor#Male');\r",
+									"pm.environment.set('supplied:'+scenarioId+':sexDescriptor','uri://ed-fi.org/SexDescriptor#Female');\r",
 									"pm.environment.set('supplied:'+scenarioId+':studentCharacteristicDescriptor','uri://ed-fi.org/StudentCharacteristicDescriptor#Homeless');\r",
 									"pm.environment.set('supplied:'+scenarioId+':raceDescriptor','uri://ed-fi.org/RaceDescriptor#American Indian - Alaska Native');"
 								],
@@ -3559,7 +3559,7 @@
 								"exec": [
 									"const scenarioId = pm.environment.get('scenarioId');\r",
 									"pm.environment.set('supplied:'+scenarioId+':languageDescriptor','uri://ed-fi.org/LanguageDescriptor#tso');\r",
-									"pm.environment.set('supplied:'+scenarioId+':sexDescriptor','uri://ed-fi.org/SexDescriptor#Male');\r",
+									"pm.environment.set('supplied:'+scenarioId+':sexDescriptor','uri://ed-fi.org/SexDescriptor#Female');\r",
 									"pm.environment.set('supplied:'+scenarioId+':studentCharacteristicDescriptor','uri://ed-fi.org/StudentCharacteristicDescriptor#Immigrant');\r",
 									"pm.environment.set('supplied:'+scenarioId+':raceDescriptor','uri://ed-fi.org/RaceDescriptor#White');\r",
 									""
@@ -3573,7 +3573,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n \r\n  \"educationOrganizationReference\": {\r\n    \"educationOrganizationId\":255901\r\n  },\r\n  \"studentReference\": {\r\n    \"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n  },\r\n  \"hispanicLatinoEthnicity\": true,\r\n  \r\n  \"languages\": [\r\n    {\r\n      \"languageDescriptor\": \"{{supplied:{{scenarioId}}:languageDescriptor}}\"\r\n    }\r\n  ],\r\n  \"sexDescriptor\": \"{{supplied:{{scenarioId}}:sexDescriptor}}\",\r\n  \"studentCharacteristics\": [\r\n    {\r\n      \"studentCharacteristicDescriptor\": \"{{supplied:{{scenarioId}}:studentCharacteristicDescriptor}}\"\r\n    }\r\n  ]\r\n}",
+							"raw": "{\r\n \r\n  \"educationOrganizationReference\": {\r\n    \"educationOrganizationId\":255901\r\n  },\r\n  \"studentReference\": {\r\n    \"studentUniqueId\": \"{{known:studentUniqueId}}\"\r\n  },\r\n  \"hispanicLatinoEthnicity\": true,\r\n  \r\n  \"languages\": [\r\n    {\r\n      \"languageDescriptor\": \"{{supplied:{{scenarioId}}:languageDescriptor}}\"\r\n    }\r\n  ],\r\n  \"sexDescriptor\": \"{{supplied:{{scenarioId}}:sexDescriptor}}\",\r\n  \"studentCharacteristics\": [\r\n    {\r\n      \"studentCharacteristicDescriptor\": \"{{supplied:{{scenarioId}}:studentCharacteristicDescriptor}}\"\r\n    }\r\n  ],\r\n  \"races\": [\r\n      {\r\n        \"raceDescriptor\": \"{{supplied:{{scenarioId}}:raceDescriptor}}\"\r\n      }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

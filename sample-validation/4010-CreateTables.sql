@@ -9,7 +9,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[DistrictErrorStaging](
+CREATE TABLE [validation].[DistrictErrorLog](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[ErrorCode] [nvarchar](255) NOT NULL,
 	[ErrorMessage] [nvarchar](255) NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE [dbo].[DistrictErrorStaging](
 	[DistrictCode] [nvarchar](255) NOT NULL,
 	[StudentUSI] [nvarchar](255) NOT NULL,
     [DateAdded] [datetime] NOT NULL
- CONSTRAINT [PK_DistrictErrorStaging_Id] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_DistrictErrorLog_Id] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]

@@ -18,23 +18,23 @@ if (-not (Get-InstalledModule | Where-Object -Property Name -eq "ImportExcel")) 
     Install-Module -Force -Scope CurrentUser -Name ImportExcel
 }
 
-$SQLresults = Invoke-Sqlcmd -Database "EdFi_Ods_2022" -InputFile "C:/sample-reports/3100-MembershipCountByGradeRaceGenderReport.sql" | Select * -ExcludeProperty RowError, RowState, Table, ItemArray, HasErrors
+$SQLresults = Invoke-Sqlcmd -Database "EdFi_Ods_2022" -InputFile "./3100-MembershipCountByGradeRaceGenderReport.sql" | Select * -ExcludeProperty RowError, RowState, Table, ItemArray, HasErrors
 
 $SQLresults | Export-Excel -Path "C:/Users/Public/Desktop/Reports/MembershipCountByGradeRaceGenderReport.xlsx" -WorksheetName "Student Count" -AutoSize
 
-$SQLresults = Invoke-Sqlcmd -Database "EdFi_Ods_2022" -InputFile "C:/sample-reports/3110-MembershipCountByGradeReport.sql" | Select * -ExcludeProperty RowError, RowState, Table, ItemArray, HasErrors
+$SQLresults = Invoke-Sqlcmd -Database "EdFi_Ods_2022" -InputFile "./3110-MembershipCountByGradeReport.sql" | Select * -ExcludeProperty RowError, RowState, Table, ItemArray, HasErrors
 
 $SQLresults | Export-Excel -Path "C:/Users/Public/Desktop/Reports/MembershipCountByGradeReport.xlsx" -WorksheetName "Student Count" -AutoSize
 
-$SQLresults = Invoke-Sqlcmd -Database "EdFi_Ods_2022" -InputFile "C:/sample-reports/3120-SpecialEducationByAgeReport.sql" | Select * -ExcludeProperty RowError, RowState, Table, ItemArray, HasErrors
+$SQLresults = Invoke-Sqlcmd -Database "EdFi_Ods_2022" -InputFile "./3120-SpecialEducationByAgeReport.sql" | Select * -ExcludeProperty RowError, RowState, Table, ItemArray, HasErrors
 
 $SQLresults | Export-Excel -Path "C:/Users/Public/Desktop/Reports/SpecialEducationByAgeReport.xlsx" -WorksheetName "Student Count" -AutoSize
 
-$SQLresults = Invoke-Sqlcmd -Database "EdFi_Ods_2022" -InputFile "C:/sample-reports/3130-SpecialEducationPrimaryDisabilityReport.sql" | Select * -ExcludeProperty RowError, RowState, Table, ItemArray, HasErrors
+$SQLresults = Invoke-Sqlcmd -Database "EdFi_Ods_2022" -InputFile "./3130-SpecialEducationPrimaryDisabilityReport.sql" | Select * -ExcludeProperty RowError, RowState, Table, ItemArray, HasErrors
 
 $SQLresults | Export-Excel -Path "C:/Users/Public/Desktop/Reports/SpecialEducationPrimaryDisabilityReport.xlsx" -WorksheetName "Student Count" -AutoSize
 
-$SQLresults = Invoke-Sqlcmd -Database "EdFi_Ods_2022" -InputFile "C:/sample-reports/3140-SpecialEducationSettingReport.sql" | Select * -ExcludeProperty RowError, RowState, Table, ItemArray, HasErrors
+$SQLresults = Invoke-Sqlcmd -Database "EdFi_Ods_2022" -InputFile "./3140-SpecialEducationSettingReport.sql" | Select * -ExcludeProperty RowError, RowState, Table, ItemArray, HasErrors
 
 $SQLresults | Export-Excel -Path "C:/Users/Public/Desktop/Reports/SpecialEducationSettingReport.xlsx" -WorksheetName "Student Count" -AutoSize
 
