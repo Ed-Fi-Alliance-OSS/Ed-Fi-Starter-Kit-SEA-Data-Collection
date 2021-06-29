@@ -44,8 +44,8 @@ jobs:
       - name: Checkout Starter Kit Sample Extension
         uses: actions/checkout@v2.3.4
         with:
-          repository: Ed-Fi-Alliance-OSS/Starter-Kit-SEA-Data-Collection
-          path: Starter-Kit-SEA-Data-Collection/
+          repository: Ed-Fi-Alliance-OSS/Starter-Kit-SEA-Modernization
+          path: Starter-Kit-SEA-Modernization/
 
       - name: CodeGen
         shell: powershell
@@ -53,16 +53,16 @@ jobs:
           $ErrorActionPreference = 'Stop'
           $PSVersionTable
           . $env:GITHUB_WORKSPACE/Ed-Fi-ODS-Implementation/Initialize-PowershellForDevelopment.ps1
-          Invoke-CodeGen -Engine SQLServer -ExtensionPaths $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Data-Collection/sample-extension/EdFi.Ods.Extensions.Sk/
+          Invoke-CodeGen -Engine SQLServer -ExtensionPaths $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/sample-extension/EdFi.Ods.Extensions.Sk/
 
       - name: DotNet Info
         run: dotnet --info
 
       - name: Build Starter Kit Sample Extension
-        run: dotnet build $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Data-Collection/sample-extension/EdFi.Ods.Extensions.Sk/ --configuration release
+        run: dotnet build $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/sample-extension/EdFi.Ods.Extensions.Sk/ --configuration release
 
       - name: Test Starter Kit Sample Extension
-        run: dotnet test $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Data-Collection/sample-extension/EdFi.Ods.Extensions.Sk/ --no-restore --verbosity normal
+        run: dotnet test $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/sample-extension/EdFi.Ods.Extensions.Sk/ --no-restore --verbosity normal
 
       - name: Version
         run: nuget help
@@ -73,7 +73,7 @@ jobs:
           nuget-version: '5.3.1'
 
       - name: Pack
-        run: nuget pack $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Data-Collection/sample-extension/EdFi.Ods.Extensions.Sk/EdFi.Ods.Extensions.Sk.nuspec -OutputDirectory NugetPackages -Version 1.0.$env:GITHUB_RUN_NUMBER -Properties configuration=release -Properties "authors=Ed-Fi Alliance" -Properties "owners=Ed-Fi Alliance" -Properties "copyright=Copyright ©Ed-Fi Alliance, LLC. 2020" -Properties id=EdFi.Ods.Extensions.Sk -Properties title=EdFi.Ods.Extensions.Sk -Properties description=EdFi.Ods.Extensions.Sk -NoPackageAnalysis -NoDefaultExcludes
+        run: nuget pack $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/sample-extension/EdFi.Ods.Extensions.Sk/EdFi.Ods.Extensions.Sk.nuspec -OutputDirectory NugetPackages -Version 1.0.$env:GITHUB_RUN_NUMBER -Properties configuration=release -Properties "authors=Ed-Fi Alliance" -Properties "owners=Ed-Fi Alliance" -Properties "copyright=Copyright ©Ed-Fi Alliance, LLC. 2020" -Properties id=EdFi.Ods.Extensions.Sk -Properties title=EdFi.Ods.Extensions.Sk -Properties description=EdFi.Ods.Extensions.Sk -NoPackageAnalysis -NoDefaultExcludes
 
       - name: Code Setup
         shell: powershell
@@ -81,7 +81,7 @@ jobs:
           docker stop mssqlwin
           docker cp $env:GITHUB_WORKSPACE/Ed-Fi-ODS/ mssqlwin:C:/Ed-Fi-ODS/
           docker cp $env:GITHUB_WORKSPACE/Ed-Fi-ODS-Implementation/ mssqlwin:C:/Ed-Fi-ODS-Implementation/
-          docker cp $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Data-Collection/.github/workflows/build.ps1 mssqlwin:C:/
+          docker cp $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/.github/workflows/build.ps1 mssqlwin:C:/
           docker cp $env:GITHUB_WORKSPACE/NugetPackages/EdFi.Ods.Extensions.Sk.1.0.$env:GITHUB_RUN_NUMBER.nupkg mssqlwin:C:/
           docker start mssqlwin
           docker exec mssqlwin powershell "Move-Item C:/EdFi.Ods.Extensions.Sk.1.0.$env:GITHUB_RUN_NUMBER.nupkg C:/EdFi.Ods.Extensions.Sk.zip"
