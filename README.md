@@ -1,4 +1,4 @@
-# Starter-Kit-SEA-Modernization Notices
+# Starter-Kit-SEA-Modernization
 
 This product includes software developed at the [Ed-Fi
 Alliance](https://www.ed-fi.org).
