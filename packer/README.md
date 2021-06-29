@@ -86,26 +86,9 @@ PS> ./build-vm.ps1 -PackerFile .\win2019-eval-base.pkr.hcl -VariablesFile .\base
 #build with vmSwitch parameter for starter-kit image
 PS> ./build-vm.ps1 -PackerFile .\sea-starter-kit-win2019-eval.pkr.hcl -VariablesFile .\starter-kit-variables.json -VMSwitch existingVMSwitchName
 
-#build with isoUrl parameter for base image
-PS> ./build-vm.ps1 -PackerFile .\win2019-eval-base.pkr.hcl -VariablesFile .\base-variables.json -ISOUrl C:\projects\17763.737.190906-2324.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us_1.iso
-
-#build with isoUrl parameter for starter-kit image
-PS> ./build-vm.ps1 -PackerFile .\sea-starter-kit-win2019-eval.pkr.hcl -VariablesFile .\starter-kit-variables.json -ISOUrl C:\projects\17763.737.190906-2324.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us_1.iso
-
-#build with SkipCreateVMSwitch  parameter for base image
-PS>  ./build-vm.ps1 -PackerFile .\win2019-eval-base.pkr.hcl -VariablesFile .\base-variables.json -SkipCreateVMSwitch $true
-
-#build with SkipCreateVMSwitch  parameter for starter-kit image
-PS>  ./build-vm.ps1 -PackerFile .\sea-starter-kit-win2019-eval.pkr.hcl -VariablesFile .\starter-kit-variables.json -SkipCreateVMSwitch $true
-
-#build with DownloadBaseImage   parameter for starter-kit image only which will Download base image from S3 only
-PS>  ./build-vm.ps1 -PackerFile .\sea-starter-kit-win2019-eval.pkr.hcl -VariablesFile .\starter-kit-variables.json -DownloadBaseImage $true
-
 ```
 > :exclamation: IMPORTANT: Disconnect from any VPNs. This will cause issues with Hypervisor
 > connectivity.
-
-> NOTE: The build takes upwards of three hours.
 
 The build will download and install Windows Server 2019 Evaluation edition, with
 a license that is valid for 180 days. NuGet Package Management is installed,
