@@ -4,19 +4,8 @@
 
 This README outlines the steps for creating a virtual hard disk image containing
 an evaluation copy of Windows 2019 Server, with SQL Server 2019 Express edition,
-SQL Server Management Studio, Google Chrome, Dot Net Framework 4.8, the Dot Net
+SQL Server Management Studio, Google Chrome, the Dot Net
 Core SDK, and NuGet Package Manager.
-
-## Quick Start
-
-If you want to jump ahead, there are three steps
-
-- Install the prerequisites: Hyper-V and Packer
-- Clone the Starter-Kit-SEA-Modernization repository from Ed-Fi-Alliance-OSS on
-  Github
-- Run the build.ps1 as an Admin user
-
-## Step by step
 
 ### Clone the repo
 
@@ -33,13 +22,12 @@ Clone the [Starter-Kit-SEA-Modernization repository](https://github.com/Ed-Fi-Al
 ```powershell
 choco install Packer
 ```
-
 ### Open a PowerShell console (greater or equal to PSVersion 5) in elevated mode
 
 Set your location in the console to the Starter-Kit-SEA-Data-Collection\packer folder.
-Execute the build.ps1 to create your AMI.
+Execute the build-vm.ps1 to create your VM.
 
-## Optional Parameters
+### Optional Parameters
 There are two optional parameters that you can pass to the build script for
 specific scenarios. The first is if you have a Hyper-V VM Switch defined in
 Hyper-V already you can add `-vmSwitch` along with the name of your Switch.
@@ -78,10 +66,10 @@ PS> ./build-vm.ps1 -PackerFile .\win2019-eval-base.pkr.hcl -VariablesFile .\base
 
 #build with vmSwitch parameter for base image
 PS> ./build-vm.ps1 -PackerFile .\win2019-eval-base.pkr.hcl -VariablesFile .\base-variables.json -VMSwitch existingVMSwitchName
+```
 
-Below are examples showing how to pass these parameters to the build script for starter kit image build .
-
-Note: After the base build, there is a manual step to copy the two folders from dist folder to build folder
+After the base build, copy the contents of `dist` folder to `build` folder and procede with full starter kit image build.
+Below are examples showing how to pass these parameters to the build script for starter kit image build.
 
 ```powershell
 #default way to run build for starter-kit image to generate the starter-kit image. Folders that are created during the build process are `./build` and `./dist`.
@@ -102,10 +90,9 @@ software: Dot Net Core 3.1 SDK, SQL Server 2019 Express,
 SQL Server Management Studio, Google Chrome, and any of their Chocolatey package
 dependencies (Windows update packages for Dot Net).
 
-Next, Starter-kit image build uses the base image provided in build folder and invokes the installation of ODS / API , Admin App, starter kit sample data, starter kit sample extension, sample validation and reporting artifacts..
+Next, Starter-kit image build uses the base image provided in build folder and invokes the installation of ODS / API, Admin App, starter kit sample data, starter kit sample extension, sample validation and reporting artifacts.
 
-When complete, the virtual machine artifacts will be created in the `\packer\dist\` folder for  base image and also starter kit image .
-it is a manual step to move the base image build artifacts to build folder to be used in full build.
+When complete, the virtual machine artifacts will be created in the `\packer\dist\` folder.
 
 ## Build outcome
 
