@@ -35,7 +35,11 @@
 		<WebSite>http://www.LISD.edu/</WebSite>
 		<LocalEducationAgencyId>255902</LocalEducationAgencyId>
 		<LocalEducationAgencyCategory>uri://ed-fi.org/LocalEducationAgencyCategoryDescriptor#Independent</LocalEducationAgencyCategory>
-		<EducationServiceCenterReference ref="ESC_255951"/>
+		<EducationServiceCenterReference>
+			<EducationServiceCenterIdentity>
+			  <EducationServiceCenterId>255951</EducationServiceCenterId>
+			</EducationServiceCenterIdentity>
+		</EducationServiceCenterReference>
 	</LocalEducationAgency>
 	<School id="SCOL_255902001">
 		<EducationOrganizationIdentificationCode>
