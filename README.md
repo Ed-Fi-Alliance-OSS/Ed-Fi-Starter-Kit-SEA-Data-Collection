@@ -1,12 +1,16 @@
 # Starter-Kit-SEA-Modernization
 
-This product includes software developed at the [Ed-Fi
-Alliance](https://www.ed-fi.org).
+This repository hosts the useful resources for the SEA Data Collection Starter Kit
+
+## Legal Information
 
 Copyright (c) 2021 Ed-Fi Alliance, LLC and contributors.
 
-This software distribution includes or contains external references to several
-open source packages that are attributed below in this notice. Where required,
-copies of the license agreement are provided in separate files in the Licenses
-subdirectory. Unless noted below, all open source software is distributed in its
-original form without modification.
+Licensed under the [Apache License, Version 2.0](LICENSE) (the "License").
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+See [NOTICES](NOTICES.md) for additional copyright and license notifications.
