@@ -92,16 +92,19 @@ dependencies (Windows update packages for Dot Net).
 
 Next, Starter-kit image build uses the base image provided in build folder and invokes the installation of ODS / API, Admin App, starter kit sample data, starter kit sample extension, sample validation and reporting artifacts.
 
-When complete, the virtual machine artifacts will be created in the `\packer\dist\` folder.
+When complete, the virtual machine artifacts will be created in the `Starter-Kit-SEA-Data-Collection\packer\dist\` folder.
 
-## Build outcome
+## Using the Image
+* Open Hyper-V Manager.
+* On the right hand side click "Import Virtual Machine".
+* In the wizard, click Next.
+* Then when it asks you to specify where the virtual machine you want to import is, browse to `Starter-Kit-SEA-Data-Collection\packer\dist\` folder which the contains the Hyper-V hard disk images.
+* On the next page it should show one virtual machine called "assessment-starter-kit". Make sure it is selected.
+* Click Next.
+* When choosing the Import Type, leave the default of "Register the virtual machine in place".
+* Click Next.
+* Click Finish.
+* Back in Hyper-V Manager you should now see a VM called "ed-fi-starter-kit".
+* Connect to that VM and start it. 
+* Log into windows using credentials `Administrator` \ `EdFi!sCool`.
 
-The `Starter-Kit-SEA-Data-Collection\packer\dist\` folder will contain Hyper-V hard disk images for the
-as starter kit   Virtual Machine image populated with the the latest databases; the ODS API Tech Suite with Admin App and ODS/ API with SK Extension plugin.
-
-> To Learn more about ODS/API the directions found [here](https://techdocs.ed-fi.org/display/ODSAPIS3V520/Getting+Started)
-
-## Testing the image
-
-You can then use Hyper-V Manager to import the virtual machine. Point the
-directory to the output folder to install. The user and password is `Administrator` and `EdFi!sCool`.
