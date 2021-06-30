@@ -24,7 +24,7 @@ choco install Packer
 ```
 ### Open a PowerShell console (greater or equal to PSVersion 5) in elevated mode
 
-Set your location in the console to the Starter-Kit-SEA-Data-Collection\packer folder.
+Set your location in the console to the Starter-Kit-SEA-Modernization\packer folder.
 Execute the build-vm.ps1 to create your VM.
 
 ### Optional Parameters
@@ -92,13 +92,13 @@ dependencies (Windows update packages for Dot Net).
 
 Next, Starter-kit image build uses the base image provided in build folder and invokes the installation of ODS / API, Admin App, starter kit sample data, starter kit sample extension, sample validation and reporting artifacts.
 
-When complete, the virtual machine artifacts will be created in the `Starter-Kit-SEA-Data-Collection\packer\dist\` folder.
+When complete, the virtual machine artifacts will be created in the `Starter-Kit-SEA-Modernization\packer\dist\` folder.
 
 ## Using the Image
 * Open Hyper-V Manager.
 * On the right hand side click "Import Virtual Machine".
 * In the wizard, click Next.
-* Then when it asks you to specify where the virtual machine you want to import is, browse to `Starter-Kit-SEA-Data-Collection\packer\dist\` folder which the contains the Hyper-V hard disk images.
+* Then when it asks you to specify where the virtual machine you want to import is, browse to `Starter-Kit-SEA-Modernization\packer\dist\` folder which the contains the Hyper-V hard disk images.
 * On the next page it should show one virtual machine called "assessment-starter-kit". Make sure it is selected.
 * Click Next.
 * When choosing the Import Type, leave the default of "Register the virtual machine in place".
