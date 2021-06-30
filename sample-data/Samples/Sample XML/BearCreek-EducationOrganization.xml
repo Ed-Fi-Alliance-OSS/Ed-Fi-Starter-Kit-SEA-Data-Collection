@@ -35,7 +35,11 @@
 		<WebSite>http://www.BCISD.edu/</WebSite>
 		<LocalEducationAgencyId>255903</LocalEducationAgencyId>
 		<LocalEducationAgencyCategory>uri://ed-fi.org/LocalEducationAgencyCategoryDescriptor#Independent</LocalEducationAgencyCategory>
-		<EducationServiceCenterReference ref="ESC_255950"/>
+		<EducationServiceCenterReference>
+			<EducationServiceCenterIdentity>
+			  <EducationServiceCenterId>255951</EducationServiceCenterId>
+			</EducationServiceCenterIdentity>
+		</EducationServiceCenterReference>
 	</LocalEducationAgency>
 	<School id="SCOL_255903001">
 		<EducationOrganizationIdentificationCode>
