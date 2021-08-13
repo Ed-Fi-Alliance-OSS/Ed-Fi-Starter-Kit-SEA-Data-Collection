@@ -24,7 +24,10 @@ function Get-FileFromInternet {
         return $output
     }
 
+    # Temporarily disabling progress bar for significantly faster downloads
+    $ProgressPreference = 'SilentlyContinue'
     Invoke-WebRequest -Uri $url -OutFile $output
+    $ProgressPreference = 'Continue'
 
     return $output
 }
