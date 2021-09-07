@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Start windows container for SQLServer 2017 Express
         run: |
-          docker run -m 3gb -p 1433:1433 -e 'sa_password=Passw0rd!' -e 'ACCEPT_EULA=Y' --name mssqlwin -d octopusdeploy/mssql-server-windows-express
+          docker run -m 3gb -p 1433:1433 -e 'sa_password=Passw0rd!' -e 'ACCEPT_EULA=Y' --name mssqlwin -d octopusdeploy/mssql-server-windows-express:latest
 
       - name: Setup .NET Core SDK 3.1.x
         uses: actions/setup-dotnet@v1.7.2
