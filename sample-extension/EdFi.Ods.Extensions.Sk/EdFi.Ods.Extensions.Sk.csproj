@@ -14,6 +14,8 @@
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="EdFi.Suite3.Ods.Api" Version="5.3.37" />
+    <PackageReference Include="EdFi.Suite3.Ods.Common" Version="5.3.37" />
     <PackageReference Include="EdFi.Suite3.Ods.Standard" Version="5.3.37" />
   </ItemGroup>
   <ItemGroup>
@@ -58,7 +60,4 @@
     </EmbeddedResource>
     <EmbeddedResource Include="assemblyMetadata.json" />
   </ItemGroup>
-    <ItemGroup>
-        <ProjectReference Include="..\..\..\Ed-Fi-ODS\Application\EdFi.Ods.Security\EdFi.Ods.Security.csproj" />
-    </ItemGroup>
 </Project>
