@@ -11,8 +11,8 @@ Import-Module (Get-RepositoryResolvedPath "logistics/scripts/modules/tools/Tools
 $pluginPaths = @()
 
 $parameters = @{
-    packageName     = "EdFi.Ods.Extensions.Sk"
-    packageVersion  = "1.0.260"
+    packageName     = "EdFi.Suite3.Ods.Extensions.SK"
+    packageVersion  = "5.3.32"
     packageSource   = "https://pkgs.dev.azure.com/ed-fi-alliance/Ed-Fi-Alliance-OSS/_packaging/EdFi/nuget/v3/index.json"
     outputDirectory = "$PSScriptRoot"
     toolsPath       = (Get-ToolsPath)
