@@ -32,14 +32,14 @@ jobs:
         with:
           repository: Ed-Fi-Alliance-OSS/Ed-Fi-ODS
           path: Ed-Fi-ODS/
-          ref: ODS-5046
+          ref: ODS-5100
 
       - name: Checkout Ed-Fi-ODS-Implementation
         uses: actions/checkout@v2.3.4
         with:
           repository: Ed-Fi-Alliance-OSS/Ed-Fi-ODS-Implementation
           path: Ed-Fi-ODS-Implementation/
-          ref: ODS-5046
+          ref: ODS-5100
 
       - name: Checkout Starter Kit Sample Extension
         uses: actions/checkout@v2.3.4
