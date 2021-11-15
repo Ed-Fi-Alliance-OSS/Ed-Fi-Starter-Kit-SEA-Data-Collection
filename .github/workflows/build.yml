@@ -7,12 +7,12 @@ env:
 
 jobs:
   build-and-test:
-    runs-on: windows-2016
+    runs-on: windows-2019
 
     steps:
       - name: Start windows container for SQLServer 2017 Express
         run: |
-          docker run -m 3gb -p 1433:1433 -e 'sa_password=Passw0rd!' -e 'ACCEPT_EULA=Y' --name mssqlwin -d microsoft/mssql-server-windows-express:2017-latest
+          docker run -m 3gb -p 1433:1433 -e 'sa_password=Passw0rd!' -e 'ACCEPT_EULA=Y' --name mssqlwin -d octopusdeploy/mssql-server-windows-express:latest
 
       - name: Setup .NET Core SDK 3.1.x
         uses: actions/setup-dotnet@v1.7.2
@@ -32,20 +32,21 @@ jobs:
         with:
           repository: Ed-Fi-Alliance-OSS/Ed-Fi-ODS
           path: Ed-Fi-ODS/
-          ref: v5.2
+          ref: v5.3
 
       - name: Checkout Ed-Fi-ODS-Implementation
         uses: actions/checkout@v2.3.4
         with:
           repository: Ed-Fi-Alliance-OSS/Ed-Fi-ODS-Implementation
           path: Ed-Fi-ODS-Implementation/
-          ref: hotfix-github-actions-v5.2.1
+          ref: v5.3
 
       - name: Checkout Starter Kit Sample Extension
         uses: actions/checkout@v2.3.4
         with:
           repository: Ed-Fi-Alliance-OSS/Starter-Kit-SEA-Modernization
           path: Starter-Kit-SEA-Modernization/
+          ref: SEASK-95
 
       - name: CodeGen
         shell: powershell

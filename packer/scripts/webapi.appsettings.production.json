@@ -1,6 +1,6 @@
 {
   "Plugin": {
     "Folder": "c:/plugin",
-    "Scripts": ["tpdm","sk"]
+    "Scripts": ["sk"]
   }
 }
