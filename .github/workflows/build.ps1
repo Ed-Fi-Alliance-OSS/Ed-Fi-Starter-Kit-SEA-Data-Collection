@@ -10,7 +10,7 @@ Import-Module (Resolve-Path -Path (Join-Path -Path $modulesPath -ChildPath "pack
 
 #global vars
 $buildPath = "C:/"
-$configPath = (Resolve-Path (Join-Path -Path $PSScriptRoot -ChildPath "C:/Starter-Kit-SEA-Modernization/packer/build-configuration.json")).Path
+$configPath = "C:/Starter-Kit-SEA-Modernization/packer/build-configuration.json"
 
 $ErrorActionPreference = 'Stop'
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
