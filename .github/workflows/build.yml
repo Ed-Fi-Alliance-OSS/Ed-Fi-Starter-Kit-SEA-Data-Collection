@@ -82,6 +82,7 @@ jobs:
           docker stop mssqlwin
           docker cp $env:GITHUB_WORKSPACE/Ed-Fi-ODS/ mssqlwin:C:/Ed-Fi-ODS/
           docker cp $env:GITHUB_WORKSPACE/Ed-Fi-ODS-Implementation/ mssqlwin:C:/Ed-Fi-ODS-Implementation/
+          docker cp $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/ mssqlwin:C:/Starter-Kit-SEA-Modernization/
           docker cp $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/.github/workflows/build.ps1 mssqlwin:C:/
           docker cp $env:GITHUB_WORKSPACE/NugetPackages/EdFi.Ods.Extensions.Sk.1.0.$env:GITHUB_RUN_NUMBER.nupkg mssqlwin:C:/
           docker start mssqlwin
