@@ -4,12 +4,12 @@
 # See the LICENSE and NOTICES files in the project root for more information.
 
 #imports
-$modulesPath = Join-Path -Path $PSScriptRoot -ChildPath "C:/Starter-Kit-SEA-Modernization/packer/scripts/modules"
+$modulesPath = "C:/Starter-Kit-SEA-Modernization/packer/scripts/modules"
 Import-Module (Resolve-Path -Path (Join-Path -Path $modulesPath -ChildPath "file-helper.psm1")).Path
 Import-Module (Resolve-Path -Path (Join-Path -Path $modulesPath -ChildPath "packer-helper.psm1")).Path -Force
 
 #global vars
-$buildPath = Join-Path -Path $PSScriptRoot -ChildPath "C:/"
+$buildPath = "C:/"
 $configPath = (Resolve-Path (Join-Path -Path $PSScriptRoot -ChildPath "C:/Starter-Kit-SEA-Modernization/packer/build-configuration.json")).Path
 
 $ErrorActionPreference = 'Stop'
