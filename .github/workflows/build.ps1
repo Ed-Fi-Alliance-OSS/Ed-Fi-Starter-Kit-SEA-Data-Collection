@@ -22,6 +22,7 @@ dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'Plugin:Script
 dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ec 'ApiSettings:PopulatedTemplateScript' 'sampledata'
 dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'ApiSettings:PopulatedTemplateScript' 'sampledata'
 Invoke-PackageDownloads -ConfigPath $configPath -BuildPath $buildPath
+Expand-Archive C:/EdFi.Ods.Populated.Template.SK.zip -Destination C:/EdFi.Ods.Populated.Template.SK
 Copy-Item -Path C:/Starter-Kit-SEA-Modernization/packer/scripts/sampledata.ps1 C:/Ed-Fi-ODS-Implementation/DatabaseTemplate/Scripts/
 . C:/Ed-Fi-ODS-Implementation/Initialize-PowershellForDevelopment.ps1
 Initialize-DevelopmentEnvironment -RunDotnetTest -RunSdkGen -RunSmokeTest
