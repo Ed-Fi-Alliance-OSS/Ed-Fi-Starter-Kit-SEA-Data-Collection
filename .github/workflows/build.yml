@@ -7,21 +7,9 @@ env:
 
 jobs:
   build-and-test:
-    runs-on: windows-2016
+    runs-on: windows-latest
 
     steps:
-      - name: Start windows container for SQLServer 2017 Express
-        run: |
-          docker run -m 3gb -p 1433:1433 -e 'sa_password=Passw0rd!' -e 'ACCEPT_EULA=Y' --name mssqlwin -d microsoft/mssql-server-windows-express:2017-latest
-
-      - name: Setup .NET Core SDK 3.1.x
-        uses: actions/setup-dotnet@v1.7.2
-        with:
-          dotnet-version: "3.1.x"
-          source-url: ${{ env.AZURE_ARTIFACTS_FEED_URL }}
-        env:
-          NUGET_AUTH_TOKEN: ${{ secrets.AZURE_ARTIFACTS_PERSONAL_ACCESS_TOKEN }}
-
       - name: Enable longpaths
         run: |
           git version
@@ -32,14 +20,15 @@ jobs:
         with:
           repository: Ed-Fi-Alliance-OSS/Ed-Fi-ODS
           path: Ed-Fi-ODS/
-          ref: v5.2
+          ref: main
 
       - name: Checkout Ed-Fi-ODS-Implementation
         uses: actions/checkout@v2.3.4
         with:
           repository: Ed-Fi-Alliance-OSS/Ed-Fi-ODS-Implementation
           path: Ed-Fi-ODS-Implementation/
-          ref: hotfix-github-actions-v5.2.1
+          ref: ODS-5089-localdb
+
 
       - name: Checkout Starter Kit Sample Extension
         uses: actions/checkout@v2.3.4
@@ -47,50 +36,15 @@ jobs:
           repository: Ed-Fi-Alliance-OSS/Starter-Kit-SEA-Modernization
           path: Starter-Kit-SEA-Modernization/
 
-      - name: CodeGen
-        shell: powershell
-        run: |
-          $ErrorActionPreference = 'Stop'
-          $PSVersionTable
-          . $env:GITHUB_WORKSPACE/Ed-Fi-ODS-Implementation/Initialize-PowershellForDevelopment.ps1
-          Invoke-CodeGen -Engine SQLServer -ExtensionPaths $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/sample-extension/EdFi.Ods.Extensions.Sk/
-
-      - name: DotNet Info
-        run: dotnet --info
-
-      - name: Build Starter Kit Sample Extension
-        run: dotnet build $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/sample-extension/EdFi.Ods.Extensions.Sk/ --configuration release
-
-      - name: Test Starter Kit Sample Extension
-        run: dotnet test $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/sample-extension/EdFi.Ods.Extensions.Sk/ --no-restore --verbosity normal
-
-      - name: Version
-        run: nuget help
-
-      - name: Setup Nuget Version
-        uses: nuget/setup-nuget@v1
+      - name: Setup .NET Core SDK 3.1.x
+        uses: actions/setup-dotnet@v1.7.2
         with:
-          nuget-version: '5.3.1'
-
-      - name: Pack
-        run: nuget pack $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/sample-extension/EdFi.Ods.Extensions.Sk/EdFi.Ods.Extensions.Sk.nuspec -OutputDirectory NugetPackages -Version 1.0.$env:GITHUB_RUN_NUMBER -Properties configuration=release -Properties "authors=Ed-Fi Alliance" -Properties "owners=Ed-Fi Alliance" -Properties "copyright=Copyright ©Ed-Fi Alliance, LLC. 2020" -Properties id=EdFi.Ods.Extensions.Sk -Properties title=EdFi.Ods.Extensions.Sk -Properties description=EdFi.Ods.Extensions.Sk -NoPackageAnalysis -NoDefaultExcludes
-
-      - name: Code Setup
-        shell: powershell
-        run: |
-          docker stop mssqlwin
-          docker cp $env:GITHUB_WORKSPACE/Ed-Fi-ODS/ mssqlwin:C:/Ed-Fi-ODS/
-          docker cp $env:GITHUB_WORKSPACE/Ed-Fi-ODS-Implementation/ mssqlwin:C:/Ed-Fi-ODS-Implementation/
-          docker cp $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/.github/workflows/build.ps1 mssqlwin:C:/
-          docker cp $env:GITHUB_WORKSPACE/NugetPackages/EdFi.Ods.Extensions.Sk.1.0.$env:GITHUB_RUN_NUMBER.nupkg mssqlwin:C:/
-          docker start mssqlwin
-          docker exec mssqlwin powershell "Move-Item C:/EdFi.Ods.Extensions.Sk.1.0.$env:GITHUB_RUN_NUMBER.nupkg C:/EdFi.Ods.Extensions.Sk.zip"
-          docker exec mssqlwin powershell "Expand-Archive C:/EdFi.Ods.Extensions.Sk.zip C:/Ed-Fi-ODS-Implementation/Plugin/EdFi.Ods.Extensions.Sk/; ls"
+          dotnet-version: "3.1.x"
+          source-url: ${{ env.AZURE_ARTIFACTS_FEED_URL }}
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.AZURE_ARTIFACTS_PERSONAL_ACCESS_TOKEN }}
 
       - name: Initialize-DevelopmentEnvironment
         shell: powershell
         run: |
-          docker exec mssqlwin powershell "& C:/build.ps1"
-
-      - name: Push Package
-        run: dotnet nuget push NugetPackages/EdFi.Ods.Extensions.Sk.1.0.$env:GITHUB_RUN_NUMBER.nupkg --api-key AzureArtifacts --skip-duplicate
+          & $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/.github/workflows/build.ps1

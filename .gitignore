@@ -47,3 +47,7 @@ bin/
 obj/
 Debug/
 Release/
+
+*.generated.cs
+*.generated.hbm.xml
+packages/
