@@ -46,7 +46,6 @@ jobs:
         with:
           repository: Ed-Fi-Alliance-OSS/Starter-Kit-SEA-Modernization
           path: Starter-Kit-SEA-Modernization/
-          ref: SEASK-95
 
       - name: CodeGen
         shell: powershell
