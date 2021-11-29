@@ -1,8 +1,9 @@
 {
-  "odsApiVersion": "5.2",
+  "odsApiVersion": "5.3",
   "schemaDefinition": {
     "logicalName": "Sk",
     "physicalName": "sk",
+    "description": "",
     "version": "1.0.0"
   },
   "aggregateDefinitions": [],
