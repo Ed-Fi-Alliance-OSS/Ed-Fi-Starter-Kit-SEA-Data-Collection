@@ -22,7 +22,6 @@ function Get-SKConfiguration([hashtable] $config = @{ }) {
     $config.schemaDirectories = @(
         (Get-RepositoryResolvedPath "Application/EdFi.Ods.Standard/Artifacts/Schemas/")
         ("$(Get-PluginFolderFromSettings $config.appSettings)/EdFi.Ods.Extensions.Sk*/Artifacts/Schemas/")
-        ("$(Get-PluginFolderFromSettings $config.appSettings)/EdFi.Suite3.Ods.Extensions.TPDM*/Artifacts/Schemas/")
     )
 
 	$config.backupDirectory = "$PSScriptRoot/../"
