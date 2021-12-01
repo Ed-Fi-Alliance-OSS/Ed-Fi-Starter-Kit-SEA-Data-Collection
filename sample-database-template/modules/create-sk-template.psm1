@@ -12,7 +12,7 @@ function Get-SKConfiguration([hashtable] $config = @{ }) {
     $env:toolsPath = "$PSScriptRoot/../../../Ed-Fi-ODS-Implementation/tools/"
     $config = Merge-Hashtables (Get-DefaultTemplateConfiguration), $config
     $config.appSettings.Plugin.Folder = "$PSScriptRoot/../../../Ed-Fi-ODS-Implementation/plugin"
-    $config.appSettings.Plugin.Scripts = @("sk")
+    $config.appSettings.Plugin.Scripts = @("sk","tpdm")
     $config.appSettings = Merge-Hashtables $config.appSettings, (Get-DefaultTemplateSettingsByEngine)[$config.engine]
 
     $config.testHarnessJsonConfigLEAs = @(255902, 255903)
@@ -22,6 +22,7 @@ function Get-SKConfiguration([hashtable] $config = @{ }) {
     $config.schemaDirectories = @(
         (Get-RepositoryResolvedPath "Application/EdFi.Ods.Standard/Artifacts/Schemas/")
         ("$(Get-PluginFolderFromSettings $config.appSettings)/EdFi.Ods.Extensions.Sk*/Artifacts/Schemas/")
+        ("$(Get-PluginFolderFromSettings $config.appSettings)/EdFi.Suite3.Ods.Extensions.TPDM*/Artifacts/Schemas/")
     )
 
 	$config.backupDirectory = "$PSScriptRoot/../"
