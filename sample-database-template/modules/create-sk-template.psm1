@@ -12,7 +12,9 @@ function Get-SKConfiguration([hashtable] $config = @{ }) {
     $env:toolsPath = "$PSScriptRoot/../../../Ed-Fi-ODS-Implementation/tools/"
     $config = Merge-Hashtables (Get-DefaultTemplateConfiguration), $config
     $config.appSettings.Plugin.Folder = "$PSScriptRoot/../../../Ed-Fi-ODS-Implementation/plugin"
-    $config.appSettings.Plugin.Scripts = @("sk","tpdm")
+    $config.appSettings.Plugin.Scripts = @("sk")
+    $config.appSettings.MinimalTemplateScript = "TPDMCoreMinimalTemplate"
+    $config.appSettings.PopulatedTemplateScript = "TPDMCorePopulatedTemplate"
     $config.appSettings = Merge-Hashtables $config.appSettings, (Get-DefaultTemplateSettingsByEngine)[$config.engine]
 
     $config.testHarnessJsonConfigLEAs = @(255902, 255903)
