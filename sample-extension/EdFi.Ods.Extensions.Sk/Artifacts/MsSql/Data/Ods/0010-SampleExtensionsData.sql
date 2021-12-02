@@ -8,6 +8,6 @@ SELECT ssa.EntryDate, ssa.SchoolId, st.StudentUSI, sc.LocalEducationAgencyId, sc
 FROM edfi.Student st
 JOIN edfi.StudentSchoolAssociation ssa ON st.StudentUSI = ssa.StudentUSI
 JOIN edfi.School sc ON ssa.SchoolId = sc.SchoolId
-WHERE st.StudentUSI NOT IN (SELECT StudentUSI FROM sk.StudentSchoolAssociationExtension)
+WHERE st.StudentUSI NOT IN (SELECT StudentUSI FROM sk.StudentSchoolAssociationExtension) AND sc.LocalEducationAgencyId is NOT NULL
 
 GO
