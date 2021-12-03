@@ -9,6 +9,60 @@
 			"name": "Get Existing Schools",
 			"item": [
 				{
+					"name": "Get  LEA",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {",
+									"    pm.expect(pm.response.code).to.equal(200);",
+									"});",
+									"const __ = require('lodash');",
+									"const leas = pm.response.json();",
+									"pm.environment.set(\"known:localEducationAgencyId\",__.first(leas)['localEducationAgencyId']);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{ApiBaseUrl}}/data/v3/{{SchoolYear}}/ed-fi/localEducationAgencies",
+							"host": [
+								"{{ApiBaseUrl}}"
+							],
+							"path": [
+								"data",
+								"v3",
+								"{{SchoolYear}}",
+								"ed-fi",
+								"localEducationAgencies"
+							]
+						},
+						"description": "This api post method adds new academicWeeks for particular school .\nThis test method will throw WeekIdentifier is required error when WeekIdentifier is not passed"
+					},
+					"response": []
+				},
+				{
 					"name": "Get  School",
 					"event": [
 						{
@@ -29,8 +83,7 @@
 									"});",
 									"const __ = require('lodash');",
 									"const schools = pm.response.json();",
-									"pm.environment.set(\"known:schoolId\",__.first(schools)['schoolId']);",
-									"pm.environment.set(\"known:localEducationAgencyId\",__.first(schools)['localEducationAgencyReference'].localEducationAgencyId);"
+									"pm.environment.set(\"known:schoolId\",__.first(schools)['schoolId']);"
 								],
 								"type": "text/javascript"
 							}
@@ -47,7 +100,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{ApiBaseUrl}}/data/v3/{{SchoolYear}}/ed-fi/schools/",
+							"raw": "{{ApiBaseUrl}}/data/v3/{{SchoolYear}}/ed-fi/schools?localEducationAgencyId=255901",
 							"host": [
 								"{{ApiBaseUrl}}"
 							],
@@ -56,8 +109,13 @@
 								"v3",
 								"{{SchoolYear}}",
 								"ed-fi",
-								"schools",
-								""
+								"schools"
+							],
+							"query": [
+								{
+									"key": "localEducationAgencyId",
+									"value": "255901"
+								}
 							]
 						},
 						"description": "This api post method adds new academicWeeks for particular school .\nThis test method will throw WeekIdentifier is required error when WeekIdentifier is not passed"
