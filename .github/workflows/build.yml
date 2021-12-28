@@ -8,7 +8,9 @@ env:
 jobs:
   build-and-test:
     runs-on: windows-latest
-
+    container:
+      image: edfialliance/mssql-server-windows-express
+      
     steps:
       - name: Enable longpaths
         run: |
