@@ -9,7 +9,8 @@ jobs:
   build-and-test:
     runs-on: windows-latest
     container:
-      image: edfialliance/mssql-server-windows-express
+      runs-on: windows-latest
+      container: edfialliance/mssql-server-windows-express
       
     steps:
       - name: Enable longpaths
