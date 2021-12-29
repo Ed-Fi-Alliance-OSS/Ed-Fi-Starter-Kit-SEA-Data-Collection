@@ -21,10 +21,10 @@ if ($env:GITHUB_ACTIONS) {
     # EdFi.Ods.Api.IntegrationTestHarness
     dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'Plugin:Folder' '../../Plugin'
     dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ec 'Plugin:Scripts:0' 'disabled'
-    dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'ConnectionStrings:EdFi_Ods'      'Server=(LocalDB)\\MSSQLLocalDB; Database=EdFi_Ods_Populated_Template_Test; Connection Timeout=30; Trusted_Connection=True; Application Name=EdFi.Ods.Api.IntegrationTestHarness'
-    dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'ConnectionStrings:EdFi_Admin'    'Server=(LocalDB)\\MSSQLLocalDB; Database=EdFi_Admin; Connection Timeout=30; Trusted_Connection=True; Application Name=EdFi.Ods.Api.IntegrationTestHarness'
-    dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'ConnectionStrings:EdFi_Security' 'Server=(LocalDB)\\MSSQLLocalDB; Database=EdFi_Security; Connection Timeout=30; Trusted_Connection=True; Persist Security Info=True; Application Name=EdFi.Ods.Api.IntegrationTestHarness'
-    dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'ConnectionStrings:EdFi_Master'   'Server=(LocalDB)\\MSSQLLocalDB; Database=master; Connection Timeout=30; Trusted_Connection=True; Application Name=EdFi.Ods.Api.IntegrationTestHarness'
+    dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'ConnectionStrings:EdFi_Ods'      'Server=(LocalDB)\MSSQLLocalDB; Database=EdFi_Ods_Populated_Template_Test; Connection Timeout=30; Trusted_Connection=True; Application Name=EdFi.Ods.Api.IntegrationTestHarness'
+    dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'ConnectionStrings:EdFi_Admin'    'Server=(LocalDB)\MSSQLLocalDB; Database=EdFi_Admin; Connection Timeout=30; Trusted_Connection=True; Application Name=EdFi.Ods.Api.IntegrationTestHarness'
+    dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'ConnectionStrings:EdFi_Security' 'Server=(LocalDB)\MSSQLLocalDB; Database=EdFi_Security; Connection Timeout=30; Trusted_Connection=True; Persist Security Info=True; Application Name=EdFi.Ods.Api.IntegrationTestHarness'
+    dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'ConnectionStrings:EdFi_Master'   'Server=(LocalDB)\MSSQLLocalDB; Database=master; Connection Timeout=30; Trusted_Connection=True; Application Name=EdFi.Ods.Api.IntegrationTestHarness'
 } else {
     $basePath = (Resolve-Path "$PSScriptRoot/../../../")
     $version = "0.0.0"
