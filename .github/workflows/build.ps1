@@ -58,6 +58,8 @@ Expand-Archive $packagesPath/EdFi.Ods.Extensions.Sk.zip $basePath/Ed-Fi-ODS-Impl
 
 SqlLocalDB info
 SqlLocalDB info MSSQLLocalDB
+SQLLocalDB start MSSQLLocalDB
+SqlLocalDB info MSSQLLocalDB
 Initialize-DevelopmentEnvironment -RunDotnetTest -RunSdkGen -RunSmokeTest
 
 # & dotnet nuget push $packagesPath/EdFi.Ods.Extensions.Sk.$version.nupkg --api-key AzureArtifacts --skip-duplicate
