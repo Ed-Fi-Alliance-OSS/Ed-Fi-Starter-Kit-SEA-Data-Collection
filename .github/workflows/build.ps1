@@ -30,6 +30,11 @@ if ($env:GITHUB_ACTIONS) {
     $version = "0.0.0"
 }
 
+Write-Host "Starting MSSQLLocalDB"
+SqlLocalDB info
+SqlLocalDB info MSSQLLocalDB
+SQLLocalDB start MSSQLLocalDB
+
 (Get-ChildItem $basePath).FullName
 
 . $basePath/Ed-Fi-ODS-Implementation/Initialize-PowershellForDevelopment.ps1
@@ -56,10 +61,6 @@ $packagesPath = "$basePath/Starter-Kit-SEA-Modernization/.github/workflows/packa
 Copy-Item $packagesPath/EdFi.Ods.Extensions.Sk.$version.nupkg $packagesPath/EdFi.Ods.Extensions.Sk.zip
 Expand-Archive $packagesPath/EdFi.Ods.Extensions.Sk.zip $basePath/Ed-Fi-ODS-Implementation/Plugin/EdFi.Ods.Extensions.Sk/ -Force
 
-SqlLocalDB info
-SqlLocalDB info MSSQLLocalDB
-SQLLocalDB start MSSQLLocalDB
-SqlLocalDB info MSSQLLocalDB
 Initialize-DevelopmentEnvironment -RunDotnetTest -RunSdkGen -RunSmokeTest
 
 # & dotnet nuget push $packagesPath/EdFi.Ods.Extensions.Sk.$version.nupkg --api-key AzureArtifacts --skip-duplicate
