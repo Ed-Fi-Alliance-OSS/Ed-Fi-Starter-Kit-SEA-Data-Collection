@@ -31,8 +31,6 @@ if ($env:GITHUB_ACTIONS) {
 }
 
 Write-Host "Starting MSSQLLocalDB"
-SqlLocalDB info
-SqlLocalDB info MSSQLLocalDB
 SQLLocalDB start MSSQLLocalDB
 
 (Get-ChildItem $basePath).FullName
