@@ -30,6 +30,9 @@ if ($env:GITHUB_ACTIONS) {
     $version = "0.0.0"
 }
 
+Write-Host "Starting MSSQLLocalDB"
+SQLLocalDB start MSSQLLocalDB
+
 (Get-ChildItem $basePath).FullName
 
 . $basePath/Ed-Fi-ODS-Implementation/Initialize-PowershellForDevelopment.ps1
