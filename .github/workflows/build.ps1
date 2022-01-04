@@ -7,6 +7,8 @@ $ErrorActionPreference = 'Stop'
 
 $PSVersionTable
 
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
 if ($env:GITHUB_ACTIONS) {
     $basePath = $env:GITHUB_WORKSPACE
     $version = "1.0.$env:GITHUB_RUN_NUMBER"
@@ -53,6 +55,7 @@ Invoke-CodeGen -Engine SQLServer -ExtensionPaths $skExtensionPath
 & dotnet test $skExtensionPath --no-restore --verbosity normal
 
 $nuget = Install-NuGetCli (Get-ToolsPath)
+& $nuget 
 $packagesPath = "$basePath/Starter-Kit-SEA-Modernization/.github/workflows/packages/"
 & $nuget pack $skExtensionPath/EdFi.Ods.Extensions.Sk.nuspec `
     -OutputDirectory $packagesPath `
