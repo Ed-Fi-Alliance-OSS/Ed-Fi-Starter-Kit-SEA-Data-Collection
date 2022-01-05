@@ -46,6 +46,8 @@ dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'Plugin:Folder
 dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'Plugin:Scripts:0' 'tpdm'
 dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'Plugin:Scripts:1' 'sk'   
 
+dotnet nuget add source $env.AZURE_ARTIFACTS_FEED_URL --name EdFiAzureArtifacts
+
 (Get-ChildItem $basePath).FullName
 . $basePath/Ed-Fi-ODS-Implementation/Initialize-PowershellForDevelopment.ps1
 
