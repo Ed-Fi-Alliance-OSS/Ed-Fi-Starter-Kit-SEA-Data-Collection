@@ -37,5 +37,7 @@ jobs:
 
       - name: Initialize-DevelopmentEnvironment
         shell: powershell
+        env:
+          AZURE_ARTIFACTS_FEED_URL: https://pkgs.dev.azure.com/ed-fi-alliance/Ed-Fi-Alliance-OSS/_packaging/EdFi/nuget/v3/index.json
         run: |
           & $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/.github/workflows/build.ps1
