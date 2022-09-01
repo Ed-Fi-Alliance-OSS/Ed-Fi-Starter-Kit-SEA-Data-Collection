@@ -18,7 +18,7 @@ The Setup Guide provides instructions to customize and deploy the starter kit on
   * Internet Information Services. IIS is the web server that will run the ODS / API.
 
 * Ed-Fi Technology Suite 3
-  * Ed-Fi ODS / API v5.3.
+  * Ed-Fi ODS / API v6.0.
   * Ed-Fi Admin App v2.3.
 
 ## Legal Information

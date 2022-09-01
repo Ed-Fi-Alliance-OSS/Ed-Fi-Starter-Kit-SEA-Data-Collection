@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="net6.0">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>EdFi.Ods.Extensions.Sk</AssemblyName>
@@ -11,12 +11,12 @@
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
-  <ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
-    <PackageReference Include="EdFi.Suite3.Ods.Api" Version="5.3.44" />
-    <PackageReference Include="EdFi.Suite3.Ods.Common" Version="5.3.44" />
-    <PackageReference Include="EdFi.Suite3.Ods.Standard" Version="5.3.43" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
+    <PackageReference Include="EdFi.Suite3.Ods.Api" Version="6.0.3" />
+    <PackageReference Include="EdFi.Suite3.Ods.Common" Version="6.0.4" />
+    <PackageReference Include="EdFi.Suite3.Ods.Standard" Version="6.0.9" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Artifacts\**\Metadata\*.xml">
