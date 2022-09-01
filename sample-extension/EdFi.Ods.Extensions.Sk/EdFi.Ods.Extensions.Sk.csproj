@@ -1,4 +1,4 @@
-<Project Sdk="net6.0">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>EdFi.Ods.Extensions.Sk</AssemblyName>
