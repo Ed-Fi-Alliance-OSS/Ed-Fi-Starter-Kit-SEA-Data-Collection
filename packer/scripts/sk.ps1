@@ -12,7 +12,7 @@ $pluginPaths = @()
 
 $parameters = @{
     packageName     = "EdFi.Suite3.Ods.Extensions.SK"
-    packageVersion  = "6.0.9"
+    packageVersion  = "6.0.11"
     packageSource   = "https://pkgs.dev.azure.com/ed-fi-alliance/Ed-Fi-Alliance-OSS/_packaging/EdFi/nuget/v3/index.json"
     outputDirectory = "$PSScriptRoot"
     toolsPath       = (Get-ToolsPath)
