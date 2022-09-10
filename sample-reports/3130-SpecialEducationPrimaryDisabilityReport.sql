@@ -8,6 +8,7 @@
 -- Query to generate SEA Starter Kit - Special Education by Primary Disability = Student Count report
 -- =========================================================================================
 SELECT [DisabilityCode] AS [Primary Disability]
+    , [2022-2023]
     , [2021-2022]
     , [2020-2021]
     , [2019-2020]
@@ -16,11 +17,11 @@ SELECT [DisabilityCode] AS [Primary Disability]
 FROM  
 (
     SELECT DISTINCT StudentUniqueId, Datayears, DisabilityCode 
-    FROM [EdFi_Ods_2022].[reporting].[SpecialEducationChildCount]
+    FROM [EdFi_Ods_2023].[reporting].[SpecialEducationChildCount]
 ) AS SourceTable  
 PIVOT  
 (  
     COUNT(StudentUniqueId)  
-    FOR Datayears IN ([2021-2022], [2020-2021], [2019-2020], [2018-2019], [2017-2018])  
+    FOR Datayears IN ([2022-2023],[2021-2022], [2020-2021], [2019-2020], [2018-2019], [2017-2018])  
 ) AS PivotTable
 ORDER BY [DisabilityCode];

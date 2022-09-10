@@ -88,7 +88,7 @@ FROM
         WHEN 'M' THEN ETHNIC_CODE + ' - Male'
         WHEN 'F' THEN ETHNIC_CODE + ' - Female'
     END AS ETHNIC_GENDER
-    FROM [EdFi_Ods_2022].[reporting].[StudentFallMembership] sfm
+    FROM [EdFi_Ods_2023].[reporting].[StudentFallMembership] sfm
     INNER JOIN edfi.EducationOrganization s ON sfm.SCHOOL_CODE = s.EducationOrganizationId
     INNER JOIN edfi.EducationOrganization d ON sfm.DISTRICT_CODE_RESIDENCE = d.EducationOrganizationId
     INNER JOIN @Grades g ON sfm.GRADE_LEVEL = g.GradeName
