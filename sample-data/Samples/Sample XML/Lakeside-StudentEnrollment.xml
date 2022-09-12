@@ -23113,7 +23113,7 @@
 				<EducationOrganizationId>255902001</EducationOrganizationId>
 			</EducationOrganizationIdentity>
 		</EducationOrganizationReference>
-		<GraduationSchoolYear>2021-2022</GraduationSchoolYear>
+		<GraduationSchoolYear>2022-2023</GraduationSchoolYear>
 	</GraduationPlan>
 	<GraduationPlan id="GPLN_Recommended-LMS">
 		<GraduationPlanType>uri://ed-fi.org/GraduationPlanTypeDescriptor#Recommended</GraduationPlanType>
@@ -23131,7 +23131,7 @@
 				<EducationOrganizationId>255902044</EducationOrganizationId>
 			</EducationOrganizationIdentity>
 		</EducationOrganizationReference>
-		<GraduationSchoolYear>2021-2022</GraduationSchoolYear>
+		<GraduationSchoolYear>2022-2023</GraduationSchoolYear>
 	</GraduationPlan>
 	<GraduationPlan id="GPLN_Recommended-LES">
 		<GraduationPlanType>uri://ed-fi.org/GraduationPlanTypeDescriptor#Recommended</GraduationPlanType>
@@ -23149,7 +23149,7 @@
 				<EducationOrganizationId>255902107</EducationOrganizationId>
 			</EducationOrganizationIdentity>
 		</EducationOrganizationReference>
-		<GraduationSchoolYear>2021-2022</GraduationSchoolYear>
+		<GraduationSchoolYear>2022-2023</GraduationSchoolYear>
 	</GraduationPlan>
 	<GraduationPlan id="GPLN_Minimum-LHS">
 		<GraduationPlanType>uri://ed-fi.org/GraduationPlanTypeDescriptor#Minimum</GraduationPlanType>
@@ -23161,7 +23161,7 @@
 				<EducationOrganizationId>255902001</EducationOrganizationId>
 			</EducationOrganizationIdentity>
 		</EducationOrganizationReference>
-		<GraduationSchoolYear>2021-2022</GraduationSchoolYear>
+		<GraduationSchoolYear>2022-2023</GraduationSchoolYear>
 	</GraduationPlan>
 	<GraduationPlan id="GPLN_Minimum-LMS">
 		<GraduationPlanType>uri://ed-fi.org/GraduationPlanTypeDescriptor#Minimum</GraduationPlanType>
@@ -23173,7 +23173,7 @@
 				<EducationOrganizationId>255902044</EducationOrganizationId>
 			</EducationOrganizationIdentity>
 		</EducationOrganizationReference>
-		<GraduationSchoolYear>2021-2022</GraduationSchoolYear>
+		<GraduationSchoolYear>2022-2023</GraduationSchoolYear>
 	</GraduationPlan>
 	<GraduationPlan id="GPLN_Minimum-LES">
 		<GraduationPlanType>uri://ed-fi.org/GraduationPlanTypeDescriptor#Minimum</GraduationPlanType>
@@ -23185,7 +23185,7 @@
 				<EducationOrganizationId>255902107</EducationOrganizationId>
 			</EducationOrganizationIdentity>
 		</EducationOrganizationReference>
-		<GraduationSchoolYear>2021-2022</GraduationSchoolYear>
+		<GraduationSchoolYear>2022-2023</GraduationSchoolYear>
 	</GraduationPlan>
 	<StudentEducationOrganizationAssociation>
 		<StudentReference>

@@ -6,7 +6,7 @@
 CREATE OR ALTER PROCEDURE reporting.LoadStudentFallMembership
 AS
 BEGIN
-    DECLARE @Datayear NVARCHAR(9) = '2021-2022'
+    DECLARE @Datayear NVARCHAR(9) = '2022-2023'
 
     --October 1st
     DECLARE @October_1st date = LEFT(@Datayear,4) + '-10-01'
