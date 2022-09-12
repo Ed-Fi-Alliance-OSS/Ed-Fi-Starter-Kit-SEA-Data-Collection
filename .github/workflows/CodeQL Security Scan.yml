@@ -1,0 +1,75 @@
+# SPDX-License-Identifier: Apache-2.0
+# Licensed to the Ed-Fi Alliance under one or more agreements.
+# The Ed-Fi Alliance licenses this file to you under the Apache License, Version 2.0.
+# See the LICENSE and NOTICES files in the project root for more information.
+
+name: CodeQL Security Scan Pull request
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+env:
+  CURRENT_BRANCH: ${{ GITHUB.HEAD_REF }}
+  AZURE_ARTIFACTS_FEED_URL: "https://pkgs.dev.azure.com/ed-fi-alliance/Ed-Fi-Alliance-OSS/_packaging/EdFi/nuget/v3/index.json"
+
+jobs:
+  analyze:
+    name: Analyze Code
+    runs-on: windows-latest
+
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b  # v3.0.2
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@1fae5bf71b0ecdc7d0a2ef0d0c28409d99693966  # v2.9.2
+        with:
+          languages: 'csharp'
+      - name: Support longpaths
+        run: git config --system core.longpaths true
+      - name: Checkout Ed-Fi-ODS-Implementation
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2
+        with:
+            repository: Ed-Fi-Alliance-OSS/Ed-Fi-ODS-Implementation
+            path: Ed-Fi-ODS-Implementation/
+            ref: v6.0
+      - name: Checkout Ed-Fi-ODS
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2
+        with:
+            repository: Ed-Fi-Alliance-OSS/Ed-Fi-ODS
+            path: Ed-Fi-ODS/
+            ref: v6.0
+      - name: Checkout Starter-Kit-SEA-Modernization
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2
+        with:
+            repository: Ed-Fi-Alliance-OSS/Starter-Kit-SEA-Modernization
+            path: Starter-Kit-SEA-Modernization/
+      - name: Is pull request branch exists in Starter-Kit-SEA-Modernization
+        working-directory: ./Starter-Kit-SEA-Modernization/
+        shell: pwsh
+        run: |
+            $patternName = 'refs/heads/' +  '${{ env.CURRENT_BRANCH }}'
+            $is_pull_request_branch = 'False'
+            $is_pull_request_branch = git ls-remote --heads origin ${{ env.CURRENT_BRANCH }} | Select-String -Pattern $patternName -SimpleMatch -Quiet
+            if ($is_pull_request_branch -eq $true) {
+              git fetch origin ${{ env.CURRENT_BRANCH }}
+              git checkout ${{ env.CURRENT_BRANCH }}
+            }
+      - name: Initialize-DevelopmentEnvironment
+        shell: pwsh
+        working-directory: ./Starter-Kit-SEA-Modernization/.github/workflows/
+        run: |
+             .\build.ps1
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@1fae5bf71b0ecdc7d0a2ef0d0c28409d99693966  # v2.9.2
