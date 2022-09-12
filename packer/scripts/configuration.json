@@ -8,7 +8,7 @@
     "ApiSettings": {
       "Mode": "YearSpecific",
       "Engine": "SQLServer",
-      "OdsTokens": [2022],
+      "OdsTokens": [2023],
       "Features": [
         {
           "Name": "OpenApiMetadata",
