@@ -80,7 +80,7 @@ function Import-AMIImage {
      ##Write-Host "##teamcity[setParameter name='aws.newimageId' value='$newimageId']"
      $global:awsNewImageId = $newimageId
      Write-Host "global New Image Id " $global:awsNewImageId
-     Write-Host "Copy to new Image " $newimageId " process has been started , It will take a while to complete this step,  Basically adding  name  " $awsPublicImageName " to image"
+     Write-Host "Copy to new Image " $newimageId " process has been started, It will take a while to complete this step, Basically adding name " $awsPublicImageName "to image"
 
     $isNewImageNotAvailable =$true
     while($isNewImageNotAvailable -eq $true) {
