@@ -102,7 +102,7 @@ jobs:
             git fetch origin ${{ env.CURRENT_BRANCH }}
             git checkout ${{ env.CURRENT_BRANCH }}
           }
-    - name: Restore
+    - name: Register Ed-Fi Azure Artifacts Package Source
       working-directory: ./Starter-Kit-SEA-Modernization/sample-extension/EdFi.Ods.Extensions.Sk/
       run: |
         if (-not [Net.ServicePointManager]::SecurityProtocol.HasFlag([Net.SecurityProtocolType]::Tls12)) {
@@ -115,7 +115,11 @@ jobs:
                 -ProviderName NuGet
             Write-Host "Ed-Fi package source configured"
         }
-        dotnet restore
+      shell: pwsh
+    - name: Restore
+      working-directory: ./Starter-Kit-SEA-Modernization/
+      run: |
+          .\build.githubactions.ps1 Restore -ProjectFile "$env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/sample-extension/EdFi.Ods.Extensions.Sk/EdFi.Ods.Extensions.Sk.csproj"
       shell: pwsh
     - name: Run CodeGen
       run: |
