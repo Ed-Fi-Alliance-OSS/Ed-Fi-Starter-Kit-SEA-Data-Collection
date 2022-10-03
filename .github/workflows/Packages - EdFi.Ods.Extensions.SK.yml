@@ -87,9 +87,9 @@ jobs:
             git checkout ${{ env.CURRENT_BRANCH }}
           }
     - name: Restore
-      working-directory: ./Starter-Kit-SEA-Modernization/
+      working-directory: ./Starter-Kit-SEA-Modernization/sample-extension/EdFi.Ods.Extensions.Sk/
       run: |
-        .\build.githubactions.ps1 restore  -ProjectFile "$env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/sample-extension/EdFi.Ods.Extensions.Sk/EdFi.Ods.Extensions.Sk.csproj"
+        dotnet restore "$env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/sample-extension/EdFi.Ods.Extensions.Sk/"
       shell: pwsh          
     - name: Run CodeGen
       run: |
