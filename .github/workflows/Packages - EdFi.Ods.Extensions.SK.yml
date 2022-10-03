@@ -105,6 +105,16 @@ jobs:
     - name: Restore
       working-directory: ./Starter-Kit-SEA-Modernization/sample-extension/EdFi.Ods.Extensions.Sk/
       run: |
+        if (-not [Net.ServicePointManager]::SecurityProtocol.HasFlag([Net.SecurityProtocolType]::Tls12)) {
+          [Net.ServicePointManager]::SecurityProtocol += [Net.SecurityProtocolType]::Tls12
+        }
+        if(-not (Get-PackageSource -ProviderName NuGet | Where-Object -Property Name -eq "Ed-FiAzureArtifacts")){
+            Write-Host "Registering Ed-Fi Package Source..."
+            Register-PackageSource -Name Ed-FiAzureArtifacts `
+                -Location "https://pkgs.dev.azure.com/ed-fi-alliance/Ed-Fi-Alliance-OSS/_packaging/EdFi/nuget/v3/index.json" `
+                -ProviderName NuGet
+            Write-Host "Ed-Fi package source configured"
+        }
         dotnet restore
       shell: pwsh
     - name: Run CodeGen
