@@ -86,16 +86,16 @@ jobs:
             git fetch origin ${{ env.CURRENT_BRANCH }}
             git checkout ${{ env.CURRENT_BRANCH }}
           }
+    - name: Restore
+      working-directory: ./Starter-Kit-SEA-Modernization/
+      run: |
+        .\build.githubactions.ps1 restore  -ProjectFile "$env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/sample-extension/EdFi.Ods.Extensions.Sk/EdFi.Ods.Extensions.Sk.csproj"
+      shell: pwsh          
     - name: Run CodeGen
       run: |
           $ErrorActionPreference = 'Stop'
           . $env:GITHUB_WORKSPACE/Ed-Fi-ODS-Implementation/Initialize-PowershellForDevelopment.ps1
           Invoke-CodeGen -Engine SQLServer -ExtensionPaths  $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/sample-extension/EdFi.Ods.Extensions.Sk/
-    - name: Restore
-      working-directory: ./Starter-Kit-SEA-Modernization/
-      run: |
-        .\build.githubactions.ps1 restore  -ProjectFile "$env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/sample-extension/EdFi.Ods.Extensions.Sk/EdFi.Ods.Extensions.Sk.csproj"
-      shell: pwsh
     - name: Build
       working-directory: ./Starter-Kit-SEA-Modernization/
       run: |
