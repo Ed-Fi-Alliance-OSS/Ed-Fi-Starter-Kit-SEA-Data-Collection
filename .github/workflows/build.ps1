@@ -35,7 +35,7 @@ if ($env:GITHUB_ACTIONS) {
 # EdFi.Ods.WebApi
 dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ec 'Plugin:Folder' '../../Plugin'
 dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ec 'Plugin:Scripts:0' 'tpdm'
-dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ec 'Plugin:Scripts:1' 'sk'
+dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ec 'Plugin:Scripts:1' 'sk'  
 
 # EdFi.Ods.Api.IntegrationTestHarness
 dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'Plugin:Folder' '../../Plugin'
@@ -53,7 +53,7 @@ Invoke-CodeGen -Engine SQLServer -ExtensionPaths $skExtensionPath
 & dotnet test $skExtensionPath --no-restore --verbosity normal
 
 $nuget = Install-NuGetCli (Get-ToolsPath)
-& $nuget
+& $nuget 
 $packagesPath = "$basePath/Starter-Kit-SEA-Modernization/.github/workflows/packages/"
 & $nuget pack $skExtensionPath/EdFi.Ods.Extensions.Sk.nuspec `
     -OutputDirectory $packagesPath `
@@ -71,4 +71,4 @@ Expand-Archive $packagesPath/EdFi.Ods.Extensions.Sk.zip $basePath/Ed-Fi-ODS-Impl
 
 Initialize-DevelopmentEnvironment -RunDotnetTest -RunSdkGen -RunSmokeTest
 
-#& dotnet nuget push $packagesPath/EdFi.Ods.Extensions.Sk.$version.nupkg --api-key AzureArtifacts --skip-duplicate
+# & dotnet nuget push $packagesPath/EdFi.Ods.Extensions.Sk.$version.nupkg --api-key AzureArtifacts --skip-duplicate
