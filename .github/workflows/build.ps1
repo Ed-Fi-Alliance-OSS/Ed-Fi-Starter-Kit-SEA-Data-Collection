@@ -54,7 +54,7 @@ Invoke-CodeGen -Engine SQLServer -ExtensionPaths $skExtensionPath
 
 $nuget = Install-NuGetCli (Get-ToolsPath)
 & $nuget 
-$packagesPath = "$basePath/Starter-Kit-SEA-Modernization/.github/workflows/packages/"
+$packagesPath = "$PSScriptRoot\NugetPackages"
 & $nuget pack $skExtensionPath/EdFi.Ods.Extensions.Sk.nuspec `
     -OutputDirectory $packagesPath `
     -Version $version `
