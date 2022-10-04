@@ -62,13 +62,12 @@ $packagesPath = "$basePath/Starter-Kit-SEA-Modernization/.github/workflows/packa
     -Properties "authors=Ed-Fi Alliance" `
     -Properties "owners=Ed-Fi Alliance" `
     -Properties "copyright=Copyright ©Ed-Fi Alliance, LLC. 2020" `
-    -Properties id=EdFi.Ods.Extensions.Sk `
     -Properties title=EdFi.Ods.Extensions.Sk `
     -Properties description=EdFi.Ods.Extensions.Sk `
     -NoPackageAnalysis `
     -NoDefaultExcludes
-Copy-Item $packagesPath/EdFi.Ods.Extensions.Sk.$version.nupkg $packagesPath/EdFi.Ods.Extensions.Sk.zip
-Expand-Archive $packagesPath/EdFi.Ods.Extensions.Sk.zip $basePath/Ed-Fi-ODS-Implementation/Plugin/EdFi.Ods.Extensions.Sk/ -Force
+Copy-Item $packagesPath/EdFi.Suite3.Ods.Extensions.Sk.$version.nupkg $packagesPath/EdFi.Suite3.Ods.Extensions.Sk.$version.zip
+Expand-Archive $packagesPath/EdFi.Suite3.Ods.Extensions.Sk.$version.zip $basePath/Ed-Fi-ODS-Implementation/Plugin/EdFi.Ods.Extensions.Sk/ -Force
 
 Initialize-DevelopmentEnvironment -RunDotnetTest -RunSdkGen -RunSmokeTest
 
