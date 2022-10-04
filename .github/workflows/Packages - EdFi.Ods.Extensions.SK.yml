@@ -107,7 +107,7 @@ jobs:
     - name: Use NuGet
       uses: nuget/setup-nuget@b2bc17b761a1d88cab755a776c7922eb26eefbfa # v1
       with:
-        nuget-version: '5.x'
+        nuget-version: '5.3.1'
     - name: pack using nuget nuspec file
       working-directory: ./Starter-Kit-SEA-Modernization/
       shell: pwsh
