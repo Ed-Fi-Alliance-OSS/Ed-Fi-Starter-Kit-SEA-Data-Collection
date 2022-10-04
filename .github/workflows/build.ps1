@@ -35,12 +35,12 @@ if ($env:GITHUB_ACTIONS) {
 # EdFi.Ods.WebApi
 dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ec 'Plugin:Folder' '../../Plugin'
 dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ec 'Plugin:Scripts:0' 'tpdm'
-dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ec 'Plugin:Scripts:1' 'sk'  
+dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ec 'Plugin:Scripts:1' 'sk'
 
 # EdFi.Ods.Api.IntegrationTestHarness
 dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'Plugin:Folder' '../../Plugin'
 dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'Plugin:Scripts:0' 'tpdm'
-dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'Plugin:Scripts:1' 'sk'
+dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'Plugin:Scripts:1' 'sk' 
 
 dotnet nuget add source $env:AZURE_ARTIFACTS_FEED_URL --name EdFiAzureArtifacts
 
