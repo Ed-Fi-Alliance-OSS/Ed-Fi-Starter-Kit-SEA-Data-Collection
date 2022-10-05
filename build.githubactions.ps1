@@ -138,7 +138,7 @@ function Pack {
     }
     if ($NuspecFilePath -Like "*.nuspec" -and $PackageName -ne $null){
        $nugetRoot = Split-Path -Path $NuspecFilePath -Parent
-       Set-Location -Path $nugetRoot  -PassThru
+       Set-Location -Path $nugetRoot
        nuget pack $NuspecFilePath -OutputDirectory $packageOutput -Version $version -Properties configuration=$Configuration -Properties id=$PackageName -NoPackageAnalysis -NoDefaultExcludes
     }
     if ([string]::IsNullOrWhiteSpace($NuspecFilePath) -and $PackageName -ne $null){

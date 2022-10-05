@@ -17,6 +17,6 @@
     <file src="Artifacts/**/*.sql" target="."/>
     <file src="Artifacts/**/*.json" target="."/>
     <file src="assemblyMetadata.json" target="."/>
-    <file src="bin/$Configuration$/net6.0/EdFi.Ods.Extensions.Sk.dll" target="."/>
+    <file src="bin/$configuration$/net6.0/EdFi.Ods.Extensions.Sk.dll" target="."/>
   </files>
 </package>
