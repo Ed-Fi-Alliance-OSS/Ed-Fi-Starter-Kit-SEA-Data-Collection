@@ -1,12 +1,14 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>EdFi.Ods.Extensions.Sk</id>
+    <id>EdFi.Suite3.Ods.Extensions.Sk</id>
     <version>0.0.0</version>
     <authors>Ed-Fi Alliance</authors>
     <owners>Ed-Fi Alliance</owners>
+    <title>EdFi.Ods.Extensions.Sk</title>
     <projectUrl>https://github.com/Ed-Fi-Alliance-OSS/Ed-Fi-Extensions</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<copyright>Copyright © 2021 Ed-Fi Alliance, LLC and Contributors</copyright>
     <description>EdFi.Ods.Extensions.Sk</description>
     <releaseNotes></releaseNotes>
     <license type="file">LICENSE.txt</license>
