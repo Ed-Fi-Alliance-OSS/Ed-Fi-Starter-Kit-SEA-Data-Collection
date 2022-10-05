@@ -36,28 +36,36 @@ jobs:
         uses: github/codeql-action/init@1fae5bf71b0ecdc7d0a2ef0d0c28409d99693966  # v2.9.2
         with:
           languages: 'csharp'
-      - name: Support longpaths
-        run: git config --system core.longpaths true
-      - name: Checkout Ed-Fi-ODS-Implementation
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2
-        with:
-            repository: Ed-Fi-Alliance-OSS/Ed-Fi-ODS-Implementation
-            path: Ed-Fi-ODS-Implementation/
-            ref: v6.0
+
+      - name: Enable longpaths
+        run: |
+          git version
+          git config --global core.longpaths true
+
       - name: Checkout Ed-Fi-ODS
         uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2
         with:
             repository: Ed-Fi-Alliance-OSS/Ed-Fi-ODS
             path: Ed-Fi-ODS/
             ref: v6.0
+
+      - name: Checkout Ed-Fi-ODS-Implementation
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2
+        with:
+            repository: Ed-Fi-Alliance-OSS/Ed-Fi-ODS-Implementation
+            path: Ed-Fi-ODS-Implementation/
+            ref: v6.0
+
       - name: Checkout Starter-Kit-SEA-Modernization
         uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2
         with:
             repository: Ed-Fi-Alliance-OSS/Starter-Kit-SEA-Modernization
             path: Starter-Kit-SEA-Modernization/
+
       - name: Initialize-DevelopmentEnvironment
         shell: powershell
         run: |
           & $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/.github/workflows/build.ps1
+
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@1fae5bf71b0ecdc7d0a2ef0d0c28409d99693966  # v2.9.2
