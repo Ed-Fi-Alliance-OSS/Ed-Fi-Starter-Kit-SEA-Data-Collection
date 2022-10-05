@@ -12,7 +12,7 @@ $PSVersionTable
 if ($env:GITHUB_ACTIONS) {
     $basePath = $env:GITHUB_WORKSPACE
     $version = "1.0.$env:GITHUB_RUN_NUMBER"
-    
+
     # EdFi.Ods.WebApi
     dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ec 'ConnectionStrings:EdFi_Ods'      'Server=(LocalDB)\\MSSQLLocalDB; Database=EdFi_{0}; Connection Timeout=30; Trusted_Connection=True; Application Name=EdFi.Ods.WebApi;'
     dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ec 'ConnectionStrings:EdFi_Admin'    'Server=(LocalDB)\\MSSQLLocalDB; Database=EdFi_Admin; Connection Timeout=30; Trusted_Connection=True; Application Name=EdFi.Ods.WebApi;'
@@ -59,12 +59,6 @@ $packagesPath = "$basePath/Starter-Kit-SEA-Modernization/.github/workflows/packa
     -OutputDirectory $packagesPath `
     -Version $version `
     -Properties configuration=release `
-    -Properties "authors=Ed-Fi Alliance" `
-    -Properties "owners=Ed-Fi Alliance" `
-    -Properties "copyright=Copyright ©Ed-Fi Alliance, LLC. 2020" `
-    -Properties id=EdFi.Ods.Extensions.Sk `
-    -Properties title=EdFi.Ods.Extensions.Sk `
-    -Properties description=EdFi.Ods.Extensions.Sk `
     -NoPackageAnalysis `
     -NoDefaultExcludes
 Copy-Item $packagesPath/EdFi.Suite3.Ods.Extensions.Sk.$version.nupkg $packagesPath/EdFi.Ods.Extensions.Sk.zip
