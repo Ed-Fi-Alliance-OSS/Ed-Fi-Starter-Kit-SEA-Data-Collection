@@ -13,7 +13,7 @@ on:
     branches:
       - main
 env:
-  CURRENT_BRANCH: ${{ GITHUB.HEAD_REF }}
+  CURRENT_BRANCH: ${{ GITHUB.REF_NAME }}
   AZURE_ARTIFACTS_FEED_URL: "https://pkgs.dev.azure.com/ed-fi-alliance/Ed-Fi-Alliance-OSS/_packaging/EdFi/nuget/v3/index.json"
 
 jobs:
@@ -55,21 +55,9 @@ jobs:
         with:
             repository: Ed-Fi-Alliance-OSS/Starter-Kit-SEA-Modernization
             path: Starter-Kit-SEA-Modernization/
-      - name: Is pull request branch exists in Starter-Kit-SEA-Modernization
-        working-directory: ./Starter-Kit-SEA-Modernization/
-        shell: pwsh
-        run: |
-            $patternName = 'refs/heads/' +  '${{ env.CURRENT_BRANCH }}'
-            $is_pull_request_branch = 'False'
-            $is_pull_request_branch = git ls-remote --heads origin ${{ env.CURRENT_BRANCH }} | Select-String -Pattern $patternName -SimpleMatch -Quiet
-            if ($is_pull_request_branch -eq $true) {
-              git fetch origin ${{ env.CURRENT_BRANCH }}
-              git checkout ${{ env.CURRENT_BRANCH }}
-            }
       - name: Initialize-DevelopmentEnvironment
-        shell: pwsh
-        working-directory: ./Starter-Kit-SEA-Modernization/.github/workflows/
+        shell: powershell
         run: |
-             .\build.ps1
+          & $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/.github/workflows/build.ps1
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@1fae5bf71b0ecdc7d0a2ef0d0c28409d99693966  # v2.9.2
