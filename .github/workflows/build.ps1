@@ -12,7 +12,7 @@ $PSVersionTable
 if ($env:GITHUB_ACTIONS) {
     $basePath = $env:GITHUB_WORKSPACE
     $version = "1.0.$env:GITHUB_RUN_NUMBER"
-    $Configuration = "Release"
+
     # EdFi.Ods.WebApi
     dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ec 'ConnectionStrings:EdFi_Ods'      'Server=(LocalDB)\\MSSQLLocalDB; Database=EdFi_{0}; Connection Timeout=30; Trusted_Connection=True; Application Name=EdFi.Ods.WebApi;'
     dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ec 'ConnectionStrings:EdFi_Admin'    'Server=(LocalDB)\\MSSQLLocalDB; Database=EdFi_Admin; Connection Timeout=30; Trusted_Connection=True; Application Name=EdFi.Ods.WebApi;'
@@ -40,7 +40,7 @@ dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ec 'Plugin:Script
 # EdFi.Ods.Api.IntegrationTestHarness
 dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'Plugin:Folder' '../../Plugin'
 dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'Plugin:Scripts:0' 'tpdm'
-dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'Plugin:Scripts:1' 'sk'  
+dotnet user-secrets set --id f1506d66-289c-44cb-a2e2-80411cc690ed 'Plugin:Scripts:1' 'sk'   
 
 dotnet nuget add source $env:AZURE_ARTIFACTS_FEED_URL --name EdFiAzureArtifacts
 
@@ -58,10 +58,11 @@ $packagesPath = "$basePath/Starter-Kit-SEA-Modernization/.github/workflows/packa
 & $nuget pack $skExtensionPath/EdFi.Ods.Extensions.Sk.nuspec `
     -OutputDirectory $packagesPath `
     -Version $version `
-    -Properties configuration=$Configuration `
+    -Properties configuration=release `
     -Properties "authors=Ed-Fi Alliance" `
     -Properties "owners=Ed-Fi Alliance" `
     -Properties "copyright=Copyright ©Ed-Fi Alliance, LLC. 2020" `
+    -Properties id=EdFi.Ods.Extensions.Sk `    
     -Properties title=EdFi.Ods.Extensions.Sk `
     -Properties description=EdFi.Ods.Extensions.Sk `
     -NoPackageAnalysis `
