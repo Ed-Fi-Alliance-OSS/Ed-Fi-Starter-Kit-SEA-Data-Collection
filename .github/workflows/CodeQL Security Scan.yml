@@ -65,6 +65,7 @@ jobs:
       - name: Initialize-DevelopmentEnvironment
         shell: powershell
         run: |
+          $env:UseSharedCompilation = 'true'
           & $env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/.github/workflows/build.ps1
 
       - name: Perform CodeQL Analysis
