@@ -19,7 +19,7 @@ The Setup Guide provides instructions to customize and deploy the starter kit on
 
 * Ed-Fi Technology Suite 3
   * Ed-Fi ODS / API v6.0.
-  * Ed-Fi Admin App v2.3.
+  * Ed-Fi Admin App v3.0.
 
 ## Legal Information
 
