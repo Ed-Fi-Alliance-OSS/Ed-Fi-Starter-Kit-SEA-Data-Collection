@@ -6,6 +6,8 @@
 name: Packages - EdFi.Ods.Populated.Template.SK
 
 on:
+  pull_request:
+    branches: [main]
   push:
     branches:
       - main
