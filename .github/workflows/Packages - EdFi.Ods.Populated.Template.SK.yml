@@ -68,6 +68,11 @@ jobs:
       shell: powershell
       run: |
         .\build.githubactions.ps1 CheckoutBranch -RelativeRepoPath "../Ed-Fi-ODS-Implementation"
+    - name: Is pull request branch exists in Ed-Fi-ODS
+      working-directory: ./Starter-Kit-SEA-Modernization/
+      shell: powershell
+      run: |
+        .\build.githubactions.ps1 CheckoutBranch -RelativeRepoPath "../Ed-Fi-ODS"        
     - name: Install sql-server-2019 & sqlpackage
       shell: powershell
       run: |
