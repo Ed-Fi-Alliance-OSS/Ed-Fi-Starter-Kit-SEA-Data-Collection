@@ -7,7 +7,7 @@
 param(
     # Command to execute, defaults to "Build".
     [string]
-    [ValidateSet("DotnetClean", "Build", "Test", "Pack", "Publish", "CheckoutBranch")]
+    [ValidateSet("Restore", "DotnetClean", "Build", "Test", "Pack", "Publish", "CheckoutBranch")]
     $Command = "Build",
 
     [switch] $SelfContained,
@@ -115,6 +115,12 @@ function Invoke-Main {
     }
 }
 
+function Restore {
+    Invoke-Execute {
+        dotnet restore $Solution
+    }
+}
+
 function DotnetClean {
     Invoke-Execute { dotnet clean $Solution -c $Configuration --nologo -v minimal }
 }
@@ -205,6 +211,10 @@ function CheckoutBranch {
             Write-Output "did not match on any results for changing ODS checkout branch"
         }
     }
+}
+
+function Invoke-Restore {
+    Invoke-Step { Restore }
 }
 
 function Invoke-Build {
