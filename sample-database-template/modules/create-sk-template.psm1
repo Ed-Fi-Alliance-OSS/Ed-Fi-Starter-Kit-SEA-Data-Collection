@@ -25,9 +25,14 @@ function Get-SKConfiguration([hashtable] $config = @{ }) {
     )
 
 	$config.backupDirectory = "$PSScriptRoot/../"
-    $config.databaseBackupName = "EdFi.Ods.Populated.Template.Sk"
-    $config.packageNuspecName = "EdFi.Ods.Populated.Template.Sk"
-
+    $config.databaseBackupName = "EdFi.Ods.Populated.Template.SK"
+    $config.packageNuspecName = "EdFi.Ods.Populated.Template.SK"
+    $config.Id = "EdFi.Ods.Populated.Template.SK"
+    $config.Title = "EdFi.Ods.Populated.Template.SK"
+    $config.Description = "EdFi Ods Populated Template SK Database"
+    $config.Authors = "Ed-Fi Alliance"
+    $config.Owners = "Ed-Fi Alliance"
+    $config.Copyright = "Copyright @ 2021 Ed-Fi Alliance, LLC and Contributors"
     return $config
 }
 
