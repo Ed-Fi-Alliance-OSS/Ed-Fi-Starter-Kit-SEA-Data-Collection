@@ -245,6 +245,7 @@ function Invoke-CheckoutBranch {
 
 Invoke-Main {
     switch ($Command) {
+        Restore { Invoke-Restore }        
         DotnetClean { Invoke-DotnetClean }
         Build { Invoke-Build }
         Test { Invoke-Tests }
