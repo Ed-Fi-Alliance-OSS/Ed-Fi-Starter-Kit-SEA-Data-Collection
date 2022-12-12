@@ -70,6 +70,6 @@ jobs:
         shell: pwsh
         working-directory: ./Starter-Kit-SEA-Modernization/.github/workflows/
         run: |
-             .\build.ps1
+             .\build.ps1 -SkipTests $true
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@1fae5bf71b0ecdc7d0a2ef0d0c28409d99693966  # v2.9.2
