@@ -69,7 +69,7 @@ $packagesPath = "$basePath/Starter-Kit-SEA-Modernization/.github/workflows/packa
 Copy-Item $packagesPath/EdFi.Suite3.Ods.Extensions.Sk.$version.nupkg $packagesPath/EdFi.Ods.Extensions.Sk.zip
 Expand-Archive $packagesPath/EdFi.Ods.Extensions.Sk.zip $basePath/Ed-Fi-ODS-Implementation/Plugin/EdFi.Ods.Extensions.Sk/ -Force
 
-# When building for the purpose CodeQL execution, running tests are not necessary.  
+# When building for the purpose of CodeQL execution, running tests are not necessary.  
 # Additionally, when CodeQL has been initialized, attempting to run -RunDotnetTest fails.
 if ($SkipTests) {
     Initialize-DevelopmentEnvironment -RunSdkGen
