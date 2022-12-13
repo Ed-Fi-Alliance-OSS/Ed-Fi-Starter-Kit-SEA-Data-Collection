@@ -14,8 +14,8 @@ on:
     types: [triggered-from-ods-repo,triggered-from-implementation-repo ,triggered-from-datastandard-repo]
 env:
   EDFI_STANDARD_REFERENCE: "v4.0.0"
-  INFORMATIONAL_VERSION: "7.0"
-  BUILD_INCREMENTER: "1"
+  INFORMATIONAL_VERSION: "1.1"
+  BUILD_INCREMENTER: "285"
   AZURE_ARTIFACT_URL: "https://pkgs.dev.azure.com/ed-fi-alliance/Ed-Fi-Alliance-OSS/_packaging/EdFi/nuget/v3/index.json"
   AZURE_ARTIFACT_NUGET_KEY: ${{ secrets.AZURE_ARTIFACTS_PERSONAL_ACCESS_TOKEN }}
   VSS_NUGET_EXTERNAL_FEED_ENDPOINTS : '{"endpointCredentials": [{"endpoint": "https://pkgs.dev.azure.com/ed-fi-alliance/Ed-Fi-Alliance-OSS/_packaging/EdFi/nuget/v3/index.json","password": "${{ secrets.AZURE_ARTIFACTS_PERSONAL_ACCESS_TOKEN }}"}]}'
@@ -96,7 +96,7 @@ jobs:
     - name: pack
       working-directory: ./Starter-Kit-SEA-Modernization/
       run: |
-        .\build.githubactions.ps1 pack -Configuration ${{ env.CONFIGURATION }} -InformationalVersion ${{ env.INFORMATIONAL_VERSION }} -BuildCounter ${{ github.run_number }} -BuildIncrementer ${{env.BUILD_INCREMENTER}} -NuspecFilePath "$env:GITHUB_WORKSPACE\Starter-Kit-SEA-Modernization\sample-database-template\EdFi.Ods.Populated.Template.Sk.nuspec" -PackageName  "EdFi.Ods.Populated.Template.SK"
+        .\build.githubactions.ps1 pack -Configuration ${{ env.CONFIGURATION }} -InformationalVersion ${{ env.INFORMATIONAL_VERSION }} -BuildCounter ${{ github.run_number }} -BuildIncrementer ${{env.BUILD_INCREMENTER}} -NuspecFilePath "$env:GITHUB_WORKSPACE/Starter-Kit-SEA-Modernization/sample-database-template/EdFi.Ods.Populated.Template.Sk.nuspec" -PackageName  "EdFi.Ods.Populated.Template.SK"
       shell: powershell
     - name: Install-credential-handler
       run: iex "& { $(irm https://aka.ms/install-artifacts-credprovider.ps1) } -AddNetfx"
