@@ -2,6 +2,11 @@
 # Licensed to the Ed-Fi Alliance under one or more agreements.
 # The Ed-Fi Alliance licenses this file to you under the Apache License, Version 2.0.
 # See the LICENSE and NOTICES files in the project root for more information.
+[CmdLetBinding()]
+param(
+    [bool]
+    $SkipTests = $false
+)
 
 $ErrorActionPreference = 'Stop'
 
@@ -64,6 +69,13 @@ $packagesPath = "$basePath/Starter-Kit-SEA-Modernization/.github/workflows/packa
 Copy-Item $packagesPath/EdFi.Suite3.Ods.Extensions.Sk.$version.nupkg $packagesPath/EdFi.Ods.Extensions.Sk.zip
 Expand-Archive $packagesPath/EdFi.Ods.Extensions.Sk.zip $basePath/Ed-Fi-ODS-Implementation/Plugin/EdFi.Ods.Extensions.Sk/ -Force
 
-Initialize-DevelopmentEnvironment -RunDotnetTest -RunSdkGen -RunSmokeTest
+# When building for the purpose of CodeQL execution, running tests are not necessary.  
+# Additionally, when CodeQL has been initialized, attempting to run -RunDotnetTest fails.
+if ($SkipTests) {
+    Initialize-DevelopmentEnvironment -RunSdkGen
+}
+else{
+    Initialize-DevelopmentEnvironment -RunDotnetTest -RunSdkGen -RunSmokeTest
+}
 
 # & dotnet nuget push $packagesPath/EdFi.Ods.Extensions.Sk.$version.nupkg --api-key AzureArtifacts --skip-duplicate
