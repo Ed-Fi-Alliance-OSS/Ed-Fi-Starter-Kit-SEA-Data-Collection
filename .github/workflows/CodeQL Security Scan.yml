@@ -7,7 +7,7 @@ name: CodeQL Security Scan Schedule
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 6 * * *'
 env:
   CURRENT_BRANCH: ${{ GITHUB.HEAD_REF }}
   AZURE_ARTIFACTS_FEED_URL: "https://pkgs.dev.azure.com/ed-fi-alliance/Ed-Fi-Alliance-OSS/_packaging/EdFi/nuget/v3/index.json"
